@@ -1,7 +1,7 @@
 # Jet Set Radio Future
 
 A separate original Xbox title project using the pinned XboxLLR framework.
-The current target is the original NTSC-U attract demo running entirely through generated native CPU and shared native services. Actual execution now renders the title and animated city/skating demo, then returns through the original logos and title into the demo again. Audio routing acceptance and interactive gameplay remain unverified; this is a development preview.
+The original NTSC-U idle attract demo now runs through generated native CPU and shared native services, returning through the original logos and title into the demo again. The observed attract path is qualified with scoped graphics/audio checks and an owner visual review. Gameplay, active spatial audio and sustained performance remain follow-up work; this is a development preview.
 
 Provide your own game under ignored local paths. Original game files, console inputs and generated code are never included in this repository. The private development image is SHA256 `f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219` (title ID `5345000A`, XDK 4134).
 

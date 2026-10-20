@@ -5,7 +5,7 @@ This record preserves earlier interface checkpoints. See the
 boundary and complete-attract acceptance status.
 
 Current source checkpoint: framework
-`50267201570dfcd104fb77f29497701092048b63`, optional source-bound original
+`adc7afcee594733613cf842a27b3eebc1360ba17`, optional source-bound original
 lighting cache, and the public image-bound native function recovery plan.
 The frozen executable
 `2eec3248aa6e011f236ff245ae1365de7b23736590add2ecf2015b2d98a41b48`
@@ -14,9 +14,12 @@ re-enters the demo without an interpreter or runtime guard. The completed
 600-second observation records 579 diagnostic present images. Repeated
 `playdemo00.dat` opens occur at 0.095, 266.113 and 546.641 seconds relative to
 the first title asset open, corroborating the inspected scene sequence.
-The observation ends at its deliberate deadline. Audio-route acceptance and
-interactive transitions remain separate open checks; the paragraphs below
-preserve historical bring-up evidence rather than the current stopping point.
+The observation ends at its deliberate deadline. A separate same-binary census
+records the complete first idle-attract cycle with original spatial buffers
+prepared but unplayed, one successful stereo PCM music Play and two finite,
+nonzero real GP output windows. Active spatial output and interactive gameplay
+remain explicit follow-ups. The paragraphs below preserve historical bring-up
+evidence rather than the current stopping point.
 
 Input SHA256: `f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219`.
 The source-selected XDK 4134 inventory is a discovery hint; decoded original

@@ -2,15 +2,22 @@
 
 Tracking: beads-xbox.2.1. Native CPU execution and service abstraction are separate axes. ORIGINAL in the initial bring-up descriptor retains original generated CPU subsystem code; it does not select an interpreter. The final attract target requires native shared graphics/audio/input consumers and actual observed behavior.
 
+The original idle-attract path is qualified for the current NTSC-U native
+profile. Actual visual return/re-entry, native music/DSP output and the original
+requested voice flags are observed under the same executable identity. The
+scope is the repeating idle attract; interactive gameplay and active positional
+output are explicit follow-ups. Exact retail pixels/samples and sustained host
+performance are not established by this qualification.
+
 | ID | Milestone | Status | Required evidence |
 |---|---|---|---|
 | J01 | Original image/project identity | Passed | Server XBE matches retained f4441696 discovery; independent game repo and immutable private inputs. |
 | J02 | Current optimized generated CPU build | Passed for current inventory | Reuse verified discovery, apply current lowering/guards, compile all admitted bodies natively; unresolved entries stay explicit. |
 | J03 | Startup/files/thread lifecycle | Passed for observed startup and repeat | Actual startup, original cache loading and repeated title/demo transitions use real native kernel and read-only media services. |
-| J04 | Title/XDK graphics/input/audio profiles | Native graphics/font, discovery, GP graph and source-native I3DL2 pass; spatial cache/ABI passes, active spatial output open | Source-derived ABI/layouts and exact-image admissions; shared consumers, no game-hardcoded framework branches. |
-| J05 | First complete title/menu frame | Title/Press Start and 3D city render; interactive transition still unverified | Actual native rendered image and responsive input, no required guard. |
-| J06 | Complete attract sequence | Native visual repeat observed; audio acceptance open | Original title, animated city/skating/police scenes, return through logos/title and subsequent demo; establish actual audio paths separately. No interpreter fallback or success-flag cheats. |
-| J07 | Final repeat and owner preview | Repeat observed; normal-window/audio preview delivered; final acceptance open | Same final binary, meaningful shared regression, source commits/pin and private receipts. Owner review does not substitute for unresolved native audio evidence. |
+| J04 | Title/XDK graphics/input/audio profiles | Passed for reached attract consumers | Source-derived ABI/layouts and exact-image admissions; shared graphics, input polling and native 2D/GP output. Prepared spatial voices remain unplayed in the observed cycle; active output is deferred. |
+| J05 | First complete title/menu frame | Passed original title/Press Start and 3D city frame | Actual native rendered image without a required guard. Starting a game is tracked separately from idle-attract acceptance. |
+| J06 | Complete attract sequence | Passed for observed native idle attract | Original title, animated city/skating/police scenes, return through logos/title and subsequent demo. Actual music voice configuration and two real DSP output windows corroborate audio progression. No interpreter fallback or success-flag cheats. |
+| J07 | Final repeat and owner preview | Passed within attract scope | Same frozen executable; component/shared regression evidence, coherent committed framework pin and public recovery plan; normal-window/audio owner preview and reproducible private receipts. |
 
 Retained earlier CPU prototype stopped at native allocation after twelve entries. That historical run has no rendering/attract coverage and is not a modern preview. Physical hardware is deferred; safely deferrable precision is recorded here as encountered.
 
@@ -94,15 +101,27 @@ extents and retired two missing-function guards; actual native build and
 repeat execution pass. No interpreter route is compiled. These counts do
 not establish complete attract coverage. See [revision evidence](REVISION-NTSC-U.md).
 
-Audio initialization alone is insufficient: the observed four-minute run creates
-207 buffers (193 mono, 14 stereo) and performs eight original-native I3DL2
-updates. Existing ordinary logs omit creation flags and successful Play calls.
-An offline configuration-capture analyzer now correlates voice generations,
-requested flags and accepted Play/Stop/Release calls; an actual capture is the
-next required check. Capture version 1 omits spatial setters and deferred
-commits, so it cannot by itself qualify spatial output. The zero-spatial
-GetCaps result has no established fallback branch in the inspected original
-sound-manager consumer and must not be used to explain away missing output.
+Audio initialization alone is insufficient. The separate 335-second actual
+observation `20261020-115433-ffyrix6h` uses the same executable and records 896
+complete accepted-call records. Of 207 buffer creations, 161 retain original
+spatial flags `0x40110`; none is played. The sole successful Play uses PCM16,
+stereo, 44100 Hz, a 65536-byte ring, flags `0x400A0` and front-left/right sends.
+Two four-second real GP output windows each contain 192000 finite frames at
+48000 Hz, with nonzero, different output and no silent 100 ms blocks. The game
+returns through logos and reloads its original demo data during this census.
+The longer 600-second observation supplies the visual return and re-entry
+evidence. These checks share one frozen binary and the qualified 2D/GP contract.
+
+The capture and its offline analyzer (`adc7afc`) correlate original flags,
+generations and accepted Play/Stop/Release calls. Version 1 omits spatial
+setters, deferred commits and failures, so it does not qualify active spatial
+output. The source retains the explicit spatial Play guard before output;
+creation flags are preserved and no forced 2D rewrite is present. The original
+sound-manager audit found no established GetCaps-dependent fallback branch.
+Combined source, census, output and visual evidence supports deferring active
+spatial output from this idle-attract scope. `.1.152` remains open for gameplay.
+Neither the samples nor the census establish retail sample identity or
+uninterrupted whole-cycle audio; those claims are not made.
 
 Owner preview `20261020-114615-msdjxxgn` uses the same executable in a normal
 window with normal audio and an isolated writable cache. The owner reports
