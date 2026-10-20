@@ -1,0 +1,5505 @@
+{
+  "adapter": "xdk-d3d8-classic-cache-v1",
+  "stateblock": false,
+  "native_create_behavior_mask": 64,
+  "original_create_driver_mask": 16,
+  "functions": [
+    {
+      "name": "D3DDevice_GetDeviceCaps",
+      "source_name": "D3DDevice_GetDeviceCaps",
+      "address": 1624832,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pCaps"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pCaps"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "8e68c94a05bf70aac698233ac4e48b94a4abac08c72f4e364ea61a4573f6c886",
+        "bytes": 23
+      }
+    },
+    {
+      "name": "D3DDevice_SetGammaRamp",
+      "source_name": "D3DDevice_SetGammaRamp",
+      "address": 1624864,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "dwFlags"
+          },
+          {
+            "type": "psh",
+            "name": "pRamp"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "dwFlags"
+          },
+          {
+            "type": "psh",
+            "name": "pRamp"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "f7a3f1582f2bf5748f21b7e7a924883b2e84331e6fec9ce527cf06defb8a803b",
+        "bytes": 93
+      }
+    },
+    {
+      "name": "D3DDevice_GetGammaRamp",
+      "source_name": "D3DDevice_GetGammaRamp",
+      "address": 1624960,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pRamp"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pRamp"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "a5cf678c9833d935088f1f9885e6631d6669b6d834759ba3c2cc484fc83bd2b3",
+        "bytes": 42
+      }
+    },
+    {
+      "name": "D3DDevice_CreateTexture",
+      "source_name": "D3DDevice_CreateTexture",
+      "address": 1625008,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Width"
+          },
+          {
+            "type": "psh",
+            "name": "Height"
+          },
+          {
+            "type": "psh",
+            "name": "Levels"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          },
+          {
+            "type": "psh",
+            "name": "Format"
+          },
+          {
+            "type": "psh",
+            "name": "Pool"
+          },
+          {
+            "type": "psh",
+            "name": "ppTexture"
+          }
+        ],
+        "stack_bytes": 28
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Width"
+          },
+          {
+            "type": "psh",
+            "name": "Height"
+          },
+          {
+            "type": "psh",
+            "name": "Levels"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          },
+          {
+            "type": "psh",
+            "name": "Format"
+          },
+          {
+            "type": "psh",
+            "name": "Pool"
+          },
+          {
+            "type": "psh",
+            "name": "ppTexture"
+          }
+        ],
+        "stack_bytes": 28
+      },
+      "body": {
+        "sha256": "32086b8a5807e8c839ff6aaa25ea1157314bc42656ed5f0d44604dde38b85a66",
+        "bytes": 44
+      }
+    },
+    {
+      "name": "D3DDevice_CreateVolumeTexture",
+      "source_name": "D3DDevice_CreateVolumeTexture",
+      "address": 1625056,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Width"
+          },
+          {
+            "type": "psh",
+            "name": "Height"
+          },
+          {
+            "type": "psh",
+            "name": "Depth"
+          },
+          {
+            "type": "psh",
+            "name": "Levels"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          },
+          {
+            "type": "psh",
+            "name": "Format"
+          },
+          {
+            "type": "psh",
+            "name": "Pool"
+          },
+          {
+            "type": "psh",
+            "name": "ppVolumeTexture"
+          }
+        ],
+        "stack_bytes": 32
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Width"
+          },
+          {
+            "type": "psh",
+            "name": "Height"
+          },
+          {
+            "type": "psh",
+            "name": "Depth"
+          },
+          {
+            "type": "psh",
+            "name": "Levels"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          },
+          {
+            "type": "psh",
+            "name": "Format"
+          },
+          {
+            "type": "psh",
+            "name": "Pool"
+          },
+          {
+            "type": "psh",
+            "name": "ppVolumeTexture"
+          }
+        ],
+        "stack_bytes": 32
+      },
+      "body": {
+        "sha256": "4ca21b31dc26eb90d4303340c01b1d7d46aa23a4b08b157e458f3f93d3dd93f7",
+        "bytes": 47
+      }
+    },
+    {
+      "name": "D3DDevice_CreateImageSurface",
+      "source_name": "D3DDevice_CreateImageSurface",
+      "address": 1625104,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Width"
+          },
+          {
+            "type": "psh",
+            "name": "Height"
+          },
+          {
+            "type": "psh",
+            "name": "Format"
+          },
+          {
+            "type": "psh",
+            "name": "ppBackBuffer"
+          }
+        ],
+        "stack_bytes": 16
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Width"
+          },
+          {
+            "type": "psh",
+            "name": "Height"
+          },
+          {
+            "type": "psh",
+            "name": "Format"
+          },
+          {
+            "type": "psh",
+            "name": "ppBackBuffer"
+          }
+        ],
+        "stack_bytes": 16
+      },
+      "body": {
+        "sha256": "2c1e2ff519a630716fe6d0b7c46bced83437a5226c6f4cd2b18650c818fc6bdf",
+        "bytes": 5
+      },
+      "tail_target": {
+        "address": 1632192,
+        "body": {
+          "sha256": "53d2a713e693f09f485db6e540a0a678b40291de66779eed28e35d5fc91b5e0a",
+          "bytes": 155
+        }
+      }
+    },
+    {
+      "name": "D3DDevice_SetTransform",
+      "source_name": "D3DDevice_SetTransform",
+      "address": 1625120,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "State"
+          },
+          {
+            "type": "psh",
+            "name": "pMatrix"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "State"
+          },
+          {
+            "type": "psh",
+            "name": "pMatrix"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "8461d8a407a965b5e43c605cc446cc86ef17b80b29c7917c98a3d5009a4c8a56",
+        "bytes": 270
+      }
+    },
+    {
+      "name": "D3DDevice_GetTransform",
+      "source_name": "D3DDevice_GetTransform",
+      "address": 1625392,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "State"
+          },
+          {
+            "type": "psh",
+            "name": "pMatrix"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "State"
+          },
+          {
+            "type": "psh",
+            "name": "pMatrix"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "29e49ab50f238ba8ce4107e266f425dd99773ac14faeb3508ef3ff92ef0477e4",
+        "bytes": 37
+      }
+    },
+    {
+      "name": "D3DDevice_SetMaterial",
+      "source_name": "D3DDevice_SetMaterial",
+      "address": 1625440,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pMaterial"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pMaterial"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "f46efccfb57dafca942c32ef1cb1a77fb69f70074b2023a0077fca87b6bacd15",
+        "bytes": 48
+      }
+    },
+    {
+      "name": "D3DDevice_AddRef",
+      "source_name": "D3DDevice_AddRef",
+      "address": 1625488,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "b8eaa842d4caf4b7e641c59dfe82acfddb15e836c4060b3987cfd069e6a7b9cb",
+        "bytes": 21
+      }
+    },
+    {
+      "name": "D3DDevice_Release",
+      "source_name": "D3DDevice_Release",
+      "address": 1625520,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "2f5e98523d066c73f0f67bb2e4c622289df9969c7ca3bcd8a5eee54c98bc6bca",
+        "bytes": 55
+      }
+    },
+    {
+      "name": "D3DDevice_SetVerticalBlankCallback",
+      "source_name": "D3DDevice_SetVerticalBlankCallback",
+      "address": 1625584,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pCallback"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pCallback"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "21bba7df1ccd9fdbce446197c0a70dbeb7e5571e1b8d74a7361f40f017df3ce4",
+        "bytes": 19
+      }
+    },
+    {
+      "name": "D3DDevice_BlockUntilVerticalBlank",
+      "source_name": "D3DDevice_BlockUntilVerticalBlank",
+      "address": 1625616,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "b817dad06e784d6a66bc24498687800784ec563c2dd12cd9ca01a1dc2b9025f0",
+        "bytes": 36
+      }
+    },
+    {
+      "name": "D3DDevice_GetTile",
+      "source_name": "D3DDevice_GetTile",
+      "address": 1625664,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Index"
+          },
+          {
+            "type": "psh",
+            "name": "pTile"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Index"
+          },
+          {
+            "type": "psh",
+            "name": "pTile"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "1273ede06b9c4b678f21626ef1d78a1d14cbed6d32cb7dc52f60dade3de53cfe",
+        "bytes": 38
+      }
+    },
+    {
+      "name": "D3DDevice_SetFlickerFilter",
+      "source_name": "D3DDevice_SetFlickerFilter",
+      "address": 1625712,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Filter"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Filter"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "3b535610c911d7c85e3a513011180a41a7d20663c212722253eb76af2f43994f",
+        "bytes": 66
+      }
+    },
+    {
+      "name": "D3DDevice_SetSoftDisplayFilter",
+      "source_name": "D3DDevice_SetSoftDisplayFilter",
+      "address": 1625792,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Enable"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Enable"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "55e4d37d6717157483b702d88bdc99c5e8baa5bec56fb4a833ef8c15a74b9374",
+        "bytes": 81
+      }
+    },
+    {
+      "name": "D3DDevice_Reset",
+      "source_name": "D3DDevice_Reset",
+      "address": 1626112,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pPresentationParameters"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pPresentationParameters"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "a185e7e16e57e3c272ce5e5bd7f2016f5bba0bc1e7d6a733ba3d5996f9e183ba",
+        "bytes": 164
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderTarget",
+      "source_name": "D3DDevice_SetRenderTarget",
+      "address": 1626288,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pRenderTarget"
+          },
+          {
+            "type": "psh",
+            "name": "pNewZStencil"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pRenderTarget"
+          },
+          {
+            "type": "psh",
+            "name": "pNewZStencil"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "870c767005ecaf6309543ce2875654b95799f03ff7c0f509e91673088e95408c",
+        "bytes": 1313
+      }
+    },
+    {
+      "name": "D3DDevice_GetBackBuffer",
+      "source_name": "D3DDevice_GetBackBuffer",
+      "address": 1627616,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "BackBuffer"
+          },
+          {
+            "type": "psh",
+            "name": "Type"
+          },
+          {
+            "type": "psh",
+            "name": "ppBackBuffer"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "BackBuffer"
+          },
+          {
+            "type": "psh",
+            "name": "Type"
+          },
+          {
+            "type": "psh",
+            "name": "ppBackBuffer"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "3f9aa152d049c1140024c7970aec77ef3336dabc29978cd5f9054471e3e986fe",
+        "bytes": 51
+      }
+    },
+    {
+      "name": "D3DDevice_CopyRects",
+      "source_name": "D3DDevice_CopyRects",
+      "address": 1628032,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pSourceSurface"
+          },
+          {
+            "type": "psh",
+            "name": "pSourceRectsArray"
+          },
+          {
+            "type": "psh",
+            "name": "cRects"
+          },
+          {
+            "type": "psh",
+            "name": "pDestinationSurface"
+          },
+          {
+            "type": "psh",
+            "name": "pDestPointsArray"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pSourceSurface"
+          },
+          {
+            "type": "psh",
+            "name": "pSourceRectsArray"
+          },
+          {
+            "type": "psh",
+            "name": "cRects"
+          },
+          {
+            "type": "psh",
+            "name": "pDestinationSurface"
+          },
+          {
+            "type": "psh",
+            "name": "pDestPointsArray"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "body": {
+        "sha256": "2ab415270d29dda962801be0f0c67cd4e5c5f0ebc85eef7e7cf4854a563c90ae",
+        "bytes": 677
+      }
+    },
+    {
+      "name": "D3DDevice_GetDepthStencilSurface",
+      "source_name": "D3DDevice_GetDepthStencilSurface",
+      "address": 1628720,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "ppZStencilSurface"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "ppZStencilSurface"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "b5375e182cdec88a94738d44a1864dc0b5472b267399e12b04c2c7742ed9437a",
+        "bytes": 40
+      }
+    },
+    {
+      "name": "D3DDevice_SetViewport",
+      "source_name": "D3DDevice_SetViewport",
+      "address": 1628768,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pViewport"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pViewport"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "94200409c31578789271e288f1ad784abec14726d87216e1490e908ec9ae0d23",
+        "bytes": 352
+      }
+    },
+    {
+      "name": "D3DDevice_SetLight",
+      "source_name": "D3DDevice_SetLight",
+      "address": 1629120,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Index"
+          },
+          {
+            "type": "psh",
+            "name": "pLight"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Index"
+          },
+          {
+            "type": "psh",
+            "name": "pLight"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "5d370f3c4339403b3a57689bced3bf91c8e78df3ac6e7788f8ab592f11d1c134",
+        "bytes": 478
+      }
+    },
+    {
+      "name": "D3DDevice_LightEnable",
+      "source_name": "D3DDevice_LightEnable",
+      "address": 1629600,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Index"
+          },
+          {
+            "type": "psh",
+            "name": "bEnable"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Index"
+          },
+          {
+            "type": "psh",
+            "name": "bEnable"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "80b4bfe0bda06b46dc19429333cf5299cba18f685fa31379c0a15abbb36bf7e8",
+        "bytes": 228
+      }
+    },
+    {
+      "name": "D3DDevice_GetTexture2",
+      "source_name": "D3DDevice_GetTexture2",
+      "address": 1629840,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          },
+          {
+            "type": "psh",
+            "name": "ppTexture"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "3c01855837b54f3f37c1b5e88c06bc96344cfa0c9bf90ce3ff931f245a9c1b4a",
+        "bytes": 54
+      }
+    },
+    {
+      "name": "D3DDevice_SetTexture",
+      "source_name": "D3DDevice_SetTexture",
+      "address": 1629904,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          },
+          {
+            "type": "psh",
+            "name": "pTexture"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          },
+          {
+            "type": "psh",
+            "name": "pTexture"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "0ae4e7e6a9424f2837100952499951b390fc82aeb1f835d8325ff36674f993bf",
+        "bytes": 378
+      }
+    },
+    {
+      "name": "D3DDevice_SetIndices",
+      "source_name": "D3DDevice_SetIndices",
+      "address": 1630288,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pIndexData"
+          },
+          {
+            "type": "psh",
+            "name": "BaseVertexIndex"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pIndexData"
+          },
+          {
+            "type": "psh",
+            "name": "BaseVertexIndex"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "cb3c092c8587e71ecc37cb249f387deb98f9e5c41c107fda9fc098495b45885a",
+        "bytes": 132
+      }
+    },
+    {
+      "name": "D3DDevice_IsBusy",
+      "source_name": "D3DDevice_IsBusy",
+      "address": 1630432,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "32ace88daaa1ce2e6f88e83b8cdd01f0509506c02ad3b5114d33e80e9c80fe3c",
+        "bytes": 52
+      }
+    },
+    {
+      "name": "D3DDevice_SetTile",
+      "source_name": "D3DDevice_SetTile",
+      "address": 1630496,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Index"
+          },
+          {
+            "type": "psh",
+            "name": "pTile"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Index"
+          },
+          {
+            "type": "psh",
+            "name": "pTile"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "8cd0aa3ca07b8524da71ab56325175b39f71e341206f4f0f24509b1f4a03c10c",
+        "bytes": 187
+      }
+    },
+    {
+      "name": "D3DDevice_SetScissors",
+      "source_name": "D3DDevice_SetScissors",
+      "address": 1630688,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Count"
+          },
+          {
+            "type": "psh",
+            "name": "Exclusive"
+          },
+          {
+            "type": "psh",
+            "name": "pRects"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Count"
+          },
+          {
+            "type": "psh",
+            "name": "Exclusive"
+          },
+          {
+            "type": "psh",
+            "name": "pRects"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "ad5b114cbc9a749d68e8c8fce3ad087c006d1a5ac183cca02dce38474060d59d",
+        "bytes": 407
+      }
+    },
+    {
+      "name": "D3DDevice_SetScreenSpaceOffset",
+      "source_name": "D3DDevice_SetScreenSpaceOffset",
+      "address": 1631104,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "x"
+          },
+          {
+            "type": "psh",
+            "name": "y"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "x"
+          },
+          {
+            "type": "psh",
+            "name": "y"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "37074f250db13a0c8d59377cdcb919e226593161cf9307abf7fd8dc619369bfb",
+        "bytes": 73
+      }
+    },
+    {
+      "name": "D3D_SetPushBufferSize",
+      "source_name": "D3D_SetPushBufferSize",
+      "address": 1631232,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "PushBufferSize"
+          },
+          {
+            "type": "psh",
+            "name": "KickOffSize"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "PushBufferSize"
+          },
+          {
+            "type": "psh",
+            "name": "KickOffSize"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "3f0101b491ae6f2d2775f11a115423aa14b7d1aad8f91477f8f54178279c4f3e",
+        "bytes": 22
+      }
+    },
+    {
+      "name": "Direct3D_CreateDevice",
+      "source_name": "Direct3D_CreateDevice",
+      "address": 1631264,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Adapter"
+          },
+          {
+            "type": "psh",
+            "name": "DeviceType"
+          },
+          {
+            "type": "psh",
+            "name": "hFocusWindow"
+          },
+          {
+            "type": "psh",
+            "name": "BehaviorFlags"
+          },
+          {
+            "type": "psh",
+            "name": "pPresentationParameters"
+          },
+          {
+            "type": "psh",
+            "name": "ppReturnedDeviceInterface"
+          }
+        ],
+        "stack_bytes": 24
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Adapter"
+          },
+          {
+            "type": "psh",
+            "name": "DeviceType"
+          },
+          {
+            "type": "psh",
+            "name": "hFocusWindow"
+          },
+          {
+            "type": "psh",
+            "name": "BehaviorFlags"
+          },
+          {
+            "type": "psh",
+            "name": "pPresentationParameters"
+          },
+          {
+            "type": "psh",
+            "name": "ppReturnedDeviceInterface"
+          }
+        ],
+        "stack_bytes": 24
+      },
+      "body": {
+        "sha256": "32a8ffd2bdfec5375cae58e961d9ae69baf1dccc4cd0c52b359fa4efe83b676c",
+        "bytes": 147
+      }
+    },
+    {
+      "name": "D3DTexture_GetSurfaceLevel",
+      "source_name": "D3DTexture_GetSurfaceLevel",
+      "address": 1631648,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          },
+          {
+            "type": "psh",
+            "name": "Level"
+          },
+          {
+            "type": "psh",
+            "name": "ppSurfaceLevel"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          },
+          {
+            "type": "psh",
+            "name": "Level"
+          },
+          {
+            "type": "psh",
+            "name": "ppSurfaceLevel"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "86ab50641a3407b435533cba507b915da274fd32631d6d98497ed4c114138558",
+        "bytes": 79
+      }
+    },
+    {
+      "name": "D3DTexture_LockRect",
+      "source_name": "D3DTexture_LockRect",
+      "address": 1631728,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          },
+          {
+            "type": "psh",
+            "name": "Level"
+          },
+          {
+            "type": "psh",
+            "name": "pLockedRect"
+          },
+          {
+            "type": "psh",
+            "name": "pRect"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          },
+          {
+            "type": "psh",
+            "name": "Level"
+          },
+          {
+            "type": "psh",
+            "name": "pLockedRect"
+          },
+          {
+            "type": "psh",
+            "name": "pRect"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "body": {
+        "sha256": "56ba0c34037cfd78b2336f6e29216807a91ef63e336fd73ec907f7c2a85cb84b",
+        "bytes": 35
+      }
+    },
+    {
+      "name": "D3DVolumeTexture_LockBox",
+      "source_name": "D3DVolumeTexture_LockBox",
+      "address": 1631776,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          },
+          {
+            "type": "psh",
+            "name": "Level"
+          },
+          {
+            "type": "psh",
+            "name": "pLockedVolume"
+          },
+          {
+            "type": "psh",
+            "name": "pBox"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          },
+          {
+            "type": "psh",
+            "name": "Level"
+          },
+          {
+            "type": "psh",
+            "name": "pLockedVolume"
+          },
+          {
+            "type": "psh",
+            "name": "pBox"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "body": {
+        "sha256": "fad93951e80b3dcea64f9923d1dd4d8c8cf16868571f410f69ed5135e99c2487",
+        "bytes": 5
+      },
+      "tail_target": {
+        "address": 1651360,
+        "body": {
+          "sha256": "be6f458b7588340b48ba9d6de3a53cbf518a124e3cf668c5820e66c4cfd81136",
+          "bytes": 156
+        }
+      }
+    },
+    {
+      "name": "D3D_CreateTexture",
+      "source_name": "D3D_CreateTexture",
+      "address": 1631792,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Width"
+          },
+          {
+            "type": "psh",
+            "name": "Height"
+          },
+          {
+            "type": "psh",
+            "name": "Depth"
+          },
+          {
+            "type": "psh",
+            "name": "Levels"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          },
+          {
+            "type": "psh",
+            "name": "Format"
+          },
+          {
+            "type": "psh",
+            "name": "isCube"
+          },
+          {
+            "type": "psh",
+            "name": "isVolume"
+          },
+          {
+            "type": "psh",
+            "name": "ppTexture"
+          }
+        ],
+        "stack_bytes": 36
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Width"
+          },
+          {
+            "type": "psh",
+            "name": "Height"
+          },
+          {
+            "type": "psh",
+            "name": "Depth"
+          },
+          {
+            "type": "psh",
+            "name": "Levels"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          },
+          {
+            "type": "psh",
+            "name": "Format"
+          },
+          {
+            "type": "psh",
+            "name": "isCube"
+          },
+          {
+            "type": "psh",
+            "name": "isVolume"
+          },
+          {
+            "type": "psh",
+            "name": "ppTexture"
+          }
+        ],
+        "stack_bytes": 36
+      },
+      "body": {
+        "sha256": "afda9c0259a839de95837fe1d8b8062ee05f8961707696b158662d257cf76692",
+        "bytes": 187
+      }
+    },
+    {
+      "name": "D3DSurface_GetDesc",
+      "source_name": "D3DSurface_GetDesc",
+      "address": 1631984,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          },
+          {
+            "type": "psh",
+            "name": "pDesc"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          },
+          {
+            "type": "psh",
+            "name": "pDesc"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "14240ee58d4a5ec9df94794a7492ee567889d821b6fbbec2769c1df5b67e0b48",
+        "bytes": 20
+      }
+    },
+    {
+      "name": "D3DSurface_LockRect",
+      "source_name": "D3DSurface_LockRect",
+      "address": 1632016,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          },
+          {
+            "type": "psh",
+            "name": "pLockedRect"
+          },
+          {
+            "type": "psh",
+            "name": "pRect"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 16
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          },
+          {
+            "type": "psh",
+            "name": "pLockedRect"
+          },
+          {
+            "type": "psh",
+            "name": "pRect"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 16
+      },
+      "body": {
+        "sha256": "3cc26746814d64a36c212ad60f46a89cb14190db0b761e0ca4628da6c454545d",
+        "bytes": 32
+      }
+    },
+    {
+      "name": "D3D_CreateStandAloneSurface",
+      "source_name": "D3D_CreateStandAloneSurface",
+      "address": 1632192,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "unknown1"
+          },
+          {
+            "type": "psh",
+            "name": "unknown2"
+          },
+          {
+            "type": "psh",
+            "name": "unknown3"
+          },
+          {
+            "type": "psh",
+            "name": "unknown4"
+          }
+        ],
+        "stack_bytes": 16
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "unknown1"
+          },
+          {
+            "type": "psh",
+            "name": "unknown2"
+          },
+          {
+            "type": "psh",
+            "name": "unknown3"
+          },
+          {
+            "type": "psh",
+            "name": "unknown4"
+          }
+        ],
+        "stack_bytes": 16
+      },
+      "body": {
+        "sha256": "53d2a713e693f09f485db6e540a0a678b40291de66779eed28e35d5fc91b5e0a",
+        "bytes": 155
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_MultiSampleMode",
+      "source_name": "D3DDevice_SetRenderState_MultiSampleMode",
+      "address": 1632352,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "fab434fdc7d732f5c187aaf151f03bf5475246811762601af951f3010c92339d",
+        "bytes": 45
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_MultiSampleRenderTargetMode",
+      "source_name": "D3DDevice_SetRenderState_MultiSampleRenderTargetMode",
+      "address": 1632400,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "d54ffc3f7de5178ea85b4c88e9ec51bc4ff9b25fed67001a1f9a41bd7b6c8edf",
+        "bytes": 45
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_PSTextureModes",
+      "source_name": "D3DDevice_SetRenderState_PSTextureModes",
+      "address": 1632448,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "f9e93b3b0d12ec43af10216eef369bacb0436909a30aa28ed7b66af4ed3a265f",
+        "bytes": 34
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_Simple",
+      "source_name": "D3DDevice_SetRenderState_Simple",
+      "address": 1632496,
+      "source_signature": {
+        "call": "fastcall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "Method"
+          },
+          {
+            "type": "edx",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "fastcall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "Method"
+          },
+          {
+            "type": "edx",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "1ad0507ebca462ed6b6e75b48cdae86c2c030674759bfbae7ee9998ce70a136a",
+        "bytes": 39
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderStateNotInline",
+      "source_name": "D3DDevice_SetRenderStateNotInline",
+      "address": 1632544,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "State"
+          },
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "State"
+          },
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "f599c5410071165fa7f90b6b0e1bd9cef054b03a1fdf9f2cac7fd288bb2114c4",
+        "bytes": 90
+      }
+    },
+    {
+      "name": "D3D_UpdateProjectionViewportTransform",
+      "source_name": "D3D_UpdateProjectionViewportTransform",
+      "address": 1632640,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "41b1e66407f4da1fc148dc59d40e18daf97c0df5a099e09e3405fba508d83563",
+        "bytes": 320
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_EdgeAntiAlias",
+      "source_name": "D3DDevice_SetRenderState_EdgeAntiAlias",
+      "address": 1632960,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "6f4427b30b1bfe8d89679e9c7ffb0ccfacb4aa3f09101a12e6c7f1485a085fd7",
+        "bytes": 50
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_ShadowFunc",
+      "source_name": "D3DDevice_SetRenderState_ShadowFunc",
+      "address": 1633024,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "f6a026d92f913a80fd131b97800d8746a5833584dff44f283d76cd8b138f5924",
+        "bytes": 53
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_FogColor",
+      "source_name": "D3DDevice_SetRenderState_FogColor",
+      "address": 1633088,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "81d347138110ffd8bde0e91a407b66fc5539da44572d055676959a6c66f49a07",
+        "bytes": 77
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_CullMode",
+      "source_name": "D3DDevice_SetRenderState_CullMode",
+      "address": 1633168,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "123d9225d2299a2408750d4707bb3083bf1662af3a7d7184aaf5477c05934da9",
+        "bytes": 104
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_FrontFace",
+      "source_name": "D3DDevice_SetRenderState_FrontFace",
+      "address": 1633280,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "678a05ef73af6d3420e4a72f039aaaeec0846ba13bb76bed5f4f8b74a2cddc60",
+        "bytes": 58
+      },
+      "tail_target": {
+        "address": 1633168,
+        "body": {
+          "sha256": "123d9225d2299a2408750d4707bb3083bf1662af3a7d7184aaf5477c05934da9",
+          "bytes": 104
+        }
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_NormalizeNormals",
+      "source_name": "D3DDevice_SetRenderState_NormalizeNormals",
+      "address": 1633344,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "d18faaf0b1474f2250015d2913432f2100ff02ef827a3a17d52b43f0fdd89371",
+        "bytes": 57
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_TextureFactor",
+      "source_name": "D3DDevice_SetRenderState_TextureFactor",
+      "address": 1633408,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "7bf7077d4e92c3106989c40654b03f5c0b8e1ae3ba79cb4c6ad1a73921eb0455",
+        "bytes": 81
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_LineWidth",
+      "source_name": "D3DDevice_SetRenderState_LineWidth",
+      "address": 1633504,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "f802a868e635c0b7e7dba74c4aeba094c9c695f1377f9f1b372c17ad96499396",
+        "bytes": 101
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_Dxt1NoiseEnable",
+      "source_name": "D3DDevice_SetRenderState_Dxt1NoiseEnable",
+      "address": 1633616,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "29f8051814f38001d79ad6b84cbc28d1ac800a83bf144b6253b5c43292d6f169",
+        "bytes": 127
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_ZBias",
+      "source_name": "D3DDevice_SetRenderState_ZBias",
+      "address": 1633744,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "30a6f7642a846197e19c8e2e09299b0c35f17a446c2124c43d20d17ac3a2eb49",
+        "bytes": 116
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_LogicOp",
+      "source_name": "D3DDevice_SetRenderState_LogicOp",
+      "address": 1633872,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "ab93a06df31c8e9d2208e2a90aa0bf2325f57312db0007937e91cef95576c152",
+        "bytes": 82
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_FillMode",
+      "source_name": "D3DDevice_SetRenderState_FillMode",
+      "address": 1633968,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "d932d3915dde656eedc43a253648038bd152b69328786d2561ea3c7d0028d8ec",
+        "bytes": 68
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_BackFillMode",
+      "source_name": "D3DDevice_SetRenderState_BackFillMode",
+      "address": 1634048,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "29fc6a3452e9997ca29a10a6666eb73a48a71201b8fadef340b26584aa65b32e",
+        "bytes": 81
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_TwoSidedLighting",
+      "source_name": "D3DDevice_SetRenderState_TwoSidedLighting",
+      "address": 1634144,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "1362f41423b67d13edc50f56500f298db071ab236a3dde150339fa3138d83dbc",
+        "bytes": 99
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_VertexBlend",
+      "source_name": "D3DDevice_SetRenderState_VertexBlend",
+      "address": 1634256,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "5b7e041b3b913419d93b66fc0c00b77baa6c3628b0001f74f047d231dfbae59d",
+        "bytes": 65
+      }
+    },
+    {
+      "name": "D3DDevice_SetTextureState_TexCoordIndex",
+      "source_name": "D3DDevice_SetTextureState_TexCoordIndex",
+      "address": 1634336,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          },
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          },
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "44dc7c6be62184a016df99db2e99ea26108f83ea922bd5a25b11493dc2f85d1d",
+        "bytes": 273
+      }
+    },
+    {
+      "name": "D3DDevice_SetTextureState_BumpEnv",
+      "source_name": "D3DDevice_SetTextureState_BumpEnv",
+      "address": 1634624,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          },
+          {
+            "type": "psh",
+            "name": "Type"
+          },
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          },
+          {
+            "type": "psh",
+            "name": "Type"
+          },
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "768b9243c0a797b7e31ac7a1c109723612264431b37c36d8df12bd27ed70fbd8",
+        "bytes": 99
+      }
+    },
+    {
+      "name": "D3DDevice_SetTextureState_BorderColor",
+      "source_name": "D3DDevice_SetTextureState_BorderColor",
+      "address": 1634736,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          },
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          },
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "8869b6c007e12f932b4c33fe9d986b82579a4cd1cc6fd9fad9e8cd396e7cd06f",
+        "bytes": 61
+      }
+    },
+    {
+      "name": "D3DDevice_SetTextureState_ColorKeyColor",
+      "source_name": "D3DDevice_SetTextureState_ColorKeyColor",
+      "address": 1634800,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          },
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          },
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "1ba7888f652faabe436a296f3e4d30c5967dd61efdfcb5e9255c1a76511c9bb5",
+        "bytes": 57
+      }
+    },
+    {
+      "name": "D3DDevice_SetTextureStageStateNotInline",
+      "source_name": "D3DDevice_SetTextureStageStateNotInline",
+      "address": 1634864,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          },
+          {
+            "type": "psh",
+            "name": "Type"
+          },
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Stage"
+          },
+          {
+            "type": "psh",
+            "name": "Type"
+          },
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "3a5174cda605dc8f1bd232740304c4e6fd754cbdb116641b86813aacc887fe00",
+        "bytes": 236
+      }
+    },
+    {
+      "name": "D3D_CommonSetDebugRegisters",
+      "source_name": "D3D_CommonSetDebugRegisters",
+      "address": 1635760,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "b20be533ddf1cedebcb4ec6e7075c148fbdb1d6847a8de6b2cca91505fe5d0ec",
+        "bytes": 206
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_ZEnable",
+      "source_name": "D3DDevice_SetRenderState_ZEnable",
+      "address": 1635968,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "80ad6ffd38b05e8479ef880ffcc6d84f4dcc22df69924d2cf15a1f586ff55ac6",
+        "bytes": 155
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_StencilEnable",
+      "source_name": "D3DDevice_SetRenderState_StencilEnable",
+      "address": 1636128,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "827979eb6d491f6898c2994af96391e998a09da9d0618dd21dc6128fb643d1ed",
+        "bytes": 132
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_StencilFail",
+      "source_name": "D3DDevice_SetRenderState_StencilFail",
+      "address": 1636272,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "18436ac33640d032880ec882ac1060dc73dacdb1e4bb0278fa0b37468720c560",
+        "bytes": 109
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_YuvEnable",
+      "source_name": "D3DDevice_SetRenderState_YuvEnable",
+      "address": 1636384,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "dab25f604eceef11336cdc24d1cad2983f3be547576b800e625d08dade579c53",
+        "bytes": 43
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_OcclusionCullEnable",
+      "source_name": "D3DDevice_SetRenderState_OcclusionCullEnable",
+      "address": 1636432,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "f63c58afaee2704c1813176807a27167bcee965405544e9c32c8b20a062e89b9",
+        "bytes": 98
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_StencilCullEnable",
+      "source_name": "D3DDevice_SetRenderState_StencilCullEnable",
+      "address": 1636544,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "acc203fff5cdf6b5ce460ac15fc8757e8372760b46f093cc491e1de7be68c350",
+        "bytes": 98
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_RopZCmpAlwaysRead",
+      "source_name": "D3DDevice_SetRenderState_RopZCmpAlwaysRead",
+      "address": 1636656,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "c2a9cc7182773a946e28c29d9fcc0364035cd599aad40a47a748f57f553e0a86",
+        "bytes": 17
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_RopZRead",
+      "source_name": "D3DDevice_SetRenderState_RopZRead",
+      "address": 1636688,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "8c20aaef015ebdd36a5ce9e1266d4e3518bc3f5053bbce50f1aec292430f461d",
+        "bytes": 17
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_DoNotCullUncompressed",
+      "source_name": "D3DDevice_SetRenderState_DoNotCullUncompressed",
+      "address": 1636720,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "5bd738151badb4a129f29a604cc9be0ef4cc99cf7c13dcba76147c334ab21086",
+        "bytes": 17
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_MultiSampleAntiAlias",
+      "source_name": "D3DDevice_SetRenderState_MultiSampleAntiAlias",
+      "address": 1636752,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "10ab57baacb7b929cc8a5a8ccde68a00255d95fe398e9591b4152aaea8356759",
+        "bytes": 82
+      }
+    },
+    {
+      "name": "D3DDevice_SetRenderState_MultiSampleMask",
+      "source_name": "D3DDevice_SetRenderState_MultiSampleMask",
+      "address": 1636848,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Value"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "90e645006c6ad19e67118cca4375be4fe95616d109c0df45a676c042b16d21a5",
+        "bytes": 82
+      }
+    },
+    {
+      "name": "D3DDevice_CreateVertexShader",
+      "source_name": "D3DDevice_CreateVertexShader",
+      "address": 1638224,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pDeclaration"
+          },
+          {
+            "type": "psh",
+            "name": "pFunction"
+          },
+          {
+            "type": "psh",
+            "name": "pHandle"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          }
+        ],
+        "stack_bytes": 16
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pDeclaration"
+          },
+          {
+            "type": "psh",
+            "name": "pFunction"
+          },
+          {
+            "type": "psh",
+            "name": "pHandle"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          }
+        ],
+        "stack_bytes": 16
+      },
+      "body": {
+        "sha256": "98bd2539b6f25811a956eb0606da5b2367d23fbaf8e5968d2cd6a0cb105e8597",
+        "bytes": 318
+      }
+    },
+    {
+      "name": "D3DDevice_SetStreamSource",
+      "source_name": "D3DDevice_SetStreamSource",
+      "address": 1638544,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "StreamNumber"
+          },
+          {
+            "type": "psh",
+            "name": "pStreamData"
+          },
+          {
+            "type": "psh",
+            "name": "Stride"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "StreamNumber"
+          },
+          {
+            "type": "psh",
+            "name": "pStreamData"
+          },
+          {
+            "type": "psh",
+            "name": "Stride"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "6b6a1e8d6570b7f8506f5401c33e90dd941be43f04d6ab88beae96209da268f0",
+        "bytes": 140
+      }
+    },
+    {
+      "name": "D3DDevice_LoadVertexShader",
+      "source_name": "D3DDevice_LoadVertexShader",
+      "address": 1638688,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Handle"
+          },
+          {
+            "type": "psh",
+            "name": "Address"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Handle"
+          },
+          {
+            "type": "psh",
+            "name": "Address"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "cc0a2907b30c281c4bdf2817cb9d7cf5874e84bfc3b380e0d9cb9f586a9d44d8",
+        "bytes": 84
+      }
+    },
+    {
+      "name": "D3DDevice_SelectVertexShader",
+      "source_name": "D3DDevice_SelectVertexShader",
+      "address": 1638784,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Handle"
+          },
+          {
+            "type": "psh",
+            "name": "Address"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Handle"
+          },
+          {
+            "type": "psh",
+            "name": "Address"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "713015143aeab66e77ba69364c417da0491129df78c73a35af203d215325fc89",
+        "bytes": 128
+      }
+    },
+    {
+      "name": "D3DDevice_SetShaderConstantMode",
+      "source_name": "D3DDevice_SetShaderConstantMode",
+      "address": 1638912,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Mode"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Mode"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "93ae6123612b7e7aca4aad8243efa8f9297367b344c58ff387e9681d0c27ca83",
+        "bytes": 245
+      }
+    },
+    {
+      "name": "D3DDevice_DeleteVertexShader",
+      "source_name": "D3DDevice_DeleteVertexShader",
+      "address": 1639232,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Handle"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Handle"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "fccbac66d54bb7dce2e9b4345e8983738ae0299a2edc147896e9717b77b3105a",
+        "bytes": 25
+      }
+    },
+    {
+      "name": "D3DDevice_SetVertexShader",
+      "source_name": "D3DDevice_SetVertexShader",
+      "address": 1639504,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Handle"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Handle"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "37c83ef38fdb6e080feff71e5949b4cb636ca294957a1138021967a07be61965",
+        "bytes": 338
+      }
+    },
+    {
+      "name": "D3DDevice_SetVertexShaderConstant",
+      "source_name": "D3DDevice_SetVertexShaderConstant",
+      "address": 1639856,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Register"
+          },
+          {
+            "type": "psh",
+            "name": "pConstantData"
+          },
+          {
+            "type": "psh",
+            "name": "ConstantCount"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Register"
+          },
+          {
+            "type": "psh",
+            "name": "pConstantData"
+          },
+          {
+            "type": "psh",
+            "name": "ConstantCount"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "1d61de063fb521f877796c81d77bd641f13190004e58920255616717c19e97c6",
+        "bytes": 155
+      }
+    },
+    {
+      "name": "CDevice_KickOff",
+      "source_name": "CDevice_KickOff",
+      "address": 1643104,
+      "source_signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          }
+        ],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          }
+        ],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "84de4a3ab414da5d7b16ff829897cdbfc2e7c3a92ac44d6911a9f302abd4e13a",
+        "bytes": 228
+      }
+    },
+    {
+      "name": "D3D_SetFence",
+      "source_name": "D3D_SetFence",
+      "address": 1643344,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "2abf8ecbabbf94710c5a91f3998b19e78ad8ea49d26e3a793a3f288b31664b1f",
+        "bytes": 173
+      }
+    },
+    {
+      "name": "D3D_BlockOnTime",
+      "source_name": "D3D_BlockOnTime",
+      "address": 1643520,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "unknown1"
+          },
+          {
+            "type": "psh",
+            "name": "unknown2"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "unknown1"
+          },
+          {
+            "type": "psh",
+            "name": "unknown2"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "e7acd8a9f427295adb035a753c982de23e4908efbd0fed43f699227ae7a169ca",
+        "bytes": 230
+      }
+    },
+    {
+      "name": "D3D_MakeRequestedSpace_8",
+      "source_name": "D3D_MakeRequestedSpace_8",
+      "address": 1643760,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "MinimumSpace"
+          },
+          {
+            "type": "psh",
+            "name": "RequestedSpace"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "MinimumSpace"
+          },
+          {
+            "type": "psh",
+            "name": "RequestedSpace"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "c23b2513368ab402cfdda46b7daf94ade7a907da746e7096844bc12dbd017638",
+        "bytes": 371
+      }
+    },
+    {
+      "name": "D3DDevice_MakeSpace",
+      "source_name": "D3DDevice_MakeSpace",
+      "address": 1644144,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "01e90290d6b042c3ab2b9765fb95586df3e0925023e196032f2fec0b1955e485",
+        "bytes": 15
+      }
+    },
+    {
+      "name": "D3D_KickOffAndWaitForIdle",
+      "source_name": "D3D_KickOffAndWaitForIdle",
+      "address": 1644240,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "8f4d5d8a41287b9a4715b89915a879df07c12ad2b390224a1aef9c149aab08b9",
+        "bytes": 17
+      }
+    },
+    {
+      "name": "D3D_BlockOnResource",
+      "source_name": "D3D_BlockOnResource",
+      "address": 1644272,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pResource"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pResource"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "f48b35afbb29325082a54f5cae027f9bf672b6045b93c2874818bbaf1c38f54d",
+        "bytes": 120
+      }
+    },
+    {
+      "name": "CDevice_FreeFrameBuffers",
+      "source_name": "CDevice_FreeFrameBuffers",
+      "address": 1645120,
+      "source_signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          }
+        ],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          }
+        ],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "cb579f12328c8c2633038135c90bbcd9be61b042766573ebf0fe1744258929d6",
+        "bytes": 281
+      }
+    },
+    {
+      "name": "CDevice_InitializeFrameBuffers",
+      "source_name": "CDevice_InitializeFrameBuffers",
+      "address": 1645408,
+      "source_signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          },
+          {
+            "type": "psh",
+            "name": "pPresentationParams"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          },
+          {
+            "type": "psh",
+            "name": "pPresentationParams"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "b24af20fc0a5b5f02e9b88925684549361cf56faabf639c42b83f40f02812f07",
+        "bytes": 1255
+      }
+    },
+    {
+      "name": "D3DResource_GetType",
+      "source_name": "D3DResource_GetType",
+      "address": 1648464,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "f2884533cc37d3e7469d698d52ace9b8525109dc155c4342b3ca41177bcd993a",
+        "bytes": 138
+      }
+    },
+    {
+      "name": "D3D_DestroyResource",
+      "source_name": "D3D_DestroyResource",
+      "address": 1648624,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pResource"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pResource"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "f52169d028e1bbcfc489de5c1a2260571793c8cc90a867b44876589a57b0e4c8",
+        "bytes": 156
+      }
+    },
+    {
+      "name": "D3DResource_AddRef",
+      "source_name": "D3DResource_AddRef",
+      "address": 1648912,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "fc04f80709305c363d8573abf7ed0d75db798bfb139abc8e23234f38282fd9b5",
+        "bytes": 55
+      }
+    },
+    {
+      "name": "D3DResource_Release",
+      "source_name": "D3DResource_Release",
+      "address": 1648976,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "4280bdb9cd6d9b9db3e57f85f505028a987b12babab1935368d2e3322b56a11d",
+        "bytes": 78
+      }
+    },
+    {
+      "name": "D3DResource_Register",
+      "source_name": "D3DResource_Register",
+      "address": 1649056,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          },
+          {
+            "type": "psh",
+            "name": "pBase"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pThis"
+          },
+          {
+            "type": "psh",
+            "name": "pBase"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "311a55abd4285a6c0a068babf0fd30c18e852ff813b531af2d2576bfa02c0ef7",
+        "bytes": 40
+      }
+    },
+    {
+      "name": "Get2DSurfaceDesc",
+      "source_name": "Get2DSurfaceDesc",
+      "address": 1650448,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pPixelContainer"
+          },
+          {
+            "type": "psh",
+            "name": "dwLevel"
+          },
+          {
+            "type": "psh",
+            "name": "pDesc"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pPixelContainer"
+          },
+          {
+            "type": "psh",
+            "name": "dwLevel"
+          },
+          {
+            "type": "psh",
+            "name": "pDesc"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "841577d426b2b127d68f415099740429f887d4ac5c6f36be5450b756bdd82a30",
+        "bytes": 177
+      }
+    },
+    {
+      "name": "Lock2DSurface",
+      "source_name": "Lock2DSurface",
+      "address": 1651200,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pPixelContainer"
+          },
+          {
+            "type": "psh",
+            "name": "FaceType"
+          },
+          {
+            "type": "psh",
+            "name": "Level"
+          },
+          {
+            "type": "psh",
+            "name": "pLockedRect"
+          },
+          {
+            "type": "psh",
+            "name": "pRect"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 24
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pPixelContainer"
+          },
+          {
+            "type": "psh",
+            "name": "FaceType"
+          },
+          {
+            "type": "psh",
+            "name": "Level"
+          },
+          {
+            "type": "psh",
+            "name": "pLockedRect"
+          },
+          {
+            "type": "psh",
+            "name": "pRect"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 24
+      },
+      "body": {
+        "sha256": "dfa70dd3c0c9a3f1f125ac5ddc024dfe6a5552f3b037b05f12e3a76820f86baf",
+        "bytes": 155
+      }
+    },
+    {
+      "name": "Lock3DSurface",
+      "source_name": "Lock3DSurface",
+      "address": 1651360,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pPixelContainer"
+          },
+          {
+            "type": "psh",
+            "name": "Level"
+          },
+          {
+            "type": "psh",
+            "name": "pLockedVolume"
+          },
+          {
+            "type": "psh",
+            "name": "pBox"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pPixelContainer"
+          },
+          {
+            "type": "psh",
+            "name": "Level"
+          },
+          {
+            "type": "psh",
+            "name": "pLockedVolume"
+          },
+          {
+            "type": "psh",
+            "name": "pBox"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "body": {
+        "sha256": "be6f458b7588340b48ba9d6de3a53cbf518a124e3cf668c5820e66c4cfd81136",
+        "bytes": 156
+      }
+    },
+    {
+      "name": "CMiniport_GetDisplayCapabilities",
+      "source_name": "CMiniport_GetDisplayCapabilities",
+      "address": 1652096,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "32242dde81b773de6aae8661cf1e721aef642e7ec3ef5cc262d396c7e3ce2bef",
+        "bytes": 31
+      }
+    },
+    {
+      "name": "D3DDevice_Clear",
+      "source_name": "D3DDevice_Clear",
+      "address": 1652720,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Count"
+          },
+          {
+            "type": "psh",
+            "name": "pRects"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          },
+          {
+            "type": "psh",
+            "name": "Color"
+          },
+          {
+            "type": "psh",
+            "name": "Z"
+          },
+          {
+            "type": "psh",
+            "name": "Stencil"
+          }
+        ],
+        "stack_bytes": 24
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Count"
+          },
+          {
+            "type": "psh",
+            "name": "pRects"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          },
+          {
+            "type": "psh",
+            "name": "Color"
+          },
+          {
+            "type": "psh",
+            "name": "Z"
+          },
+          {
+            "type": "psh",
+            "name": "Stencil"
+          }
+        ],
+        "stack_bytes": 24
+      },
+      "body": {
+        "sha256": "e5b8779d546d4cf32cbf5398a68f50323b4637ad4b1efed080f0d9c9c3e0b73d",
+        "bytes": 924
+      }
+    },
+    {
+      "name": "CMiniport_CreateCtxDmaObject",
+      "source_name": "CMiniport_CreateCtxDmaObject",
+      "address": 1657043,
+      "source_signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          },
+          {
+            "type": "psh",
+            "name": "unknown1"
+          },
+          {
+            "type": "psh",
+            "name": "unknown2"
+          },
+          {
+            "type": "psh",
+            "name": "unknown3"
+          },
+          {
+            "type": "psh",
+            "name": "unknown4"
+          },
+          {
+            "type": "psh",
+            "name": "unknown5"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          },
+          {
+            "type": "psh",
+            "name": "unknown1"
+          },
+          {
+            "type": "psh",
+            "name": "unknown2"
+          },
+          {
+            "type": "psh",
+            "name": "unknown3"
+          },
+          {
+            "type": "psh",
+            "name": "unknown4"
+          },
+          {
+            "type": "psh",
+            "name": "unknown5"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "body": {
+        "sha256": "e8b7f2c39cd2692e721f81b1e83f595aaa3804d3021fb516d0929a263155d885",
+        "bytes": 207
+      }
+    },
+    {
+      "name": "CMiniport_InitHardware",
+      "source_name": "CMiniport_InitHardware",
+      "address": 1657501,
+      "source_signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          }
+        ],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          }
+        ],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "c71074ea9de5b89c00841c88b982f2b1f08141725dfccb03cece083594c05e9e",
+        "bytes": 354
+      }
+    },
+    {
+      "name": "D3D_LazySetPointParams",
+      "source_name": "D3D_LazySetPointParams",
+      "address": 1659136,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Device"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Device"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "a50c80b51825812583765aa26962f427bd62215ed9bc799e3eca624de16eb329",
+        "bytes": 357
+      }
+    },
+    {
+      "name": "CDevice_SetStateVB",
+      "source_name": "CDevice_SetStateVB",
+      "address": 1664224,
+      "source_signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          },
+          {
+            "type": "psh",
+            "name": "unknown2"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          },
+          {
+            "type": "psh",
+            "name": "unknown2"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "755a0aa360583552bdf9797e737b27163de2df80b92b2306b87383b7e94eb10b",
+        "bytes": 401
+      }
+    },
+    {
+      "name": "CDevice_SetStateUP",
+      "source_name": "CDevice_SetStateUP",
+      "address": 1664640,
+      "source_signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          }
+        ],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "thiscall",
+        "params": [
+          {
+            "type": "ecx",
+            "name": "this"
+          }
+        ],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "7554d5f4d70668ae84d53d72d329dde11747fb009db0d9114f901ab165ef1ee1",
+        "bytes": 318
+      }
+    },
+    {
+      "name": "D3DDevice_Swap",
+      "source_name": "D3DDevice_Swap",
+      "address": 1674960,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "cd8bf6462b40cc9643d789284a5bf6383a1dbc4444551cae9f8ca949240ce01f",
+        "bytes": 177
+      }
+    },
+    {
+      "name": "D3DDevice_DrawVerticesUP",
+      "source_name": "D3DDevice_DrawVerticesUP",
+      "address": 1675296,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "PrimitiveType"
+          },
+          {
+            "type": "psh",
+            "name": "VertexCount"
+          },
+          {
+            "type": "psh",
+            "name": "pVertexStreamZeroData"
+          },
+          {
+            "type": "psh",
+            "name": "VertexStreamZeroStride"
+          }
+        ],
+        "stack_bytes": 16
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "PrimitiveType"
+          },
+          {
+            "type": "psh",
+            "name": "VertexCount"
+          },
+          {
+            "type": "psh",
+            "name": "pVertexStreamZeroData"
+          },
+          {
+            "type": "psh",
+            "name": "VertexStreamZeroStride"
+          }
+        ],
+        "stack_bytes": 16
+      },
+      "body": {
+        "sha256": "a2b04754349f779e6ccb88c9c4dca1a17f1fa24e6afa1dab792de6508503dee7",
+        "bytes": 350
+      }
+    },
+    {
+      "name": "D3DDevice_DrawIndexedVerticesUP",
+      "source_name": "D3DDevice_DrawIndexedVerticesUP",
+      "address": 1675648,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "PrimitiveType"
+          },
+          {
+            "type": "psh",
+            "name": "VertexCount"
+          },
+          {
+            "type": "psh",
+            "name": "pIndexData"
+          },
+          {
+            "type": "psh",
+            "name": "pVertexStreamZeroData"
+          },
+          {
+            "type": "psh",
+            "name": "VertexStreamZeroStride"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "PrimitiveType"
+          },
+          {
+            "type": "psh",
+            "name": "VertexCount"
+          },
+          {
+            "type": "psh",
+            "name": "pIndexData"
+          },
+          {
+            "type": "psh",
+            "name": "pVertexStreamZeroData"
+          },
+          {
+            "type": "psh",
+            "name": "VertexStreamZeroStride"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "body": {
+        "sha256": "6c9698386a48f5031aa640f849b23220c1b1bc20e1a99acfbf7bcc1d75160757",
+        "bytes": 315
+      }
+    },
+    {
+      "name": "D3DDevice_DrawVertices",
+      "source_name": "D3DDevice_DrawVertices",
+      "address": 1675968,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "PrimitiveType"
+          },
+          {
+            "type": "psh",
+            "name": "StartVertex"
+          },
+          {
+            "type": "psh",
+            "name": "VertexCount"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "PrimitiveType"
+          },
+          {
+            "type": "psh",
+            "name": "StartVertex"
+          },
+          {
+            "type": "psh",
+            "name": "VertexCount"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "e7e9b9970278bce622e297ddc75a828acf7d89bc2e42bb2c6ea3282872145cb8",
+        "bytes": 159
+      }
+    },
+    {
+      "name": "D3DDevice_DrawIndexedVertices",
+      "source_name": "D3DDevice_DrawIndexedVertices",
+      "address": 1676128,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "PrimitiveType"
+          },
+          {
+            "type": "psh",
+            "name": "VertexCount"
+          },
+          {
+            "type": "psh",
+            "name": "pIndexData"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "PrimitiveType"
+          },
+          {
+            "type": "psh",
+            "name": "VertexCount"
+          },
+          {
+            "type": "psh",
+            "name": "pIndexData"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "63e3b761c2d3729c6053571d8d5f9399d6ed89c3a50073bbca719e5bb7b87d00",
+        "bytes": 600
+      }
+    },
+    {
+      "name": "D3DDevice_SetVertexData2f",
+      "source_name": "D3DDevice_SetVertexData2f",
+      "address": 1676736,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Register"
+          },
+          {
+            "type": "psh",
+            "name": "a"
+          },
+          {
+            "type": "psh",
+            "name": "b"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Register"
+          },
+          {
+            "type": "psh",
+            "name": "a"
+          },
+          {
+            "type": "psh",
+            "name": "b"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "352487dbfa0226d390fdaf70bedf43f20296c63a66870af056df193c2bbcbb69",
+        "bytes": 55
+      }
+    },
+    {
+      "name": "D3DDevice_SetVertexData4f",
+      "source_name": "D3DDevice_SetVertexData4f",
+      "address": 1676800,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Register"
+          },
+          {
+            "type": "psh",
+            "name": "a"
+          },
+          {
+            "type": "psh",
+            "name": "b"
+          },
+          {
+            "type": "psh",
+            "name": "c"
+          },
+          {
+            "type": "psh",
+            "name": "d"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Register"
+          },
+          {
+            "type": "psh",
+            "name": "a"
+          },
+          {
+            "type": "psh",
+            "name": "b"
+          },
+          {
+            "type": "psh",
+            "name": "c"
+          },
+          {
+            "type": "psh",
+            "name": "d"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "body": {
+        "sha256": "e08c886bb726418b42145085acadc5734851710db79826c7a877bd4827557975",
+        "bytes": 89
+      }
+    },
+    {
+      "name": "D3DDevice_Begin",
+      "source_name": "D3DDevice_Begin",
+      "address": 1676896,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "PrimitiveType"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "PrimitiveType"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "94bf53a9d867b80665291ef5e385dce2b04b5aca23796b6205298096508b1f59",
+        "bytes": 53
+      }
+    },
+    {
+      "name": "D3DDevice_End",
+      "source_name": "D3DDevice_End",
+      "address": 1676960,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [],
+        "stack_bytes": 0
+      },
+      "body": {
+        "sha256": "a0605fded1eebc3e74dcf4842478b95b4cc3f98031442069196702d279cb986f",
+        "bytes": 61
+      }
+    },
+    {
+      "name": "D3DDevice_CreateIndexBuffer",
+      "source_name": "D3DDevice_CreateIndexBuffer",
+      "address": 1677024,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Length"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          },
+          {
+            "type": "psh",
+            "name": "Format"
+          },
+          {
+            "type": "psh",
+            "name": "Pool"
+          },
+          {
+            "type": "psh",
+            "name": "ppIndexBuffer"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Length"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          },
+          {
+            "type": "psh",
+            "name": "Format"
+          },
+          {
+            "type": "psh",
+            "name": "Pool"
+          },
+          {
+            "type": "psh",
+            "name": "ppIndexBuffer"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "body": {
+        "sha256": "e374e8dc3c61c6798c79ac5013eb2e52d765dfb5a6277d6a41d20c7e501610e5",
+        "bytes": 62
+      }
+    },
+    {
+      "name": "D3DDevice_CreateVertexBuffer",
+      "source_name": "D3DDevice_CreateVertexBuffer",
+      "address": 1677088,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Length"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          },
+          {
+            "type": "psh",
+            "name": "FVF"
+          },
+          {
+            "type": "psh",
+            "name": "Pool"
+          },
+          {
+            "type": "psh",
+            "name": "ppVertexBuffer"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Length"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          },
+          {
+            "type": "psh",
+            "name": "FVF"
+          },
+          {
+            "type": "psh",
+            "name": "Pool"
+          },
+          {
+            "type": "psh",
+            "name": "ppVertexBuffer"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "body": {
+        "sha256": "cd9ebd987ea5d6d7e106c313516dfbde602a47dd5722ecc598290e60221c8f6b",
+        "bytes": 86
+      }
+    },
+    {
+      "name": "D3DVertexBuffer_Lock",
+      "source_name": "D3DVertexBuffer_Lock",
+      "address": 1677184,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pVertexBuffer"
+          },
+          {
+            "type": "psh",
+            "name": "OffsetToLock"
+          },
+          {
+            "type": "psh",
+            "name": "SizeToLock"
+          },
+          {
+            "type": "psh",
+            "name": "ppbData"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pVertexBuffer"
+          },
+          {
+            "type": "psh",
+            "name": "OffsetToLock"
+          },
+          {
+            "type": "psh",
+            "name": "SizeToLock"
+          },
+          {
+            "type": "psh",
+            "name": "ppbData"
+          },
+          {
+            "type": "psh",
+            "name": "Flags"
+          }
+        ],
+        "stack_bytes": 20
+      },
+      "body": {
+        "sha256": "c8bd5955d4675fc0749ffa178099e570aeea808f9d5067ace4968b2bc8bf3656",
+        "bytes": 83
+      }
+    },
+    {
+      "name": "D3D_GetAdapterModeCount",
+      "source_name": "D3D_GetAdapterModeCount",
+      "address": 1677296,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Adapter"
+          },
+          {
+            "type": "psh",
+            "name": "Format"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Adapter"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "83c94309175e22824952a8a7eec267f78e3a1c7d378c8e11fd7c267bda258c55",
+        "bytes": 159
+      }
+    },
+    {
+      "name": "D3D_EnumAdapterModes",
+      "source_name": "D3D_EnumAdapterModes",
+      "address": 1677456,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Adapter"
+          },
+          {
+            "type": "psh",
+            "name": "Mode"
+          },
+          {
+            "type": "psh",
+            "name": "pMode"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Adapter"
+          },
+          {
+            "type": "psh",
+            "name": "Mode"
+          },
+          {
+            "type": "psh",
+            "name": "pMode"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "d3a7a4e9107421275b5a9db57b4cdce0e71a9545be2661802fbffac72fc4c1ea",
+        "bytes": 321
+      }
+    },
+    {
+      "name": "D3D_GetDeviceCaps",
+      "source_name": "D3D_GetDeviceCaps",
+      "address": 1677808,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Adapter"
+          },
+          {
+            "type": "psh",
+            "name": "DeviceType"
+          },
+          {
+            "type": "psh",
+            "name": "pCaps"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Adapter"
+          },
+          {
+            "type": "psh",
+            "name": "DeviceType"
+          },
+          {
+            "type": "psh",
+            "name": "pCaps"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "5898cc7505bf84253c93474a68653233a975f7db90c42f346002802f8727ec00",
+        "bytes": 46
+      }
+    },
+    {
+      "name": "D3D_CheckDeviceFormat",
+      "source_name": "D3D_CheckDeviceFormat",
+      "address": 1677856,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Adapter"
+          },
+          {
+            "type": "psh",
+            "name": "DeviceType"
+          },
+          {
+            "type": "psh",
+            "name": "AdapterFormat"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          },
+          {
+            "type": "psh",
+            "name": "RType"
+          },
+          {
+            "type": "psh",
+            "name": "CheckFormat"
+          }
+        ],
+        "stack_bytes": 24
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Adapter"
+          },
+          {
+            "type": "psh",
+            "name": "DeviceType"
+          },
+          {
+            "type": "psh",
+            "name": "AdapterFormat"
+          },
+          {
+            "type": "psh",
+            "name": "Usage"
+          },
+          {
+            "type": "psh",
+            "name": "RType"
+          },
+          {
+            "type": "psh",
+            "name": "CheckFormat"
+          }
+        ],
+        "stack_bytes": 24
+      },
+      "body": {
+        "sha256": "c4c26f289bf6db73c5b875b6a80cac79871c57e28b54a0a5a28e1f29c55ca472",
+        "bytes": 126
+      }
+    },
+    {
+      "name": "D3D_AllocContiguousMemory",
+      "source_name": "D3D_AllocContiguousMemory",
+      "address": 1678080,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "dwSize"
+          },
+          {
+            "type": "psh",
+            "name": "dwAllocAttributes"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "dwSize"
+          },
+          {
+            "type": "psh",
+            "name": "dwAllocAttributes"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "f9599bebfaa58fc0bf28e4ef2a3a0d68d5db27ad1794b403126fc71991d13ac6",
+        "bytes": 31
+      }
+    },
+    {
+      "name": "D3DDevice_CreatePixelShader",
+      "source_name": "D3DDevice_CreatePixelShader",
+      "address": 1678128,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pPSDef"
+          },
+          {
+            "type": "psh",
+            "name": "pHandle"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "pPSDef"
+          },
+          {
+            "type": "psh",
+            "name": "pHandle"
+          }
+        ],
+        "stack_bytes": 8
+      },
+      "body": {
+        "sha256": "5a5eab9dd6851c47069998d8959736659dbf3c15fd92633dc7ce4f0d14457134",
+        "bytes": 69
+      }
+    },
+    {
+      "name": "D3DDevice_DeletePixelShader",
+      "source_name": "D3DDevice_DeletePixelShader",
+      "address": 1678208,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Handle"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Handle"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "20312a335dd91edcdcb653b5c62cf3a441291ff63c3ecbbdc5a2a00be02fc0fa",
+        "bytes": 27
+      }
+    },
+    {
+      "name": "D3DDevice_SetPixelShader",
+      "source_name": "D3DDevice_SetPixelShader",
+      "address": 1678240,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Handle"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Handle"
+          }
+        ],
+        "stack_bytes": 4
+      },
+      "body": {
+        "sha256": "086f79bb4688a9c670d80aadab6e5b5ac27f717556343036b2998f3b8c70c1b8",
+        "bytes": 458
+      }
+    },
+    {
+      "name": "D3DDevice_SetPixelShaderConstant",
+      "source_name": "D3DDevice_SetPixelShaderConstant",
+      "address": 1678704,
+      "source_signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Register"
+          },
+          {
+            "type": "psh",
+            "name": "pConstantData"
+          },
+          {
+            "type": "psh",
+            "name": "ConstantCount"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "signature": {
+        "call": "stdcall",
+        "params": [
+          {
+            "type": "psh",
+            "name": "Register"
+          },
+          {
+            "type": "psh",
+            "name": "pConstantData"
+          },
+          {
+            "type": "psh",
+            "name": "ConstantCount"
+          }
+        ],
+        "stack_bytes": 12
+      },
+      "body": {
+        "sha256": "ad4bc194be62ddb62c06ce59c831d077819cc42968e9595c7f21da5f1546e512",
+        "bytes": 647
+      }
+    }
+  ],
+  "helpers": {
+    "state_initializer": {
+      "address": 1644928,
+      "sha256": "a3e68ea67fbd511256a66f04f583a8f4d16871bf7a446fd6c91c3c7acfe998b0",
+      "bytes": 186
+    },
+    "device_initializer": {
+      "address": 1646672,
+      "sha256": "0916c7b524cd50963c1a66d5bfe6c638f9891ddf18bcfda12a64af2a7e21267c",
+      "bytes": 1296
+    },
+    "reset_buffers": {
+      "address": 1645408,
+      "sha256": "b24af20fc0a5b5f02e9b88925684549361cf56faabf639c42b83f40f02812f07",
+      "bytes": 1255
+    },
+    "vertex_recorder": {
+      "address": 1637264,
+      "sha256": "10b03b74ac3de0b20ea0fefd54e50a0e4b5b841368ca1f060afee0df50b83931",
+      "bytes": 170
+    },
+    "fvf_decoder": {
+      "address": 1636944,
+      "sha256": "6151030f684d7e2bdcc9602689f9bca14d0bfefdc5d222b81587e02be8793bab",
+      "bytes": 313
+    },
+    "constant_setter": {
+      "address": 1639856,
+      "sha256": "1d61de063fb521f877796c81d77bd641f13190004e58920255616717c19e97c6",
+      "bytes": 155
+    },
+    "gamma_initializer": {
+      "address": 1657501,
+      "sha256": "c71074ea9de5b89c00841c88b982f2b1f08141725dfccb03cece083594c05e9e",
+      "bytes": 354
+    }
+  },
+  "layout": {
+    "device_global": 1694880,
+    "device_object": 1683904,
+    "device_bytes": 10976,
+    "streams": 1694888,
+    "render_states": 1695904,
+    "texture_states": 1695392,
+    "shader_mode": 8216,
+    "device_references": 1084,
+    "swap_counter": 10940,
+    "vblank_callback": 9260,
+    "vblank_event": 9264,
+    "device_caps": 2286656,
+    "render_defaults": 1680768,
+    "texture_defaults": 1680736,
+    "surface_formats": 1679384,
+    "fvf_object": 1695080,
+    "vertex_start": 904,
+    "vertex_record_flags": 8,
+    "vertex_record_disable": 16,
+    "vertex_constants": 1686872,
+    "vertex_program_cache": 6040,
+    "resource_fence": 48,
+    "texture_mode": 12,
+    "packed_pixel_constants": 1004,
+    "index_data_global": 1695380,
+    "presentation_interval": 1692196,
+    "screen_bias": 1057488896,
+    "yuv_state": 160,
+    "cache_fields": {
+      "pixel_shader": 880,
+      "vertex_object": 896,
+      "vertex_shader": 900,
+      "indices": 908,
+      "base_vertex": 28,
+      "textures": 2680,
+      "transforms": 1872,
+      "viewport": 2512
+    },
+    "transform_fields": {
+      "projection_depth": 1088,
+      "depth_scale": 1100,
+      "pixel_scale": 1108,
+      "projection_viewport": 1136,
+      "screen_offset": 2536
+    },
+    "presentation_fields": {
+      "count": 8312,
+      "colors": 8316,
+      "depth": 8328,
+      "current_color": 8304,
+      "current_depth": 8308
+    },
+    "gamma_cache": {
+      "ramps": 9340,
+      "pending": 10876,
+      "current": 10884
+    }
+  },
+  "references": [
+    {
+      "function": "Direct3D_CreateDevice",
+      "field": "device_global",
+      "mnemonic": "mov",
+      "operands": "dword ptr [{value}], 0x19b1c0"
+    },
+    {
+      "function": "Direct3D_CreateDevice",
+      "field": "device_object",
+      "mnemonic": "mov",
+      "operands": "ecx, {value}"
+    },
+    {
+      "function": "D3DDevice_SetShaderConstantMode",
+      "field": "shader_mode",
+      "mnemonic": "mov",
+      "operands": "dword ptr [ebx + {value}], eax"
+    },
+    {
+      "function": "D3DDevice_Swap",
+      "field": "swap_counter",
+      "mnemonic": "mov",
+      "operands": "eax, dword ptr [esi + {value}]"
+    },
+    {
+      "function": "D3DDevice_SetVerticalBlankCallback",
+      "field": "vblank_callback",
+      "mnemonic": "mov",
+      "operands": "dword ptr [ecx + {value}], eax"
+    },
+    {
+      "function": "D3DDevice_GetDeviceCaps",
+      "field": "device_caps",
+      "mnemonic": "mov",
+      "operands": "esi, {value}"
+    },
+    {
+      "function": "state_initializer",
+      "field": "render_defaults",
+      "mnemonic": "mov",
+      "operands": "ebx, {value}"
+    },
+    {
+      "function": "state_initializer",
+      "field": "texture_defaults",
+      "mnemonic": "movzx",
+      "operands": "edx, byte ptr [esi + {value}]"
+    },
+    {
+      "function": "Get2DSurfaceDesc",
+      "field": "surface_formats",
+      "mnemonic": "mov",
+      "operands": "al, byte ptr [edx + {value}]"
+    },
+    {
+      "function": "D3DDevice_SetVertexShader",
+      "field": "fvf_object",
+      "mnemonic": "mov",
+      "operands": "edi, {value}"
+    },
+    {
+      "function": "vertex_recorder",
+      "field": "vertex_program_cache",
+      "mnemonic": "lea",
+      "operands": "edx, [ecx + esi + {value}]"
+    },
+    {
+      "function": "constant_setter",
+      "mnemonic": "lea",
+      "operands": "edi, [edx + ebx + 0xb98]"
+    },
+    {
+      "function": "D3DDevice_SelectVertexShader",
+      "field": "vertex_start",
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + {value}], ecx"
+    },
+    {
+      "function": "D3DDevice_LoadVertexShader",
+      "field": "vertex_record_flags",
+      "mnemonic": "mov",
+      "operands": "al, byte ptr [ebx + {value}]",
+      "decimal": true
+    },
+    {
+      "function": "D3DDevice_SetTexture",
+      "field": "resource_fence",
+      "mnemonic": "mov",
+      "operands": "ecx, dword ptr [edi + {value}]"
+    },
+    {
+      "function": "D3DDevice_SetTexture",
+      "field": "texture_mode",
+      "mnemonic": "mov",
+      "operands": "dword ptr [edi + esi*4 + {value}], 0xffffffff"
+    },
+    {
+      "function": "D3DDevice_SetPixelShaderConstant",
+      "field": "packed_pixel_constants",
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + ebp*4 + {value}], eax"
+    },
+    {
+      "function": "D3DDevice_SetPixelShader",
+      "field": "cache_fields.pixel_shader",
+      "mnemonic": "mov",
+      "operands": "dword ptr [ebx + {value}], eax"
+    },
+    {
+      "function": "D3DDevice_SetVertexShader",
+      "field": "cache_fields.vertex_object",
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + {value}], edi"
+    },
+    {
+      "function": "D3DDevice_SetVertexShader",
+      "field": "cache_fields.vertex_shader",
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + {value}], ebx"
+    },
+    {
+      "function": "D3DDevice_SetIndices",
+      "field": "cache_fields.indices",
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + {value}], edi"
+    },
+    {
+      "function": "D3DDevice_SetIndices",
+      "field": "cache_fields.base_vertex",
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + {value}], ecx"
+    },
+    {
+      "function": "D3DDevice_SetTexture",
+      "field": "cache_fields.textures",
+      "mnemonic": "mov",
+      "operands": "dword ptr [edi + esi*4 + {value}], ebx"
+    },
+    {
+      "function": "D3DDevice_SetTransform",
+      "field": "cache_fields.transforms",
+      "mnemonic": "lea",
+      "operands": "edi, [ecx + ebx + {value}]"
+    },
+    {
+      "function": "D3DDevice_SetViewport",
+      "field": "cache_fields.viewport",
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + {value}], ecx"
+    },
+    {
+      "function": "D3DDevice_SetTransform",
+      "field": "transform_fields.projection_depth",
+      "mnemonic": "fstp",
+      "operands": "dword ptr [ebx + {value}]"
+    },
+    {
+      "function": "D3D_UpdateProjectionViewportTransform",
+      "field": "transform_fields.depth_scale",
+      "mnemonic": "fmul",
+      "operands": "dword ptr [edx + {value}]"
+    },
+    {
+      "function": "D3D_UpdateProjectionViewportTransform",
+      "field": "transform_fields.pixel_scale",
+      "mnemonic": "fmul",
+      "operands": "dword ptr [edx + {value}]"
+    },
+    {
+      "function": "D3D_UpdateProjectionViewportTransform",
+      "field": "transform_fields.projection_viewport",
+      "mnemonic": "add",
+      "operands": "edx, {value}"
+    },
+    {
+      "function": "D3DDevice_SetScreenSpaceOffset",
+      "field": "transform_fields.screen_offset",
+      "mnemonic": "fstp",
+      "operands": "dword ptr [esi + {value}]"
+    },
+    {
+      "function": "reset_buffers",
+      "field": "presentation_fields.count",
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + {value}], eax"
+    },
+    {
+      "function": "reset_buffers",
+      "field": "presentation_fields.colors",
+      "mnemonic": "lea",
+      "operands": "ecx, [esi + {value}]"
+    },
+    {
+      "function": "reset_buffers",
+      "field": "presentation_fields.depth",
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + {value}], edi"
+    },
+    {
+      "function": "D3DDevice_SetRenderTarget",
+      "field": "presentation_fields.current_color",
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + {value}], edi"
+    },
+    {
+      "function": "D3DDevice_SetRenderTarget",
+      "field": "presentation_fields.current_depth",
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + {value}], ebp"
+    },
+    {
+      "function": "state_initializer",
+      "mnemonic": "cmp",
+      "operands": "esi, 0x164"
+    },
+    {
+      "function": "state_initializer",
+      "mnemonic": "cmp",
+      "operands": "esi, 0xec"
+    },
+    {
+      "function": "state_initializer",
+      "mnemonic": "cmp",
+      "operands": "esi, 0x138"
+    },
+    {
+      "function": "D3DDevice_SetRenderStateNotInline",
+      "mnemonic": "cmp",
+      "operands": "esi, 0x52"
+    },
+    {
+      "function": "D3DDevice_SetRenderStateNotInline",
+      "mnemonic": "cmp",
+      "operands": "esi, 0x75"
+    },
+    {
+      "function": "constant_setter",
+      "field": "vertex_constants",
+      "relative_to": "device_object",
+      "mnemonic": "lea",
+      "operands": "edi, [edx + ebx + {value}]"
+    },
+    {
+      "function": "D3DDevice_GetGammaRamp",
+      "field": "gamma_cache.current",
+      "mnemonic": "mov",
+      "operands": "ecx, dword ptr [eax + {value}]"
+    },
+    {
+      "function": "D3DDevice_GetGammaRamp",
+      "field": "gamma_cache.ramps",
+      "mnemonic": "lea",
+      "operands": "esi, [ecx + eax + {value}]"
+    },
+    {
+      "function": "gamma_initializer",
+      "mnemonic": "mov",
+      "operands": "edx, 0x100"
+    },
+    {
+      "function": "gamma_initializer",
+      "mnemonic": "add",
+      "operands": "dword ptr [ebp - 4], 0x300"
+    }
+  ],
+  "render_cache": {
+    "count": 146,
+    "map": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      -1,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145
+    ],
+    "default_count": 89,
+    "default_skips": [
+      116,
+      135
+    ]
+  },
+  "command_buffer": {
+    "version": 1,
+    "reserve": "D3D_MakeRequestedSpace_8",
+    "space": "D3DDevice_MakeSpace",
+    "kickoff": "CDevice_KickOff",
+    "request_global": 1696488,
+    "capacity_global": 1696492,
+    "request_default": 32768,
+    "capacity_default": 524288,
+    "current_offset": 0,
+    "limit_offset": 4,
+    "flags_offset": 8,
+    "record_mask": 4,
+    "margin": 512
+  }
+}

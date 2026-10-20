@@ -90,6 +90,9 @@
         "bytes": 23,
         "stack_bytes": 4
       }
+    },
+    "d3d": {
+      "include": "d3d-classic.json"
     }
   }
 }
