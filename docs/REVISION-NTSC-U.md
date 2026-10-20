@@ -1,5 +1,9 @@
 # Reviewed native interfaces
 
+This record preserves earlier interface checkpoints. See the
+[native attract burndown](NATIVE-ATTRACT-BURNDOWN.md) for the current reached
+boundary and complete-attract acceptance status.
+
 Input SHA256: `f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219`.
 The source-selected XDK 4134 inventory is a discovery hint; decoded original
 bodies and their recorded extents/RET cleanup provide the interface evidence.

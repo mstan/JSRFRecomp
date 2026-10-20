@@ -8,7 +8,7 @@ Tracking: beads-xbox.2.1. Native CPU execution and service abstraction are separ
 | J02 | Current optimized generated CPU build | Passed for current inventory | Reuse verified discovery, apply current lowering/guards, compile all admitted bodies natively; unresolved entries stay explicit. |
 | J03 | Startup/files/thread lifecycle | Real data and cache loading, owning-thread file APCs and volume queries pass; later startup active | Actual startup advances through real native kernel and read-only media services. |
 | J04 | Title/XDK graphics/input/audio profiles | Native graphics/font, discovery, GP graph and source-native I3DL2 pass; spatial cache/ABI passes, active spatial output open | Source-derived ABI/layouts and exact-image admissions; shared consumers, no game-hardcoded framework branches. |
-| J05 | First complete title/menu frame | Startup logos and warning advance; interactive title/menu still open | Actual native rendered image and responsive input, no required guard. |
+| J05 | First complete title/menu frame | Logos/warning/loading advance into a nearly black scene fade; interactive title/menu still open | Actual native rendered image and responsive input, no required guard. |
 | J06 | Complete attract sequence | Open | Real movie/demo scenes, audio progression and title-demo-title cycle; no interpreter fallback or success-flag cheats. |
 | J07 | Final repeat and owner preview | Open | Same final binary completes repeat, meaningful shared regression, normal-window/audio frozen preview; commits and private receipts. |
 
@@ -31,14 +31,21 @@ and fixed an inverse-transpose packing error in the existing normal constants.
 Disabled/COUNT2 texture transforms now also pass 384 independent GPU samples
 and actual scene setup (`beads-xbox.1.161`, framework `b21d7ef`). The
 original nonzero unit-point draw also now passes, with sprites and size scaling
-disabled (`beads-xbox.1.162`, framework `b21d7ef`). The next reached
-boundary is the original immediate-mode `D3DDevice_Begin(6)` drawing family.
-Spatial output remains separate required work.
-The immediate caller submits a four-vertex screen quad. Original API and LLE
-packet inspection establish persistent attributes and a vertex snapshot on
-completed position writes. The implementation must retain shared draw-state,
-texture, raster and completion owners; reaching this boundary is not yet a
-passed immediate draw (`beads-xbox.1.163`).
+disabled (`beads-xbox.1.162`, framework `b21d7ef`). The original immediate-mode
+`D3DDevice_Begin(6)` quad now also passes (`beads-xbox.1.163`, framework
+`922eff0`). Its source-bound API preserves persistent float attributes and
+position-triggered snapshots through the shared native draw owner. Independent
+storage, whole-image GPU, ABI and shared regression checks pass; actual startup
+gets beyond the original immediate sequence.
+
+The next COLOROP14 consumer also passes, with COLOR operations 8..14 qualified
+against independent GPU expectations across four texture stages and recreated
+devices (`beads-xbox.1.165`). Startup then reaches FVF `0x1118`. Its original
+decoder describes two FLOAT beta components, a float3 normal and float2 UVs:
+40 bytes in total. The source-bound declaration capability and binding ABI pass,
+including ordinary rebinding and cleared types. The actual drawing consumer
+remains open (`beads-xbox.1.166`); accepting the declaration does not establish
+weighted transform output. Spatial output remains separate required work.
 Owning-thread file completion APCs, the actual 20-effect GP graph, deferred
 gamma presentation and mounted read-only content capacity all pass. A native
 debugger traced an earlier null renderer helper to premature controller
@@ -46,9 +53,10 @@ enumeration; the shared asynchronous initialization phase fixes that cause.
 Packed-byte native vertex inputs and the eight listener transform/deferred
 methods then pass their component checks and actual startup use.
 
-The latest frozen run is `20261020-083517-djuzc85a`, executable SHA256
-`b95fefbf420d74e16134fe76ebacda92816ab1069345c541ff0cae486b3d86fb`.
-Its last capture shows the original Now Loading screen. Interactive menu,
+The latest frozen run is `20261020-101325-pmlav6bu`, executable SHA256
+`68e5899d6286b8329d189008df5b496ba9643911f0e5a69266861b5f5a9776ee`.
+It passes the beta declaration setup and stops at remaining drawing support
+for that FVF. Its last capture is a nearly black first scene fade. Interactive menu,
 movie/audio progression and attract completion remain open. Native entry counts
 vary with real worker scheduling and are not a completion percentage.
 The original native I3DL2 calculation now produces all 66 coefficient words
