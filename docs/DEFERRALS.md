@@ -10,9 +10,14 @@ the actual native attract cycle.
 | Exact MCPX allocation counters | Native GetCaps reports actual maintained buffer/page ownership; unavailable spatial voices report zero. Hardware counter identity is unqualified. | A concrete decision depends on exact hardware counters. |
 | Physical tile/Z-tag byte encodings | Native images hold logical depth/color; source-proved tile descriptors remain queryable. Exact physical compressed bytes are unqualified. | A raw-memory-dependent effect requires their encoding. |
 | Physical encoder/scanout timing | Software capability query is source referenced; physical hardware remains deferred. | Final hardware phase, if required by a concrete discrepancy. |
+| Exact original DVD padding/physical extent | Mounted-directory volume size comes from actual file/directory metadata in read-only 2048-byte units. It does not invent unprovided disc padding. | An image provider or behavior requires original physical geometry. |
+| Exact initial USB enumeration latency | Shared native initialization models the established 500ms asynchronous HLE phase; real discovery and insertion follow completion. Timing is not claimed hardware-exact. | A concrete title timing discrepancy requires an original timing comparison. |
+| Unknown original listener defaults and 3D voice transforms | Known masks distinguish explicitly supplied listener values. Only qualified 2D buffers are admitted; no spatial voice capability is invented. | A reached 3D consumer needs defaults, distance/doppler/HRTF or transformed output. |
 
-Required boundaries remain explicit: asynchronous file APCs, spatial audio, nonidentity gamma,
-active fixed-function lighting and extended COPY Reset have not been qualified.
+Required boundaries remain explicit: I3DL2 reverb parameter conversion/application,
+spatial audio consumers, immediate gamma, active fixed-function lighting and
+extended COPY Reset have not been qualified. Owning-thread file APCs and deferred
+nonidentity gamma are implemented; these are no longer open boundaries.
 If the attract sequence reaches any of them, they are required work, not a
 precision waiver. Full campaign play and later gameplay enhancements are outside
 the current attract goal.

@@ -58,3 +58,24 @@ and GetState, creates its initial LIN565 texture, registers and describes real
 CPU headers and records its depth tile. It then loads real game data. The next
 required shared service is asynchronous file completion APC delivery (2483
 native entries). No first complete frame or attract cycle is accepted yet.
+
+Later source checkpoints implement the owning-thread file completion, original
+kernel232 status/argument rules, real full-size 20-effect GP graph within the
+unchanged 4096-word hardware banks, source-bound deferred gamma presentation and
+metadata-derived mounted content capacity. Their meaningful component suites
+pass, and actual game startup passes these calls.
+
+The original renderer helper stayed null because the first input enumeration
+returned E_FAIL on a prematurely published controller insertion. Native debugger
+observations locate the failure before the skipped helper creation. Modeling the
+asynchronous initial enumeration fixes the cause. The original game then loads
+TNRoman.bin, creates native shaders and uses PBYTE4 declarations (normalized
+stored byte order, distinct from D3DCOLOR's BGRA).
+
+The optional listener proof admits all eight public transforms/deferred APIs
+only with their exact called internal helper bodies and cleanup. Actual native
+audio component playback/ABI/lifetime checks pass with these methods. Actual
+startup reaches the separate I3DL2 reverb operation. Its fifteen-function,
+2171-byte pure arithmetic closure is being assessed for direct native reuse.
+The first captured present remains black; complete rendered scene and attract
+behavior are still open.

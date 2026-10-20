@@ -5054,7 +5054,11 @@
       "count": 8,
       "stride": 24
     },
-    "sample_count": 8284
+    "sample_count": 8284,
+    "gamma_setter": {
+      "miniport": 8808,
+      "deferred_flags_mask": 1
+    }
   },
   "references": [
     {

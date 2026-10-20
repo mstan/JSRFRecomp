@@ -299,5 +299,50 @@
     8,
     0,
     0
-  ]
+  ],
+  "listener": {
+    "adapter": "listener-parameters-2d-v1",
+    "helpers": {
+      "SetAllParameters": {
+        "sha256": "c31b8fcea9962384dc426cc26af48c21ed4d68f8e156ba14764578b139b3e91f",
+        "bytes": 230,
+        "stack_bytes": 12
+      },
+      "SetDistanceFactor": {
+        "sha256": "0952f334c090b997f07dc497d6c54263d1061e11479a131fa27dfecf576d7d5b",
+        "bytes": 98,
+        "stack_bytes": 12
+      },
+      "SetDopplerFactor": {
+        "sha256": "1978a6b37396838a6f9e5b35889ad87814f7573a584a2cc2b36844f26113d4aa",
+        "bytes": 98,
+        "stack_bytes": 12
+      },
+      "SetOrientation": {
+        "sha256": "96668d41de2f8d9ce223b3a899b3821d7a934f0f1a29f043e0720ade1ff4f1cc",
+        "bytes": 144,
+        "stack_bytes": 32
+      },
+      "SetPosition": {
+        "sha256": "c99572455c2c9888322de724b7533ab5f5c545075ab02822898d5b3a88d94df7",
+        "bytes": 118,
+        "stack_bytes": 20
+      },
+      "SetRolloffFactor": {
+        "sha256": "28dd304af3f82d3f200e6295d1642abbcbef2f90ace9e96b2e807da22dc4a429",
+        "bytes": 98,
+        "stack_bytes": 12
+      },
+      "SetVelocity": {
+        "sha256": "b9f4349963165e76b74195f04dccb765ce0d41d276a7519751ed50230079a285",
+        "bytes": 118,
+        "stack_bytes": 20
+      },
+      "CommitDeferredSettings": {
+        "sha256": "145a0ed5bed24f4f7e8cba25497370775ce61d0a62607f7b5308a22d7b714b63",
+        "bytes": 124,
+        "stack_bytes": 4
+      }
+    }
+  }
 }
