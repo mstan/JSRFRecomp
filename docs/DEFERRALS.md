@@ -14,6 +14,7 @@ the actual native attract cycle.
 | Exact initial USB enumeration latency | Shared native initialization models the established 500ms asynchronous HLE phase; real discovery and insertion follow completion. Timing is not claimed hardware-exact. | A concrete title timing discrepancy requires an original timing comparison. |
 | Unknown original listener and spatial defaults | Known masks distinguish explicitly supplied values. Inactive spatial storage/setters retain state; active spatial playback still guards. No spatial output capability is invented. | The reached 3D output consumer needs original defaults, distance/doppler/HRTF and effect routing. |
 | Unmasked x87 exception delivery and full sticky exception modeling | Existing native arithmetic models values/comparison state. Reached FNCLEX clears represented status without changing conditions, TOP, stack or control word. Hardware trap delivery is not claimed. | A concrete reached exception/status consumer requires that additional behavior. |
+| Exact SSE sticky-status provenance and portable denormal controls | The reached STMXCSR nearest-rounding consumer passes with the shared native query (framework `4e89b7e`). Native x64 reads the actual CSR; the portable C profile represents standard flags and masked reset controls. Guest writes, trap delivery and portable DAZ/FTZ remain guarded/unqualified. | A reached consumer depends on these additional bits or changes control state. |
 
 Required boundaries remain explicit: spatial audio consumers, immediate gamma,
 active fixed-function lighting and
