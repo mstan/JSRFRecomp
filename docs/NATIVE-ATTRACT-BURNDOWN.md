@@ -8,17 +8,19 @@ Tracking: beads-xbox.2.1. Native CPU execution and service abstraction are separ
 | J02 | Current optimized generated CPU build | Passed for current inventory | Reuse verified discovery, apply current lowering/guards, compile all admitted bodies natively; unresolved entries stay explicit. |
 | J03 | Startup/files/thread lifecycle | Real data and cache loading, owning-thread file APCs and volume queries pass; later startup active | Actual startup advances through real native kernel and read-only media services. |
 | J04 | Title/XDK graphics/input/audio profiles | Native graphics/font, discovery, GP graph and source-native I3DL2 pass; spatial cache/ABI passes, active spatial output open | Source-derived ABI/layouts and exact-image admissions; shared consumers, no game-hardcoded framework branches. |
-| J05 | First complete title/menu frame | SEGA logo renders correctly; interactive title/menu still open | Actual native rendered image and responsive input, no required guard. |
+| J05 | First complete title/menu frame | Startup logos and warning advance; interactive title/menu still open | Actual native rendered image and responsive input, no required guard. |
 | J06 | Complete attract sequence | Open | Real movie/demo scenes, audio progression and title-demo-title cycle; no interpreter fallback or success-flag cheats. |
 | J07 | Final repeat and owner preview | Open | Same final binary completes repeat, meaningful shared regression, normal-window/audio frozen preview; commits and private receipts. |
 
 Retained earlier CPU prototype stopped at native allocation after twelve entries. That historical run has no rendering/attract coverage and is not a modern preview. Physical hardware is deferred; safely deferrable precision is recorded here as encountered.
 
-Current actual frontier: startup renders the SEGA logo, loads particle textures
-and geometry, creates inactive positional buffers, and writes its original
-startup cache-completion markers. A warm 25-second run continues displaying the
-logo without hitting a required guard. Its actual next-state predicate is being
-traced as beads-xbox.2.2. Spatial output remains separate required work.
+Current actual frontier: startup renders and advances through the SEGA,
+Smilebit and Dolby screens and the anti-graffiti notice. The original startup
+cache-completion markers are produced by the game. Native watchpoints traced
+the earlier logo wait to two omitted x87 conditional moves in its fade clamp;
+shared CPU lowering now fixes that cause (beads-xbox.2.2). The next reached
+failure is a null resource argument during stage-asset initialization
+(beads-xbox.2.3). Spatial output remains separate required work.
 Owning-thread file completion APCs, the actual 20-effect GP graph, deferred
 gamma presentation and mounted read-only content capacity all pass. A native
 debugger traced an earlier null renderer helper to premature controller
@@ -26,9 +28,9 @@ enumeration; the shared asynchronous initialization phase fixes that cause.
 Packed-byte native vertex inputs and the eight listener transform/deferred
 methods then pass their component checks and actual startup use.
 
-The latest frozen run is `20261020-055748-ixivi0qn`, executable SHA256
-`71354033ea07cdfeed0362c8fbe5f7116684651a6b944b345191b281ee5f8862`.
-The preceding run's captures show the complete SEGA logo. Interactive menu,
+The latest frozen run is `20261020-065126-mcn72fkk`, executable SHA256
+`5bb7ef4a1054cf6bb0c0cf086a7f9b9a34f9a752834c928d5fc9710429db9c03`.
+Its captures show the original startup screens advancing. Interactive menu,
 movie/audio progression and attract completion remain open. Native entry counts
 vary with real worker scheduling and are not a completion percentage.
 The original native I3DL2 calculation now produces all 66 coefficient words

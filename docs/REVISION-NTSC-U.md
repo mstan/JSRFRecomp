@@ -88,3 +88,13 @@ checks pass, and actual startup renders the complete SEGA logo and loads
 particle textures/geometry. The next required boundary is positional stage
 sound buffers (flags `0x40110`), not texture or reverb initialization. Interactive
 title/menu and complete repeating attract behavior remain unverified.
+
+Native watchpoints traced the earlier SEGA fade wait to the pinned CPU
+generator omitting FCMOVE and FCMOVNE as comments. The shared framework now
+lowers all eight conditions from the existing CFG-aware CPU flag expressions,
+preserves comparison/stack state, implements reached FNCLEX status clearing,
+and guards other unsupported x87 instructions. Authored optimized native
+fixtures cover 8,960 moves and 128 min/max cases including NaNs and signed zero.
+Actual startup advances through SEGA, Smilebit, Dolby and the original warning.
+The next original resource initializer faults on a null argument; this is
+tracked separately from the resolved logo predicate and remains required work.

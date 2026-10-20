@@ -13,6 +13,7 @@ the actual native attract cycle.
 | Exact original DVD padding/physical extent | Mounted-directory volume size comes from actual file/directory metadata in read-only 2048-byte units. It does not invent unprovided disc padding. | An image provider or behavior requires original physical geometry. |
 | Exact initial USB enumeration latency | Shared native initialization models the established 500ms asynchronous HLE phase; real discovery and insertion follow completion. Timing is not claimed hardware-exact. | A concrete title timing discrepancy requires an original timing comparison. |
 | Unknown original listener and spatial defaults | Known masks distinguish explicitly supplied values. Inactive spatial storage/setters retain state; active spatial playback still guards. No spatial output capability is invented. | The reached 3D output consumer needs original defaults, distance/doppler/HRTF and effect routing. |
+| Unmasked x87 exception delivery and full sticky exception modeling | Existing native arithmetic models values/comparison state. Reached FNCLEX clears represented status without changing conditions, TOP, stack or control word. Hardware trap delivery is not claimed. | A concrete reached exception/status consumer requires that additional behavior. |
 
 Required boundaries remain explicit: spatial audio consumers, immediate gamma,
 active fixed-function lighting and
