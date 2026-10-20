@@ -14,10 +14,13 @@ the actual native attract cycle.
 | Exact initial USB enumeration latency | Shared native initialization models the established 500ms asynchronous HLE phase; real discovery and insertion follow completion. Timing is not claimed hardware-exact. | A concrete title timing discrepancy requires an original timing comparison. |
 | Unknown original listener defaults and 3D voice transforms | Known masks distinguish explicitly supplied listener values. Only qualified 2D buffers are admitted; no spatial voice capability is invented. | A reached 3D consumer needs defaults, distance/doppler/HRTF or transformed output. |
 
-Required boundaries remain explicit: I3DL2 reverb parameter conversion/application,
-spatial audio consumers, immediate gamma, active fixed-function lighting and
+Required boundaries remain explicit: spatial audio consumers, immediate gamma,
+active fixed-function lighting and
 extended COPY Reset have not been qualified. Owning-thread file APCs and deferred
-nonidentity gamma are implemented; these are no longer open boundaries.
+nonidentity gamma and I3DL2 conversion/application are implemented; these are no
+longer open boundaries. Replacing an installed effects image after listener
+reverb settings have been applied still guards until replacement ownership is
+qualified.
 If the attract sequence reaches any of them, they are required work, not a
 precision waiver. Full campaign play and later gameplay enhancements are outside
 the current attract goal.

@@ -75,7 +75,16 @@ stored byte order, distinct from D3DCOLOR's BGRA).
 The optional listener proof admits all eight public transforms/deferred APIs
 only with their exact called internal helper bodies and cleanup. Actual native
 audio component playback/ABI/lifetime checks pass with these methods. Actual
-startup reaches the separate I3DL2 reverb operation. Its fifteen-function,
-2171-byte pure arithmetic closure is being assessed for direct native reuse.
-The first captured present remains black; complete rendered scene and attract
-behavior are still open.
+startup passes the I3DL2 reverb operation using its fifteen-function, 2171-byte
+original arithmetic closure compiled natively. All 66 coefficient words match
+the original x86 execution exactly. CPU effect shadow and live GP state have
+separate ownership and atomic control/coefficient updates.
+
+The shared draw owner retains inactive lighting and point parameter caches,
+while genuine unsupported fixed-lighting and point consumers remain guarded.
+Native 1555 texture support preserves original tight Morton mip storage and
+forces ignored-X alpha only in the native upload copy. Focused runtime/GPU
+checks pass, and actual startup renders the complete SEGA logo and loads
+particle textures/geometry. The next required boundary is positional stage
+sound buffers (flags `0x40110`), not texture or reverb initialization. Interactive
+title/menu and complete repeating attract behavior remain unverified.

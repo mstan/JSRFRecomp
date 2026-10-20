@@ -344,5 +344,148 @@
         "stack_bytes": 4
       }
     }
+  },
+  "i3dl2": {
+    "adapter": "original-native-i3dl2-v1",
+    "initialize": 1729607,
+    "calculate": 1730824,
+    "helpers": [
+      {
+        "address": 1707773,
+        "body": {
+          "sha256": "ae4a39f1f86ea5a10dc0f01ad19c2ede2c9ddf1aed58b048c690bc9f8fdebf83",
+          "bytes": 9,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1714030,
+        "body": {
+          "sha256": "c0001e38160de3c99fb274a8e33f30139728b8de149229ea7bba2c289f409cbd",
+          "bytes": 66,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729018,
+        "body": {
+          "sha256": "f0f1db053a5e3e91df582ed47956ea8b0e299a31482728fff44364ea50ebcbc2",
+          "bytes": 50,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729079,
+        "body": {
+          "sha256": "6df8473a642849ca4f206062aa66945436deb33c24bc975ff193d59163372a41",
+          "bytes": 133,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729212,
+        "body": {
+          "sha256": "87a64b3b316704b3b439d3bcddd38fcc370caf5bd1829db6a0fe6abd74592410",
+          "bytes": 51,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729263,
+        "body": {
+          "sha256": "5e33766204cfc3918a92a58d9a3e1a628ddf22f095361c6dc7ec6f6eacaccc39",
+          "bytes": 28,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729291,
+        "body": {
+          "sha256": "9a7349d4cc2779dc31363d618590e6b16788bb10379bb289d80f462cf67b86b2",
+          "bytes": 53,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729344,
+        "body": {
+          "sha256": "6458b987718c0398201f6756d437c9f677636fd7f1fabe2a834c3392fbed08bc",
+          "bytes": 144,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729488,
+        "body": {
+          "sha256": "9b9ce6f002a2f4f7abe67cddd236c22407a2ecd9c123c648f8560e2fe5067a55",
+          "bytes": 119,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729607,
+        "body": {
+          "sha256": "9a13417f44aa3bea1232ffd97a6302e3842c53258702c689e669c8ed3bc868a7",
+          "bytes": 55,
+          "stack_bytes": 0
+        }
+      },
+      {
+        "address": 1729662,
+        "body": {
+          "sha256": "53e0be9d527d2763744a6601c542a63e300256dd5b2fdc589de83c5603631f07",
+          "bytes": 191,
+          "stack_bytes": 24
+        }
+      },
+      {
+        "address": 1730030,
+        "body": {
+          "sha256": "9b8cc3b2b2f18fc077da0cc1e1ab680f0d425053624d99979728170c18246f2b",
+          "bytes": 95,
+          "stack_bytes": 8
+        }
+      },
+      {
+        "address": 1730125,
+        "body": {
+          "sha256": "e784db075fc1145b56b42babbfa544d2ff9ebd9a20f4e0e787e9504c905e8c5c",
+          "bytes": 171,
+          "stack_bytes": 20
+        }
+      },
+      {
+        "address": 1730609,
+        "body": {
+          "sha256": "5c11a0ccb1d0263011a47f5671326ed080c413f276b8165844d643a389d7dde4",
+          "bytes": 215,
+          "stack_bytes": 12
+        }
+      },
+      {
+        "address": 1730824,
+        "body": {
+          "sha256": "c2e825f0711aee724820d55c90779fd95ad0be262aa6e9aea96f80338e922004",
+          "bytes": 791,
+          "stack_bytes": 0
+        }
+      }
+    ],
+    "set_listener": {
+      "address": 1705142,
+      "body": {
+        "sha256": "99cbef7648dea07ecb183fa47279548c812de0228a037586bd246ed5e6a5c64e",
+        "bytes": 252,
+        "stack_bytes": 12
+      }
+    },
+    "driver_commit": {
+      "address": 1712116,
+      "body": {
+        "sha256": "1a890614d8cb76ff71345396d6ea13355e5b72ed46e3549482b38ca870da5204",
+        "bytes": 176,
+        "stack_bytes": 0
+      }
+    }
   }
 }
