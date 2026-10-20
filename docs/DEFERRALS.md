@@ -12,7 +12,7 @@ the actual native attract cycle.
 | Physical encoder/scanout timing | Software capability query is source referenced; physical hardware remains deferred. | Final hardware phase, if required by a concrete discrepancy. |
 | Exact original DVD padding/physical extent | Mounted-directory volume size comes from actual file/directory metadata in read-only 2048-byte units. It does not invent unprovided disc padding. | An image provider or behavior requires original physical geometry. |
 | Exact initial USB enumeration latency | Shared native initialization models the established 500ms asynchronous HLE phase; real discovery and insertion follow completion. Timing is not claimed hardware-exact. | A concrete title timing discrepancy requires an original timing comparison. |
-| Unknown original listener defaults and 3D voice transforms | Known masks distinguish explicitly supplied listener values. Only qualified 2D buffers are admitted; no spatial voice capability is invented. | A reached 3D consumer needs defaults, distance/doppler/HRTF or transformed output. |
+| Unknown original listener and spatial defaults | Known masks distinguish explicitly supplied values. Inactive spatial storage/setters retain state; active spatial playback still guards. No spatial output capability is invented. | The reached 3D output consumer needs original defaults, distance/doppler/HRTF and effect routing. |
 
 Required boundaries remain explicit: spatial audio consumers, immediate gamma,
 active fixed-function lighting and
