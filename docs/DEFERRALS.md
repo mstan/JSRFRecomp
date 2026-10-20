@@ -7,9 +7,11 @@ the actual native attract cycle.
 |---|---|---|
 | Exact RGB565 framebuffer quantization and console dither | Native RGBA8 render precision; original RGB565 surface descriptors and two-byte pitch retained. Exact console pixel identity is unqualified. | Pixel comparison or a readback-dependent effect needs this precision. |
 | 10:11 pixel-aspect presentation calibration | Original presentation flag retained and queryable. Desktop framing/calibration remains to be compared with the actual scene. | First complete frames expose an aspect discrepancy, or final presentation QA. |
+| Exact MCPX allocation counters | Native GetCaps reports actual maintained buffer/page ownership; unavailable spatial voices report zero. Hardware counter identity is unqualified. | A concrete decision depends on exact hardware counters. |
+| Physical tile/Z-tag byte encodings | Native images hold logical depth/color; source-proved tile descriptors remain queryable. Exact physical compressed bytes are unqualified. | A raw-memory-dependent effect requires their encoding. |
 | Physical encoder/scanout timing | Software capability query is source referenced; physical hardware remains deferred. | Final hardware phase, if required by a concrete discrepancy. |
 
-Required boundaries remain explicit: audio is not yet bound; nonidentity gamma,
+Required boundaries remain explicit: asynchronous file APCs, spatial audio, nonidentity gamma,
 active fixed-function lighting and extended COPY Reset have not been qualified.
 If the attract sequence reaches any of them, they are required work, not a
 precision waiver. Full campaign play and later gameplay enhancements are outside

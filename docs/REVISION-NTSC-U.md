@@ -51,3 +51,10 @@ getter. Actual startup then initializes the shared native controller provider
 and reaches DirectSound startup at 1525 native entries. The unbound original
 audio path stops at KfRaiseIrql; the native audio family is the next required
 admission. No full rendered frame or attract sequence is established.
+
+The SDK4134 native audio profile binds 50 public/object entries. Actual startup
+creates a 48 kHz native device, uses owned AddRef/GetCaps, automatic XInputPoll
+and GetState, creates its initial LIN565 texture, registers and describes real
+CPU headers and records its depth tile. It then loads real game data. The next
+required shared service is asynchronous file completion APC delivery (2483
+native entries). No first complete frame or attract cycle is accepted yet.

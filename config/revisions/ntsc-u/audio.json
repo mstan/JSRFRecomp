@@ -1,0 +1,303 @@
+{
+  "adapter": "dsound-objects-v1",
+  "layout": {
+    "device_interface_offset": 8,
+    "buffer_interface_offset": 28,
+    "buffer_descriptor_bytes": 24
+  },
+  "calls": {
+    "IDirectSound_AddRef": {
+      "sha256": "d9c66149f31f1ecfb19bb8a7ba4c4b36e8c214b2dc045f17c6a08338f4dd535e",
+      "bytes": 22,
+      "stack_bytes": 4
+    },
+    "IDirectSound_Release": {
+      "sha256": "0a72b625b8e9e1a301ddf3c84ec304eded77fc8886c86f41f03efd6fa1fac2b5",
+      "bytes": 22,
+      "stack_bytes": 4
+    },
+    "IDirectSoundBuffer_Unlock": {
+      "sha256": "e123f60e9fc6e974d1381f2f15fb19e7960628cc8925d65e344c2f2bdc64f424",
+      "bytes": 5,
+      "stack_bytes": 20
+    },
+    "IDirectSoundBuffer_AddRef": {
+      "sha256": "c10bd3b2a86aeaef9176bd1dcfe990e5e4c90d53aa405c969817cfc97714cb01",
+      "bytes": 22,
+      "stack_bytes": 4
+    },
+    "IDirectSoundBuffer_Release": {
+      "sha256": "d3270be9d4962cdcdb62ef4c3242b41b960c1f0cb7621e035393e8b7607de92c",
+      "bytes": 22,
+      "stack_bytes": 4
+    },
+    "IDirectSound_GetCaps": {
+      "sha256": "ced46e5880db47c476a7fb13f51b999294928595125b746ca4000508979597a8",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSound_GetSpeakerConfig": {
+      "sha256": "a939c84115ce05646c3819d62f397e445ddb668f3b6fa76640a0dadee8e1d38f",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSound_DownloadEffectsImage": {
+      "sha256": "1334dd7cdc0c6860149634d59073991a302ab83274996dcd232137344029c326",
+      "bytes": 39,
+      "stack_bytes": 20
+    },
+    "IDirectSound_GetEffectData": {
+      "sha256": "216db7dec5528a8e13f7a163974fb3fe18eea5e492516993c1a8dc18bd3b4545",
+      "bytes": 39,
+      "stack_bytes": 20
+    },
+    "IDirectSound_SetEffectData": {
+      "sha256": "87d69fe2e8c48ff84b41534909f21e25758f481f9bfc227234bdc61fbf4ce317",
+      "bytes": 42,
+      "stack_bytes": 24
+    },
+    "IDirectSoundBuffer_SetVolume": {
+      "sha256": "b58eb0c194c7ed59ddd4dd5b4e35d7794448243ce9b4139d7bdc5659dc126f7f",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_SetLFO": {
+      "sha256": "b239782784f0cd716c4334f9a299150e1661fbc1037f8cbb9242e2f6ee2fe1e7",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_SetEG": {
+      "sha256": "1810b19e887639a037a138401d69cee1ea9ff58ca2abf34b5fad89184a0176bc",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_SetFilter": {
+      "sha256": "173fb8e2b1e495fdb9f18565e2723796b63d432d58242988e70170c1826234e6",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_SetHeadroom": {
+      "sha256": "1757cea17c629f6b1fd9c274ca4f415183aa33febabf97163f2325295b01de4d",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_SetMixBins": {
+      "sha256": "3a7e8bb57003883bd1ddfd19f87d8f793f6457246ca889b0c546316cdea4faa2",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_Play": {
+      "sha256": "adead72a8aacb01acfea8c6d25219d48a2e546348cf871ea96ce8cb65346d3be",
+      "bytes": 36,
+      "stack_bytes": 16
+    },
+    "IDirectSoundBuffer_Stop": {
+      "sha256": "df1837484aa3e62bbc781e21387a541521f9d91273cdce786ce386976d826c51",
+      "bytes": 24,
+      "stack_bytes": 4
+    },
+    "IDirectSoundBuffer_SetLoopRegion": {
+      "sha256": "898c06626099fbf8842e068425e0913787757c31ad1442753ef93077b5de6016",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_GetStatus": {
+      "sha256": "18468286922467a501a34e7b937bc8ae2219ea0429cb922c920416404a6c6e94",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_GetCurrentPosition": {
+      "sha256": "ccfc504dffc81dc7e4cbe7aa1d4e4a18cc2f0a881acede316cf419bf8b8e1c0f",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetCurrentPosition": {
+      "sha256": "ad6e90ccc5a642e4be01a4e583169a38982ddffe68ba57a500683dc8b28ab0d5",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_Lock": {
+      "sha256": "9fcb07696318977d91a1d9221c165eb4d652731c1ec4eaafa3df0b3c6fa3f030",
+      "bytes": 48,
+      "stack_bytes": 32
+    },
+    "IDirectSound_CommitDeferredSettings": {
+      "sha256": "34f59c0fa3a67230a5ff424d2c4ccc7b4d26f7b491183d09c0fdd2e95816284a",
+      "bytes": 24,
+      "stack_bytes": 4
+    },
+    "IDirectSoundBuffer_SetFrequency": {
+      "sha256": "f5621260d82ea8ca08e2f182e613d629e95113a562ec329b060ef1cefefb628d",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_SetAllParameters": {
+      "sha256": "74d2074724c78afcff1730de3785b631bbab4133b3d291dcecc5f6b7aa77f13a",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetConeAngles": {
+      "sha256": "25bb50e1e5a61620d76cd3718c2161599e56b5725cf9b08eb6fdcfb3264081de",
+      "bytes": 36,
+      "stack_bytes": 16
+    },
+    "IDirectSoundBuffer_SetConeOrientation": {
+      "sha256": "08fe4a21c42d1f1e2ed7b97277e10cbf39cb751eca34151fcd347662da34c3d9",
+      "bytes": 53,
+      "stack_bytes": 20
+    },
+    "IDirectSoundBuffer_SetConeOutsideVolume": {
+      "sha256": "02d78d8b8a8ed7f8dc10bf278531c80205384531a48d1ac06596f3b4edb57b76",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetMaxDistance": {
+      "sha256": "76bb9add19f869ba4d0112c56cb60f76593e913e993dd8865116583d3e108d88",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetMinDistance": {
+      "sha256": "1b82926f5294b5e653d997c34a7ef00c0e77f72169a990f04c967c07347e92ba",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetMode": {
+      "sha256": "87dfc63f38d9a69f11cf724d976be0dc915c8f4d6503ce292cc4b0d05cdebcc0",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetPosition": {
+      "sha256": "e1ea5cbe7f14f85e9a55dd8bcbb742cfb38df68447fd4990af5da8cfbad52a1b",
+      "bytes": 53,
+      "stack_bytes": 20
+    },
+    "IDirectSoundBuffer_SetVelocity": {
+      "sha256": "4487f541fc2a74ff963d9c676d4316e8b9af93d3d791efa1eca40b75b4d173e0",
+      "bytes": 53,
+      "stack_bytes": 20
+    },
+    "IDirectSoundBuffer_SetDistanceFactor": {
+      "sha256": "352cdbebcf668ab03bb8d22defcbdf23809b5f5628a68c1b0fa2d9d678795577",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetDopplerFactor": {
+      "sha256": "58fa66a8ad99ac977bb3f8066cce9e67b50186ce0c25c9676e87098c72d14686",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetRolloffFactor": {
+      "sha256": "051441bc027854431b4389493fafcfe483bebe79c79cad3d2f4a78da28fdfdf5",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetI3DL2Source": {
+      "sha256": "42e36fa3346367bfa9fb49b9acb68a2bd0a4131012798163ae15d55b25cf7b68",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSound_SetAllParameters": {
+      "sha256": "ef1e33f4b84214196a04de2a4ae3a6776af1cc44d478ef1e99a6d4a0c9e1b468",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSound_SetDistanceFactor": {
+      "sha256": "0598a96825f2410f54a080f476d7f056fe49e60fb18f560618281d3f391d0764",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSound_SetDopplerFactor": {
+      "sha256": "0e9a878a7a394b01b70d8dae82a5db3b02e3e0de3094c55ec0dc21ecb5c25198",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSound_SetOrientation": {
+      "sha256": "8d6ed84fd4a109010f606ae7c0d07678e30508e4e650a8dbc7e8067c25248d12",
+      "bytes": 74,
+      "stack_bytes": 32
+    },
+    "IDirectSound_SetPosition": {
+      "sha256": "7124fa7c18ffcf04fc43d8a6d8029696eb7ac2a757541019c320082602357ea5",
+      "bytes": 53,
+      "stack_bytes": 20
+    },
+    "IDirectSound_SetRolloffFactor": {
+      "sha256": "287c6d5db7fb07cbcf837f4020c810fdf181357cba57fe423e429978380e6b17",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSound_SetVelocity": {
+      "sha256": "a1cbbaea2bf1a9a6480cc2b758a5fab563caba057a5a480c74bab52cea26234a",
+      "bytes": 53,
+      "stack_bytes": 20
+    },
+    "IDirectSound_SetI3DL2Listener": {
+      "sha256": "3afe59d80a99ec19f9dfcd32e510ed9b2cab49ca9067cdb12ea9140bbe72dea8",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetBufferData": {
+      "sha256": "f8a1e318fc2410bb4eda11acd636d248b159ef005dfdd51efecb129dcdef76b0",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSound_CreateSoundBuffer": {
+      "sha256": "03b0fdff70199320a2db605a34283edfb2714eec2213f0d8374beaf9eaa3f345",
+      "bytes": 36,
+      "stack_bytes": 16
+    },
+    "DirectSoundCreate": {
+      "sha256": "9d83f8f9d21a20348ab84561bea802b36f8fe7673d55338ff53ac49afb57a98f",
+      "bytes": 71,
+      "stack_bytes": 12
+    },
+    "ObjectAddRef": {
+      "sha256": "0a1625e8ba774d981103c9c15c22ff68052f939fa94ef2a3ba5f8681867f7cb4",
+      "bytes": 71,
+      "stack_bytes": 4
+    }
+  },
+  "addref": {
+    "sha256": "0a1625e8ba774d981103c9c15c22ff68052f939fa94ef2a3ba5f8681867f7cb4",
+    "bytes": 71,
+    "stack_bytes": 4
+  },
+  "constructors": {
+    "DEVICE": {
+      "sha256": "eb473e796bf780af46df54e9d6bd0a58f888f4f7c33b926288bfc7603754f011",
+      "bytes": 29
+    },
+    "BUFFER": {
+      "sha256": "b29162920b3e483365d142c1bee4c560a108efffc31d8e02f9d766cf9c2c1500",
+      "bytes": 24
+    }
+  },
+  "dsp_helpers": {
+    "step": {
+      "sha256": "033c3664f0382cdf7b0783739d9ecf1a57b6cc4e78319e7f069ff06c8fbf7ba9",
+      "bytes": 121
+    },
+    "seed": {
+      "sha256": "d6fbcf36fd435ef8992eb4c8a025a6037604441f2acca02094e056fd5a6831c7",
+      "bytes": 45
+    },
+    "decode": {
+      "sha256": "68bb004f6f6e3425b301652056b1e62eec935a43d1adab4c5cf61cc0a0000ba2",
+      "bytes": 207
+    },
+    "location": {
+      "sha256": "fdbfe8d8b720fe60daf1f383e0145206c7628364a40514e141374ded3cb1f84d",
+      "bytes": 34
+    }
+  },
+  "seed_push_prefix": [
+    0,
+    0
+  ],
+  "seed_push_suffix": [
+    80,
+    8,
+    0,
+    0
+  ]
+}

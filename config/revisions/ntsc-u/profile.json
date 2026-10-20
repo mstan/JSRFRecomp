@@ -45,6 +45,11 @@
           "sha256": "1bce51eb834bc1dc8785d98ce3fa21e3995793edf85987e057abe3cc91f7eb20",
           "bytes": 56,
           "stack_bytes": 8
+        },
+        "XInputPoll": {
+          "sha256": "3efb626735f470faaeecf76126ed39185e350a2c42bc08d023fc4580bdcd66ed",
+          "bytes": 89,
+          "stack_bytes": 4
         }
       },
       "set_last_error": {
@@ -93,6 +98,9 @@
     },
     "d3d": {
       "include": "d3d-classic.json"
+    },
+    "audio": {
+      "include": "audio.json"
     }
   }
 }

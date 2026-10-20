@@ -14,7 +14,7 @@ drive_owner = "HOST"
 
 [generation]
 profile = "config/revisions/ntsc-u/profile.json"
-bindings = ["cache", "input", "d3d"]
+bindings = ["cache", "input", "d3d", "audio"]
 unit_max_functions = 64
 unit_max_bytes = 524288
 
@@ -25,7 +25,7 @@ PILOT_CACHE = "NATIVE"
 PILOT_CPU_PROBE = "ORIGINAL"
 PILOT_RENDERER = "D3D11"
 PILOT_D3D_DONOR = "PHOBOS"
-PILOT_AUDIO = "ORIGINAL"
+PILOT_AUDIO = "NATIVE"
 PILOT_CALENDAR = "HLE"
 PILOT_IO_DEVICE = "OFF"
 PILOT_USB = "OFF"

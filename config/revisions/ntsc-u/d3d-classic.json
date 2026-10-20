@@ -4984,6 +4984,11 @@
       "address": 1657501,
       "sha256": "c71074ea9de5b89c00841c88b982f2b1f08141725dfccb03cece083594c05e9e",
       "bytes": 354
+    },
+    "surface_dimensions": {
+      "address": 1650112,
+      "sha256": "7f61ec35d891a2537fc4f1f8b789e3d7ec764c4256c98ad7d2b1dd97dc093459",
+      "bytes": 336
     }
   },
   "layout": {
@@ -5043,7 +5048,13 @@
       "ramps": 9340,
       "pending": 10876,
       "current": 10884
-    }
+    },
+    "tile_cache": {
+      "offset": 8476,
+      "count": 8,
+      "stride": 24
+    },
+    "sample_count": 8284
   },
   "references": [
     {
@@ -5501,5 +5512,22 @@
     "flags_offset": 8,
     "record_mask": 4,
     "margin": 512
-  }
+  },
+  "cpu_services": [
+    "D3D_GetAdapterModeCount",
+    "D3D_EnumAdapterModes",
+    "CMiniport_GetDisplayCapabilities",
+    "D3D_GetDeviceCaps",
+    "D3D_CheckDeviceFormat",
+    "D3DDevice_SetLight",
+    "D3DDevice_LightEnable",
+    "D3DDevice_SetMaterial",
+    "D3DDevice_GetGammaRamp",
+    "D3D_AllocContiguousMemory",
+    "D3DResource_Register",
+    "D3DDevice_GetTile",
+    "D3DSurface_GetDesc",
+    "Get2DSurfaceDesc",
+    "D3DResource_GetType"
+  ]
 }
