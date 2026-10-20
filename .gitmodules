@@ -1,0 +1,3 @@
+[submodule "xboxllr"]
+	path = xboxllr
+	url = https://github.com/mstan/xboxlle

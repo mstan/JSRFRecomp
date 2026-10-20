@@ -1,0 +1,44 @@
+schema = "xboxllr.native-title.v1"
+
+[title]
+id = "jsrf-ntsc-u"
+name = "Jet Set Radio Future"
+executable = "JSRFRecomp"
+xbe_sha256 = "f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219"
+
+[content]
+image = "default.xbe"
+device = '\Device\Cdrom0'
+drive = "D:"
+drive_owner = "HOST"
+
+[generation]
+profile = "config/revisions/ntsc-u/profile.json"
+bindings = ["cache", "input"]
+unit_max_functions = 64
+unit_max_bytes = 524288
+
+[build]
+PILOT_NATIVE_OPTIMIZATION = "OPTIMIZED"
+PILOT_MEDIA = "HOST"
+PILOT_CACHE = "NATIVE"
+PILOT_CPU_PROBE = "ORIGINAL"
+PILOT_RENDERER = "ORIGINAL"
+PILOT_D3D_DONOR = "PHOBOS"
+PILOT_AUDIO = "ORIGINAL"
+PILOT_CALENDAR = "HLE"
+PILOT_IO_DEVICE = "OFF"
+PILOT_USB = "OFF"
+PILOT_DISPLAY = "NATIVE"
+PILOT_MEMORY = "NATIVE"
+PILOT_FILES = "NATIVE"
+PILOT_INPUT = "NATIVE"
+PILOT_SCHEDULING = "NATIVE"
+
+[runtime]
+XLLE_PILOT_GUEST_SCHEDULER = "1"
+XLLE_PILOT_DEFER_STREAM_UPLOAD = "1"
+XLLE_PILOT_TEXTURE_EXPOSURE_CACHE = "1"
+XLLE_PILOT_GPU_EVENTS = "1"
+XLLE_PILOT_EVENT_TRACE = "0"
+XLLE_PILOT_TRACE = "0"
