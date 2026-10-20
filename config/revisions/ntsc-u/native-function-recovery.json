@@ -1,0 +1,101 @@
+{
+  "schema": "xboxllr.native-function-recovery.v1",
+  "sha256": "f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219",
+  "extents": [
+    {
+      "start": 718688,
+      "original_end": 718688,
+      "end": 718890,
+      "sha256": "a2396c7d0380e0406c038db1a6c566d8e4f4904d93d66e8d3076a2aaa48e0df8",
+      "reason": "Original direct call at000AFE93 reaches complete SEH-framed object cleanup entry; separate from priorAF060 body and nextAF830.",
+      "new_entry": true
+    },
+    {
+      "start": 776880,
+      "original_end": 776880,
+      "end": 777058,
+      "sha256": "0283c5965e7ddcd4eb81211cba9ca4874cdcf445a487aff32cd84db82ae9781c",
+      "reason": "Measured native title run20261020-110550-z69uca1c stops at original direct call000BE163 from000BE160; complete original SEH-framed cleanup entry followsBD8A0 end and precedesBDB70.",
+      "new_entry": true
+    },
+    {
+      "start": 261824,
+      "original_end": 262568,
+      "end": 262840,
+      "sha256": "eeabfede82182293f40cd82fa6c3ac1f64f52bd74b50b0fff1d26bb1c61cde0e",
+      "reason": "Original3FEED conditional branch reaches40299 within same caller frame; retain all14source-bound discovered fragments while expanding parent through finalRET402B7. No new semantic CPU replacement.",
+      "contained_entries": [
+        {
+          "start": 262568,
+          "end": 262664,
+          "sha256": "5e8d0c72edbfab870a33d4e5bccf058e5d01a683d39462711411ebcae2dfd11f"
+        },
+        {
+          "start": 262622,
+          "end": 262664,
+          "sha256": "3ce32f9b206635f12d75456d9d436768ec0376b6ef466ee2620fb06004a7e2bd"
+        },
+        {
+          "start": 262664,
+          "end": 262804,
+          "sha256": "0237c0084fb6790aa63e44d5e3958b4bd06fe02a5ae32a8072fc0a1e0832a07c"
+        },
+        {
+          "start": 262760,
+          "end": 262804,
+          "sha256": "c0c89e053271210697a32f0b4d084fc996eb283efaa1866a216912fb70cb8ae0"
+        },
+        {
+          "start": 262764,
+          "end": 262804,
+          "sha256": "3e470efb74156ee90193b1f739b2b792a0d1ed5fdea3262dca2435baa7804340"
+        },
+        {
+          "start": 262768,
+          "end": 262804,
+          "sha256": "4d0c26a2f3e045d47809ba5f38848571720102d45be8a0ba96809a36e19f3531"
+        },
+        {
+          "start": 262776,
+          "end": 262804,
+          "sha256": "d45029db20613b31c6e8b6c8563c617638a05ca8451cb30159babebb2dbe86a6"
+        },
+        {
+          "start": 262796,
+          "end": 262804,
+          "sha256": "8f3eca89616c4ea5f11856d431746dabca51b69c300da07ed0bf0583f09170ba"
+        },
+        {
+          "start": 262804,
+          "end": 262808,
+          "sha256": "15bd9fc28c4aa412a8e68d08564103ea06df7c78a2a656c463d0997590801093"
+        },
+        {
+          "start": 262808,
+          "end": 262809,
+          "sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e"
+        },
+        {
+          "start": 262812,
+          "end": 262820,
+          "sha256": "ed12f3bd1f74f25bbc5fcb8f6d3a124741b7cd68699b194cbbd6eb6661f9e73c"
+        },
+        {
+          "start": 262820,
+          "end": 262836,
+          "sha256": "7b0349ae7786a087301b4deb47b6db1cdec2651e868b4c95c2dcf613867a3d9c"
+        },
+        {
+          "start": 262825,
+          "end": 262836,
+          "sha256": "7cf99c7fa2a06e13bf199b51931219c6ee84ea496a7b346c03833a01e0ceefa9"
+        },
+        {
+          "start": 262836,
+          "end": 262840,
+          "sha256": "a89c7d65c0a0cda09d72a9093bc2e32f0fb510a65b02ba28d28f3fe9d36562b4"
+        }
+      ]
+    }
+  ]
+}

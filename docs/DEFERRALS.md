@@ -16,10 +16,17 @@ the actual native attract cycle.
 | Unmasked x87 exception delivery and full sticky exception modeling | Existing native arithmetic models values/comparison state. Reached FNCLEX clears represented status without changing conditions, TOP, stack or control word. Hardware trap delivery is not claimed. | A concrete reached exception/status consumer requires that additional behavior. |
 | Exact SSE sticky-status provenance and portable denormal controls | The reached STMXCSR nearest-rounding consumer passes with the shared native query (framework `4e89b7e`). Native x64 reads the actual CSR; the portable C profile represents standard flags and masked reset controls. Guest writes, trap delivery and portable DAZ/FTZ remain guarded/unqualified. | A reached consumer depends on these additional bits or changes control state. |
 | Exact NV2A texture-combiner intermediate rounding | Native COLOROP8..14 component equations pass independent GPU expectations with one final UNORM byte of rounding tolerance. Original state identity and the retained LLE owner remain intact. Exact fixed-point intermediate pixels are unqualified. | A visible discrepancy or readback-dependent effect requires the intermediate precision. |
+| Active weighted vertex blending | Reached beta FVF draws use authoritative VertexBlend=0. Original float-beta bytes and following offsets are retained; nonzero blending stops explicitly. | An actual draw enables vertex blending. |
+| Two-sided lighting and lit XYZ without an explicit normal | Front material lighting with explicit normals passes the reached title draw. Other consumers retain guards. | A draw needs back materials or an original current-normal owner. |
+| Exact NV2A lighting precision | Native view-space lighting equations and independent GPU samples pass; exact intermediate rounding, denormal and specular approximations remain unqualified. | A visible/readback discrepancy requires those details. |
+| Nonfinite uniform material fields overridden by vertex colors | Uniform material channels remain conservatively validated; unused directional fields and inactive specular power are already ignored correctly. | A reached vertex-color source overrides a nonfinite uniform channel. |
+| Unreached contained CPU loop entry `0x0006FFA0` | Source audit identifies a real entry inside an existing function. It remains guarded; table/string false targets are also retained as guards. | Actual execution reaches that shared entry; native entry lowering then becomes required. |
 
-Required boundaries remain explicit: spatial audio consumers, immediate gamma,
-active fixed-function lighting, the reached beta-FVF drawing consumer and
-extended COPY Reset have not been qualified. Owning-thread file APCs and deferred
+Required boundaries remain explicit: spatial audio consumers, immediate gamma
+and extended COPY Reset have not been qualified. Reached disabled-blend beta
+input and front fixed-function lighting now pass. The previous actual CPU stop
+at `0x000BDAB0` is resolved by source-bound native function recovery and actual
+repeat execution. Owning-thread file APCs and deferred
 nonidentity gamma and I3DL2 conversion/application are implemented; these are no
 longer open boundaries. Replacing an installed effects image after listener
 reverb settings have been applied still guards until replacement ownership is

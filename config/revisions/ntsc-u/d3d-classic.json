@@ -4994,6 +4994,26 @@
       "address": 1664096,
       "sha256": "a679848f00a00d47a960c78ef7881e3895b818a6ca7e9699cb97c1f509e7397d",
       "bytes": 117
+    },
+    "lighting_sources": {
+      "address": 1658976,
+      "sha256": "5986143377b1145aa284a15778c330680897de172c786ce3efc19fec25e97dbc",
+      "bytes": 152
+    },
+    "lighting_light_colors": {
+      "address": 1661792,
+      "sha256": "98c77cd126ffb81532100c2b32cfa9ae88e47513b25866b8327a797431f5aefa",
+      "bytes": 250
+    },
+    "lighting_global_colors": {
+      "address": 1662048,
+      "sha256": "e22c2e6479f79df61c7025ef64bb6a9746da4d873b1c85b5814e7dfee5aa5798",
+      "bytes": 413
+    },
+    "lighting_consumer": {
+      "address": 1662784,
+      "sha256": "d471cdf0b8a57bb2e1c6a7ee2995419fce9a3fc3a384b7a4ad76e1c72f9fe6e7",
+      "bytes": 815
     }
   },
   "layout": {
@@ -5540,5 +5560,21 @@
     "D3DResource_GetType"
   ],
   "immediate": true,
-  "float_beta_fvf": true
+  "float_beta_fvf": true,
+  "lighting_cache": {
+    "version": 1,
+    "table": 912,
+    "capacity": 916,
+    "head": 920,
+    "material": 2544,
+    "stride": 144,
+    "flags": 104,
+    "next": 140,
+    "helpers": {
+      "sources": "lighting_sources",
+      "light_colors": "lighting_light_colors",
+      "global_colors": "lighting_global_colors",
+      "consumer": "lighting_consumer"
+    }
+  }
 }

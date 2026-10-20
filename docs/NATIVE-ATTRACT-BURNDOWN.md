@@ -6,11 +6,11 @@ Tracking: beads-xbox.2.1. Native CPU execution and service abstraction are separ
 |---|---|---|---|
 | J01 | Original image/project identity | Passed | Server XBE matches retained f4441696 discovery; independent game repo and immutable private inputs. |
 | J02 | Current optimized generated CPU build | Passed for current inventory | Reuse verified discovery, apply current lowering/guards, compile all admitted bodies natively; unresolved entries stay explicit. |
-| J03 | Startup/files/thread lifecycle | Real data and cache loading, owning-thread file APCs and volume queries pass; later startup active | Actual startup advances through real native kernel and read-only media services. |
+| J03 | Startup/files/thread lifecycle | Passed for observed startup and repeat | Actual startup, original cache loading and repeated title/demo transitions use real native kernel and read-only media services. |
 | J04 | Title/XDK graphics/input/audio profiles | Native graphics/font, discovery, GP graph and source-native I3DL2 pass; spatial cache/ABI passes, active spatial output open | Source-derived ABI/layouts and exact-image admissions; shared consumers, no game-hardcoded framework branches. |
-| J05 | First complete title/menu frame | Logos/warning/loading advance into a nearly black scene fade; interactive title/menu still open | Actual native rendered image and responsive input, no required guard. |
-| J06 | Complete attract sequence | Open | Real movie/demo scenes, audio progression and title-demo-title cycle; no interpreter fallback or success-flag cheats. |
-| J07 | Final repeat and owner preview | Open | Same final binary completes repeat, meaningful shared regression, normal-window/audio frozen preview; commits and private receipts. |
+| J05 | First complete title/menu frame | Title/Press Start and 3D city render; interactive transition still unverified | Actual native rendered image and responsive input, no required guard. |
+| J06 | Complete attract sequence | Native visual repeat observed; audio acceptance open | Original title, animated city/skating/police scenes, return through logos/title and subsequent demo; establish actual audio paths separately. No interpreter fallback or success-flag cheats. |
+| J07 | Final repeat and owner preview | Repeat observed; normal-window/audio preview delivered; final acceptance open | Same final binary, meaningful shared regression, source commits/pin and private receipts. Owner review does not substitute for unresolved native audio evidence. |
 
 Retained earlier CPU prototype stopped at native allocation after twelve entries. That historical run has no rendering/attract coverage and is not a modern preview. Physical hardware is deferred; safely deferrable precision is recorded here as encountered.
 
@@ -42,10 +42,15 @@ The next COLOROP14 consumer also passes, with COLOR operations 8..14 qualified
 against independent GPU expectations across four texture stages and recreated
 devices (`beads-xbox.1.165`). Startup then reaches FVF `0x1118`. Its original
 decoder describes two FLOAT beta components, a float3 normal and float2 UVs:
-40 bytes in total. The source-bound declaration capability and binding ABI pass,
-including ordinary rebinding and cleared types. The actual drawing consumer
-remains open (`beads-xbox.1.166`); accepting the declaration does not establish
-weighted transform output. Spatial output remains separate required work.
+40 bytes in total. The source-bound declaration, binding ABI and native drawing
+consumer pass with original vertex blending explicitly disabled
+(`beads-xbox.1.166`, framework `a8070f4`). The unused float weights retain their
+stride while normals and UVs reach the shared native shader. Active vertex
+blending remains guarded. The source-bound light/material snapshot then passes
+the original lit draw (`beads-xbox.1.167`): the title/Press Start screen and its
+3D city background now render. Original CPU setters retain cache/list ownership.
+Independent GPU checks cover material sources, light types, normal/view controls
+and stale-state handling. Spatial output remains separate required work.
 Owning-thread file completion APCs, the actual 20-effect GP graph, deferred
 gamma presentation and mounted read-only content capacity all pass. A native
 debugger traced an earlier null renderer helper to premature controller
@@ -53,12 +58,23 @@ enumeration; the shared asynchronous initialization phase fixes that cause.
 Packed-byte native vertex inputs and the eight listener transform/deferred
 methods then pass their component checks and actual startup use.
 
-The latest frozen run is `20261020-101325-pmlav6bu`, executable SHA256
-`68e5899d6286b8329d189008df5b496ba9643911f0e5a69266861b5f5a9776ee`.
-It passes the beta declaration setup and stops at remaining drawing support
-for that FVF. Its last capture is a nearly black first scene fade. Interactive menu,
-movie/audio progression and attract completion remain open. Native entry counts
-vary with real worker scheduling and are not a completion percentage.
+The latest completed observation is `20261020-113717-g38my7ld`, executable
+SHA256 `2eec3248aa6e011f236ff245ae1365de7b23736590add2ecf2015b2d98a41b48`.
+Its original animated city, characters, skating/grinding and police scenes
+return through the original logos and title, then enter the demo again. The
+repeated original title-asset opens corroborate the inspected image sequence.
+The bounded observation ends by the driver's deliberate deadline, not a
+graceful game exit. Actual native execution reports no runtime stop.
+
+The previous undiscovered CPU stop `0x000BDAB0` is resolved by the reviewed
+[recovery plan](../config/revisions/ntsc-u/native-function-recovery.json): two
+complete missed entries and one fragmented parent tail, without replacing
+original CPU behavior. The shared recovery tool retires only the two exact
+guard definitions, preserves unrelated units and links the recovered native
+functions without duplicate symbols (`5026720`, `beads-xbox.2.4` and
+`beads-xbox.1.168`). Interactive menu transitions and complete audio acceptance
+remain open. Native entry counts vary with worker scheduling and are not a
+completion percentage.
 The original native I3DL2 calculation now produces all 66 coefficient words
 bit-identically to the original x86 calculation, and updates CPU effect shadow
 and live GP state atomically without resetting the running graph. Shared
@@ -70,6 +86,29 @@ parameter cache now pass component/ABI/lifetime checks. Unknown defaults remain
 unknown and active spatial Play stops explicitly until its output owner exists.
 The original closed spatial arithmetic graph is 16 functions/1900 bytes; it is
 assessed for native reuse, not yet integrated into positional output.
-The optimized build still has zero failed translations and fourteen explicit
-undiscovered direct targets. No interpreter route is compiled. These counts do
+The latest executed build has zero failed translations and twelve explicit
+undiscovered direct-target guards. Source audit separates an unreached real
+contained loop entry and retained alias from ten false references decoded out
+of tables/strings. The transactional recovery has published three source-bound
+extents and retired two missing-function guards; actual native build and
+repeat execution pass. No interpreter route is compiled. These counts do
 not establish complete attract coverage. See [revision evidence](REVISION-NTSC-U.md).
+
+Audio initialization alone is insufficient: the observed four-minute run creates
+207 buffers (193 mono, 14 stereo) and performs eight original-native I3DL2
+updates. Existing ordinary logs omit creation flags and successful Play calls.
+An offline configuration-capture analyzer now correlates voice generations,
+requested flags and accepted Play/Stop/Release calls; an actual capture is the
+next required check. Capture version 1 omits spatial setters and deferred
+commits, so it cannot by itself qualify spatial output. The zero-spatial
+GetCaps result has no established fallback branch in the inspected original
+sound-manager consumer and must not be used to explain away missing output.
+
+Owner preview `20261020-114615-msdjxxgn` uses the same executable in a normal
+window with normal audio and an isolated writable cache. The owner reports
+that it looks good at a glance. A subsequent temporary main-menu stall with
+looping audio resumed without restart or agent input. Its cause is not yet
+established. A short read-only observation after recovery sees 273 additional
+presents over 4.545 seconds; that establishes resumed progress, not sustained
+performance or an explanation of the stall. Preserve the owner preview while
+diagnosing the separate muted observation.

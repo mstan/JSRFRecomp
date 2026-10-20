@@ -4,6 +4,20 @@ This record preserves earlier interface checkpoints. See the
 [native attract burndown](NATIVE-ATTRACT-BURNDOWN.md) for the current reached
 boundary and complete-attract acceptance status.
 
+Current source checkpoint: framework
+`50267201570dfcd104fb77f29497701092048b63`, optional source-bound original
+lighting cache, and the public image-bound native function recovery plan.
+The frozen executable
+`2eec3248aa6e011f236ff245ae1365de7b23736590add2ecf2015b2d98a41b48`
+executes the original animated attract, returns through logos/title and
+re-enters the demo without an interpreter or runtime guard. The completed
+600-second observation records 579 diagnostic present images. Repeated
+`playdemo00.dat` opens occur at 0.095, 266.113 and 546.641 seconds relative to
+the first title asset open, corroborating the inspected scene sequence.
+The observation ends at its deliberate deadline. Audio-route acceptance and
+interactive transitions remain separate open checks; the paragraphs below
+preserve historical bring-up evidence rather than the current stopping point.
+
 Input SHA256: `f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219`.
 The source-selected XDK 4134 inventory is a discovery hint; decoded original
 bodies and their recorded extents/RET cleanup provide the interface evidence.
@@ -83,6 +97,9 @@ startup passes the I3DL2 reverb operation using its fifteen-function, 2171-byte
 original arithmetic closure compiled natively. All 66 coefficient words match
 the original x86 execution exactly. CPU effect shadow and live GP state have
 separate ownership and atomic control/coefficient updates.
+
+The following paragraphs retain historical bring-up checkpoints; current reached
+behavior and required work are in [the burndown](NATIVE-ATTRACT-BURNDOWN.md).
 
 The shared draw owner retains inactive lighting and point parameter caches,
 while genuine unsupported fixed-lighting and point consumers remain guarded.
