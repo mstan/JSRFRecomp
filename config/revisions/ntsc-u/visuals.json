@@ -9,7 +9,10 @@
     "state": 1,
     "original_m0": 1,
     "original_m5": "4/3",
-    "horizontal_tangent_element": 11
+    "horizontal_tangent_element": 11,
+    "gameplay_viewport": [640, 480],
+    "viewport_size": "0x264e98/0x264e9c",
+    "other_producers": "Original Load Game uses the same builder for512x512 offscreen views with m5=1. Preserve those projections; restore only our retained m0/m8 changes before leaving non-gameplay or non640x480 producers."
   },
   "clipping": {
     "horizontal_secant": [

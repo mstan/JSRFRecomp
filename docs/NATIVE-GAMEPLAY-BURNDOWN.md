@@ -74,6 +74,26 @@ scene entry, source registration and a successful build do not close these rows.
 Supporting precision/hardware SV01-SV08 and full runtime snapshots stay deferred;
 actual reached crashes or broken output remain required fixes.
 
+### Owner Load Game crash fixed, October21
+
+`beads-xbox.2.12`: the enhanced preview stopped at the title mod's perspective
+guard during original Load Game. A private copy of the owner's save reproduced
+exit2 in run20261021-152856-98irjwxr: the original camera builder also creates a
+512x512 offscreen view with m5=1 during mission state12. The mod incorrectly
+required the gameplay4:3 matrix there. Save decoding and native CPU execution
+were not the failing boundary.
+
+Adaptation now requires the reviewed640x480 gameplay viewport. Other producers
+retain their original projection, with only the mod's previous retained m0/m8
+edits restored. Loading and in-game offscreen regression cases pass alongside
+the disabled/fixed/adaptive contracts. Actual retest20261021-153157-yr297v14,
+executable0cc19142..., uses the same adaptive1080p/2x supersampling/FXAA/8x
+filtering/interpolated60 plan and the original Load/character-selection menus.
+It reaches saved Chuo200e6/state15 and responds to ordinary movement. Captures
+were inspected; the test then stops intentionally (exit15), not at a crash or
+deadline. Owner source saves remain unchanged. Broader visual checks retain
+their recorded sampled scope.
+
 Current private work/evidence root:
 `G:/Temp/Codex/JSRFRecomp/gameplay-20261020`.
 The original native generation is copied intact from the prior qualified

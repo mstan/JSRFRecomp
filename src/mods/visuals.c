@@ -62,11 +62,29 @@ static void camera_transform(unsigned state,unsigned address,unsigned caller)
     scope_dirty=1;update_scope();
     float matrix[16];
     if(!api->read(address,matrix,sizeof(matrix)))fail("JSRF projection is unavailable");
+    unsigned viewport[2];
+    if(!api->read(0x264e98,viewport,sizeof(viewport)))fail("JSRF logical viewport is unavailable");
     if(!isfinite(matrix[0]) || (fabsf(matrix[0]-1)>.00001f && fabsf(matrix[0]-prior_scale)>.00001f) ||
-       !isfinite(matrix[5]) || fabsf(matrix[5]-4.0f/3.0f)>.0001f ||
-       !isfinite(matrix[8]) || (fabsf(matrix[8])>.000001f && fabsf(matrix[8]-prior_offset)>.000001f) ||
+       !isfinite(matrix[8]) || (fabsf(matrix[8])>.000001f && fabsf(matrix[8]-prior_offset)>.000001f))
+        fail("unexpected retained JSRF projection elements");
+    /* The same original builder also renders square offscreen views during
+     * Load Game (512x512, m5=1). They are not the gameplay viewport. The
+     * builder retains m0/m8, so remove only our previous changes before
+     * leaving these producers otherwise untouched, including their m5. */
+    if(!scene || viewport[0]!=640 || viewport[1]!=480) {
+        if(matrix[0]!=1){write_float(address,1);write_float(0x264eb8,1);}
+        if(matrix[8]!=0){write_float(address+32,0);write_float(0x264eb8+32,0);}
+        prior_scale=1;prior_offset=0;
+        return;
+    }
+    if(!isfinite(matrix[5]) || fabsf(matrix[5]-4.0f/3.0f)>.0001f ||
        !isfinite(matrix[11]) || matrix[11]<=0 || matrix[11]>32)
+    {
+        fprintf(stderr,"[JSRF PROJECTION] scene=%u scope=%u prior=%.9g/%.9g matrix=",
+            scene,scope,prior_scale,prior_offset);
+        for(unsigned i=0;i<16;++i)fprintf(stderr,"%.9g%c",matrix[i],i==15?'\n':',');
         fail("unexpected original JSRF perspective data");
+    }
     unsigned n=4,d=3;if(scene)aspect(&n,&d);
     float scale=4.0f*d/(3.0f*n),tangent=matrix[11]/scale;
     /* 153E90 builds m0=1, m5=4/3 and m11=tan(horizontalFov/2), and copies
@@ -100,8 +118,6 @@ static void camera_transform(unsigned state,unsigned address,unsigned caller)
      * the raster callback maps that canvas into the wide presentation.
      * Replacing this with an inverse focal corrupts projected UI positions;
      * scaling it here as well would apply widescreen twice to those points. */
-    unsigned width;
-    if(!read_u32(0x264e98,&width) || width!=640)fail("unexpected JSRF logical viewport width");
     frame_aspect[0]=n;frame_aspect[1]=d;projection_seen=scene;
 }
 

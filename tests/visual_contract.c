@@ -30,7 +30,7 @@ static void env(const char *key,const char *value)
 }
 static void original_projection(void)
 {
-    f32(0x22e68c,4.0f/3);f32(0x22e6a4,.75f);u32(0x264e98,640);
+    f32(0x22e68c,4.0f/3);f32(0x22e6a4,.75f);u32(0x264e98,640);u32(0x264e9c,480);
     f32(0x264e40,1.25f);f32(0x264e44,-.75f);f32(0x264e48,1.25f);f32(0x264e4c,.75f);
     f32(0x264ea8,320.0f/.75f);
 }
@@ -51,6 +51,12 @@ int main(int argc,char **argv)
     u32(0x300000+0x98+0x4c*4,0x320000);u32(0x320000,0x1cd4d8);
     f32(0x22e678,1);original_projection();
     const struct PilotTitleMod *mod=pilot_title_mod_open(&host);CHECK(mod && mod->transform && mod->draw && mod->present);
+    /* Original Load Game creates a square offscreen projection before the
+     * gameplay camera. It must neither trip the gameplay guard nor change. */
+    u32(0x31005c,12);u32(0x264e98,512);u32(0x264e9c,512);f32(0x22e68c,1);
+    unsigned before=writes;mod->transform(1,0x22e678,0x153fa9);
+    CHECK(writes==before && getf(0x22e68c)==1);mod->present();CHECK(shape[0]==4 && shape[1]==3);
+    u32(0x31005c,15);original_projection();
     mod->transform(1,0x22e678,0x153fa9);
     CHECK(fabsf(getf(0x22e678)-4.0f/7)<.000001f);
     CHECK(getf(0x22e678)==getf(0x264eb8));
@@ -71,6 +77,12 @@ int main(int argc,char **argv)
     mod->transform(1,0x22e678,0x153fa9);
     CHECK(fabsf(getf(0x22e698)-(1-4.0f/7)*.0260835867f)<.000001f);
     CHECK(getf(0x22e698)==getf(0x264ed8));
+    /* Offscreen passes can also occur during gameplay. Undo retained mod
+     * elements without imposing the gameplay aspect or miniature HUD bias. */
+    u32(0x264e98,512);u32(0x264e9c,512);f32(0x22e68c,1);
+    mod->transform(1,0x22e678,0x153fa9);
+    CHECK(getf(0x22e678)==1 && getf(0x264eb8)==1 && getf(0x22e698)==0 && getf(0x264ed8)==0);
+    CHECK(getf(0x22e68c)==1);original_projection();f32(0x22e6a4,.0260835867f);
     /* A following unbiased prompt must not inherit the can's right anchor. */
     f32(0x22e6b0,-.02609f);mod->transform(1,0x22e678,0x153fa9);CHECK(getf(0x22e698)==0);
     f32(0x22e6b0,-24.02609f);mod->transform(1,0x22e678,0x153fa9);CHECK(getf(0x22e698)==0);
