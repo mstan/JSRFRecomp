@@ -12,7 +12,7 @@ or completion trigger. Inputs sent during an event do not establish controllable
 
 | Scene key | Files | Observed runtime ID | Evidence so far | Mechanics/completion |
 | --- | --- | --- | --- | --- |
-| `0x00000000` | 52 | `10001` | Movement, camera, jump/landing, Corn talk | Open |
+| `0x00000000` | 52 | `10001` | Movement, camera, Corn/Gum talk; original tutorial accepts three jumps and rail grinds in run023 | Open: spray-can lesson and later tutorial/progression |
 | `0x00000008` | 1 | `100c4` | Cutscene entry/motion; end unverified | Open |
 | `0x00000009` | 1 | `200c4` | Story event entry/animation captured in run014 | Open |
 | `0x00010000` | 16 | `10014` | Entry and movement | Open |
@@ -83,7 +83,7 @@ sequence is fixed by shared commit `bc3a6a6` (`beads-xbox.1.180`).
 | Movement, camera and jump/landing | Initial Garage passed; movement observed in several additional areas |
 | NPC interaction | Corn conversation trigger passed after teleport bypassed travel |
 | Graffiti/spraying, pickups and resource limits | Unverified |
-| Boost, grinding, tricks, jumps and traversal routes | Unverified beyond initial movement/jump |
+| Boost, grinding, tricks, jumps and traversal routes | Garage tutorial accepts three jumps and grinds; actual rail travel, sparks, scoring and trick label render in run023. Boost, requested trick combinations and other traversal remain open |
 | Enemies, police encounters and bosses | Unverified |
 | Real mission completion and next-mission triggers | Unverified; forced handovers do not count |
 | Death/retry, checkpoint handling and game-over | Unverified |
@@ -93,3 +93,14 @@ sequence is fixed by shared commit `bc3a6a6` (`beads-xbox.1.180`).
 Supporting precision/oracle validation remains in the SV01-SV08 deferral list of
 [the gameplay burndown](NATIVE-GAMEPLAY-BURNDOWN.md). Reached crashes and missing
 output remain required fixes.
+
+Run023 reaches Gum through a position-only teleport near `(-140,-9,285)` and
+the original RT conversation trigger. Original A inputs finish her instructions,
+and ordinary jump inputs satisfy her three-jump counter. Teleports above the
+visible Garage rail bypass travel; the original fall/rail collision starts a
+grind, with follow-camera mode5, constrained rail height, automatic movement,
+sparks and scoring. The original lesson advances through “Grind one more time”
+to “Collect 10 Spray Cans.” No lesson or completion flag is written. The run
+then ends at its planned bound; pickup/spray and the rest of the tutorial remain
+open. A private replay batch now reproduces these inputs/teleports in one route,
+so future runs need not repeat the exploratory menu and positioning steps.
