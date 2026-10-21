@@ -22,7 +22,7 @@ retrying the game. Preserve cheats/teleports as QA tools and record bypasses.
 | GP03 | Reach controllable gameplay | Passed for initial Garage movement, camera, jump/landing, rail grinding and NPC talk | Initial routes pass movement/jump/Corn talk. Run023 triggers Gum's original conversation, satisfies her three-jump and grind lessons, and reaches “Collect 10 Spray Cans.” Teleports bypass travel and approach to the rail; original input/collision/counters establish the actions. Remaining tutorial and campaign mechanics remain GP07 |
 | GP04 | Implement newly reached shared contracts | Reached boost failure fixed; continue with the next gameplay consumer | Shared `bc4d290` models the original standalone depth surface used by boost. Targeted actual GPU depth/stencil/ownership checks pass; run028 performs two original boosts with expected can consumption and visible effects, then loads3003c and revisits20028. No broad campaign qualification implied |
 | GP05 | Derive the area/mission/mechanic inventory | Content inventory derived; behavioral mapping open | `tools/qa_inventory.py` parses all 311 owned mission/script pairs and their setup/trigger operation inventories, grouped under 33 scene keys. Scene keys are not automatically area names. Filename numbers alias modulo 100, so canonical runtime IDs still require original-flow evidence |
-| GP06 | Add reusable cheat-assisted QA controls through title mods | Teleport, original handover, explicit event bypass and bounded can refill working; further controls open | Shared private RAM transport plus revision-bound `tools/qa.py` and `gameplay-qa.json`. Source-bound can count/capacity facts now support a refill capped by the original character capacity; run025/026 live use validates it, including over-capacity rejection without a write. Protection and further resource controls remain open; refills do not pass pickup prerequisites |
+| GP06 | Add reusable cheat-assisted QA controls through title mods | Teleport, original handover, explicit event bypass and bounded can/health refill working; further controls open | Shared private RAM transport plus revision-bound `tools/qa.py` and `gameplay-qa.json`. Refills respect original character capacities and reject over-capacity requests without a write. Run034 validates health65 ->110 with the maximum unchanged. Continuous protection and further resource controls remain open; refills do not pass pickup or damage checks |
 | GP07 | Exercise every inventoried location and meaningful mechanic | In progress: 28/33 scene groups have rendered entries; mechanics remain open | Per-location passed/failed/unverified/bypassed ledger, original transitions, interactions, mission triggers, unique actions and relevant audio; entry count is not a campaign qualification denominator |
 | GP08 | Validate save/reload and representative progression boundaries | Original save/create/fresh-process reload passed; wider progression open | Run032 creates a same-chapter save at10014; independent run033 uses original Load Game and character selection, returns to playable10014, retains the painted save-point target and responds to movement. Real mission progression and recovery boundaries remain GP07 work; owner originals are protected |
 
@@ -123,6 +123,16 @@ the exact image and original consumption/pickup-clamp code identities. This
 changes only a private run's resource count and records a prerequisite bypass;
 it does not write mission flags or qualify collection. Actual collection in
 run024 remains independently established by original pickups and lesson output.
+
+`python tools/qa.py --run <private-run> health <count>` provides a bounded
+private health refill for encounter coverage. Original pickup/clamp code at
+8e670 binds current health at player+f98 and its maximum at player+f9c;
+the reverse interpretation would overwrite the maximum. Only positive values
+within the existing character capacity are accepted, under the same original
+camera-owner and frozen-write checks as can refills. Run034 rejects a request
+above110 without changing either field, then refills actual health65 ->110
+with maximum110 retained. This is an explicit resource bypass, not evidence
+of a health pickup, damage behavior or invincibility.
 
 The rebuilt `new-game-002` route reaches the same required spatial Play in
 57.1 seconds. It uses CTRL3D mode 0, with two current mix routes and genuinely
