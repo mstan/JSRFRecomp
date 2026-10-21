@@ -33,6 +33,10 @@ not pass its interactions, collision, enemies, mission behavior or audio.
 Batch compatible routes in a single run and stop a run at its first required
 unsupported boundary. Do not repeat the long attract observation for each fix.
 
+The [content coverage ledger](CONTENT-COVERAGE.md) lists all 33 source-derived
+scene keys and the remaining mechanics. These include event scenes and extra
+modes; neither 33 keys nor 311 script pairs is a qualification denominator.
+
 After gameplay coverage, add adaptive widescreen through 32:9, HUD anchoring,
 higher internal resolution and the generic frame-rate mods. Real faster
 simulation and frame interpolation remain separate, mutually exclusive modes.
@@ -149,7 +153,9 @@ the other revision's offsets blindly. No added xemu/hardware work is required.
 | Mission `0x2001e` / `mssn0230`, scene key `0x10001` | Event entry observed | Original flow reaches state19. Event completion bypassed for the next handover; ordinary movement not established during the event |
 | Mission `0x20028` / `mssn0240`, Rokkaku-dai Heights, scene key `0x20000` | Original introduction renders past the fog failure | `mission-qa-007` renders original animated introduction/subtitles with typed and immediate XYZRHW fog. Event completion is bypassed for the next handover; ordinary gameplay and area-wide mechanics unverified |
 | Mission `0x20032` / `mssn0250`, 99th Street, scene key `0x30000` | Original introduction renders | Same live batch renders original area introduction/subtitles. Event completion bypassed; ordinary movement and area-wide mechanics unverified |
-| Mission `0x3003c` / `mssn0360`, scene key `0x20001` | Direct entry/movement passed; sequence-dependent point failure open | Fresh `mission-qa-008` direct handover reaches state15 and real movement; the earlier `20028 -> 20032 -> 3003c` sequence stops at `unqualified active point raster state`, FVF1c4. Required renderer issue `beads-xbox.1.180`; full area mechanics unverified |
+| Mission `0x3003c` / `mssn0360`, scene key `0x20001` | Forward sequence, entry and movement passed | `mission-qa-010` clears the exact `20028 -> 20032 -> 3003c` sequence after admitting screen-space unit points, shared commit `bc3a6a6`; independent full-image point/fog/offset tests pass. Full area mechanics unverified |
+| Further mid/late-game locations | Entries observed; some movement passed | Run010 reaches `30046`, `40032`, `4003c`, `40046`, `40050`, `5000a`, `6003c`, `70032`; the original `40032` introduction returns naturally from19 to15. The separate content ledger distinguishes movement from event entry |
+| Late-game scene types | Three introductions captured; scaled sprites blocked | Run011 captures `8000b`, `8000c`, `80050`. The `8005a` request reaches scaled XYZ point sprites (size0.3, sprite/scale enabled), requiring real output under `beads-xbox.1.182`; this is distinct from the completed unit-point fix |
 | Reverse handover `0x3003c -> 0x20028` | Failed; investigation required | `mission-qa-008` reads unmapped guest address `0x05ec0000` during the handover. Repeated-transition correctness remains required; no assumption that this is automation-only and no pass claimed |
 
 The enabled normal-normalization fix uses the existing real lighting consumer,
@@ -164,6 +170,9 @@ private QA transport as `e40eec8`. Native pretransformed fog is committed as
 fixed-declaration/lighting regressions (3.07 s), followed by the original route
 advancing through two introductions. Range fog remains guarded; precision and
 projection/depth-policy comparisons remain SV07 supporting validation.
+Screen-space unit points are committed as `bc3a6a6`, with complete-image tests
+covering source offsets/counts, screen placement and fog; original forward
+handover now passes its earlier failure. Scaled point sprites remain required.
 Campaign-wide inventory, mechanics, mission completion and save/reload remain
 open. No overall campaign percentage is established. SV01-SV07 remain deferred.
 
