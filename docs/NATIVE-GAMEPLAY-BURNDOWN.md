@@ -115,6 +115,16 @@ No isolated performance or entire-game visual acceptance is claimed.
 Actual faster simulation is unavailable: a
 higher presentation rate alone does not qualify game timers or physics.
 
+A retained comparison of those three native runs also checks coarse gameplay
+pacing: the same800ms LY20000 lease from identical Garage coordinates produces
+28.03 units of settled travel with120Hz interpolation, versus28.67 and28.54
+with original presentation. That is about98% of the original-run displacement,
+consistent with input/frame scheduling variation and no2x/4x simulation speedup.
+It is a smoke comparison across different raster settings/host runs, not a
+deterministic physics or bit-identical timing qualification. The observations,
+input durations and source-evidence hashes are in the private
+`visual-mods/timing-comparison.aot-private.json`.
+
 Frameworkb5e3b8e is clean and pinned with the title gitlink/framework.json. Its
 launcher catalog roundtrip, driver/visual resolver, native recovery and TCP
 contracts pass. Title fixed/adaptive/disabled contracts pass. Later title mod
