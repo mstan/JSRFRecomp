@@ -243,3 +243,14 @@ selection, returns to20000/state15 and responds to movement. This passes the
 reached mission/chapter progression save/load boundary; other recoveries remain
 open. Immutable private checkpoints retain both the earlier Shibuya story state
 and this Chapter2 Garage state.
+
+Run038 crosses the owned Garage plane1 using position-only travel bypasses; the
+original exit loads0210 (runtime200d2), finishes its entrance camera and restores
+ordinary movement. Crossing0210 plane2 similarly loads0230 (runtime200e6), with
+its original introduction and playable Chuo Street. No handover/exit/completion
+fields are written for either transition. Chuo registers25 graffiti targets,
+including three10-part targets. The first XL approach triggers the original0231
+(runtime200e7) tank encounter before spraying; the area-specific batch stops at
+that real mission change. Tank completion and10-part spraying remain open.
+Private run038 remains live, hidden/muted, at the reached tank encounter; the
+Chapter2 Garage checkpoint is the independent restart source.
