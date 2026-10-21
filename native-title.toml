@@ -3,8 +3,22 @@ schema = "xboxllr.native-title.v1"
 [title]
 id = "jsrf-ntsc-u"
 name = "Jet Set Radio Future"
+game_id = "5345000A"
+region = "NTSC-U"
 executable = "JSRFRecomp"
 xbe_sha256 = "f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219"
+
+[launcher]
+ui_revision = "ccc186e097b362555292b157ffd303abcea26fbf"
+# Added after original gameplay scope/timing observations; never just uncap.
+frame_modes = ["interpolated"]
+
+[mods]
+registry = "src/mods/visuals.c"
+inputs = ["config/revisions/ntsc-u/visuals.json"]
+widescreen_manifest = "mods/preloaded/packages/jsrf.enhancement.widescreen/1.0.0/manifest.toml"
+widescreen_package = "jsrf.enhancement.widescreen"
+widescreen_plugin = "jsrf.widescreen"
 
 [content]
 image = "default.xbe"

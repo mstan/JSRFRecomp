@@ -1,0 +1,25 @@
+format_version = 1
+id = "jsrf.enhancement.widescreen"
+name = "Adaptive widescreen"
+version = "1.0.0"
+description = "Expand the original camera through 32:9, with matching CPU clipping and HUD placement."
+
+[[target]]
+game_id = "5345000A"
+xbe_sha256 = "f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219"
+
+[[feature]]
+id = "widescreen"
+name = "Widescreen"
+default_enabled = false
+
+[[option]]
+feature = "widescreen"
+id = "aspect"
+type = "aspect"
+default = "adaptive"
+presets = ["16:9", "21:9", "32:9"]
+
+[[plugin]]
+feature = "widescreen"
+id = "jsrf.widescreen"

@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=('check', 'prepare', 'bind', 'recover', 'partition', 'configure', 'build', 'run'))
+    parser.add_argument('action', choices=('check', 'prepare', 'bind', 'recover', 'partition', 'configure', 'build', 'build-launcher', 'run'))
     parser.add_argument('--paths', type=Path, default=ROOT / 'local/paths.json')
     parser.add_argument('--generated', type=Path)
     parser.add_argument('--build-dir', type=Path)

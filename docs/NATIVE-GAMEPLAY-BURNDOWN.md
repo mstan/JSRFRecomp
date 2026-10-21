@@ -66,10 +66,10 @@ scene entry, source registration and a successful build do not close these rows.
 | --- | --- | --- |
 | Areas and bosses; extra-mode setup deferred | Rapid campaign coverage recorded | All19 campaign/gameplay scene groups entered;13 encounter files reached. Original extra-mode initialization and mechanics remain deferred under the owner clarification |
 | Recovery and audiovisual behavior | Original save/load and reached race failure/retry passed | Carry scoped evidence forward; deeper death/recovery and audiovisual permutations deferred unless a reached failure requires them |
-| Adaptive widescreen and HUD | Pending gameplay coverage | Window/aspect changes through 32:9, real margin content, visible entities, correctly shaped indicators and anchored HUD |
-| Internal resolution and fidelity | Pending gameplay coverage | 1080p through 4K, AA and supersampling options through reusable mod controls and inspected output |
-| Higher FPS and interpolation | Pending gameplay coverage | Separate mutually exclusive modes; measured gameplay timers/movement retain intended pacing |
-| Compatibility and final handoff | Open | Blinx/Dashboard regression evidence, committed coherent framework pins, windowed launcher and normal audio for owner review |
+| Adaptive widescreen and HUD | Implemented; sampled live gameplay passes | Actual 4:3/16:9/21:9/32:9 changes retain original vertical FOV, widen GPU and CPU projection/clipping, reveal scene margins and keep HUD shape/right anchoring. Miniature 3D spray-can alignment repaired and reviewed. Authored disabled/repeated-frame/loading/history checks pass; broader effects stay sampled/reviewable |
+| Internal resolution and fidelity | Implemented; representative gameplay passes | Actual2520x1080,5040x2160 and1920x1440 with3x3 supersampling, FXAA and8x/16x filtering; original movement/pause/resume. Intermediate resolution choices share the tested resolver/raster path. Owner performance review remains |
+| Higher FPS and interpolation | Optional interpolated presentation implemented; gameplay simulation retained | Actual120Hz plan in controllable Garage with title gameplay scope and pause/resume cuts; original/interpolated modes are exclusive. Blended double edges are expected. Actual faster simulation remains unavailable without a qualified timing adapter |
+| Compatibility and final handoff | Compatibility smoke passes; owner handoff delivered | Dashboard Home/Memory/Music/Settings and Blinx boot/cinematics rendered with frameworkb5e3b8e; three Blinx visual contracts pass. Coherent title pin, normal windowed Player1/mod launcher and100% volume delivered. Owner selected options and started the immutable native build; protected source saves and existing Blinx/Dashboard builds remain untouched |
 
 Supporting precision/hardware SV01-SV08 and full runtime snapshots stay deferred;
 actual reached crashes or broken output remain required fixes.
@@ -78,6 +78,76 @@ Current private work/evidence root:
 `G:/Temp/Codex/JSRFRecomp/gameplay-20261020`.
 The original native generation is copied intact from the prior qualified
 input; generated output and state remain isolated from owner previews.
+
+### Visual implementation checkpoint, October21
+
+The shared native-title driver now builds the existing Xbox recomp-ui launcher
+and resolves trusted, image-bound v2 mod plans. The launcher uses the same Player1
+controller selection and saved feature controls as Blinx. Its compiled catalog
+roundtrip agrees with CLI resolution for1080p/FXAA/8x filtering. Generic controls
+include1080/1440/1800/2160, supersampling, AA and filtering; each defaults off.
+Title registry source and declared fact inputs are included in build identity.
+
+Original New Game reaches controllable Garage and movement with actual1440x1080
+rendering in run20261021-133731-fxe7ruwb. Initial observer mistakes were attaching
+before image mapping and choosing New Game while attempting Load; neither was a
+native crash. The same live run completed introduction dialogue and movement.
+Its300sec bounded process ended at the explicit deadline. Original owner saves
+were never used as writable state.
+
+The camera mod keeps the original vertical field of view, widens GPU X,
+updates the original CPU projection copy and horizontal clipping planes, and
+preserves shape/placement of screen-space HUD. Exact-image facts and source-block
+hashes are in config/revisions/ntsc-u/visuals.json. No original code is patched.
+Authored contract checks cover disabled behavior, repeated-frame stability,
+adaptive4:3/21:9/32:9, pause/history scope and loading restoration. They do not
+establish actual entity visibility or complete HUD coverage.
+
+A bounded opt-in native TCP resize command lets one running title exercise
+multiple live window aspects. Window operations remain on the graphics owner;
+background tests stay hidden/muted. Runs20261021-141432-1ah6l0c_,141748-mx6w27lk
+and141901-433japq_ pass original NewGame, movement, four live aspects, pause/resume
+and sampled margin/HUD review. The first uses1080p/FXAA/8x/120Hz interpolation;
+the other two exercise2160p/16x and3x3 supersampling. Evidence is private below
+`host-001/runs/`; screenshots and read-only projection/CPU clipping observations
+are retained per run. Processes are intentionally stopped after the checks.
+No isolated performance or entire-game visual acceptance is claimed.
+Actual faster simulation is unavailable: a
+higher presentation rate alone does not qualify game timers or physics.
+
+Frameworkb5e3b8e is clean and pinned with the title gitlink/framework.json. Its
+launcher catalog roundtrip, driver/visual resolver, native recovery and TCP
+contracts pass. Title fixed/adaptive/disabled contracts pass. Later title mod
+edits rebuild only the registry and link (about8sec), reusing generated CPU.
+Compatibility evidence is `visual-mods/dashboard-latest-143748` (three menus,
+749 presented frames) and `visual-mods/blinx-latest-143812` (3481 presented frames,
+boot/cinematics); this is a smoke check, not repeated campaign qualification.
+Dashboard attempts using a different private baseline or stale content did not
+pass and are retained separately. The verified QA content/private owner-state
+copy passes; no native behavior was changed to hide those attempts.
+
+Nonessential follow-ups remain explicit: deeper stage-specific HUD/effects and
+isolated performance sampling; an actual higher-simulation-rate adapter; the
+Dashboard private-baseline launch difference; and an existing Blinx generated
+CPU C4293 shift-count warning (`beads-xbox.1.7.14`). None is a claim of a passed
+unreached operation. Current-build snapshots may break across builds; native
+in-game saves remain a separate protected contract.
+
+Visual follow-ups are tracked in `beads-xbox.2.11`. The owner launcher is built
+under `host-001/launcher/Release/` and was visually inspected as a normal window
+with Player1 selection, Mods/Settings and a verified owned XBE. Private owner
+paths/preferences and a separate copy of the original post-Chuo-race in-game save
+are under `owner-visual-preview-20261021/`. The protected41088-byte save retains
+SHA256`5e07983ef9f5d57a1f58a8a9465b0d5b508d5bc3959b2fbd917bcce2b298c6f3`.
+The owner then selected adaptive1080p/2x supersampling/FXAA/8x/60Hz interpolation
+and launched native executable`85b4de49...` (run20261021-144406-z0qhclk7).
+That owner-facing process has no QA deadline and is left alone. Playback feel
+and performance remain the owner's review; this is not a claim of that review.
+
+### Historical progress notes
+
+The dated/run-numbered notes below preserve earlier frontiers. The current
+scope and delivery table above supersede their then-open status.
 
 The current input investigation establishes that TCP input reaches original
 `XInputGetState` successfully, the original input wrapper converts Start to

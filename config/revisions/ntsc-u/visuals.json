@@ -1,0 +1,76 @@
+{
+  "schema": "xboxllr.title-visuals.v1",
+  "xbe_sha256": "f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219",
+  "scope": "Static native camera/HUD mod facts, original NTSC-U; disabled preserves original path. Sampled controllable Garage/adaptive margins and HUD reviewed; owner performance and broader stage-specific visuals remain reviewable follow-ups.",
+  "projection": {
+    "source": 2287224,
+    "cpu_copy": 2510520,
+    "caller": 1392553,
+    "state": 1,
+    "original_m0": 1,
+    "original_m5": "4/3",
+    "horizontal_tangent_element": 11
+  },
+  "clipping": {
+    "horizontal_secant": [
+      2510400,
+      2510408
+    ],
+    "horizontal_tangent": [
+      2510404,
+      2510412
+    ],
+    "inverse_pixel_focal": 2510504,
+    "logical_width": 2510488
+  },
+  "scene": {
+    "manager": 2292896,
+    "actor_table": 152,
+    "mission_actor": 9,
+    "camera_actor": 76,
+    "mission_vtable": 1878640,
+    "camera_vtable": 1889496,
+    "mission": 88,
+    "state": 92,
+    "gameplay": 15,
+    "event": 19,
+    "pause_event_flags": 64,
+    "current_draw": 34796
+  },
+  "source_blocks": [
+    {
+      "address": "0x153e90",
+      "bytes": 285,
+      "sha256": "9a791efda3212d8776fdcf074ecff716abd8dfe70aca0ccb04ea2a2697d31a32"
+    },
+    {
+      "address": "0x153a60",
+      "bytes": 176,
+      "sha256": "571e8bc7c08e3229ef41ccb97f3a3b7fce957c82e12814ef8119cef10181bf9a"
+    },
+    {
+      "address": "0x128c0",
+      "bytes": 23,
+      "sha256": "af6d1e6732aa791f78a89dd6899c05656ab1958a98c3ef4e63fd74fe78ea2c16"
+    },
+    {
+      "address": "0x153fb0",
+      "bytes": 189,
+      "sha256": "354bc714b15619987f2907475fa9885dd7f35a22241462ac2654f6cb34422a52"
+    },
+    {
+      "address": "0x131f0",
+      "bytes": 120,
+      "sha256": "1cb87291ddf7dd9e8476a03aa97e1ae3078ebe44e3637b00cc3e3f17be27b625"
+    }
+  ],
+  "evidence": "Private runs20261021-141432-1ah6l0c_,141748-mx6w27lk,141901-433japq_: original NewGame, controllable Garage/movement, live4:3/16:9/21:9/32:9, GPU/CPU m0=1/.75/.5714286/.375 with original m5=4/3, widened CPU clipping, repaired3D spray-can/right HUD alignment, pause/resume. Actual2520x1080,5040x2160 and1920x1440/3x3 supersampling observed. Original base m11=.765703499; horizontal secant1.25948477 and signed tangent+/-.765703499. Manager actor9 matches independently discovered CMission; FVF XYZRHW HUD uses authored screen pixels. These samples do not establish every mission-specific effect or isolated-host performance.",
+  "hud_3d": {
+    "scope": "ordinary gameplay, current draw is the checked player camera actor",
+    "fov_turns": 546,
+    "tangent": 0.0260835867,
+    "projection_bias_element": 8,
+    "right_anchor_ndc_offset": "1 - (4/3)/display_aspect",
+    "restored_on_next_world_projection": true
+  }
+}
