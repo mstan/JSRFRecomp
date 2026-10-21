@@ -22,8 +22,8 @@ retrying the game. Preserve cheats/teleports as QA tools and record bypasses.
 | GP03 | Reach controllable gameplay | Passed for initial Garage movement, camera, jump/landing and NPC talk | `gameplay-entry-001` movement/follow camera; `mission-qa-001` real A input raises player Y from 0 to 16.5 and returns to 0; teleport near Corn then real RT triggers original conversation. Travel is bypassed; conversation trigger is not |
 | GP04 | Implement newly reached shared contracts | In progress | Active positional playback now runs through shared native HRTF/filter/send output, tracked by `beads-xbox.1.152`; fix the next concrete boundary found during gameplay |
 | GP05 | Derive the area/mission/mechanic inventory | Content inventory derived; behavioral mapping open | `tools/qa_inventory.py` parses all 311 owned mission/script pairs and their setup/trigger operation inventories, grouped under 33 scene keys. Scene keys are not automatically area names. Filename numbers alias modulo 100, so canonical runtime IDs still require original-flow evidence |
-| GP06 | Add reusable cheat-assisted QA controls through title mods | Teleport and original mission handover working; further controls open | Shared development RAM transport plus revision-bound `tools/qa.py` and `gameplay-qa.json`; public controls exercised in `mission-qa-002/003`, unfrozen writes rejected; no game addresses in shared transport. Protection/resource controls and event cancellation remain unverified |
-| GP07 | Exercise every inventoried location and meaningful mechanic | Unverified | Per-location passed/failed/unverified/bypassed ledger, original transitions, interactions, mission triggers, unique actions and relevant audio |
+| GP06 | Add reusable cheat-assisted QA controls through title mods | Teleport, original mission handover and explicit event bypass working; further controls open | Shared development RAM transport plus revision-bound `tools/qa.py` and `gameplay-qa.json`; public controls exercised in `mission-qa-002/003` and subsequent batches, unfrozen writes rejected; no game addresses in shared transport. Protection/resource controls remain open; bypassed events do not pass their real ends |
+| GP07 | Exercise every inventoried location and meaningful mechanic | In progress: 28/33 scene groups have rendered entries; mechanics remain open | Per-location passed/failed/unverified/bypassed ledger, original transitions, interactions, mission triggers, unique actions and relevant audio; entry count is not a campaign qualification denominator |
 | GP08 | Validate save/reload and representative progression boundaries | Unverified | Original save writes and authenticated fresh-process reload, with protected owner originals |
 
 Cheats can position/protect the player and bypass prerequisites. A forced
@@ -108,6 +108,14 @@ coverage, promote that failure immediately.
 | SV05 | Long audio stress runs, broad lifecycle permutations and performance benchmarking | A reached leak/stutter/corruption, or post-coverage qualification; use short targeted checks for fixes |
 | SV06 | Repairing the complete xemu firmware/game boot setup and conducting broad oracle comparisons | A specific native mismatch needs that reference, or final qualification; do not block native gameplay on emulator setup |
 | SV07 | Hardware/oracle precision and projection/depth-policy comparison for native pretransformed fog | A reached visual mismatch or post-coverage qualification; real native fog output and reached crashes remain required now |
+| SV08 | Exact NV2A point-size quantization, subpixel edge rules and attenuation reciprocal precision | A reached visual mismatch or post-coverage qualification; real scaled/textured point output is implemented and tested |
+
+Runtime save states and rewind remain a separate workflow improvement under
+`beads-xbox.1.131`. Existing generic native-continuation diagnostics are not a
+title snapshot. The PSX recomp-net/rbengine model is the intended reusable
+foundation, but full native waits/stacks and graphics/audio/storage state need
+additional work. On October 20 the owner explicitly prioritized finishing JSRF
+over this larger detour. Continue batching original scene handovers now.
 
 The rebuilt `new-game-002` route reaches the same required spatial Play in
 57.1 seconds. It uses CTRL3D mode 0, with two current mix routes and genuinely
@@ -155,7 +163,8 @@ the other revision's offsets blindly. No added xemu/hardware work is required.
 | Mission `0x20032` / `mssn0250`, 99th Street, scene key `0x30000` | Original introduction renders | Same live batch renders original area introduction/subtitles. Event completion bypassed; ordinary movement and area-wide mechanics unverified |
 | Mission `0x3003c` / `mssn0360`, scene key `0x20001` | Forward sequence, entry and movement passed | `mission-qa-010` clears the exact `20028 -> 20032 -> 3003c` sequence after admitting screen-space unit points, shared commit `bc3a6a6`; independent full-image point/fog/offset tests pass. Full area mechanics unverified |
 | Further mid/late-game locations | Entries observed; some movement passed | Run010 reaches `30046`, `40032`, `4003c`, `40046`, `40050`, `5000a`, `6003c`, `70032`; the original `40032` introduction returns naturally from19 to15. The separate content ledger distinguishes movement from event entry |
-| Late-game scene types | Three introductions captured; scaled sprites blocked | Run011 captures `8000b`, `8000c`, `80050`. The `8005a` request reaches scaled XYZ point sprites (size0.3, sprite/scale enabled), requiring real output under `beads-xbox.1.182`; this is distinct from the completed unit-point fix |
+| Late-game scene types | Four introductions captured; reached scaled sprites fixed | Run014 repeats `8000b -> 8000c -> 80050 -> 8005a`, renders past the previous scaled-point stop, and the original introduction naturally returns to state15. Independent full-image size/attenuation/UV/fog checks pass. Forced entry leaves the player outside the final arena; boss setup/mechanics/completion remain open |
+| Extra-mode setup | City Rush briefing and countdown reached; race setup incomplete | Run012 requests `14000a`, reaches the original City Rush briefing, and real A starts countdown. World/player setup is not established after this direct story handover. Use proper original extra-mode setup before qualifying races |
 | Reverse handover `0x3003c -> 0x20028` | Failed; investigation required | `mission-qa-008` reads unmapped guest address `0x05ec0000` during the handover. Repeated-transition correctness remains required; no assumption that this is automation-only and no pass claimed |
 
 The enabled normal-normalization fix uses the existing real lighting consumer,
@@ -172,9 +181,16 @@ advancing through two introductions. Range fog remains guarded; precision and
 projection/depth-policy comparisons remain SV07 supporting validation.
 Screen-space unit points are committed as `bc3a6a6`, with complete-image tests
 covering source offsets/counts, screen placement and fog; original forward
-handover now passes its earlier failure. Scaled point sprites remain required.
-Campaign-wide inventory, mechanics, mission completion and save/reload remain
-open. No overall campaign percentage is established. SV01-SV07 remain deferred.
+handover now passes its earlier failure. Native scaled sprites now pass the
+same late-game route and targeted GPU checks; exact precision remains SV08.
+The scaled-point implementation is committed as `4a56ca4`; targeted points,
+fixed-declaration and fog checks pass in 1.46s. Run014 additionally captures
+eight previously unobserved story-event scene groups in one running process.
+The reverse handover3003c ->20028 also succeeds after that long batch and
+returns naturally to playable15 with movement/jump input; the earlier fresh
+run failure still needs its exact fresh-route retry under `beads-xbox.1.181`.
+Campaign-wide behavioral mapping, mechanics, mission completion and save/reload remain
+open. No overall campaign percentage is established. SV01-SV08 remain deferred.
 
 Generate the private content inventory without copying game content into Git:
 
