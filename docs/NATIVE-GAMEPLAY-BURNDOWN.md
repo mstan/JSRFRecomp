@@ -20,11 +20,11 @@ retrying the game. Preserve cheats/teleports as QA tools and record bypasses.
 | GP01 | Build the current shared runtime with the verified native CPU inventory | Passed | Framework `52eb13c`, optimized/ITERATIVE executable `6cbf353b...`, verified original generation reused; actual native startup/title frames |
 | GP02 | Start or load a game through the original menus | Passed: New Game enters the Garage introduction | `new-game-003`: real Start/release/Start/A reaches Corn's original GG's Garage dialogue with active positional audio; no direct-menu bypass; Load Game remains GP08 |
 | GP03 | Reach controllable gameplay | Passed for initial Garage movement, camera, jump/landing, rail grinding and NPC talk | Initial routes pass movement/jump/Corn talk. Run023 triggers Gum's original conversation, satisfies her three-jump and grind lessons, and reaches “Collect 10 Spray Cans.” Teleports bypass travel and approach to the rail; original input/collision/counters establish the actions. Remaining tutorial and campaign mechanics remain GP07 |
-| GP04 | Implement newly reached shared contracts | In progress: boost attempt reaches a texture-layout stop | Positional playback and reached graphics fixes are implemented; reverse-area allocation failure is closed. Run024 now stops at a caller-owned texture-layout check during a B/stick boost attempt (`beads-xbox.1.183`); fix and retry this boundary next |
+| GP04 | Implement newly reached shared contracts | Reached boost failure fixed; continue with the next gameplay consumer | Shared `bc4d290` models the original standalone depth surface used by boost. Targeted actual GPU depth/stencil/ownership checks pass; run028 performs two original boosts with expected can consumption and visible effects, then loads3003c and revisits20028. No broad campaign qualification implied |
 | GP05 | Derive the area/mission/mechanic inventory | Content inventory derived; behavioral mapping open | `tools/qa_inventory.py` parses all 311 owned mission/script pairs and their setup/trigger operation inventories, grouped under 33 scene keys. Scene keys are not automatically area names. Filename numbers alias modulo 100, so canonical runtime IDs still require original-flow evidence |
 | GP06 | Add reusable cheat-assisted QA controls through title mods | Teleport, original handover, explicit event bypass and bounded can refill working; further controls open | Shared private RAM transport plus revision-bound `tools/qa.py` and `gameplay-qa.json`. Source-bound can count/capacity facts now support a refill capped by the original character capacity; run025/026 live use validates it, including over-capacity rejection without a write. Protection and further resource controls remain open; refills do not pass pickup prerequisites |
 | GP07 | Exercise every inventoried location and meaningful mechanic | In progress: 28/33 scene groups have rendered entries; mechanics remain open | Per-location passed/failed/unverified/bypassed ledger, original transitions, interactions, mission triggers, unique actions and relevant audio; entry count is not a campaign qualification denominator |
-| GP08 | Validate save/reload and representative progression boundaries | Unverified | Original save writes and authenticated fresh-process reload, with protected owner originals |
+| GP08 | Validate save/reload and representative progression boundaries | Original save write passed; fresh-process load and progression open | Run028 creates Game File1 through the original save-point menu, reports Done saving and writes a new private JSRFDATA.SAV plus SaveMeta.xbx. Fresh-process original Load Game remains required; owner originals are protected |
 
 Cheats can position/protect the player and bypass prerequisites. A forced
 mission-complete flag is recorded as a bypass; it cannot pass the real
@@ -158,6 +158,17 @@ cheat/observation facts to this exact image before using them; do not install
 the other revision's offsets blindly. No added xemu/hardware work is required.
 
 ## Current gameplay coverage checkpoint
+
+Run028 also performs an original three-part spray at Rokkaku-dai Heights.
+Actual RT input spends three cans (30 ->27), paints descriptor592 and activates
+the Graffiti Stop save point. Resource refill and the area prerequisite are
+explicit bypasses; no paint or completion flags are written. This establishes
+one save-point graffiti interaction, not the regular wall-tag mission.
+The original save menu then creates Game File1, Chapter1, play time00:20 and
+reports Done saving. The new private JSRFDATA.SAV is41088bytes, accompanied by
+SaveMeta.xbx. Run028 is intentionally stopped after that completed save so an
+independent process can test original loading. Actual loading and broader
+progression remain open; this save is not a runtime snapshot.
 
 | Route | Result | Scope and bypasses |
 | --- | --- | --- |

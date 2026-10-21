@@ -12,7 +12,7 @@ or completion trigger. Inputs sent during an event do not establish controllable
 
 | Scene key | Files | Observed runtime ID | Evidence so far | Mechanics/completion |
 | --- | --- | --- | --- | --- |
-| `0x00000000` | 52 | `10001` | Movement, camera, Corn/Gum talk; original tutorial accepts jumps/grinds in run023; real pickups reach12 cans and collection acknowledgement in run024 | Open: boost texture stop, spraying and later tutorial/progression |
+| `0x00000000` | 52 | `10001` | Movement, camera, NPC talk, original jump/grind lessons, real pickups and two original boosts through shared bc4d290 | Open: spraying and later tutorial/progression |
 | `0x00000008` | 1 | `100c4` | Cutscene entry/motion; end unverified | Open |
 | `0x00000009` | 1 | `200c4` | Story event entry/animation captured in run014 | Open |
 | `0x00010000` | 16 | `10014` | Entry and movement | Open |
@@ -21,7 +21,7 @@ or completion trigger. Inputs sent during an event do not establish controllable
 | `0x00010003` | 12 | `40032` | Introduction naturally returns to gameplay | Open |
 | `0x00010008` | 1 | `300c4` | Story event entry/animation captured in run014 | Open |
 | `0x00010009` | 1 | `400c4` | Story event entry/animation captured in run014 | Open |
-| `0x00020000` | 21 | `20028` | Introduction, repeated revisits and playable movement in run022 | Open |
+| `0x00020000` | 21 | `20028` | Introduction, repeated revisits/movement, one real three-part Graffiti Stop spray and original save creation in run028 | Open: regular graffiti mission, encounters and completion |
 | `0x00020001` | 10 | `3003c` | Entry/movement; point failure fixed | Open |
 | `0x00020002` | 20 | `4003c` | Introduction entry | Open |
 | `0x00020003` | 15 | `30046` | Entry/movement; story text observed | Open |
@@ -82,12 +82,12 @@ sequence is fixed by shared commit `bc3a6a6` (`beads-xbox.1.180`).
 | --- | --- |
 | Movement, camera and jump/landing | Initial Garage passed; movement observed in several additional areas |
 | NPC interaction | Corn conversation trigger passed after teleport bypassed travel |
-| Graffiti/spraying, pickups and resource limits | Real can pickups raise HUD0 ->8 ->12 and the original collection lesson acknowledges success in run024. Spraying, limits and other pickup types remain open |
-| Boost, grinding, tricks, jumps and traversal routes | Garage tutorial accepts three jumps and grinds; actual rail travel, sparks, scoring and trick label render in run023. Boost, requested trick combinations and other traversal remain open |
+| Graffiti/spraying, pickups and resource limits | Real can pickups raise HUD0 ->8 ->12 and the original collection lesson acknowledges success in run024. Run028 paints one three-part save-point target through actual RT, cans30 ->27; ordinary wall-tag missions, limits and other pickup types remain open |
+| Boost, grinding, tricks, jumps and traversal routes | Garage jump/grind lessons passed; rail movement, sparks and scoring rendered. Run028 performs two boosts with cans12 ->2 and blur/fire effects. Requested trick combinations and other traversal remain open |
 | Enemies, police encounters and bosses | Unverified |
 | Real mission completion and next-mission triggers | Unverified; forced handovers do not count |
 | Death/retry, checkpoint handling and game-over | Unverified |
-| Save and authenticated fresh-process reload | Unverified |
+| Save and authenticated fresh-process reload | Original save creation passed in run028; independent-process original loading remains open |
 | All remaining script variants and scene exits | Unverified; inventory presence does not prove execution |
 
 Supporting precision/oracle validation remains in the SV01-SV08 deferral list of
@@ -112,3 +112,17 @@ resource-count write. The following B/stick boost attempt reaches an explicit
 caller-owned texture-layout stop, tracked by `beads-xbox.1.183`; boost and spray
 are not yet passed. The private executable, symbols, receipt and captures are
 retained. The next action is to fix and retry this reached native boundary.
+
+That stop is now fixed by shared `bc4d290`: the resource is a standalone depth
+surface used during SetRenderTarget, not a texture. The shared implementation
+retains caller storage and supplies a native depth/stencil target. Actual GPU
+bytes, retained GPU contents across rebind, references and teardown pass across
+three device lifetimes. Run028 performs two boosts (each cans12 ->2), renders
+the blur/fire trail, then loads3003c with movement and revisits20028. Refill and
+travel prerequisites are bypassed explicitly; exact effect pixels and campaign
+completion are not established. Run028 subsequently paints the original
+three-part Graffiti Stop target592 using actual RT input, with cans30 ->27 and
+unpainted1 ->0, and activates its save point. The original menu creates
+Game File1 and reports Done saving, with new private JSRFDATA.SAV and
+SaveMeta.xbx files. Prerequisite refill and area entry are bypassed; ordinary
+wall-tag mission completion and independent-process loading remain open.
