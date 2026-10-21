@@ -12,9 +12,10 @@
 static const struct PilotTitleModHost *api;
 static FILE *trace;
 static const char *trace_trigger;
-static unsigned trace_armed,transform_count,draw_count;
+static unsigned trace_armed,trace_generation,transform_count,draw_count;
 static unsigned numerator=4,denominator=3,adaptive,wide,frame_mode;
 static unsigned frame_aspect[2]={4,3},projection_seen,scope_dirty=1,scene,scope;
+static unsigned score_overlay;
 static unsigned scene_manager,scene_camera;
 static float prior_scale=1,prior_offset;
 static void fail(const char *reason)
@@ -73,15 +74,15 @@ static void camera_transform(unsigned state,unsigned address,unsigned caller)
      * original builder retains m0, so assign from its source invariant each
      * time instead of repeatedly multiplying an already modified matrix. */
     write_float(address,scale);write_float(0x264eb8,scale);prior_scale=scale;
-    /* The camera's HUD pass uses the original0x222-angle miniature 3D
-     * projection (spray-can model), then screen-space health/counter quads.
-     * Move that model to the same right anchor with an off-axis projection;
-     * changing m8 adds a constant clip-X offset without stretching the model.
-     * Other actors using this UI projection and world/cutscene cameras keep
-     * their own placement. Original builders retain m8: restore it each call. */
+    /* The camera uses the original0x222-angle miniature projection for both
+     * centered interaction prompts and depth-biased HUD passes. The original
+     * stock pass at79C41 selects bias-24.9; only it shares the right HUD anchor.
+     * Changing m8 adds a constant clip-X offset without stretching the model.
+     * Original builders retain m8: restore it for every other producer. */
     unsigned owner=0;
     float offset=0;
     if(scope && fabsf(matrix[11]-.0260835867f)<.000001f &&
+       fabsf(matrix[14]+matrix[10]+24.9f)<.001f &&
        read_u32(scene_manager+0x87ec,&owner) && owner==scene_camera)
         offset=(1-scale)*matrix[11];
     write_float(address+32,offset);write_float(0x264eb8+32,offset);prior_offset=offset;
@@ -94,11 +95,13 @@ static void camera_transform(unsigned state,unsigned address,unsigned caller)
         write_float(0x264e40,secant);write_float(0x264e44,-tangent);
         write_float(0x264e48,secant);write_float(0x264e4c,tangent);
     }
-    /* Original CPU point projection uses inverse horizontal pixel focal
-     * length at264EA8; vertical projection has an independent owner264EB0. */
+    /* 154100 projects view points with the original pixel focal264EA8.
+     * These remain authored640x480 canvas coordinates, just like font quads;
+     * the raster callback maps that canvas into the wide presentation.
+     * Replacing this with an inverse focal corrupts projected UI positions;
+     * scaling it here as well would apply widescreen twice to those points. */
     unsigned width;
     if(!read_u32(0x264e98,&width) || width!=640)fail("unexpected JSRF logical viewport width");
-    if(scale<1)write_float(0x264ea8,tangent/320.0f);
     frame_aspect[0]=n;frame_aspect[1]=d;projection_seen=scene;
 }
 
@@ -138,13 +141,31 @@ static void draw(struct PilotTitleModDraw *draw)
         if(valid && !(lo[0]<=1 && hi[0]>=639 && lo[1]<=1 && hi[1]>=479)) {
             draw->x_scale=4.0f*frame_aspect[1]/(3.0f*frame_aspect[0]);draw->x_anchor=320;
             update_scope();
-            if(scope && (hi[1]<=160 || lo[1]>=320)) {
-                if(hi[0]<=270)draw->x_anchor=0;
-                else if(lo[0]>=390)draw->x_anchor=640;
+            unsigned owner=0;
+            if(scope && read_u32(scene_manager+0x87ec,&owner) && owner==scene_camera) {
+                /* Camera-owned widgets are edge HUD; dialogue/radio actors
+                 * retain one centered canvas for every glyph and its frame.
+                 * Never infer an actor's anchor from a changing text bound. */
+                draw->x_anchor=0;
+                if((lo[1]>=35 && hi[1]<=110 && lo[0]>=390) ||
+                   (lo[1]>=400 && hi[1]<=440 && lo[0]>=430))
+                    draw->x_anchor=640;
+                if(lo[1]>=106 && hi[1]<=182)score_overlay=1;
+            } else if(scope && score_overlay && owner) {
+                unsigned vtable=0,mode=0;
+                /* Original score digits are drawn by the camera, while its
+                 * trick name and multiplication glyph are queued through the
+                 * shared text actor. Join those exact score rows to the same
+                 * left anchor; NPC/radio dialogue keeps its centered canvas. */
+                if(read_u32(owner,&vtable) && vtable==0x1c4540 &&
+                   read_u32(scene_camera+0x208,&mode) && (mode==3 || mode==5 || mode==13 || mode==14) &&
+                   ((lo[1]>=77 && hi[1]<=105) || (lo[1]>=133 && hi[1]<=154)))
+                    draw->x_anchor=0;
             }
         }
     }
     if(!trace_armed || draw_count>=512 || !draw->positions || draw->count>4096 || draw->stride<8)return;
+    if(draw->position_type!=0x42 && draw->shader!=0x102)return;
     float lo[2]={1e20f,1e20f},hi[2]={-1e20f,-1e20f};
     for(unsigned i=0;i<draw->count;++i) {
         float xy[2];memcpy(xy,draw->positions+i*draw->stride,8);
@@ -169,10 +190,17 @@ static void present(void)
     if(frame_mode)api->frame_scope(scope);
     if(wide && !api->frame_shape(projection_seen?frame_aspect[0]:4,projection_seen?frame_aspect[1]:3))
         fail("unsupported JSRF frame shape");
-    projection_seen=0;scope_dirty=1;
-    if(trace && !trace_armed) {
+    projection_seen=0;scope_dirty=1;score_overlay=0;
+    if(trace) {
         FILE *trigger=fopen(trace_trigger,"rb");
-        if(trigger){fclose(trigger);trace_armed=1;}
+        if(trigger) {
+            unsigned generation=1;
+            (void)fscanf(trigger,"%u",&generation);fclose(trigger);
+            if(!trace_armed || generation!=trace_generation) {
+                trace_armed=1;trace_generation=generation;transform_count=draw_count=0;
+                fprintf(trace,"phase=%u\n",generation);fflush(trace);
+            }
+        }
     }
 }
 

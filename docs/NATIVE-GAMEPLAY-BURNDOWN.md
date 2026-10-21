@@ -66,7 +66,7 @@ scene entry, source registration and a successful build do not close these rows.
 | --- | --- | --- |
 | Areas and bosses; extra-mode setup deferred | Rapid campaign coverage recorded | All19 campaign/gameplay scene groups entered;13 encounter files reached. Original extra-mode initialization and mechanics remain deferred under the owner clarification |
 | Recovery and audiovisual behavior | Original save/load and reached race failure/retry passed | Carry scoped evidence forward; deeper death/recovery and audiovisual permutations deferred unless a reached failure requires them |
-| Adaptive widescreen and HUD | Implemented; sampled live gameplay passes | Actual 4:3/16:9/21:9/32:9 changes retain original vertical FOV, widen GPU and CPU projection/clipping, reveal scene margins and keep HUD shape/right anchoring. Miniature 3D spray-can alignment repaired and reviewed. Authored disabled/repeated-frame/loading/history checks pass; broader effects stay sampled/reviewable |
+| Adaptive widescreen and HUD | Sampled world/basic HUD and reported text cases pass | Actual 4:3/16:9/21:9/32:9 changes retain original vertical FOV and widen GPU/CPU projection/clipping. Owner-reported score/dialogue/prompt defects repaired with source-owned anchors and original pixel canvas. Actual rail scoring, centered talk prompt, right stock icon/count and bottom portrait dialogue inspected through32:9; broader effects remain sampled/reviewable |
 | Internal resolution and fidelity | Implemented; representative gameplay passes | Actual2520x1080,5040x2160 and1920x1440 with3x3 supersampling, FXAA and8x/16x filtering; original movement/pause/resume. Intermediate resolution choices share the tested resolver/raster path. Owner performance review remains |
 | Higher FPS and interpolation | Optional interpolated presentation implemented; gameplay simulation retained | Actual120Hz plan in controllable Garage with title gameplay scope and pause/resume cuts; original/interpolated modes are exclusive. Blended double edges are expected. Actual faster simulation remains unavailable without a qualified timing adapter |
 | Compatibility and final handoff | Compatibility smoke passes; owner handoff delivered | Dashboard Home/Memory/Music/Settings and Blinx boot/cinematics rendered with frameworkb5e3b8e; three Blinx visual contracts pass. Coherent title pin, normal windowed Player1/mod launcher and100% volume delivered. Owner selected options and started the immutable native build; protected source saves and existing Blinx/Dashboard builds remain untouched |
@@ -153,6 +153,34 @@ The owner then selected adaptive1080p/2x supersampling/FXAA/8x/60Hz interpolatio
 and launched native executable`85b4de49...` (run20261021-144406-z0qhclk7).
 That owner-facing process has no QA deadline and is left alone. Playback feel
 and performance remain the owner's review; this is not a claim of that review.
+
+### Owner HUD review and repair, October21
+
+The owner reports gameplay feels solid, but the initial enhanced build splits
+score and dialogue glyphs across different anchors and misplaces the talk prompt.
+The earlier health/spray-only Garage sample did not cover those components.
+The fix groups original camera score digits with the shared text actor's trick
+name/multiplier rows, while NPC and radio dialogue retain one centered canvas.
+The original pixel focal is preserved: source-bound154100 projects into authored
+640x480 coordinates, which are mapped once by the raster callback. The stock
+pass at79C41 uses depth bias-24.9 and anchors right; other miniature producers,
+including the talk prompt, retain their original placement. Original code,
+generated CPU and shared frameworkb5e3b8e are unchanged.
+
+Three authored disabled/fixed/adaptive contracts pass, including dialogue glyphs
+crossing the former per-draw edge thresholds, score group ownership, unchanged
+pixel focal, and separation of miniature stock/prompt passes. Runtime calibration
+in run20261021-151448-bcge1jyr separates the original0/24/24.9/25 bias producers;
+the calibration switch is removed from the delivered source. Final native run
+20261021-151709-lf8_39pj uses executable055c3af6... and retains rail-score, talk
+prompt, stock, tutorial text and bottom portrait-dialogue captures at21:9/32:9.
+Score and portrait text/frame alignment are visually inspected. Its first marker
+and Corn captures occur in original state31 introduction, so those particular
+frames establish centered4:3 UI rather than adaptive gameplay. The later original
+state15 Gum/radio frames establish the wide talk-prompt/stock/portrait placement.
+The process exits15 only after the explicit private QA stop, with no runtime guard.
+Teleports bypass approach; no fair tutorial/combat claim is added. This repairs
+the reported samples, not every possible stage-specific HUD combination.
 
 ### Historical progress notes
 

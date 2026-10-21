@@ -32,7 +32,7 @@ static void original_projection(void)
 {
     f32(0x22e68c,4.0f/3);f32(0x22e6a4,.75f);u32(0x264e98,640);
     f32(0x264e40,1.25f);f32(0x264e44,-.75f);f32(0x264e48,1.25f);f32(0x264e4c,.75f);
-    f32(0x264ea8,.75f/320);
+    f32(0x264ea8,320.0f/.75f);
 }
 int main(int argc,char **argv)
 {
@@ -57,12 +57,24 @@ int main(int argc,char **argv)
     CHECK(fabsf(getf(0x264e4c)-1.3125f)<.000001f);
     CHECK(fabsf(getf(0x264e40)-sqrtf(1+1.3125f*1.3125f))<.000001f);
     CHECK(getf(0x264e40)==getf(0x264e48));CHECK(getf(0x264e44)==-getf(0x264e4c));
+    /* World-to-canvas points and authored glyphs use the same original pixel
+     * focal. Raster compression, not a second CPU focal change, maps them to
+     * the wide display. A point at the original right edge must still be640. */
+    CHECK(fabsf(.75f*getf(0x264ea8)+320-640)<.0001f);
     /* The miniature 3D spray icon shares the right anchor with its 2D count;
      * a following ordinary camera restores zero off-axis translation. */
     u32(0x300000+0x87ec,0x320000);f32(0x22e6a4,.0260835867f);
+    f32(0x22e6a0,.02609f);f32(0x22e6b0,-.02609f);
+    /* The unbiased miniature pass owns the centered talk prompt. */
+    mod->transform(1,0x22e678,0x153fa9);CHECK(getf(0x22e698)==0);
+    f32(0x22e6b0,-24.92609f);
     mod->transform(1,0x22e678,0x153fa9);
     CHECK(fabsf(getf(0x22e698)-(1-4.0f/7)*.0260835867f)<.000001f);
     CHECK(getf(0x22e698)==getf(0x264ed8));
+    /* A following unbiased prompt must not inherit the can's right anchor. */
+    f32(0x22e6b0,-.02609f);mod->transform(1,0x22e678,0x153fa9);CHECK(getf(0x22e698)==0);
+    f32(0x22e6b0,-24.02609f);mod->transform(1,0x22e678,0x153fa9);CHECK(getf(0x22e698)==0);
+    f32(0x22e6b0,-25.02609f);mod->transform(1,0x22e678,0x153fa9);CHECK(getf(0x22e698)==0);
     original_projection();mod->transform(1,0x22e678,0x153fa9);CHECK(getf(0x22e698)==0);
     /* Repeated frames retain original m0; never compound the prior scale. */
     mod->transform(1,0x22e678,0x153fa9);CHECK(fabsf(getf(0x22e678)-4.0f/7)<.000001f);
@@ -70,6 +82,28 @@ int main(int argc,char **argv)
     struct PilotTitleModDraw draw={0};draw.positions=(const unsigned char*)quad;
     draw.count=4;draw.stride=16;draw.position_type=0x42;draw.default_target=1;draw.x_scale=1;
     mod->draw(&draw);CHECK(draw.x_anchor==640 && fabsf(draw.x_scale-4.0f/7)<.000001f);
+    /* One original dialogue actor owns all text pieces. Moving a glyph over
+     * the old left/right heuristic boundaries cannot move it to another edge. */
+    u32(0x300000+0x87ec,0x330000);u32(0x330000,0x1c4540);
+    for(unsigned glyph=0;glyph<3;++glyph) {
+        float x=110+glyph*170.0f;
+        quad[0][0]=quad[2][0]=x;quad[1][0]=quad[3][0]=x+16;
+        quad[0][1]=quad[1][1]=60;quad[2][1]=quad[3][1]=86;
+        mod->draw(&draw);CHECK(draw.x_anchor==320);
+        quad[0][1]=quad[1][1]=360;quad[2][1]=quad[3][1]=386;
+        mod->draw(&draw);CHECK(draw.x_anchor==320);
+    }
+    u32(0x300000+0x87ec,0x320000);
+    quad[0][0]=quad[2][0]=260;quad[1][0]=quad[3][0]=280;
+    quad[0][1]=quad[1][1]=130;quad[2][1]=quad[3][1]=156;
+    mod->draw(&draw);CHECK(draw.x_anchor==0);
+    /* Score digits and the shared text actor's X/name use one left anchor. */
+    u32(0x320208,5);u32(0x300000+0x87ec,0x330000);
+    quad[0][1]=quad[1][1]=134;quad[2][1]=quad[3][1]=152;
+    mod->draw(&draw);CHECK(draw.x_anchor==0);
+    quad[0][1]=quad[1][1]=78;quad[2][1]=quad[3][1]=103.84f;
+    mod->draw(&draw);CHECK(draw.x_anchor==0);
+    u32(0x320208,9);mod->draw(&draw);CHECK(draw.x_anchor==320);
     mod->present();CHECK(frame_scope==0x10002 && shape[0]*3==shape[1]*7);
     /* Pause cuts interpolation history while retaining the wide world. */
     u32(0x300040,1);original_projection();mod->transform(1,0x22e678,0x153fa9);mod->present();CHECK(!frame_scope);

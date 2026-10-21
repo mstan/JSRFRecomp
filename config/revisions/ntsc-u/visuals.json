@@ -20,8 +20,9 @@
       2510404,
       2510412
     ],
-    "inverse_pixel_focal": 2510504,
-    "logical_width": 2510488
+    "logical_width": 2510488,
+    "logical_pixel_focal": 2510504,
+    "pixel_focal_policy": "Preserve original640x480 canvas focal;154100 maps view point x/z with this focal. Raster scales canvas once. No inverse-focal or second aspect write."
   },
   "scene": {
     "manager": 2292896,
@@ -62,15 +63,52 @@
       "address": "0x131f0",
       "bytes": 120,
       "sha256": "1cb87291ddf7dd9e8476a03aa97e1ae3078ebe44e3637b00cc3e3f17be27b625"
+    },
+    {
+      "address": "0x154100",
+      "bytes": 64,
+      "sha256": "a08761e0f7b574225f8f8b45ef0a8c11280e65f7fdb4d4feac7fc8cd143be1fe"
+    },
+    {
+      "address": "0x79c41",
+      "bytes": 20,
+      "sha256": "0f90fbd300f5b727dd54d0a3d539fc91636ae5851f4cd3cd3b7236c3d82bf5c9"
     }
   ],
   "evidence": "Private runs20261021-141432-1ah6l0c_,141748-mx6w27lk,141901-433japq_: original NewGame, controllable Garage/movement, live4:3/16:9/21:9/32:9, GPU/CPU m0=1/.75/.5714286/.375 with original m5=4/3, widened CPU clipping, repaired3D spray-can/right HUD alignment, pause/resume. Actual2520x1080,5040x2160 and1920x1440/3x3 supersampling observed. Original base m11=.765703499; horizontal secant1.25948477 and signed tangent+/-.765703499. Manager actor9 matches independently discovered CMission; FVF XYZRHW HUD uses authored screen pixels. These samples do not establish every mission-specific effect or isolated-host performance.",
   "hud_3d": {
-    "scope": "ordinary gameplay, current draw is the checked player camera actor",
+    "scope": "ordinary gameplay, checked camera owner and original stock miniature pass with bias-24.9; centered interaction prompt and bias-24/-25 producers retain their own anchors",
     "fov_turns": 546,
     "tangent": 0.0260835867,
     "projection_bias_element": 8,
     "right_anchor_ndc_offset": "1 - (4/3)/display_aspect",
-    "restored_on_next_world_projection": true
+    "restored_on_next_world_projection": true,
+    "source_pass": "0x79c41",
+    "depth_bias": -24.9
+  },
+  "hud_2d": {
+    "owner": "CActMan current_draw; camera actor4C owns edge HUD; dialogue/radio actors retain centered canvas",
+    "camera_right_widgets": "health/can original y35..110,x>=390 and speed y400..440,x>=430",
+    "camera_other_widgets": "one left anchor, independent of changing glyph bounds",
+    "other_actors": "one centered canvas for frame, portrait and every text batch",
+    "text_score_rows": {
+      "actor_vtable": "0x1c4540",
+      "requires_camera_score_digits": true,
+      "camera_modes": [
+        3,
+        5,
+        13,
+        14
+      ],
+      "trick_name_y": [
+        77,
+        105
+      ],
+      "multiplication_y": [
+        133,
+        154
+      ],
+      "anchor": "left, shared with camera-owned score digits"
+    }
   }
 }
