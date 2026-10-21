@@ -38,13 +38,18 @@ def open_qa(run,framework=None,write=False):
                     if state<119 and mission>>16<100:flows.append({'object':at,'mission':mission,'state':state})
                 except OSError:pass
             return {'pid':self.pid,'camera':cameras,'flow':flows,'raw_flow_candidates':found['flow']}
-        def teleport(self,camera,position):
+        def teleport(self,camera,position,sweep=False):
             if len(position)!=3 or not all(math.isfinite(x) and abs(x)<1000000 for x in position):raise ValueError('teleport coordinates')
             with self.frozen():
                 if self.u32(camera['object'])!=self.facts['camera_vtable'] or self.u32(camera['object']+self.facts['camera_target'])!=camera['player']:raise ValueError('camera owner changed')
                 at=camera['player']+self.facts['player_position']
-                old=struct.unpack('<3f',self.read(at,12));self.write(at,struct.pack('<3f',*position))
-            self.record({'operation':'teleport','player':camera['player'],'before':old,'after':position,'bypass':True})
+                old=struct.unpack('<3f',self.read(at,12));data=struct.pack('<3f',*position)
+                if not sweep:
+                    if self.facts['player_previous_position']!=self.facts['player_position']+12:raise ValueError('requires adjacent original motion samples')
+                    data+=data
+                self.write(at,data)
+            self.record({'operation':'teleport','player':camera['player'],'before':old,'after':position,
+                'motion_history_synchronized':not sweep,'bypass':True})
         def mission(self,flow,mission,allow_event=False):
             if mission<0 or mission>>16>99 or mission&0xffff>999:raise ValueError('mission range')
             with self.frozen():
@@ -94,6 +99,7 @@ def main():
     commands=parser.add_subparsers(dest='command',required=True)
     commands.add_parser('status')
     teleport=commands.add_parser('teleport');teleport.add_argument('position',nargs=3,type=float)
+    teleport.add_argument('--sweep',action='store_true',help='Retain the previous motion sample for intentional crossing checks')
     mission=commands.add_parser('mission');mission.add_argument('id',type=lambda s:int(s,0));mission.add_argument('--cancel-event',action='store_true')
     cans=commands.add_parser('cans');cans.add_argument('count',type=int)
     health=commands.add_parser('health');health.add_argument('count',type=int)
@@ -102,7 +108,7 @@ def main():
         state=p.objects()
         if args.command=='teleport':
             if len(state['camera'])!=1:raise ValueError('ambiguous camera owner')
-            p.teleport(state['camera'][0],args.position)
+            p.teleport(state['camera'][0],args.position,args.sweep)
         elif args.command=='mission':
             active=[f for f in state['flow'] if f['state'] in ((15,19) if args.cancel_event else (15,))]
             if len(active)!=1:raise ValueError('ambiguous active flow')

@@ -244,9 +244,9 @@ reached mission/chapter progression save/load boundary; other recoveries remain
 open. Immutable private checkpoints retain both the earlier Shibuya story state
 and this Chapter2 Garage state.
 
-Run038 crosses the owned Garage plane1 using position-only travel bypasses; the
-original exit loads0210 (runtime200d2), finishes its entrance camera and restores
-ordinary movement. Crossing0210 plane2 similarly loads0230 (runtime200e6), with
+Run038 uses coordinates from the owned Garage region1 with position-only travel
+bypasses; original flow loads0210 (runtime200d2), finishes its entrance camera and restores
+ordinary movement. A coordinate batch near0210 region2 similarly loads0230 (runtime200e6), with
 its original introduction and playable Chuo Street. No handover/exit/completion
 fields are written for either transition. Chuo registers25 graffiti targets,
 including three10-part targets. The first XL approach triggers the original0231
@@ -318,3 +318,46 @@ Inventory v2 parses all311 owned pairs successfully, including all four command
 arrays and bounded enemy-definition/group-set tables. The known0231 sets match
 [1..7] and[0,7]. These metadata aid later encounter batching; parsed definitions,
 placement counts and operations alone do not pass behavior or actor counts.
+
+## Instant-teleport motion history and post-fight checkpoint
+
+The original player stores current position atCA4 and its previous sample atCB0.
+Owned source7e9ed copies all three current components into the previous sample;
+837ad performs the same initialization on spawn/reset, and80644 supplies both
+samples to collision processing. Image/function hashes bind these facts. Private
+instant teleports now set both adjacent vectors in one frozen24-byte write.
+An explicit `--sweep` keeps the previous sample when a traversed segment is
+intended. Live040 checks both byte layouts and unchanged resources, then restores
+the position. This changes QA tooling, not the native game or shared runtime.
+It does not reset an active grind, jump or other original player action.
+
+Earlier region/plane numbers identify the coordinates used by QA, not a fully
+qualified exit-volume mapping: their initial teleports retained an old motion
+sample and could traverse unrelated triggers. The actual mission changes and
+continued native movement remain observed, but precise portal identity requires
+an intentional crossing observation. No success is inferred from coordinates.
+
+Run040 repeats actual tank/Hayashi defeat and the original playable0230 return
+with C10/C13/C19. Actual spraying paints six pieces of each of two ten-part
+murals; neither full mural completes, and the third has no accepted paint yet.
+Some candidates fall below the raised mural or leave the avatar in its original
+grinding action. Hover/closer samples do not complete the missing pieces and
+are not passes. These are still open approach/action setup checks; no native
+failure or completed ten-part consumer is claimed. The batch records any area
+change and stops its scene-specific inputs.
+
+An explicit original handover bypasses return travel to the same-chapter Garage.
+The source Roboy definition (character19, talk entry24) supplies a closer approach;
+actual RT/A opens Garage/System/Save. The original menu reports Done saving.
+The new41088-byte private file has SHA256
+0ed7b8bd1acad437bfcb24ffc6978ff801b37ec8d1a7f32ee4daa6ac47a10d21;
+read-only decode passes lane checks and records chapter2/return0 with
+C10/C13/C19/C270. No signature or completion override is used. An immutable
+copy excludes only the rebuildable native cache and matches the saved bytes.
+This checkpoint removes the need to replay the fight for later Chuo checks.
+
+Fresh independent041 accepts that exact saved file with original validation,
+returns through character selection to native20000/state15 and responds to
+ordinary movement. Read-only observation retains C10/C13/C19 with C11 clear.
+This passes the reached post-fight progression save/load boundary. Live041
+remains hidden/muted on four normal-priority cores for the next coverage batch.

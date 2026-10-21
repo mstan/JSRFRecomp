@@ -6,8 +6,15 @@
   "camera_vtable": 1889496,
   "camera_target": 36,
   "camera_mode": 520,
-  "resource_camera_modes": [3, 5, 9, 13, 14],
+  "resource_camera_modes": [
+    3,
+    5,
+    9,
+    13,
+    14
+  ],
   "player_position": 3236,
+  "player_previous_position": 3248,
   "player_health": 3992,
   "player_health_capacity": 3996,
   "player_spray_cans": 4000,
@@ -78,6 +85,16 @@
       "address": 321968,
       "bytes": 121,
       "sha256": "b73d3b27da0ac331a18f984fa88657e5293fb3b74d89484bd108e3e936b28a0b"
+    },
+    {
+      "address": 518637,
+      "bytes": 80,
+      "sha256": "7ff761cc4af8a4e436269c8fa88d075c67c910b2233d063517070c0381324492"
+    },
+    {
+      "address": 538541,
+      "bytes": 112,
+      "sha256": "d417124cdc8e6f0733997870b524e51fbfa4a5a2ad91d8a3b05b4dd7783b561f"
     }
   ],
   "flow_vtables": [

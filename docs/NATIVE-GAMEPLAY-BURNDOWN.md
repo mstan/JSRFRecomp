@@ -323,3 +323,19 @@ Ten-part painting, post-fight save and Chuo's next real story interaction remain
 next. The diagnostic run is deliberately stopped for debugger-input cleanup;
 its terminal status is not a game crash. Immutable Garage restart state remains
 available. Enemy/group-set inventory v2 passes all311 owned mission pairs.
+
+Run040 adds a post-tank original save through Roboy. Chapter2/return0 and
+C10/C13/C19/C270 decode with valid lane checks; the immutable checkpoint retains
+the identical41088-byte file. Original return travel is bypassed, not passed.
+Two ten-part murals have six accepted pieces each; full painting remains open.
+Private instant teleports now synchronize the original current/previous position
+samples, retaining an explicit sweep option. Actual frozen-byte/resource checks
+pass. Earlier region-coordinate handovers do not independently qualify portal
+identity; see the content ledger's clarification. Original player actions still
+need a valid approach/grounding setup before spray acceptance.
+
+Fresh independent041 loads the post-tank checkpoint through the original menus,
+reaches native20000/state15, moves and retains C10/C13/C19 with C11 clear. This
+checkpoint is the new restart source for Chuo; the fight does not need repeating
+for each remaining mural/story approach. Full Chuo progression/ten-part painting,
+other missions/bosses/extra modes/recovery and subsequent visual mods stay open.
