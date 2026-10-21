@@ -23,7 +23,7 @@ retrying the game. Preserve cheats/teleports as QA tools and record bypasses.
 | GP04 | Implement newly reached shared contracts | Reached boost failure fixed; continue with the next gameplay consumer | Shared `bc4d290` models the original standalone depth surface used by boost. Targeted actual GPU depth/stencil/ownership checks pass; run028 performs two original boosts with expected can consumption and visible effects, then loads3003c and revisits20028. No broad campaign qualification implied |
 | GP05 | Derive the area/mission/mechanic inventory | Content inventory derived; behavioral mapping open | `tools/qa_inventory.py` parses all 311 owned mission/script pairs and their setup/trigger operation inventories, grouped under 33 scene keys. Scene keys are not automatically area names. Filename numbers alias modulo 100, so canonical runtime IDs still require original-flow evidence |
 | GP06 | Add reusable cheat-assisted QA controls through title mods | Teleport, original handover, explicit event bypass and bounded can/health refill working; further controls open | Shared private RAM transport plus revision-bound `tools/qa.py` and `gameplay-qa.json`. Refills respect original character capacities and reject over-capacity requests without a write. Run034 validates health65 ->110 with the maximum unchanged. Run038 uses explicit private health protection and admits live-player lock/spray/look camera modes while retaining guards; refills do not pass pickup or damage checks |
-| GP07 | Exercise every inventoried location and meaningful mechanic | In progress: 28/33 scene groups entered; Shibuya graffiti and reached Combo challenge passed | Run034/035 paints all regular tags and save point with actual RT, original map 35 (100%), with original saves and a fresh-process30-target persistence check. Run036 also completes four original Poison Jam route returns and Combo's actual grind/air-trick challenge; run037 completes the reached 20-cop fight through real lock-dash/spray and original Chapter2 transition; other content remains open. Entry count is not a campaign qualification denominator |
+| GP07 | Exercise every inventoried location and meaningful mechanic | In progress: 28/33 scene groups entered; Shibuya/Chuo graffiti and reached Combo challenge passed | Run034/035 paints Shibuya, original map35 (100%), and run041 paints all25 Chuo targets, original map24 (100%), including all three ten-part murals. Original saves retain the progress. Run036 also completes four original Poison Jam route returns and Combo's actual grind/air-trick challenge; run037 completes the reached 20-cop fight through real lock-dash/spray and original Chapter2 transition; other content remains open. Entry count is not a campaign qualification denominator |
 | GP08 | Validate save/reload and representative progression boundaries | Original save/fresh-process reload and reached Chapter2 progression save/load passed; wider recovery open | Run032 creates a same-chapter save at10014; independent run033 uses original Load Game and character selection, returns to playable10014, retains the painted save-point target and responds to movement. Run037 then completes the reached Shibuya cop fight and original Chapter2 transition, saves through Roboy; fresh038 loads the Chapter2 Garage and moves. Wider recovery/content remains GP07 work; owner originals are protected |
 
 Cheats can position/protect the player and bypass prerequisites. A forced
@@ -339,3 +339,15 @@ reaches native20000/state15, moves and retains C10/C13/C19 with C11 clear. This
 checkpoint is the new restart source for Chuo; the fight does not need repeating
 for each remaining mural/story approach. Full Chuo progression/ten-part painting,
 other missions/bosses/extra modes/recovery and subsequent visual mods stay open.
+
+Run041 completes Chuo's actual graffiti consumer: all25 registered targets and
+front/back layers pass, original map24 (100%), with natural C13 ->C14/C200 story
+progress. Original per-piece volumes replace unreliable whole-mural/reference
+positions; public read-only `qa.py tags` exposes source-bound metadata for further
+area batches. Actual RT, not paint/completion writes, establishes the pass.
+The same-area save point and original Save menu create a chapter2/return230
+checkpoint (SHA8c5fbc08...,41088bytes, lane checks valid). Fresh independent042
+accepts original Load Game/character selection, returns playable200e6/state15,
+moves and restores all25 painted targets. The following Chuo story/challenge is
+next; wider campaign/extra-mode and final visual-mod/handoff requirements remain
+unchanged.

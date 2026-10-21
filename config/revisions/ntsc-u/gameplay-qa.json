@@ -95,10 +95,38 @@
       "address": 538541,
       "bytes": 112,
       "sha256": "d417124cdc8e6f0733997870b524e51fbfa4a5a2ad91d8a3b05b4dd7783b561f"
+    },
+    {
+      "address": 578608,
+      "bytes": 176,
+      "sha256": "90b63a6213f33fb9f1f25633b6678f971367f4f4dbfca5f8427ebe6af50bb10f"
+    },
+    {
+      "address": 304880,
+      "bytes": 83,
+      "sha256": "23861e304a0f6c071969929b38afe0d712e2fcff228c6d6e05e3c449c1ede2dd"
+    },
+    {
+      "address": 261824,
+      "bytes": 384,
+      "sha256": "962c3cf5b70651d03e0b82f4116a917ed9e9ea44cd81b4d78dae3af191f423ff"
     }
   ],
   "flow_vtables": [
     1878640
   ],
-  "reference_commit": "6cb1964b7512064d2c0d8ee6eb5417ca41d96a8b"
+  "reference_commit": "6cb1964b7512064d2c0d8ee6eb5417ca41d96a8b",
+  "graffiti": {
+    "registry": 2299000,
+    "piece_array": 148,
+    "parts": 152,
+    "id": 156,
+    "unpainted": 160,
+    "designs": 164,
+    "back_designs": 172,
+    "next": 260,
+    "piece_stride": 184,
+    "piece_position": 160,
+    "region_normals": 72
+  }
 }

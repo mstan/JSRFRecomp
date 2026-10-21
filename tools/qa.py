@@ -16,6 +16,34 @@ def open_qa(run,framework=None,write=False):
     from native_qa_memory import NativeQaMemory
     facts=json.loads((root/'config/revisions/ntsc-u/gameplay-qa.json').read_text())
     class TitleQa(NativeQaMemory):
+        def tags(self):
+            """Read original per-piece reference positions, not completion overrides."""
+            layout=self.facts['graffiti'];result=[];seen=set()
+            for bucket,at in enumerate(struct.unpack('<256I',self.read(layout['registry'],1024))):
+                while at:
+                    if at in seen or len(seen)>=1024:raise ValueError('unstable graffiti registry')
+                    seen.add(at);id=self.u32(at+layout['id']);parts=self.u32(at+layout['parts'])
+                    if id&255!=bucket or parts not in (1,3,6,10):raise ValueError('unqualified graffiti layout')
+                    base=self.u32(at+layout['piece_array']);stride=layout['piece_stride']
+                    if not self.valid(base,parts*stride):raise ValueError('invalid graffiti piece extent')
+                    positions=[];centers=[]
+                    for i in range(parts):
+                        piece=self.read(base+i*stride,stride)
+                        positions.append(struct.unpack_from('<3f',piece,layout['piece_position']))
+                        points=[struct.unpack_from('<3f',piece,j*12) for j in range(6)]
+                        normals=[struct.unpack_from('<3f',piece,layout['region_normals']+j*12) for j in range(6)]
+                        if not all(math.isfinite(v) and abs(v)<1000000 for point in points+normals for v in point):raise ValueError('invalid graffiti region')
+                        center=tuple(sum(point[axis] for point in points)/6 for axis in range(3))
+                        inside=all(sum((center[axis]-point[axis])*normal[axis] for axis in range(3))<=.01 for point,normal in zip(points,normals))
+                        centers.append(center if inside else None)
+                    if not all(math.isfinite(v) and abs(v)<1000000 for point in positions for v in point):raise ValueError('invalid graffiti reference position')
+                    result.append({'object':at,'id':id,'parts':parts,
+                        'unpainted':self.u32(at+layout['unpainted']),
+                        'designs':self.u32(at+layout['designs']),
+                        'back_designs':self.u32(at+layout['back_designs']),
+                        'piece_positions':positions,'piece_region_centers':centers})
+                    at=self.u32(at+layout['next'])
+            return sorted(result,key=lambda tag:tag['id'])
         def objects(self):
             values={self.facts['camera_vtable']:'camera',**{v:'flow' for v in self.facts.get('flow_vtables',[self.facts['flow_vtable']])}}
             found=self.find_values(values)
@@ -98,13 +126,17 @@ def main():
     parser.add_argument('--development-framework',type=Path)
     commands=parser.add_subparsers(dest='command',required=True)
     commands.add_parser('status')
+    commands.add_parser('tags',help='Read original per-piece graffiti positions and paint state')
     teleport=commands.add_parser('teleport');teleport.add_argument('position',nargs=3,type=float)
     teleport.add_argument('--sweep',action='store_true',help='Retain the previous motion sample for intentional crossing checks')
     mission=commands.add_parser('mission');mission.add_argument('id',type=lambda s:int(s,0));mission.add_argument('--cancel-event',action='store_true')
     cans=commands.add_parser('cans');cans.add_argument('count',type=int)
     health=commands.add_parser('health');health.add_argument('count',type=int)
-    args=parser.parse_args();p=open_qa(args.run,args.development_framework,args.command!='status')
+    args=parser.parse_args();p=open_qa(args.run,args.development_framework,args.command not in ('status','tags'))
     try:
+        if args.command=='tags':
+            print(json.dumps(p.tags(),indent=2))
+            return 0
         state=p.objects()
         if args.command=='teleport':
             if len(state['camera'])!=1:raise ValueError('ambiguous camera owner')

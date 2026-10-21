@@ -361,3 +361,43 @@ returns through character selection to native20000/state15 and responds to
 ordinary movement. Read-only observation retains C10/C13/C19 with C11 clear.
 This passes the reached post-fight progression save/load boundary. Live041
 remains hidden/muted on four normal-priority cores for the next coverage batch.
+
+## Chuo graffiti completion and the next story gate
+
+Run041 first verifies that the next Chuo story step is gated by the original
+TagClear listener (opcode8 ->3e8b0), not by prematurely talking at the candidate
+NPC region. The original spray consumer8d430 checks each piece's six-plane
+volume through4a6f0; descriptor+94 holds0xb8-byte piece records. Their reference
+positions at+A0 can lie outside the spray volumes. Sampling a whole mural or
+hovering at those art positions is unreliable QA setup, not a demonstrated
+native spray failure. A replacement batch uses candidates inside all six planes,
+actual RT input and original paint observations. It replaces only the input
+helper, preserving the running game and already painted progress.
+
+The first ten-part mural completes through actual RT. Volume-center approaches
+then finish the remaining two ten-part murals, all six-part murals, three-part
+and small tags. All25 registered targets have unpainted0 and complete front/back
+paint layers; the original map reports24 regular tags (100%), excluding the
+save point. Source progress advances C13 ->C14/C200 naturally and reaches the
+following story/challenge setup (M140/M142/M146). No paint, counter, success,
+mission-completion or chapter flags are written. Position/resource refills and
+travel are explicit bypasses; skating the complete routes is not qualified.
+
+`tools/qa.py tags` now exposes read-only per-piece reference positions and region
+centers under exact-image/function hashes, registry bucket/cycle checks and
+bounded piece arrays. A center is returned only if it satisfies all six plane
+constraints. All96 current Chuo piece volumes admit a center; this metadata is
+not itself a gameplay pass or a guarantee of ground/approach validity.
+
+The painted save point's original START prompt opens the pause map. Two Up inputs
+select its Save icon, then the original slot/overwrite confirmation reports
+Done saving. The41088-byte file has SHA256
+8c5fbc086877a709b948d4033605eb7c4260ff45ed47032e4f575a2149cf80ac;
+read-only lane checks pass, chapter2/return230 and C10/C14/C200/C270 are recorded.
+The immutable checkpoint preserves identical bytes and omits only the rebuildable
+native cache. This is a consistent same-area original save, with no signature
+override. Run041 is deliberately stopped after the saved checkpoint. Fresh
+independent042 accepts the save through original Load Game/character selection,
+returns to Chuo200e6/state15, responds to movement and restores all25 painted
+targets. Full Chuo challenge/completion, other areas and later campaign content
+remain open.
