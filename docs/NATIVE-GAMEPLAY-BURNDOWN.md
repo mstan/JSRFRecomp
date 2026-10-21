@@ -22,7 +22,7 @@ retrying the game. Preserve cheats/teleports as QA tools and record bypasses.
 | GP03 | Reach controllable gameplay | Passed for initial Garage movement, camera, jump/landing, rail grinding and NPC talk | Initial routes pass movement/jump/Corn talk. Run023 triggers Gum's original conversation, satisfies her three-jump and grind lessons, and reaches “Collect 10 Spray Cans.” Teleports bypass travel and approach to the rail; original input/collision/counters establish the actions. Remaining tutorial and campaign mechanics remain GP07 |
 | GP04 | Implement newly reached shared contracts | In progress: boost attempt reaches a texture-layout stop | Positional playback and reached graphics fixes are implemented; reverse-area allocation failure is closed. Run024 now stops at a caller-owned texture-layout check during a B/stick boost attempt (`beads-xbox.1.183`); fix and retry this boundary next |
 | GP05 | Derive the area/mission/mechanic inventory | Content inventory derived; behavioral mapping open | `tools/qa_inventory.py` parses all 311 owned mission/script pairs and their setup/trigger operation inventories, grouped under 33 scene keys. Scene keys are not automatically area names. Filename numbers alias modulo 100, so canonical runtime IDs still require original-flow evidence |
-| GP06 | Add reusable cheat-assisted QA controls through title mods | Teleport, original mission handover and explicit event bypass working; further controls open | Shared development RAM transport plus revision-bound `tools/qa.py` and `gameplay-qa.json`; public controls exercised in `mission-qa-002/003` and subsequent batches, unfrozen writes rejected; no game addresses in shared transport. Protection/resource controls remain open; bypassed events do not pass their real ends |
+| GP06 | Add reusable cheat-assisted QA controls through title mods | Teleport, original handover, explicit event bypass and bounded can refill working; further controls open | Shared private RAM transport plus revision-bound `tools/qa.py` and `gameplay-qa.json`. Source-bound can count/capacity facts now support a refill capped by the original character capacity; run025/026 live use validates it, including over-capacity rejection without a write. Protection and further resource controls remain open; refills do not pass pickup prerequisites |
 | GP07 | Exercise every inventoried location and meaningful mechanic | In progress: 28/33 scene groups have rendered entries; mechanics remain open | Per-location passed/failed/unverified/bypassed ledger, original transitions, interactions, mission triggers, unique actions and relevant audio; entry count is not a campaign qualification denominator |
 | GP08 | Validate save/reload and representative progression boundaries | Unverified | Original save writes and authenticated fresh-process reload, with protected owner originals |
 
@@ -116,6 +116,13 @@ title snapshot. The PSX recomp-net/rbengine model is the intended reusable
 foundation, but full native waits/stacks and graphics/audio/storage state need
 additional work. On October 20 the owner explicitly prioritized finishing JSRF
 over this larger detour. Continue batching original scene handovers now.
+
+For short boost/spray retries, `python tools/qa.py --run <private-run> cans 12`
+uses the original character's current capacity. The field facts are bound to
+the exact image and original consumption/pickup-clamp code identities. This
+changes only a private run's resource count and records a prerequisite bypass;
+it does not write mission flags or qualify collection. Actual collection in
+run024 remains independently established by original pickups and lesson output.
 
 The rebuilt `new-game-002` route reaches the same required spatial Play in
 57.1 seconds. It uses CTRL3D mode 0, with two current mix routes and genuinely

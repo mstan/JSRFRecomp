@@ -7,6 +7,8 @@
   "camera_target": 36,
   "camera_mode": 520,
   "player_position": 3236,
+  "player_spray_cans": 4000,
+  "player_spray_capacity": 4004,
   "flow_vtable": 1878640,
   "flow_mission": 88,
   "flow_state": 92,
@@ -14,6 +16,16 @@
   "flow_next_number": 84,
   "handover_state": 93,
   "functions": [
+    {
+      "address": 523312,
+      "bytes": 33,
+      "sha256": "79674824024d69a3a8f694bf984c8397025a09bd082d5e3e4595bb74ff212508"
+    },
+    {
+      "address": 583192,
+      "bytes": 88,
+      "sha256": "8e7ed49811ab86d1ad02b862d990573fcb43a569b14ce54fbbf61aa8eb91851c"
+    },
     {
       "address": 675152,
       "bytes": 712,

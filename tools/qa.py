@@ -23,7 +23,10 @@ def open_qa(run,framework=None,write=False):
                     player=self.u32(at+self.facts['camera_target']);mode=self.u32(at+self.facts['camera_mode'])
                     if not self.valid(player,0x1000) or mode>20:continue
                     position=struct.unpack('<3f',self.read(player+self.facts['player_position'],12))
-                    if all(math.isfinite(x) and abs(x)<1000000 for x in position):cameras.append({'object':at,'player':player,'mode':mode,'position':position})
+                    if all(math.isfinite(x) and abs(x)<1000000 for x in position):
+                        cameras.append({'object':at,'player':player,'mode':mode,'position':position,
+                            'spray_cans':self.u32(player+self.facts['player_spray_cans']),
+                            'spray_capacity':self.u32(player+self.facts['player_spray_capacity'])})
                 except OSError:pass
             for at in found['flow']:
                 try:
@@ -51,6 +54,19 @@ def open_qa(run,framework=None,write=False):
                 struct.pack_into('<I',block,self.facts['flow_state']-start,self.facts['handover_state'])
                 self.write(at+start,bytes(block))
             self.record({'operation':'mission-handover','before':old,'requested':mission,'bypass':True,'completion_claimed':False,'event_completion_bypassed':state==19})
+        def cans(self,camera,count):
+            if type(count) is not int or count<0:raise ValueError('can count must be a nonnegative integer')
+            with self.frozen():
+                owner=camera['object'];player=camera['player']
+                if self.u32(owner)!=self.facts['camera_vtable'] or self.u32(owner+self.facts['camera_target'])!=player:
+                    raise ValueError('camera owner changed')
+                if self.u32(owner+self.facts['camera_mode']) not in (3,5):raise ValueError('requires ordinary gameplay camera')
+                capacity=self.u32(player+self.facts['player_spray_capacity'])
+                at=player+self.facts['player_spray_cans'];before=self.u32(at)
+                if not 0<capacity<=999 or before>capacity or count>capacity:raise ValueError('can count exceeds current original capacity')
+                self.write(at,struct.pack('<I',count))
+            self.record({'operation':'spray-can-refill','player':player,'before':before,'after':count,
+                'capacity':capacity,'bypass':True,'pickup_claimed':False,'completion_claimed':False})
     return TitleQa(run,facts,write)
 
 
@@ -62,6 +78,7 @@ def main():
     commands.add_parser('status')
     teleport=commands.add_parser('teleport');teleport.add_argument('position',nargs=3,type=float)
     mission=commands.add_parser('mission');mission.add_argument('id',type=lambda s:int(s,0));mission.add_argument('--cancel-event',action='store_true')
+    cans=commands.add_parser('cans');cans.add_argument('count',type=int)
     args=parser.parse_args();p=open_qa(args.run,args.development_framework,args.command!='status')
     try:
         state=p.objects()
@@ -72,7 +89,10 @@ def main():
             active=[f for f in state['flow'] if f['state'] in ((15,19) if args.cancel_event else (15,))]
             if len(active)!=1:raise ValueError('ambiguous active flow')
             p.mission(active[0],args.id,args.cancel_event)
-        print(json.dumps(state,indent=2))
+        elif args.command=='cans':
+            if len(state['camera'])!=1:raise ValueError('ambiguous camera owner')
+            p.cans(state['camera'][0],args.count)
+        print(json.dumps(p.objects() if args.command!='status' else state,indent=2))
     finally:p.close()
     return 0
 
