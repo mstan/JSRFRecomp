@@ -149,7 +149,8 @@ the other revision's offsets blindly. No added xemu/hardware work is required.
 | Mission `0x2001e` / `mssn0230`, scene key `0x10001` | Event entry observed | Original flow reaches state19. Event completion bypassed for the next handover; ordinary movement not established during the event |
 | Mission `0x20028` / `mssn0240`, Rokkaku-dai Heights, scene key `0x20000` | Original introduction renders past the fog failure | `mission-qa-007` renders original animated introduction/subtitles with typed and immediate XYZRHW fog. Event completion is bypassed for the next handover; ordinary gameplay and area-wide mechanics unverified |
 | Mission `0x20032` / `mssn0250`, 99th Street, scene key `0x30000` | Original introduction renders | Same live batch renders original area introduction/subtitles. Event completion bypassed; ordinary movement and area-wide mechanics unverified |
-| Mission `0x3003c` / `mssn0360`, scene key `0x20001` | Blocked on point raster admission | Next original handover stops at `unqualified active point raster state`, FVF1c4. Required renderer issue `beads-xbox.1.180`; no area pass claimed |
+| Mission `0x3003c` / `mssn0360`, scene key `0x20001` | Direct entry/movement passed; sequence-dependent point failure open | Fresh `mission-qa-008` direct handover reaches state15 and real movement; the earlier `20028 -> 20032 -> 3003c` sequence stops at `unqualified active point raster state`, FVF1c4. Required renderer issue `beads-xbox.1.180`; full area mechanics unverified |
+| Reverse handover `0x3003c -> 0x20028` | Failed; investigation required | `mission-qa-008` reads unmapped guest address `0x05ec0000` during the handover. Repeated-transition correctness remains required; no assumption that this is automation-only and no pass claimed |
 
 The enabled normal-normalization fix uses the existing real lighting consumer,
 with three targeted initializer/lighting tests passing. The actual retry now
