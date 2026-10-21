@@ -1,0 +1,67 @@
+{
+  "schema": "xboxllr.title-qa.v1",
+  "xbe_sha256": "f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219",
+  "reference": "https://github.com/JuMatt/JetSetRadioFuture-Unleashed",
+  "scope": "Private QA only; source-bound layouts; forced handovers/teleports are explicit bypasses",
+  "camera_vtable": 1889496,
+  "camera_target": 36,
+  "camera_mode": 520,
+  "player_position": 3236,
+  "flow_vtable": 1878640,
+  "flow_mission": 88,
+  "flow_state": 92,
+  "flow_next_chapter": 76,
+  "flow_next_number": 84,
+  "handover_state": 93,
+  "functions": [
+    {
+      "address": 675152,
+      "bytes": 712,
+      "sha256": "055e2827dd486cd8ed688f40c0898c26e57562964819353c83c355a26494e3d2"
+    },
+    {
+      "address": 675904,
+      "bytes": 796,
+      "sha256": "dca531ce3a8fdfb48ec5e8e23c840323860d1273f3b29b64c6db035cef9f2b99"
+    },
+    {
+      "address": 72656,
+      "bytes": 4,
+      "sha256": "e27121b8816e0aef2ed29676899d26e79f66af7e5ee5aed902be7208122bb635"
+    },
+    {
+      "address": 678704,
+      "bytes": 1348,
+      "sha256": "346f681fc6b08b0ea559fe067a040d652959b0001f492cb76fcefebef3a126aa"
+    },
+    {
+      "address": 335808,
+      "bytes": 67,
+      "sha256": "c4d45fcb1310f7ef756defd2ab2d19d1b41681068f3f1b9bb324c34366c03582"
+    },
+    {
+      "address": 306080,
+      "bytes": 39,
+      "sha256": "6df4b46ba5e49bf930020c99acdc2baa0f5e8eee56cb7eab4c2604edbcc0d7ef"
+    },
+    {
+      "address": 342448,
+      "bytes": 40,
+      "sha256": "da6c6e2c5b24d4601bf3a10d0213e4cacdb30165941bcd969399cdcbdcd30803"
+    },
+    {
+      "address": 305424,
+      "bytes": 656,
+      "sha256": "64db4eaa722a91221d055d733be8d8b51ef1a75e2116d2abf41f8932fea18208"
+    },
+    {
+      "address": 321968,
+      "bytes": 121,
+      "sha256": "b73d3b27da0ac331a18f984fa88657e5293fb3b74d89484bd108e3e936b28a0b"
+    }
+  ],
+  "flow_vtables": [
+    1878640
+  ],
+  "reference_commit": "6cb1964b7512064d2c0d8ee6eb5417ca41d96a8b"
+}
