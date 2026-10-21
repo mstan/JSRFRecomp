@@ -106,6 +106,14 @@ and an actual-faster-simulation timing adapter. Interpolated presentation is
 available now; actual faster simulation stays unavailable until qualified.
 Supporting hardware/precision work and full runtime snapshots remain deferred.
 
+The subsequent private recovery attempt (`beads-xbox.2.13`) loads the original
+checkpoint and sets guarded nonzero health1, then teleports below Chuo's floor.
+The native player continues falling for24 seconds without a death/retry trigger;
+this setup does not establish either behavior and is not a game-crash finding.
+The run is stopped intentionally with owner saves untouched. The owner then
+prioritizes three-repository release readiness (`beads-xbox.1.187`) before more
+recovery/extra-mode work; both follow-ups remain deferred.
+
 ### Owner Load Game crash fixed, October21
 
 `beads-xbox.2.12`: the enhanced preview stopped at the title mod's perspective
