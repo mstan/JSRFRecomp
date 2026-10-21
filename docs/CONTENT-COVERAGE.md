@@ -12,7 +12,7 @@ or completion trigger. Inputs sent during an event do not establish controllable
 
 | Scene key | Files | Observed runtime ID | Evidence so far | Mechanics/completion |
 | --- | --- | --- | --- | --- |
-| `0x00000000` | 52 | `10001` | Movement, camera, Corn/Gum talk; original tutorial accepts three jumps and rail grinds in run023 | Open: spray-can lesson and later tutorial/progression |
+| `0x00000000` | 52 | `10001` | Movement, camera, Corn/Gum talk; original tutorial accepts jumps/grinds in run023; real pickups reach12 cans and collection acknowledgement in run024 | Open: boost texture stop, spraying and later tutorial/progression |
 | `0x00000008` | 1 | `100c4` | Cutscene entry/motion; end unverified | Open |
 | `0x00000009` | 1 | `200c4` | Story event entry/animation captured in run014 | Open |
 | `0x00010000` | 16 | `10014` | Entry and movement | Open |
@@ -82,7 +82,7 @@ sequence is fixed by shared commit `bc3a6a6` (`beads-xbox.1.180`).
 | --- | --- |
 | Movement, camera and jump/landing | Initial Garage passed; movement observed in several additional areas |
 | NPC interaction | Corn conversation trigger passed after teleport bypassed travel |
-| Graffiti/spraying, pickups and resource limits | Unverified |
+| Graffiti/spraying, pickups and resource limits | Real can pickups raise HUD0 ->8 ->12 and the original collection lesson acknowledges success in run024. Spraying, limits and other pickup types remain open |
 | Boost, grinding, tricks, jumps and traversal routes | Garage tutorial accepts three jumps and grinds; actual rail travel, sparks, scoring and trick label render in run023. Boost, requested trick combinations and other traversal remain open |
 | Enemies, police encounters and bosses | Unverified |
 | Real mission completion and next-mission triggers | Unverified; forced handovers do not count |
@@ -104,3 +104,11 @@ to “Collect 10 Spray Cans.” No lesson or completion flag is written. The run
 then ends at its planned bound; pickup/spray and the rest of the tutorial remain
 open. A private replay batch now reproduces these inputs/teleports in one route,
 so future runs need not repeat the exploratory menu and positioning steps.
+
+Run024 repeats the tutorial using original actions and position-only teleports.
+The pickup sweep raises the visible can count from0 to8 to12, and the original
+lesson acknowledges collection. This establishes real pickups rather than a
+resource-count write. The following B/stick boost attempt reaches an explicit
+caller-owned texture-layout stop, tracked by `beads-xbox.1.183`; boost and spray
+are not yet passed. The private executable, symbols, receipt and captures are
+retained. The next action is to fix and retry this reached native boundary.
