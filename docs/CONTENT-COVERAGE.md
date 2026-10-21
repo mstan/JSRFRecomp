@@ -21,7 +21,7 @@ or completion trigger. Inputs sent during an event do not establish controllable
 | `0x00010003` | 12 | `40032` | Introduction naturally returns to gameplay | Open |
 | `0x00010008` | 1 | `300c4` | Story event entry/animation captured in run014 | Open |
 | `0x00010009` | 1 | `400c4` | Story event entry/animation captured in run014 | Open |
-| `0x00020000` | 21 | `20028` | Rokkaku-dai Heights introduction | Open |
+| `0x00020000` | 21 | `20028` | Introduction, repeated revisits and playable movement in run022 | Open |
 | `0x00020001` | 10 | `3003c` | Entry/movement; point failure fixed | Open |
 | `0x00020002` | 20 | `4003c` | Introduction entry | Open |
 | `0x00020003` | 15 | `30046` | Entry/movement; story text observed | Open |
@@ -69,8 +69,11 @@ scene groups now have visually inspected rendered entries. This count includes
 introductions and studio events, not 28 fully tested playable areas. The five
 extra-mode scene groups still need proper initialization and world coverage.
 
-The reverse handover3003c ->20028 failed with an unmapped read and remains required
-work under `beads-xbox.1.181`. The screen-space unit-point failure in the forward
+The reverse handover3003c ->20028 unmapped read is fixed by shared `eb180a4`
+under `beads-xbox.1.181`. Fresh run022 passes that route, then repeats
+20032 ->3003c ->20028 with playable movement on the final revisit. This closes
+the reached allocation failure, not the bypassed missions or their mechanics.
+The screen-space unit-point failure in the forward
 sequence is fixed by shared commit `bc3a6a6` (`beads-xbox.1.180`).
 
 ## Mechanics that still need coverage

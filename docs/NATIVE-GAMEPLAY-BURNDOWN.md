@@ -165,7 +165,7 @@ the other revision's offsets blindly. No added xemu/hardware work is required.
 | Further mid/late-game locations | Entries observed; some movement passed | Run010 reaches `30046`, `40032`, `4003c`, `40046`, `40050`, `5000a`, `6003c`, `70032`; the original `40032` introduction returns naturally from19 to15. The separate content ledger distinguishes movement from event entry |
 | Late-game scene types | Four introductions captured; reached scaled sprites fixed | Run014 repeats `8000b -> 8000c -> 80050 -> 8005a`, renders past the previous scaled-point stop, and the original introduction naturally returns to state15. Independent full-image size/attenuation/UV/fog checks pass. Forced entry leaves the player outside the final arena; boss setup/mechanics/completion remain open |
 | Extra-mode setup | City Rush briefing and countdown reached; race setup incomplete | Run012 requests `14000a`, reaches the original City Rush briefing, and real A starts countdown. World/player setup is not established after this direct story handover. Use proper original extra-mode setup before qualifying races |
-| Reverse handover `0x3003c -> 0x20028` | Failed; investigation required | `mission-qa-008` reads unmapped guest address `0x05ec0000` during the handover. Repeated-transition correctness remains required; no assumption that this is automation-only and no pass claimed |
+| Reverse handover `0x3003c -> 0x20028` | Reached crash fixed; repeated loading and movement passed | Shared `eb180a4` corrects native vertex-header allocation ownership. Fresh run022 passes the original failing route, then `20032 -> 3003c -> 20028`, with playable state15 and movement on the final revisit. Mission prerequisites are bypassed; this does not qualify the complete missions |
 
 The enabled normal-normalization fix uses the existing real lighting consumer,
 with three targeted initializer/lighting tests passing. The actual retry now
@@ -186,9 +186,17 @@ same late-game route and targeted GPU checks; exact precision remains SV08.
 The scaled-point implementation is committed as `4a56ca4`; targeted points,
 fixed-declaration and fog checks pass in 1.46s. Run014 additionally captures
 eight previously unobserved story-event scene groups in one running process.
-The reverse handover3003c ->20028 also succeeds after that long batch and
-returns naturally to playable15 with movement/jump input; the earlier fresh
-run failure still needs its exact fresh-route retry under `beads-xbox.1.181`.
+The fresh reverse-handover failure is now resolved under `beads-xbox.1.181`.
+Allocation tracing and a private debugger watch establish a graphics-header
+allocation mismatch: the bridge placed an opaque driver header in a recycled
+raw user-VM reservation, whereas the original SDK allocates a small heap
+object. Shared `eb180a4` uses the maintained header pool, preserving physical
+data and reference/binding/waiter ownership. A targeted actual VM reuse,
+CPU/GPU byte, binding-retention and final-cleanup regression passes across
+three device lifetimes. Fresh run022 passes the previously failing route and
+repeats the forward/reverse sequence with movement. Broad ABI/capacity/scheduler
+fixtures explicitly skip unavailable boundaries in this older SDK profile;
+those skips are not counted as passes.
 Campaign-wide behavioral mapping, mechanics, mission completion and save/reload remain
 open. No overall campaign percentage is established. SV01-SV08 remain deferred.
 
