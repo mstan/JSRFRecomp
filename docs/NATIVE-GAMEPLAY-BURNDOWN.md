@@ -66,13 +66,45 @@ scene entry, source registration and a successful build do not close these rows.
 | --- | --- | --- |
 | Areas and bosses; extra-mode setup deferred | Rapid campaign coverage recorded | All19 campaign/gameplay scene groups entered;13 encounter files reached. Original extra-mode initialization and mechanics remain deferred under the owner clarification |
 | Recovery and audiovisual behavior | Original save/load and reached race failure/retry passed | Carry scoped evidence forward; deeper death/recovery and audiovisual permutations deferred unless a reached failure requires them |
-| Adaptive widescreen and HUD | Sampled world/basic HUD and reported text cases pass | Actual 4:3/16:9/21:9/32:9 changes retain original vertical FOV and widen GPU/CPU projection/clipping. Owner-reported score/dialogue/prompt defects repaired with source-owned anchors and original pixel canvas. Actual rail scoring, centered talk prompt, right stock icon/count and bottom portrait dialogue inspected through32:9; broader effects remain sampled/reviewable |
-| Internal resolution and fidelity | Implemented; representative gameplay passes | Actual2520x1080,5040x2160 and1920x1440 with3x3 supersampling, FXAA and8x/16x filtering; original movement/pause/resume. Intermediate resolution choices share the tested resolver/raster path. Owner performance review remains |
+| Adaptive widescreen and HUD | Sampled checks pass; owner brief playtest accepted | Actual 4:3/16:9/21:9/32:9 changes retain original vertical FOV and widen GPU/CPU projection/clipping. Owner-reported score/dialogue/prompt defects repaired with source-owned anchors and original pixel canvas. Actual rail scoring, centered talk prompt, right stock icon/count and bottom portrait dialogue inspected through32:9; broader effects remain sampled/reviewable |
+| Internal resolution and fidelity | Implemented; representative gameplay and brief owner review pass | Actual2520x1080,5040x2160 and1920x1440 with3x3 supersampling, FXAA and8x/16x filtering; original movement/pause/resume. Intermediate resolution choices share the tested resolver/raster path. No isolated-host performance benchmark or exhaustive stage-effects claim |
 | Higher FPS and interpolation | Optional interpolated presentation implemented; gameplay simulation retained | Actual120Hz plan in controllable Garage with title gameplay scope and pause/resume cuts; original/interpolated modes are exclusive. Blended double edges are expected. Actual faster simulation remains unavailable without a qualified timing adapter |
-| Compatibility and final handoff | Compatibility smoke passes; owner handoff delivered | Dashboard Home/Memory/Music/Settings and Blinx boot/cinematics rendered with frameworkb5e3b8e; three Blinx visual contracts pass. Coherent title pin, normal windowed Player1/mod launcher and100% volume delivered. Owner selected options and started the immutable native build; protected source saves and existing Blinx/Dashboard builds remain untouched |
+| Compatibility and final handoff | Final compatibility smoke and owner brief playtest pass | Dashboard Home/Memory/Music/Settings and Blinx boot/cinematics render with final shared frameworkb657fc6. Coherent title pin, normal windowed Player1/mod launcher and100% volume delivered. Owner selected options and started the immutable native build; protected source saves and existing Blinx/Dashboard builds remain untouched |
 
 Supporting precision/hardware SV01-SV08 and full runtime snapshots stay deferred;
 actual reached crashes or broken output remain required fixes.
+
+### Accepted preview delivery, October21
+
+The owner reports, "I just briefly playtested. it looks good to me." This is the
+final brief visual/playability review of the delivered preview, within the
+explicit rapid stage/boss coverage scope above. It does not convert bypassed
+combat or untested mechanics into passes. All reached execution uses generated
+native CPU code without interpreter fallback; shared services retain their fast
+native HLE implementations and the existing LLE contracts.
+
+The final native executable is SHA256
+`b4617075924f11d10b5539dce5ab1ad2ac75a98dc65f5e24a66d14d2cc777ea7`.
+JSRF source `d97d18a` coherently pins shared framework
+`b657fc60cb37908181d118884e044a101cf9969d`. The load-camera fix and host exception
+fix are included. The private owner preference file retains controller selection,
+normal audio, adaptive widescreen,1080p with2x supersampling, FXAA/8x filtering
+and60Hz interpolated presentation. The normal windowed launcher remains available
+through the private `Play Jet Set Radio Future.cmd` handoff.
+
+Final independent compatibility builds use the same shared commit. Private
+`dashboard-final-154954` renders Home, Memory, Music and Settings with754 presents;
+`blinx-final-155009` renders boot/cinematics with1727 presents. Captures were
+inspected. Both runs are muted, use copied state and stop intentionally after
+their short checks. Existing owner builds and persistent saves are preserved.
+
+The remaining nonessential work is explicitly deferred in Beads: `.2.5`
+unreproduced/resuming title pause under host load, `.2.8` unusual instant-escape
+action traversal, `.2.9` proper extra-mode initialization, `.2.10` exhaustive
+mechanics/routes/recovery, and `.2.11` deeper stage effects, isolated performance
+and an actual-faster-simulation timing adapter. Interpolated presentation is
+available now; actual faster simulation stays unavailable until qualified.
+Supporting hardware/precision work and full runtime snapshots remain deferred.
 
 ### Owner Load Game crash fixed, October21
 
