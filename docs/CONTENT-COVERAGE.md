@@ -15,7 +15,7 @@ or completion trigger. Inputs sent during an event do not establish controllable
 | `0x00000000` | 52 | `10001` | Movement, camera, NPC talk, original jump/grind lessons, real pickups and two original boosts through shared bc4d290 | Open: spraying and later tutorial/progression |
 | `0x00000008` | 1 | `100c4` | Cutscene entry/motion; end unverified | Open |
 | `0x00000009` | 1 | `200c4` | Story event entry/animation captured in run014 | Open |
-| `0x00010000` | 16 | `10014` | Entry and movement | Open |
+| `0x00010000` | 16 | `10014` | Entry/movement; real three-part save-point spray, original save and fresh-process reload with painted state retained in run032/033 | Open: regular graffiti missions, encounters and completion |
 | `0x00010001` | 18 | `2001e` | Introduction entry | Open |
 | `0x00010002` | 17 | `1000a` | Movement and original story conversation/return | Open |
 | `0x00010003` | 12 | `40032` | Introduction naturally returns to gameplay | Open |
@@ -87,7 +87,7 @@ sequence is fixed by shared commit `bc3a6a6` (`beads-xbox.1.180`).
 | Enemies, police encounters and bosses | Unverified |
 | Real mission completion and next-mission triggers | Unverified; forced handovers do not count |
 | Death/retry, checkpoint handling and game-over | Unverified |
-| Save and authenticated fresh-process reload | Original save creation passed in run028; independent-process original loading remains open |
+| Save and authenticated fresh-process reload | Passed for the reached same-chapter10014 save: run032 saves, fresh run033 loads through original menus, restores the painted save-point target and responds to movement; no validation bypass |
 | All remaining script variants and scene exits | Unverified; inventory presence does not prove execution |
 
 Supporting precision/oracle validation remains in the SV01-SV08 deferral list of
@@ -125,4 +125,11 @@ three-part Graffiti Stop target592 using actual RT input, with cans30 ->27 and
 unpainted1 ->0, and activates its save point. The original menu creates
 Game File1 and reports Done saving, with new private JSRFDATA.SAV and
 SaveMeta.xbx files. Prerequisite refill and area entry are bypassed; ordinary
-wall-tag mission completion and independent-process loading remain open.
+wall-tag mission completion remains open. The first cross-chapter forced save
+is unsuitable for reload: its unchanged persistent Chapter1 requests missing
+mssn0140, while the forced area was mssn0240. No fake alias or load pass is
+claimed for run031. Same-chapter run032 paints target576 at10014 and saves;
+fresh run033 accepts that file through original Load Game/character selection,
+returns to playable10014/state15, retains target576 painted and moves normally.
+This closes the reached save/reload check while campaign progression remains
+open. QA handovers do not update persistent story flags.

@@ -2,6 +2,8 @@
 
 Teleport and mission handover bypass prerequisites and never certify completion.
 Only the private process/state identified by --run can be modified.
+Handovers leave persistent story progression unchanged; save/reload and mission
+chain checks require a consistent chapter/area setup in addition to scene entry.
 """
 from pathlib import Path
 import argparse,json,math,struct,sys
@@ -53,7 +55,7 @@ def open_qa(run,framework=None,write=False):
                 struct.pack_into('<I',block,self.facts['flow_next_number']-start,mission&0xffff)
                 struct.pack_into('<I',block,self.facts['flow_state']-start,self.facts['handover_state'])
                 self.write(at+start,bytes(block))
-            self.record({'operation':'mission-handover','before':old,'requested':mission,'bypass':True,'completion_claimed':False,'event_completion_bypassed':state==19})
+            self.record({'operation':'mission-handover','before':old,'requested':mission,'bypass':True,'completion_claimed':False,'event_completion_bypassed':state==19,'persistent_story_updated':False,'save_context_consistency_claimed':False})
         def cans(self,camera,count):
             if type(count) is not int or count<0:raise ValueError('can count must be a nonnegative integer')
             with self.frozen():

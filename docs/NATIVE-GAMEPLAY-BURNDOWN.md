@@ -24,7 +24,7 @@ retrying the game. Preserve cheats/teleports as QA tools and record bypasses.
 | GP05 | Derive the area/mission/mechanic inventory | Content inventory derived; behavioral mapping open | `tools/qa_inventory.py` parses all 311 owned mission/script pairs and their setup/trigger operation inventories, grouped under 33 scene keys. Scene keys are not automatically area names. Filename numbers alias modulo 100, so canonical runtime IDs still require original-flow evidence |
 | GP06 | Add reusable cheat-assisted QA controls through title mods | Teleport, original handover, explicit event bypass and bounded can refill working; further controls open | Shared private RAM transport plus revision-bound `tools/qa.py` and `gameplay-qa.json`. Source-bound can count/capacity facts now support a refill capped by the original character capacity; run025/026 live use validates it, including over-capacity rejection without a write. Protection and further resource controls remain open; refills do not pass pickup prerequisites |
 | GP07 | Exercise every inventoried location and meaningful mechanic | In progress: 28/33 scene groups have rendered entries; mechanics remain open | Per-location passed/failed/unverified/bypassed ledger, original transitions, interactions, mission triggers, unique actions and relevant audio; entry count is not a campaign qualification denominator |
-| GP08 | Validate save/reload and representative progression boundaries | Original save write passed; fresh-process load and progression open | Run028 creates Game File1 through the original save-point menu, reports Done saving and writes a new private JSRFDATA.SAV plus SaveMeta.xbx. Fresh-process original Load Game remains required; owner originals are protected |
+| GP08 | Validate save/reload and representative progression boundaries | Original save/create/fresh-process reload passed; wider progression open | Run032 creates a same-chapter save at10014; independent run033 uses original Load Game and character selection, returns to playable10014, retains the painted save-point target and responds to movement. Real mission progression and recovery boundaries remain GP07 work; owner originals are protected |
 
 Cheats can position/protect the player and bypass prerequisites. A forced
 mission-complete flag is recorded as a bypass; it cannot pass the real
@@ -167,8 +167,30 @@ one save-point graffiti interaction, not the regular wall-tag mission.
 The original save menu then creates Game File1, Chapter1, play time00:20 and
 reports Done saving. The new private JSRFDATA.SAV is41088bytes, accompanied by
 SaveMeta.xbx. Run028 is intentionally stopped after that completed save so an
-independent process can test original loading. Actual loading and broader
-progression remain open; this save is not a runtime snapshot.
+independent process can test original loading. This first forced cross-chapter
+save is subsequently rejected as usable QA setup: the handover did not update
+the persistent story chapter. Run031 accepts the file and character selection,
+then requests nonexistent mssn0140 instead of the forced area's mssn0240.
+The real missing-file statuses are preserved. No runtime failure is inferred
+from this inconsistent prerequisite bypass, and no filename alias or fake
+success is added to the base runtime.
+
+Run032 starts fresh, uses an explicitly bypassed same-chapter handover10014,
+and paints its original Graffiti Stop target576 with real RT input, cans30 ->27.
+Original saving writes JSRFDATA.SAV41088bytes. Independent process run033 loads
+that file through the actual Load Game confirmation and character selection,
+then reaches mission10014/state15 with the original player/camera. Target576
+is still painted (unpainted0, designsfffffe00), its save-point effect is active,
+and ordinary stick input moves the player. No paint, completion or signature
+validation override is used. The private save identity and before/after memory
+observations are retained in fresh-load-proof.aot-private.json. This passes
+the reached save/create/reload interaction; wider progression and recovery
+boundaries remain open. A game save is not a runtime snapshot.
+
+QA handovers leave persistent story progression unchanged. Use a consistent
+chapter/area setup for save, mission-chain and extra-mode checks, and continue
+recording bypassed prerequisites. A rendered forced scene alone does not prove
+its persistent story state is suitable for those checks.
 
 | Route | Result | Scope and bypasses |
 | --- | --- | --- |
