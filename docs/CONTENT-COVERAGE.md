@@ -254,3 +254,46 @@ including three10-part targets. The first XL approach triggers the original0231
 that real mission change. Tank completion and10-part spraying remain open.
 Private run038 remains live, hidden/muted, at the reached tank encounter; the
 Chapter2 Garage checkpoint is the independent restart source.
+
+## Chuo tank encounter setup and resource protection
+
+Run038's first tank phase contains six type8 Tank groups and barricades.
+The owned mission's A2 command indexes enemy-group sets in block5, rather than
+individual definitions in block3. Initial set0 contains definitions1..7;
+Hayashi (definition0, type1) belongs to the later set1. His absence during the
+first phase is expected and is not a missing-enemy bug. Read-only live ownership
+comes from the original enemy manager's type8 bucket, including the wrapper's
+primary Tank instance; concrete tank instances are not CAct tree children.
+
+Actual RT input completes the first tank's two side targets and final target,
+with original target progress reaching1.0 and remaining count1 ->0. A tagging
+camera/target observation proves accepted spraying; can consumption alone does
+not. Teleports and capped can/health refills bypass approach and survival only.
+No target, enemy-health, defeat, mission or chapter fields are written.
+The same batch then retires the remaining five tanks through actual RT. All six
+reach original remaining0; the mission removes the type8 set and spawns its
+second-phase type1 Hayashi group. No group-set or listener fields are written.
+The following actual LT/B dash and RT spray batch defeats Hayashi: original
+remaining1 ->0, defeat animation/state33 and mission return0231 ->0230
+(runtime200e7 ->200e6), with a new live player/camera and ordinary state15.
+These pass the reached fight and its outgoing transition.
+
+The private resource helpers now admit original live-player camera modes3/5
+(normal/grind),9 (lock-on),13 (spray) and14 (look), retaining image/function hashes,
+camera/player ownership, frozen writes and unchanged capacity guards. Original
+camera Exec at0xa5040 selects13 from the player's active spray fields and14 from
+its look field; its existing hash is already checked. Actual health protection
+runs during the encounter, including a refill during mode13. Repeated over-capacity
+health111 and cans31 requests are rejected with all four resource/capacity DWORDs
+unchanged (original caps110 and30). This is an explicit
+survival bypass, not a pass for damage, death/retry or every camera mechanic.
+
+The next ordinary Chuo graffiti approach unexpectedly enters0231 again. The
+recorded chapter flags after the first return are10/11/13/19, although0231's
+terminal command lists C12=0/C11=0/C13=1/C19=1. The reentry's cause remains open:
+inspect actual flag writes, original return/setup and approach prerequisites
+before claiming stable Chuo story progression or changing the runtime. The
+ordinary save-point target is only partially painted, and no ten-part target
+passes yet. Run038 then ends at its original3600-observation bound (4081.9s),
+not a crash; its survival guard exits after that owned process ends. No new
+post-fight save is claimed; the Chapter2 Garage checkpoint remains available.

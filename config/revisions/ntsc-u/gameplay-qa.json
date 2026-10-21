@@ -6,6 +6,7 @@
   "camera_vtable": 1889496,
   "camera_target": 36,
   "camera_mode": 520,
+  "resource_camera_modes": [3, 5, 9, 13, 14],
   "player_position": 3236,
   "player_health": 3992,
   "player_health_capacity": 3996,

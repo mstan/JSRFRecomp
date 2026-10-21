@@ -64,7 +64,7 @@ def open_qa(run,framework=None,write=False):
                 owner=camera['object'];player=camera['player']
                 if self.u32(owner)!=self.facts['camera_vtable'] or self.u32(owner+self.facts['camera_target'])!=player:
                     raise ValueError('camera owner changed')
-                if self.u32(owner+self.facts['camera_mode']) not in (3,5):raise ValueError('requires ordinary gameplay camera')
+                if self.u32(owner+self.facts['camera_mode']) not in self.facts.get('resource_camera_modes',[3,5]):raise ValueError('requires a supported live-player camera')
                 capacity=self.u32(player+self.facts['player_spray_capacity'])
                 at=player+self.facts['player_spray_cans'];before=self.u32(at)
                 if not 0<capacity<=999 or before>capacity or count>capacity:raise ValueError('can count exceeds current original capacity')
@@ -77,7 +77,7 @@ def open_qa(run,framework=None,write=False):
                 owner=camera['object'];player=camera['player']
                 if self.u32(owner)!=self.facts['camera_vtable'] or self.u32(owner+self.facts['camera_target'])!=player:
                     raise ValueError('camera owner changed')
-                if self.u32(owner+self.facts['camera_mode']) not in (3,5):raise ValueError('requires ordinary gameplay camera')
+                if self.u32(owner+self.facts['camera_mode']) not in self.facts.get('resource_camera_modes',[3,5]):raise ValueError('requires a supported live-player camera')
                 capacity=self.u32(player+self.facts['player_health_capacity'])
                 at=player+self.facts['player_health'];before=self.u32(at)
                 if not 0<capacity<=999 or before>capacity or count>capacity:raise ValueError('health exceeds current original capacity')
