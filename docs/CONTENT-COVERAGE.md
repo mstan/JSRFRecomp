@@ -297,3 +297,24 @@ ordinary save-point target is only partially painted, and no ten-part target
 passes yet. Run038 then ends at its original3600-observation bound (4081.9s),
 not a crash; its survival guard exits after that owned process ends. No new
 post-fight save is claimed; the Chapter2 Garage checkpoint remains available.
+
+Fresh039 accepts the unchanged Chapter2 Garage save, crosses the same original
+Garage/Shibuya exits, and repeats the six-tank/Hayashi fight successfully. A
+read-only flag watch and native debugger data watch establish the original
+terminal writer path (39be0 ->39d80, caller56540): C11 clears, C13 and C19 set.
+The resulting playable0230 state has C10/C13/C19 and no C11. The same XL approach
+then stays in0230/state15 for the bounded observation. No native fix or flags
+patch is justified by this repeat. The earlier038 reentry remains recorded and
+its differing QA setup is not qualified as a game defect. Ten-part painting,
+post-fight saving and the next Chuo story interaction remain open.
+
+The debugger was launched with inherited closed stdin; its later diagnostic
+break could not accept a detach command. Agent cleanup deliberately ends039,
+with this tooling stop recorded separately from native game failures. Evidence
+and the immutable Garage save are retained. Future interactive debugger wrappers
+must own an input pipe before attaching; this does not require a runtime change.
+
+Inventory v2 parses all311 owned pairs successfully, including all four command
+arrays and bounded enemy-definition/group-set tables. The known0231 sets match
+[1..7] and[0,7]. These metadata aid later encounter batching; parsed definitions,
+placement counts and operations alone do not pass behavior or actor counts.

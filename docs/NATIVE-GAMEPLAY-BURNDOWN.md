@@ -275,7 +275,10 @@ Generate the private content inventory without copying game content into Git:
 python tools/qa_inventory.py --media-root <owned-media-root> --output G:/Temp/Codex/JSRFRecomp/content-inventory.aot-private.json
 ```
 
-This emits filenames, hashes, scene keys and command counts/opcode counts.
+This emits filenames, hashes, scene keys and command counts/opcode counts for
+all four command arrays. Inventory v2 also separates individual enemy definitions
+from the original group sets that spawn/despawn/listen commands reference.
+Placement-record counts are not claimed as live actor or encounter counts.
 It neither runs commands nor establishes their behavior. For example,
 `mssn0196` is reached with runtime ID `0x100c4` (low word196), so the naive
 filename candidate with low word96 must not be treated as a proven ID.
@@ -312,3 +315,11 @@ Hayashi and the original mission returns to playable Chuo. A subsequent graffiti
 approach unexpectedly reenters0231, so stable post-fight story progression and
 the ten-part targets remain open; no broad Chuo completion claim is made. Details and source ownership are in the content
 ledger; no native runtime change or rebuild is required for these QA controls.
+
+Fresh039 repeats the fight and original return with a read-only data watch.
+Original C11 clears and C13/C19 set; the same XL approach stays in0230/state15.
+The earlier reentry is not reproduced and no native behavior change is justified.
+Ten-part painting, post-fight save and Chuo's next real story interaction remain
+next. The diagnostic run is deliberately stopped for debugger-input cleanup;
+its terminal status is not a game crash. Immutable Garage restart state remains
+available. Enemy/group-set inventory v2 passes all311 owned mission pairs.
