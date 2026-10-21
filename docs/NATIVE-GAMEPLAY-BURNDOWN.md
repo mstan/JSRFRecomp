@@ -23,8 +23,8 @@ retrying the game. Preserve cheats/teleports as QA tools and record bypasses.
 | GP04 | Implement newly reached shared contracts | Reached boost failure fixed; continue with the next gameplay consumer | Shared `bc4d290` models the original standalone depth surface used by boost. Targeted actual GPU depth/stencil/ownership checks pass; run028 performs two original boosts with expected can consumption and visible effects, then loads3003c and revisits20028. No broad campaign qualification implied |
 | GP05 | Derive the area/mission/mechanic inventory | Content inventory derived; behavioral mapping open | `tools/qa_inventory.py` parses all 311 owned mission/script pairs and their setup/trigger operation inventories, grouped under 33 scene keys. Scene keys are not automatically area names. Filename numbers alias modulo 100, so canonical runtime IDs still require original-flow evidence |
 | GP06 | Add reusable cheat-assisted QA controls through title mods | Teleport, original handover, explicit event bypass and bounded can/health refill working; further controls open | Shared private RAM transport plus revision-bound `tools/qa.py` and `gameplay-qa.json`. Refills respect original character capacities and reject over-capacity requests without a write. Run034 validates health65 ->110 with the maximum unchanged. Continuous protection and further resource controls remain open; refills do not pass pickup or damage checks |
-| GP07 | Exercise every inventoried location and meaningful mechanic | In progress: 28/33 scene groups entered; Shibuya Terminal graffiti 35/35 passed | Run034/035 paints all regular tags and save point with actual RT, original map 35 (100%), with original saves and a fresh-process30-target persistence check. Encounters, actual exits, mission completion and other locations remain open; entry count is not a campaign qualification denominator |
-| GP08 | Validate save/reload and representative progression boundaries | Original save/create/fresh-process reload passed; wider progression open | Run032 creates a same-chapter save at10014; independent run033 uses original Load Game and character selection, returns to playable10014, retains the painted save-point target and responds to movement. Real mission progression and recovery boundaries remain GP07 work; owner originals are protected |
+| GP07 | Exercise every inventoried location and meaningful mechanic | In progress: 28/33 scene groups entered; Shibuya graffiti and reached Combo challenge passed | Run034/035 paints all regular tags and save point with actual RT, original map 35 (100%), with original saves and a fresh-process30-target persistence check. Run036 also completes four original Poison Jam route returns and Combo's actual grind/air-trick challenge; run037 completes the reached 20-cop fight through real lock-dash/spray and original Chapter2 transition; other content remains open. Entry count is not a campaign qualification denominator |
+| GP08 | Validate save/reload and representative progression boundaries | Original save/fresh-process reload and reached Chapter2 progression save/load passed; wider recovery open | Run032 creates a same-chapter save at10014; independent run033 uses original Load Game and character selection, returns to playable10014, retains the painted save-point target and responds to movement. Run037 then completes the reached Shibuya cop fight and original Chapter2 transition, saves through Roboy; fresh038 loads the Chapter2 Garage and moves. Wider recovery/content remains GP07 work; owner originals are protected |
 
 Cheats can position/protect the player and bypass prerequisites. A forced
 mission-complete flag is recorded as a bypass; it cannot pass the real
@@ -42,6 +42,24 @@ higher internal resolution and the generic frame-rate mods. Real faster
 simulation and frame interpolation remain separate, mutually exclusive modes.
 Owner visual/performance review is the appropriate acceptance step for those
 enhancements; gameplay timing must remain correct.
+
+## Full end-to-end completion scope
+
+The October21 owner goal (beads-xbox.2.6 and beads-xbox.2.7) includes gameplay coverage first, followed by visual
+mods and final delivery. The goal remains open until each row has direct evidence;
+scene entry, source registration and a successful build do not close these rows.
+
+| Work | Status | Required evidence |
+| --- | --- | --- |
+| Areas, missions, bosses and extra modes | Open under beads-xbox.2.6 | Per-content real mechanics, completion and next-area/progression observations; explicit travel/prerequisite bypasses |
+| Recovery and audiovisual behavior | Save/load passed in reached scope; wider checks open | Death/retry, representative progression reloads, interaction audio and animation during actual content coverage |
+| Adaptive widescreen and HUD | Pending gameplay coverage | Window/aspect changes through 32:9, real margin content, visible entities, correctly shaped indicators and anchored HUD |
+| Internal resolution and fidelity | Pending gameplay coverage | 1080p through 4K, AA and supersampling options through reusable mod controls and inspected output |
+| Higher FPS and interpolation | Pending gameplay coverage | Separate mutually exclusive modes; measured gameplay timers/movement retain intended pacing |
+| Compatibility and final handoff | Open | Blinx/Dashboard regression evidence, committed coherent framework pins, windowed launcher and normal audio for owner review |
+
+Supporting precision/hardware SV01-SV08 and full runtime snapshots stay deferred;
+actual reached crashes or broken output remain required fixes.
 
 Current private work/evidence root:
 `G:/Temp/Codex/JSRFRecomp/gameplay-20261020`.
@@ -261,3 +279,25 @@ This emits filenames, hashes, scene keys and command counts/opcode counts.
 It neither runs commands nor establishes their behavior. For example,
 `mssn0196` is reached with runtime ID `0x100c4` (low word196), so the naive
 filename candidate with low word96 must not be treated as a proven ID.
+
+The original Shibuya story route now advances beyond graffiti: run036 passes four
+Poison Jam recordings/returns and Combo's real two-grind/air-trick challenge,
+then enters the cop fight and disables one cop through normal dash/spray input.
+No action/counter/completion fields are written. Run037 repeats the four routes
+and saves an original C31/C50 story checkpoint (chapter1, return mission120,
+events10/21/23). Its lane checks pass and the save reports Done saving; independent
+reload of this newer story checkpoint remains open. The checkpoint excludes only
+the rebuildable locked native cache. The per-consumer evidence and explicit repeat
+prerequisite bypass are recorded in CONTENT-COVERAGE.md and private traces.
+
+Run037 now completes the reached20-cop fight through actual knockdown/tagging.
+The original defeat listener, event and exit advance to native20060/Chapter2.
+The repeated Combo prerequisite is explicitly bypassed after its actual run036
+pass; no enemy/completion/chapter fields are written. Chapter2 entry is direct
+progression evidence, not a claim that all Chapter1 side content is covered.
+
+Original Chapter2 progression save/load now passes: after its introduction and
+character selection, run037 enters Garage200c8, talks to Roboy and uses the original
+save menus. The chapter2/return mission0 file is saved with original validation
+active. Fresh038 loads it into native20000/state15 and ordinary movement responds.
+The earlier Shibuya checkpoint and the new Garage checkpoint are preserved privately.

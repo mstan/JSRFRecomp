@@ -15,7 +15,7 @@ or completion trigger. Inputs sent during an event do not establish controllable
 | `0x00000000` | 52 | `10001` | Movement, camera, NPC talk, original jump/grind lessons, real pickups and two original boosts through shared bc4d290 | Open: spraying and later tutorial/progression |
 | `0x00000008` | 1 | `100c4` | Cutscene entry/motion; end unverified | Open |
 | `0x00000009` | 1 | `200c4` | Story event entry/animation captured in run014 | Open |
-| `0x00010000` | 16 | `10014` | Shibuya Terminal: movement, original story encounter, all 35 regular graffiti plus save point painted; original map 35 (100%); progress saved and30-target checkpoint restored by fresh run035 | Open: remaining encounters, actual exits and mission completion |
+| `0x00010000` | 16 | `10014` | Shibuya Terminal: movement, original story encounter, all 35 regular graffiti plus save point painted; original map 35 (100%); progress saved; fresh036 restores all36 targets; four Poison Jam routes and Combo challenge complete through original flow | Passed: reached police-fight completion and original Chapter2 transition; other chapter variants open |
 | `0x00010001` | 18 | `2001e` | Introduction entry | Open |
 | `0x00010002` | 17 | `1000a` | Movement and original story conversation/return | Open |
 | `0x00010003` | 12 | `40032` | Introduction naturally returns to gameplay | Open |
@@ -81,11 +81,11 @@ sequence is fixed by shared commit `bc3a6a6` (`beads-xbox.1.180`).
 | Behavior | Current scope |
 | --- | --- |
 | Movement, camera and jump/landing | Initial Garage passed; movement observed in several additional areas |
-| NPC interaction | Corn conversation trigger passed after teleport bypassed travel |
+| NPC interaction | Corn/Gum passed; run036 triggers Poison Jam and Combo through original RT/A dialogue, including original Yes/No selection |
 | Graffiti/spraying, pickups and resource limits | Real can pickups and original collection lesson passed in run024. Run034/035 paints every Shibuya Terminal target through actual RT, including one/three/six-part wall tags and its save point; original map 35 (100%). Ten-part tags, other areas, limits and other pickup types remain open |
 | Boost, grinding, tricks, jumps and traversal routes | Garage jump/grind lessons passed; rail movement, sparks and scoring rendered. Run028 performs two boosts with cans12 ->2 and blur/fire effects. Requested trick combinations and other traversal remain open |
-| Enemies, police encounters and bosses | Unverified |
-| Real mission completion and next-mission triggers | Unverified; forced handovers do not count |
+| Enemies, police encounters and bosses | Run036/037 real lock-on/dash knockdown plus close RT spray disables the reached20-cop fight, with original completion/Chapter2 transition; bosses and other enemy families open |
+| Real mission completion and next-mission triggers | Four Poison Jam recordings return through original exits; Combo street challenge reaches original success and next story conversation, then cop-fight entry. Travel bypassed, no completion/action-field writes. Run037 cop-fight terminal transition enters original Chapter2 introduction. Wider progression open |
 | Death/retry, checkpoint handling and game-over | Unverified |
 | Save and authenticated fresh-process reload | Passed for the reached same-chapter10014 save: run032 saves, fresh run033 loads through original menus, restores the painted save-point target and responds to movement; no validation bypass |
 | All remaining script variants and scene exits | Unverified; inventory presence does not prove execution |
@@ -157,7 +157,7 @@ state is saved normally; the final private save is41088bytes, SHA256
 e73a248b47612848d009cf4f078af56207c5375a03e11b7923ac4c899b652d76.
 Travel, resource collection and some story prerequisites are bypassed.
 
-After leaving the save menu, the original flow remains10014/state15. The
+At the run035 save checkpoint, the original flow remains10014/state15. The
 100% graffiti display does not establish a complete mission or its exit.
 Original NPC/exit-triggered progression, encounters and other unique actions
 remain open. The parsed0120 mission lists exits to0121/0122; those are route
@@ -176,3 +176,70 @@ zero-key signature assumption does not match this runtime's save, so its
 writer is not used. Original game save validation stays active. Reference
 tools, decoded game state and captures remain private; no upstream runtime
 code or original content is added to this repository.
+## Shibuya original story chain and combat
+
+Fresh process036 loads the final graffiti checkpoint and observes all36 painted
+targets retained. Original talk regions parsed from owned0120 supply the four
+Poison Jam approach positions. Actual RT/A input triggers each conversation,
+mission0121 (observed runtime10079), its recorded skating route, and the original
+return to0120 (runtime10078). The game advances chapter flags itself; none are
+written by the QA controls. Four routes and their returns pass in this scope.
+
+Combo's original conversation, explicit Yes selection and demonstration then
+reach playable0123 (runtime1007b). Simply teleporting to its endpoint does not
+complete the challenge. The original challenge manager observes two real grinds
+and an actual X air trick in the required regions, advances stages0 ->1 ->2 ->3,
+and sets its own success state. Original progression clearsC31, setsC32 and
+returns through event22 and Combo's following conversation. Teleports bypass
+travel between action regions; completion, action-kind, counters and story flags
+are never written. This passes the reached challenge's action consumers and
+terminal transition; it does not qualify skating the whole route without cheats.
+
+The next original conversation enters0122 (runtime1007a), with its cop introduction
+and playable fight. Actual LT lock-on/B dash knocks an original cop down; close RT
+spray consumes cans, enters the original tagging animation and disables the cop
+(original state26/removal flag). Only player positions and bounded resources are
+changed by QA. Full fight completion and outgoing chapter transition remain open.
+Run036 ends at its planned time bound, rather than an unsupported native stop.
+The known route is now a single batch for replay and checkpoint creation in037.
+
+Format/name references for locating these original consumers are
+[KeybadeBlox/GG-Notebook](https://codeberg.org/KeybadeBlox/GG-Notebook)
+(WTFPL2, mission layout blob7aa51fa8c69abfa2f85fae9a11f7581dcb114365) and
+[KeybadeBlox/JSRF-Decompilation](https://codeberg.org/KeybadeBlox/JSRF-Decompilation)
+(CC0, listing blob247094a23b3ce182c92ed211b6f919050f5468e8).
+Addresses/layouts are checked against this owned revision; upstream data addresses
+are shifted and cannot be copied blindly. These remain private read-only references;
+no original code or game content is shipped.
+
+Run037 preserves an original story checkpoint after all four Poison Jam routes:
+41088bytes, SHA256271de43150134f0472ae0ed86ec68431ee90443a7877419d8a332c99c582e59a,
+chapter1/return mission120, C31/C50 and events10/21/23, with valid decoded lane
+checks. The original save menu reports Done saving. The independent private
+checkpoint omits the locked rebuildable native cache and retains identical save
+bytes; an independent reload of this newer checkpoint remains open.
+
+A repeat Combo attempt's teleport candidates touch its original retry conditions;
+that is a QA route miss, not a demonstrated game failure. Run036 remains its actual
+success evidence. To avoid re-proving that completed check, run037 explicitly
+bypasses the repeat prerequisite through original handover0122. It then uses actual
+LT/B lock-dash and RT spraying for the entire20-cop fight, with bounded can/health
+refills and close-approach teleports. No enemy-health, action, mission-completion
+or chapter flags are written. Several original hits disable more than one nearby
+cop. The game retires disabled actor allocations, so the read-only observer treats
+those lifetimes as retired rather than reading freed memory. The terminal proof
+is the original mission itself: after its defeat listener/event/exit, native flow
+enters20060 and persistent chapter advances to2. This passes the reached fight's
+completion and outgoing progression; it does not establish the bypassed repeat
+prerequisite or the remaining Chapter1 Dogenzaka content.
+
+Chapter2 introduction ends through the original post-cutscene character selection
+(runtime20126), then native Garage gameplay (200c8). The original Roboy interaction
+opens its Garage/System/Save menus and saves normally. That save is41088bytes,
+SHA2564322d791cb7ef0c52865586b81af9be062d98e5ac05e9b84e4b46fbd43d7a2b9,
+chapter2/return mission0 with reset chapter flags and retained prior graffiti.
+Fresh independent process038 accepts it through original Load Game and character
+selection, returns to20000/state15 and responds to movement. This passes the
+reached mission/chapter progression save/load boundary; other recoveries remain
+open. Immutable private checkpoints retain both the earlier Shibuya story state
+and this Chapter2 Garage state.
