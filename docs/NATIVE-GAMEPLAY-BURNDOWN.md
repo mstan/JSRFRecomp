@@ -23,7 +23,7 @@ retrying the game. Preserve cheats/teleports as QA tools and record bypasses.
 | GP04 | Implement newly reached shared contracts | Reached boost failure fixed; continue with the next gameplay consumer | Shared `bc4d290` models the original standalone depth surface used by boost. Targeted actual GPU depth/stencil/ownership checks pass; run028 performs two original boosts with expected can consumption and visible effects, then loads3003c and revisits20028. No broad campaign qualification implied |
 | GP05 | Derive the area/mission/mechanic inventory | Content inventory derived; behavioral mapping open | `tools/qa_inventory.py` parses all 311 owned mission/script pairs and their setup/trigger operation inventories, grouped under 33 scene keys. Scene keys are not automatically area names. Filename numbers alias modulo 100, so canonical runtime IDs still require original-flow evidence |
 | GP06 | Add reusable cheat-assisted QA controls through title mods | Teleport, original handover, explicit event bypass and bounded can/health refill working; further controls open | Shared private RAM transport plus revision-bound `tools/qa.py` and `gameplay-qa.json`. Refills respect original character capacities and reject over-capacity requests without a write. Run034 validates health65 ->110 with the maximum unchanged. Continuous protection and further resource controls remain open; refills do not pass pickup or damage checks |
-| GP07 | Exercise every inventoried location and meaningful mechanic | In progress: 28/33 scene groups have rendered entries; mechanics remain open | Per-location passed/failed/unverified/bypassed ledger, original transitions, interactions, mission triggers, unique actions and relevant audio; entry count is not a campaign qualification denominator |
+| GP07 | Exercise every inventoried location and meaningful mechanic | In progress: 28/33 scene groups entered; Shibuya Terminal graffiti 35/35 passed | Run034/035 paints all regular tags and save point with actual RT, original map 35 (100%), with original saves and a fresh-process30-target persistence check. Encounters, actual exits, mission completion and other locations remain open; entry count is not a campaign qualification denominator |
 | GP08 | Validate save/reload and representative progression boundaries | Original save/create/fresh-process reload passed; wider progression open | Run032 creates a same-chapter save at10014; independent run033 uses original Load Game and character selection, returns to playable10014, retains the painted save-point target and responds to movement. Real mission progression and recovery boundaries remain GP07 work; owner originals are protected |
 
 Cheats can position/protect the player and bypass prerequisites. A forced
@@ -131,7 +131,7 @@ the reverse interpretation would overwrite the maximum. Only positive values
 within the existing character capacity are accepted, under the same original
 camera-owner and frozen-write checks as can refills. Run034 rejects a request
 above110 without changing either field, then refills actual health65 ->110
-with maximum110 retained. This is an explicit resource bypass, not evidence
+with maximum 110 retained. This is an explicit resource bypass, not evidence
 of a health pickup, damage behavior or invincibility.
 
 The rebuilt `new-game-002` route reaches the same required spatial Play in
@@ -205,6 +205,7 @@ its persistent story state is suitable for those checks.
 | Route | Result | Scope and bypasses |
 | --- | --- | --- |
 | Initial Garage (`0x10001`) | Movement, follow camera, jump/landing and Corn conversation passed | `mission-qa-001`: ordinary jump and interaction inputs; teleport bypasses travel to Corn, not the conversation trigger. Tutorial completion remains unverified |
+| Shibuya Terminal (`0x10014`) | All 35 regular graffiti and save point painted, map100%, original save/load and a story encounter observed | Run034/035 uses actual RT, including one/three/six-part targets; no paint/completion writes. Original30-target checkpoint reloads in fresh035, then remaining six pass and full progress saves. Travel/resources/story prerequisites bypassed. Original NPC/exit progression and mission clear remain unverified |
 | Post-tutorial scene (`0x100c4`) | Cutscene entry, animation and subtitles observed | Original handover loads the scene; tutorial prerequisite bypassed. Natural scene completion and exit unverified |
 | Mission `0x1000a` / `mssn0110`, Stage 12 assets | Loads, movement and original story conversation passed | `mission-qa-004` advances past both graphics failures, renders the reached FVF102, movement triggers the original story dialogue in state31, real A advances it back to15 and movement resumes. Tutorial prerequisite bypassed; full area mechanics remain unverified |
 | Mission `0x10014` / `mssn0120`, scene key `0x10000` | Loads; movement and camera input exercised | Same live location batch, inspected position changes; prerequisites bypassed. Area-wide mechanics/completion unverified |

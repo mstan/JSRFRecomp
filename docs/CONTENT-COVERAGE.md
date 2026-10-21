@@ -15,7 +15,7 @@ or completion trigger. Inputs sent during an event do not establish controllable
 | `0x00000000` | 52 | `10001` | Movement, camera, NPC talk, original jump/grind lessons, real pickups and two original boosts through shared bc4d290 | Open: spraying and later tutorial/progression |
 | `0x00000008` | 1 | `100c4` | Cutscene entry/motion; end unverified | Open |
 | `0x00000009` | 1 | `200c4` | Story event entry/animation captured in run014 | Open |
-| `0x00010000` | 16 | `10014` | Entry/movement; real three-part save-point spray, original save and fresh-process reload with painted state retained in run032/033 | Open: regular graffiti missions, encounters and completion |
+| `0x00010000` | 16 | `10014` | Shibuya Terminal: movement, original story encounter, all 35 regular graffiti plus save point painted; original map 35 (100%); progress saved and30-target checkpoint restored by fresh run035 | Open: remaining encounters, actual exits and mission completion |
 | `0x00010001` | 18 | `2001e` | Introduction entry | Open |
 | `0x00010002` | 17 | `1000a` | Movement and original story conversation/return | Open |
 | `0x00010003` | 12 | `40032` | Introduction naturally returns to gameplay | Open |
@@ -82,7 +82,7 @@ sequence is fixed by shared commit `bc3a6a6` (`beads-xbox.1.180`).
 | --- | --- |
 | Movement, camera and jump/landing | Initial Garage passed; movement observed in several additional areas |
 | NPC interaction | Corn conversation trigger passed after teleport bypassed travel |
-| Graffiti/spraying, pickups and resource limits | Real can pickups raise HUD0 ->8 ->12 and the original collection lesson acknowledges success in run024. Run028 paints one three-part save-point target through actual RT, cans30 ->27; ordinary wall-tag missions, limits and other pickup types remain open |
+| Graffiti/spraying, pickups and resource limits | Real can pickups and original collection lesson passed in run024. Run034/035 paints every Shibuya Terminal target through actual RT, including one/three/six-part wall tags and its save point; original map 35 (100%). Ten-part tags, other areas, limits and other pickup types remain open |
 | Boost, grinding, tricks, jumps and traversal routes | Garage jump/grind lessons passed; rail movement, sparks and scoring rendered. Run028 performs two boosts with cans12 ->2 and blur/fire effects. Requested trick combinations and other traversal remain open |
 | Enemies, police encounters and bosses | Unverified |
 | Real mission completion and next-mission triggers | Unverified; forced handovers do not count |
@@ -133,3 +133,46 @@ fresh run033 accepts that file through original Load Game/character selection,
 returns to playable10014/state15, retains target576 painted and moves normally.
 This closes the reached save/reload check while campaign progression remains
 open. QA handovers do not update persistent story flags.
+
+## Shibuya Terminal graffiti checkpoint
+
+Run034 uses the original Load Game path, then batches revision-bound position
+candidates and actual RT spraying. Small wall tags and a six-part mural pass;
+the Poison Jam story encounter renders and returns naturally to gameplay.
+Several initial position candidates are below terrain or inside collision,
+so displacement and return-to-save-point behavior are recorded separately.
+The first attempt eventually returns to the original title; no mission-clear
+or complete game-over qualification is inferred. Same-process reentry is
+separate from the independent-process reload evidence.
+
+Above-floor candidates and bounded health refills retain the next batch's
+progress. Run034 paints 30/36 registered targets and saves normally. Fresh
+process035 loads that exact checkpoint and independently observes all 30
+painted targets retained. The remaining six are painted using position
+candidates offset toward the descriptor's normal; no paint flags are written.
+All 36 descriptors are painted, and the game's map reports 35 (100%) regular
+graffiti, excluding the save point. Actual RT can use, original spray
+animations and one/three/six-part designs are observed. The fully painted
+state is saved normally; the final private save is41088bytes, SHA256
+e73a248b47612848d009cf4f078af56207c5375a03e11b7923ac4c899b652d76.
+Travel, resource collection and some story prerequisites are bypassed.
+
+After leaving the save menu, the original flow remains10014/state15. The
+100% graffiti display does not establish a complete mission or its exit.
+Original NPC/exit-triggered progression, encounters and other unique actions
+remain open. The parsed0120 mission lists exits to0121/0122; those are route
+candidates until an actual transition is observed.
+
+Descriptor IDs are assigned again when a world loads. Repeated same-process
+loads can change IDs even for the same target. Compare scene and geometry
+when checking persistence, rather than assuming an earlier ID is stable.
+
+Read-only save/mission format inspection uses
+[andeecollard/jsrf-recomp's MIT-licensed QA tools](https://github.com/andeecollard/jsrf-recomp/tree/4242eb69694c8752ca42550ca3765e56288d4535/diagnostics/jsrf_first_fault/gametools).
+The private saved slot decodes with valid lane popcounts and records the
+actual original chapter flags 21/22/23 and events 10/23. Its 64 painted
+marks match the sum of the 36 registered target sizes. The upstream editor's
+zero-key signature assumption does not match this runtime's save, so its
+writer is not used. Original game save validation stays active. Reference
+tools, decoded game state and captures remain private; no upstream runtime
+code or original content is added to this repository.

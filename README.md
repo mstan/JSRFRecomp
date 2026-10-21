@@ -11,6 +11,12 @@ Interactive gameplay and systematic content validation are now tracked in the
 [gameplay burndown](docs/NATIVE-GAMEPLAY-BURNDOWN.md). Visual enhancements follow
 that work; attract acceptance alone does not qualify gameplay.
 
+The current gameplay checkpoint covers every regular graffiti target in
+Shibuya Terminal (the original map reports 35 tags, 100%), using actual spray input
+with explicit teleport/resource bypasses. Original saving and independent
+process loading retain painted progress. Remaining mission triggers,
+encounters and campaign coverage are listed in the ledger.
+
 CPU translation references phobos665/xboxrecomp and sp00nz/sp00nznet/xboxrecomp. Additional exact source/license attribution follows each borrowed implementation through the framework notices; this project does not grant rights to original game assets.
 
 The reviewed [native function recovery plan](config/revisions/ntsc-u/native-function-recovery.json)
