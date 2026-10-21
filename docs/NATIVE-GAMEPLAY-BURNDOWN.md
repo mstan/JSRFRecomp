@@ -94,6 +94,14 @@ were inspected; the test then stops intentionally (exit15), not at a crash or
 deadline. Owner source saves remain unchanged. Broader visual checks retain
 their recorded sampled scope.
 
+The first corrected visible relaunch exposed a separate host startup defect:
+Windows UI Automation raised a first-chance C++ exception that the native
+fault handler stopped before its Windows SEH owner could catch it. Shared
+frameworkb657fc6 fixes that dispatch while retaining a fatal final handler for
+unhandled exceptions. Production caught-language/unhandled-child and diagnostic
+observer checks pass. The JSRF framework pin includes this fix; it changes no
+original CPU generation, save behavior or rendering model.
+
 Current private work/evidence root:
 `G:/Temp/Codex/JSRFRecomp/gameplay-20261020`.
 The original native generation is copied intact from the prior qualified
