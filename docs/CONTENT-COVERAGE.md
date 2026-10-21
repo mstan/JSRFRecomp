@@ -10,6 +10,74 @@ All area prerequisites reached through forced handover are bypassed. A loaded sc
 a screenshot or movement alone does not pass its enemies, collision, unique mechanics
 or completion trigger. Inputs sent during an event do not establish controllable movement.
 
+
+## Current acceptance scope
+
+The owner clarified on2026-10-21 that this pass should load every stage/boss and
+attempt coverage with blatant cheats, instant kills and forced end sequences,
+not play full routes or qualify every mechanic. The target is a30-45 minute
+wall-clock sweep. The historical mechanics tables below remain evidence, with
+untested mechanics deferred. Current coverage records distinguish rendered entry,
+live enemy setup, forced defeat and observed outgoing flow; none of those alone
+is a fair-combat or complete-mechanics pass.
+
+The exact-revision `qa.py enemy-groups` reader exposes live groups, while
+`qa.py force-encounter-end` sets the original group-defeated predicate under
+private-process/frozen-RAM/source-hash guards. This is an explicit defeat-condition
+bypass, leaving original native end scripts to run. It does not patch the base
+recompile, switch CPU execution, write a fake passing report or qualify combat.
+
+## Rapid campaign coverage result
+
+The owner-clarified pass has entry evidence for all19 campaign/gameplay scene
+groups and nine story-event scene groups. The13 additional encounter files below
+have been reached in native execution. Setup/prerequisite changes, instant travel
+and defeated-condition writes are explicit cheats. This is an attempted coverage
+pass, not full gameplay qualification or a fair campaign completion.
+
+| Encounter file | Reached observation | Bypass / remaining scope |
+| --- | --- | --- |
+|0241 Armed police | Five ordinary cops and one Armed group registered | Defeated predicates forced; combat bypassed |
+|0251 Spotlight police | Original encounter intro renders | Active spotlight combat remains unverified |
+|0461 Helicopters | Original helicopter intro renders | Active helicopter combat remains unverified |
+|0471 Hayashi/armed encounter | Original rooftop introduction renders | Subsequent combat bypassed |
+|0514 Robo | Original large-machine introduction renders; live group registered | Defeated condition forced |
+|0751 Harrier | Two live groups registered; scene/render attempt captured | Defeated conditions forced; flight-model visibility not established by that frame |
+|0717 Benz | Four live groups registered; scene/render attempt captured | Defeated conditions forced |
+|0872 Fire | One live group registered; scene/render attempt captured | Defeated condition forced |
+|0816 Arm | Original encounter introduction renders; live group registered | Defeated condition forced |
+|0610 Noise | Original mass-produced-unit introduction renders | Combat bypassed |
+|0732 Zako/Kigurumi | Five Zako and one Kigurumi group registered | Defeat forced; individual model visibility not established by the ground-facing sample |
+|0880 Train | Original train introduction renders; live group registered | Defeated condition forced |
+|0890 Final boss | Original introduction, corrected original arena start, live boss and post-fight sequence reached | Final defeated predicate forced; original flow advances into the subsequent rendered event |
+
+The original0890 start position fixes the carried-over out-of-arena QA placement:
+player125.035,-958.598,197.313 lands on the intended floor. The public guarded
+`force-encounter-end` changes the final boss's original defeated predicate; native
+flow advances15->19 and into the following rendered sequence without CPU fallback.
+Earlier real Tank/Hayashi, Chuo race and basic movement/save/load evidence remains
+available; those checks were not replayed for this coverage pass.
+
+Private evidence: run043 `rapid-coverage.aot-private.json`, run044
+`rapid-coverage-v2.aot-private.json`, unmodified per-entry PNGs and contact sheets,
+plus run044 `final-boss-forced-end.aot-private.json`. The first helper's empty-
+registry read errors and20sec loading deadlines are QA-tool limits, not game crash
+claims; the second helper handles empty registries and allows45sec asset loading.
+No original code/assets or captures are committed.
+
+Deferred follow-ups from the attempted sweep:
+
+- Run042: unusual instant escape from the armed police setup reaches an unmapped
+  read in native action traversal; a focused repeat does not reproduce it. Cause
+  remains unproven. Do not represent this as fixed or normal gameplay qualified.
+- Run043: direct entry into extra-mode2400 from a story-game context reaches a
+  null read. Correct original extra-mode/player initialization is unverified.
+  The five extra-mode setup scene groups remain deferred; they are not five
+  unvisited campaign areas. The current owner gate is campaign stage/boss coverage.
+- Fair combat, full routes, optional mission variants, exhaustive recovery and
+  individual off-camera enemy-model visibility remain unverified/deferred unless
+  an owner playtest or reached failure makes a targeted check necessary.
+
 | Scene key | Files | Observed runtime ID | Evidence so far | Mechanics/completion |
 | --- | --- | --- | --- | --- |
 | `0x00000000` | 52 | `10001` | Movement, camera, NPC talk, original jump/grind lessons, real pickups and two original boosts through shared bc4d290 | Open: spraying and later tutorial/progression |
@@ -452,3 +520,15 @@ exit2. The terminal receipt distinguishes this reached fault from a timeout or
 observer interruption. Cause is unproven (QA travel setup versus runtime defect).
 The Chuo post-race original save is retained, and fresh043 restarts from it for a
 focused reproduction; no flags, enemy state or success bytes are patched.
+
+
+Fresh043 accepts the exact post-race Chuo save with original validation, returns
+to playable200e6/state15, responds to movement and restores all25 painted Chuo
+targets. Its immutable checkpoint receipt now records independent loading.
+A focused replay uses one original Rokkaku-dai conversation/recording, enters the
+second police zone, disables the five ordinary cops and repeats the type4/escape
+approach without reproducing042's fault. No runtime patch is justified from this
+negative reproduction. The earlier failure remains open, and type4 completion is
+still unverified. A later idle return reaches the title; its cause is not qualified
+as a deliberate death/retry test. Explicit health protection is used for further
+police setup. The attached debugger is detached through its owning helper.

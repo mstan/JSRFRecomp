@@ -16,6 +16,34 @@ def open_qa(run,framework=None,write=False):
     from native_qa_memory import NativeQaMemory
     facts=json.loads((root/'config/revisions/ntsc-u/gameplay-qa.json').read_text())
     class TitleQa(NativeQaMemory):
+        def enemy_groups(self):
+            """Inspect live encounter groups; definitions alone do not prove spawns."""
+            layout=self.facts['enemy_groups'];manager=self.u32(layout['manager']);result=[]
+            if not self.valid(manager,4+layout['buckets']*4):return result
+            seen=set()
+            for kind in range(layout['buckets']):
+                node=self.u32(manager+4+kind*4)
+                while node:
+                    if node in seen or len(seen)>=1024 or not self.valid(node,8):raise ValueError('unstable enemy registry')
+                    seen.add(node);at=self.u32(node)
+                    if not self.valid(at,layout['flags']+4) or self.u32(at)!=layout['vtable'] or self.u32(at+layout['kind'])!=kind:
+                        raise ValueError('unqualified enemy group owner')
+                    remaining=self.u32(at+layout['remaining'])
+                    if remaining>10000:raise ValueError('unqualified enemy group count')
+                    result.append({'object':at,'type':kind,'remaining':remaining,'flags':self.u32(at+layout['flags'])})
+                    node=self.u32(node+4)
+            return result
+        def force_encounter_end(self):
+            """Cheat the original defeated predicate; never a combat correctness pass."""
+            changed=[];layout=self.facts['enemy_groups']
+            with self.frozen():
+                for group in self.enemy_groups():
+                    if group['remaining'] and not group['flags']&layout['defeated_mask']:
+                        self.write(group['object']+layout['flags'],struct.pack('<I',group['flags']|layout['defeated_mask']))
+                        changed.append(group)
+            self.record({'operation':'force-encounter-end','groups':changed,'bypass':True,
+                'original_defeat_condition_bypassed':True,'combat_pass_claimed':False})
+            return changed
         def tags(self):
             """Read original per-piece reference positions, not completion overrides."""
             layout=self.facts['graffiti'];result=[];seen=set()
@@ -127,13 +155,18 @@ def main():
     commands=parser.add_subparsers(dest='command',required=True)
     commands.add_parser('status')
     commands.add_parser('tags',help='Read original per-piece graffiti positions and paint state')
+    commands.add_parser('enemy-groups',help='Read currently registered encounter groups')
+    commands.add_parser('force-encounter-end',help='Cheat the defeated condition to reach the original end sequence; does not pass combat')
     teleport=commands.add_parser('teleport');teleport.add_argument('position',nargs=3,type=float)
     teleport.add_argument('--sweep',action='store_true',help='Retain the previous motion sample for intentional crossing checks')
     mission=commands.add_parser('mission');mission.add_argument('id',type=lambda s:int(s,0));mission.add_argument('--cancel-event',action='store_true')
     cans=commands.add_parser('cans');cans.add_argument('count',type=int)
     health=commands.add_parser('health');health.add_argument('count',type=int)
-    args=parser.parse_args();p=open_qa(args.run,args.development_framework,args.command not in ('status','tags'))
+    args=parser.parse_args();p=open_qa(args.run,args.development_framework,args.command not in ('status','tags','enemy-groups'))
     try:
+        if args.command in ('enemy-groups','force-encounter-end'):
+            print(json.dumps(p.enemy_groups() if args.command=='enemy-groups' else p.force_encounter_end(),indent=2))
+            return 0
         if args.command=='tags':
             print(json.dumps(p.tags(),indent=2))
             return 0

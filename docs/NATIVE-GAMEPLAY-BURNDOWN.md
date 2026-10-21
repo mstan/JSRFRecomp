@@ -23,7 +23,7 @@ retrying the game. Preserve cheats/teleports as QA tools and record bypasses.
 | GP04 | Implement newly reached shared contracts | Reached boost failure fixed; continue with the next gameplay consumer | Shared `bc4d290` models the original standalone depth surface used by boost. Targeted actual GPU depth/stencil/ownership checks pass; run028 performs two original boosts with expected can consumption and visible effects, then loads3003c and revisits20028. No broad campaign qualification implied |
 | GP05 | Derive the area/mission/mechanic inventory | Content inventory derived; behavioral mapping open | `tools/qa_inventory.py` parses all 311 owned mission/script pairs and their setup/trigger operation inventories, grouped under 33 scene keys. Scene keys are not automatically area names. Filename numbers alias modulo 100, so canonical runtime IDs still require original-flow evidence |
 | GP06 | Add reusable cheat-assisted QA controls through title mods | Teleport, original handover, explicit event bypass and bounded can/health refill working; further controls open | Shared private RAM transport plus revision-bound `tools/qa.py` and `gameplay-qa.json`. Refills respect original character capacities and reject over-capacity requests without a write. Run034 validates health65 ->110 with the maximum unchanged. Run038 uses explicit private health protection and admits live-player lock/spray/look camera modes while retaining guards; refills do not pass pickup or damage checks |
-| GP07 | Exercise every inventoried location and meaningful mechanic | In progress: 28/33 scene groups entered; Shibuya/Chuo graffiti and reached Combo challenge passed | Run034/035 paints Shibuya, original map35 (100%), and run041 paints all25 Chuo targets, original map24 (100%), including all three ten-part murals. Original saves retain the progress. Run036 also completes four original Poison Jam route returns and Combo's actual grind/air-trick challenge; run037 completes the reached 20-cop fight through real lock-dash/spray and original Chapter2 transition; other content remains open. Entry count is not a campaign qualification denominator |
+| GP07 | Rapid stage/boss coverage with explicit cheats | Owner-clarified campaign sweep complete; extra-mode setups deferred | All19 campaign/gameplay and nine story-event scene groups have entry evidence. Thirteen additional encounter files reached, with live groups or rendered introductions. Final boss corrected spawn and original post-fight flow reached using the defeated-condition cheat. Off-camera model visibility, fair mechanics and full routes are not passed; see CONTENT-COVERAGE.md |
 | GP08 | Validate save/reload and representative progression boundaries | Original save/fresh-process reload and reached Chapter2 progression save/load passed; wider recovery open | Run032 creates a same-chapter save at10014; independent run033 uses original Load Game and character selection, returns to playable10014, retains the painted save-point target and responds to movement. Run037 then completes the reached Shibuya cop fight and original Chapter2 transition, saves through Roboy; fresh038 loads the Chapter2 Garage and moves. Wider recovery/content remains GP07 work; owner originals are protected |
 
 Cheats can position/protect the player and bypass prerequisites. A forced
@@ -43,6 +43,19 @@ simulation and frame interpolation remain separate, mutually exclusive modes.
 Owner visual/performance review is the appropriate acceptance step for those
 enhancements; gameplay timing must remain correct.
 
+## Owner scope clarification: rapid coverage, 2026-10-21
+
+The owner explicitly requests the bare minimum to load every stage and boss and
+attempt coverage, using blatant cheats, instant kills and forced end sequences.
+Do not spend the pass playing routes, reproducing combat input or qualifying each
+repeated mechanic. Target a30-45 minute wall-clock sweep. Load each distinct scene
+and boss setup, take a brief visual/input observation, force progression as needed,
+and record reached failures and explicit bypasses. A forced victory is coverage of
+the reached setup/end sequence, not a passed combat mechanic. Earlier mechanics
+qualification language below is historical scope; exhaustive mission/mechanic
+validation is deferred under this owner clarification. Visual enhancement work and
+Blinx/Dashboard preservation/final owner review remain required after this sweep.
+
 ## Full end-to-end completion scope
 
 The October21 owner goal (beads-xbox.2.6 and beads-xbox.2.7) includes gameplay coverage first, followed by visual
@@ -51,8 +64,8 @@ scene entry, source registration and a successful build do not close these rows.
 
 | Work | Status | Required evidence |
 | --- | --- | --- |
-| Areas, missions, bosses and extra modes | Open under beads-xbox.2.6 | Per-content real mechanics, completion and next-area/progression observations; explicit travel/prerequisite bypasses |
-| Recovery and audiovisual behavior | Save/load passed in reached scope; wider checks open | Death/retry, representative progression reloads, interaction audio and animation during actual content coverage |
+| Areas and bosses; extra-mode setup deferred | Rapid campaign coverage recorded | All19 campaign/gameplay scene groups entered;13 encounter files reached. Original extra-mode initialization and mechanics remain deferred under the owner clarification |
+| Recovery and audiovisual behavior | Original save/load and reached race failure/retry passed | Carry scoped evidence forward; deeper death/recovery and audiovisual permutations deferred unless a reached failure requires them |
 | Adaptive widescreen and HUD | Pending gameplay coverage | Window/aspect changes through 32:9, real margin content, visible entities, correctly shaped indicators and anchored HUD |
 | Internal resolution and fidelity | Pending gameplay coverage | 1080p through 4K, AA and supersampling options through reusable mod controls and inspected output |
 | Higher FPS and interpolation | Pending gameplay coverage | Separate mutually exclusive modes; measured gameplay timers/movement retain intended pacing |
@@ -117,12 +130,12 @@ painted area or save boundary solely to prepare another check when a consistent
 private checkpoint is available. Use short batches with actual game triggers and
 terminal observations, retaining explicit position/resource/prerequisite bypasses.
 Inspect representative repeated visuals and ordinary interactions; expand a sample
-when a reached failure or a distinct implementation justifies it. Each unique
-mechanic, boss, progression boundary and recovery path still needs direct evidence.
+when a reached failure or a distinct implementation justifies it. The current owner gate is stage/boss setup coverage, with forced progression
+explicitly recorded; deeper mechanic and recovery qualification is deferred.
 
 Sampling a common behavior does not pass an unexercised mission or its completion.
-Every-content coverage remains the active goal; per-content unverified entries
-stay open until exercised. Optional repetitions, precision/stress matrices and
+The owner now requests rapid stage/boss coverage; detailed mission/mechanic
+entries stay unverified or deferred rather than blocking this sweep. Optional repetitions, precision/stress matrices and
 subjective presentation checks may be sampled or deferred only with that scope
 visible. Owner visual/audio review can settle subjective appearance and feel;
 original counters, transitions and save/load establish progression and persistence.
@@ -144,6 +157,7 @@ coverage, promote that failure immediately.
 | SV06 | Repairing the complete xemu firmware/game boot setup and conducting broad oracle comparisons | A specific native mismatch needs that reference, or final qualification; do not block native gameplay on emulator setup |
 | SV07 | Hardware/oracle precision and projection/depth-policy comparison for native pretransformed fog | A reached visual mismatch or post-coverage qualification; real native fog output and reached crashes remain required now |
 | SV08 | Exact NV2A point-size quantization, subpixel edge rules and attenuation reciprocal precision | A reached visual mismatch or post-coverage qualification; real scaled/textured point output is implemented and tested |
+| SV09 | Exhaustive campaign mission variants, fair combat/traversal, unique-mechanic completion and recovery permutations | Owner explicitly requests later gameplay qualification, or a reached failure blocks stage/boss coverage; the current pass permits instant kills and forced end sequences |
 
 Runtime save states and rewind remain a separate workflow improvement under
 `beads-xbox.1.131`. Existing generic native-continuation diagnostics are not a
@@ -390,3 +404,14 @@ reaches a native unmapped-read stop in sub_00011D00 (exit2). This is an open
 reached failure, not a passed encounter; focused reproduction is next. The
 Chuo post-race save protects earlier progress. Rokkaku-dai full graffiti and
 later campaign/visual requirements remain open.
+
+
+The owner-clarified rapid sweep reaches13 additional encounter files in runs043/044,
+including the final boss. The corrected original arena start prevents the carried-
+over fall. The public `force-encounter-end` cheat bypasses native defeated tests;
+original final-boss flow advances into its rendered post-fight sequence. This is
+coverage with explicit cheats, not fair combat or whole-campaign qualification.
+The two unusual travel/setup failures and five extra-mode setup scenes remain
+recorded as deferred follow-ups; per-model visibility gaps are explicit in the
+coverage table. Proceed to reusable visual mods rather than expanding mechanics
+validation again. Shared frameworkbc4d290 and native CPU execution are unchanged.

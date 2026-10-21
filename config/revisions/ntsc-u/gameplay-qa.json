@@ -2,7 +2,7 @@
   "schema": "xboxllr.title-qa.v1",
   "xbe_sha256": "f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219",
   "reference": "https://github.com/JuMatt/JetSetRadioFuture-Unleashed",
-  "scope": "Private QA only; source-bound layouts; forced handovers/teleports are explicit bypasses",
+  "scope": "Private QA only; source-bound layouts; forced handovers, teleports and encounter-end cheats are explicit bypasses, never mechanics passes",
   "camera_vtable": 1889496,
   "camera_target": 36,
   "camera_mode": 520,
@@ -110,6 +110,11 @@
       "address": 261824,
       "bytes": 384,
       "sha256": "962c3cf5b70651d03e0b82f4116a917ed9e9ea44cd81b4d78dae3af191f423ff"
+    },
+    {
+      "address": 787952,
+      "bytes": 40,
+      "sha256": "d92626d3983b6cd7a3a8969d6825d3ab7fbfe144def202d13c57cff4f5c25bc4"
     }
   ],
   "flow_vtables": [
@@ -128,5 +133,14 @@
     "piece_stride": 184,
     "piece_position": 160,
     "region_normals": 72
+  },
+  "enemy_groups": {
+    "manager": 2456740,
+    "buckets": 24,
+    "vtable": 1892272,
+    "remaining": 152,
+    "kind": 156,
+    "flags": 164,
+    "defeated_mask": 32
   }
 }
