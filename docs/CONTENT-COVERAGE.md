@@ -401,3 +401,54 @@ independent042 accepts the save through original Load Game/character selection,
 returns to Chuo200e6/state15, responds to movement and restores all25 painted
 targets. Full Chuo challenge/completion, other areas and later campaign content
 remain open.
+
+## Chuo race, failure/retry and original story return
+
+Run042 opens Poison Jam's post-graffiti conversation with real RT and accepts
+its original Yes option. The original handover enters0232/runtime200e8, shows
+the City Rush briefing/countdown and runs the race. A first accelerated approach
+passes80 race gates before a grind interrupts the helper; the opponents finish
+and the original You Lose/Retry screen appears. Actual Retry loads the original
+briefing; A starts a new playable race. This passes reached race failure/retry,
+not death recovery or an untested race setup.
+
+A replacement travel batch crosses the217 original race-path planes above the
+rails, intentionally retaining swept motion. The original race manager advances
+its gate index through the route, increments lap0->1 and enters victory state29.
+No lap, opponent, success or chapter fields are written. Travel/skating the full
+route and fair competitive timing are bypassed; native lap/finish processing and
+original story completion are exercised. The game returns naturally to Chuo0230,
+playable200e6/state15, and advances C14->C15->C16 with C23 set for Rokkaku-dai.
+
+The original Chuo save point reports Done saving again. The immutable41088-byte
+checkpoint has SHA256
+5e07983ef9f5d57a1f58a8a9465b0d5b508d5bc3959b2fbd917bcce2b298c6f3;
+read-only lane checks pass, chapter2/return230 and C10/C16/C23/C200/C270 persist.
+This exact post-race file has not been independently reloaded; the earlier
+same-area save/reload remains the scoped fresh-process evidence. Travel to
+Rokkaku-dai is then explicitly bypassed through the original handover, retaining
+these actual story flags. Remaining Rokkaku-dai/campaign checks stay open.
+
+## Rokkaku-dai story recordings and reached police frontier
+
+Run042 completes four actual Poison Jam RT/A conversations and their original
+0242 recordings, returning naturally to playable0240 after each. Persistent story
+flags advance C23->C24->C25->C26->C27. The final two original event sequences also
+return naturally. Travel to NPCs is bypassed; following/skating their full routes
+is not established by the autonomous recording-complete listeners.
+
+The real-spray batch completes the three ten-part murals and reached six-part
+targets, then enters an original police zone. Existing tag objects are freed by
+that handover, so its read-only target observer stops. The game remains healthy.
+All three active ordinary cops are defeated through actual lock/dash/spray; the
+original0241->0240 playable return occurs, and painted targets persist. A later
+paint approach enters the next original zone: five ordinary cops and a type4
+group. Actual lock/dash/spray disables those five cops; type4 remains active and
+this encounter is not qualified as complete.
+
+After a bounded RT approach to type4, an instant teleport out of the arena reaches
+an explicit native stop: unmapped read44c590b8, host symbol sub_00011D00+11f,
+exit2. The terminal receipt distinguishes this reached fault from a timeout or
+observer interruption. Cause is unproven (QA travel setup versus runtime defect).
+The Chuo post-race original save is retained, and fresh043 restarts from it for a
+focused reproduction; no flags, enemy state or success bytes are patched.

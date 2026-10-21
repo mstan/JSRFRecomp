@@ -110,6 +110,23 @@ The native consumer now publishes original calculated gains, Doppler/pitch,
 HRTF data, direct/room filters and effect sends through a per-voice submix.
 Mono source cursors, notifications and deferred state retain their owners.
 
+## Practical QA batching and sampling
+
+Carry forward completed shared-behavior evidence; do not replay a passed fight,
+painted area or save boundary solely to prepare another check when a consistent
+private checkpoint is available. Use short batches with actual game triggers and
+terminal observations, retaining explicit position/resource/prerequisite bypasses.
+Inspect representative repeated visuals and ordinary interactions; expand a sample
+when a reached failure or a distinct implementation justifies it. Each unique
+mechanic, boss, progression boundary and recovery path still needs direct evidence.
+
+Sampling a common behavior does not pass an unexercised mission or its completion.
+Every-content coverage remains the active goal; per-content unverified entries
+stay open until exercised. Optional repetitions, precision/stress matrices and
+subjective presentation checks may be sampled or deferred only with that scope
+visible. Owner visual/audio review can settle subjective appearance and feel;
+original counters, transitions and save/load establish progression and persistence.
+
 ## Supporting validation deferred until after game coverage
 
 Owner-directed deferrals, tracked with `beads-xbox.1.152` and
@@ -351,3 +368,25 @@ accepts original Load Game/character selection, returns playable200e6/state15,
 moves and restores all25 painted targets. The following Chuo story/challenge is
 next; wider campaign/extra-mode and final visual-mod/handoff requirements remain
 unchanged.
+
+
+Run042 accepts the original Poison Jam race after full Chuo graffiti. The first
+attempt reaches actual You Lose; original Retry/briefing/A returns to a running
+race. An adjusted217-plane travel batch makes the native race manager complete
+lap1 and enter victory29; the original return to playable Chuo advances to
+C16/C23. Positions/sweeps bypass skating, without lap/completion/chapter writes.
+A new original Chuo save is retained (SHA5e07983e...,41088bytes, valid lane checks,
+chapter2/return230/C10/C16/C23/C200/C270); this exact file has not been freshly
+reloaded. Chuo's reached graffiti/race progression is passed. Rokkaku-dai story
+coverage is next, with inter-area travel explicitly bypassed; full campaign and
+later enhancements remain open. Race failure/retry does not establish death.
+
+
+Run042 also completes four original Rokkaku-dai Poison Jam recordings/returns,
+advancing C23->C27, then clears the first reached three-cop police zone through
+actual lock/dash/spray and original return. A second zone's five ordinary cops
+are disabled, but its type4 group remains. An instant escape teleport then
+reaches a native unmapped-read stop in sub_00011D00 (exit2). This is an open
+reached failure, not a passed encounter; focused reproduction is next. The
+Chuo post-race save protects earlier progress. Rokkaku-dai full graffiti and
+later campaign/visual requirements remain open.
