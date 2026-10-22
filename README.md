@@ -31,10 +31,14 @@ source frame of latency. Actual higher-rate gameplay is unavailable.
 
 ## Getting started
 
-**Windows x64 preview candidates are prepared; executable downloads await
-the [shared distribution review](https://github.com/mstan/xboxllr/blob/master/LICENSE-SCOPE.md).**
-Native Linux releases are deferred. A prepared ZIP includes the launcher,
-Python and native dependencies; players do not need developer tools.
+**[Download the GPL source/tooling preview](https://github.com/mstan/JSRFRecomp/releases/tag/preview-2026-10-22).**
+This release contains build tools, title metadata/mods and the pinned framework.
+It does not contain a precompiled game or original game code. Use the
+[developer setup guide](docs/DEVELOPMENT.md) to build locally with your own game.
+The tested native host is Windows x64; Linux releases are deferred.
+
+The local owner-use Windows candidate includes the launcher, Python and native
+dependencies. Its setup flow is described below for locally prepared packages.
 
 You supply your own **Jet Set Radio Future (NTSC-U)** files. Open **Start Game.cmd**,
 choose **Skip** in the optional first-launch console setup, and select the
@@ -110,6 +114,7 @@ shared framework. [Credits](CREDITS.md) links their projects and the detailed
 component inventory.
 
 This repository does not grant rights to Sega's original game files. The
-owner-original source uses [PolyForm Noncommercial 1.0.0](LICENSE), subject to
-[license scope](LICENSE-SCOPE.md). Third-party work retains its own terms. The
-current private reference executable is not cleared for distribution.
+owner-original source uses [GNU GPL version 3 or later](LICENSE), subject to
+[license scope](LICENSE-SCOPE.md). Third-party work retains its own terms.
+The source/tooling release excludes original and generated game code; local
+precompiled owner candidates are not included.

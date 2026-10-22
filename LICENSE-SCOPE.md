@@ -1,21 +1,22 @@
-# License scope and distribution status
+# License scope and release contents
 
-Owner-original contributions in this title repository follow the existing Xbox
-ecosystem policy: [PolyForm Noncommercial 1.0.0](LICENSE), with the licensor
-identified in [NOTICE](NOTICE). This grant covers only work for which that owner
-holds the necessary rights. It does not relicense third-party implementations,
-derivatives, dependencies, original game assets or generated original game code.
+Owner decision, October 22, 2026: owner-original code in this repository is
+**GPL-3.0-or-later**. [LICENSE](LICENSE) contains GPLv3; [NOTICE](NOTICE) records
+the grant. This supersedes the former PolyForm/non-GPL shipping policy for the
+current source. Third-party work retains its own terms and credits.
 
-The current title build composes the **private reference pilot** from the pinned
-xboxllr framework. Its [license scope](xboxllr/LICENSE-SCOPE.md) remains in force,
-including the unresolved combined-executable restriction and the owner's policy
-that the intended shipping product exclude GPL code. Attribution alone does not
-clear that combined executable for distribution. No executable release is
-authorized by adding this source-license file.
+The shared framework's [license scope](xboxllr/LICENSE-SCOPE.md) and
+[component inventory](xboxllr/THIRD_PARTY_ATTRIBUTION.md) describe the incorporated
+renderer/runtime dependencies. This GPL grant does not license the original
+game or generated code translated from it, artwork, firmware or console inputs.
 
-See [third-party attribution](THIRD_PARTY_ATTRIBUTION.md) for the pinned component
-inventory and [Credits](CREDITS.md) for readable recognition. Original Sega game
-files, generated original code, console inputs and user saves stay outside the
-repository. The curated documentation screenshot retains the rights described
-in its [notice](docs/screenshots/NOTICE.md); it is not covered by a blanket
-source-code license.
+The current release is a **source/tooling preview** with title metadata, mods,
+build scripts and its pinned framework source. It does not contain a precompiled
+game executable, translated original function bodies or original game assets.
+Build locally with your own supported game and the [developer guide](docs/DEVELOPMENT.md).
+The former private owner-use Windows candidates remain local; they are not
+corresponding-source-cleared GPL binary downloads.
+
+Preserve the separate notices for curated screenshots and launcher artwork.
+No kernel, EEPROM, disk image, signing keys, native saves or player profiles are
+part of a release. The source license does not change those private-data rules.
