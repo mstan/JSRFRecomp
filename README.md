@@ -38,6 +38,13 @@ You need your own **Jet Set Radio Future (NTSC-U)** game files. Other regions
 and revisions have not been qualified. Original game files and generated game
 code are not included in this repository.
 
+The shared [setup and required-file guide](https://github.com/mstan/xboxllr/blob/master/docs/SETUP.md)
+covers supported XBE hashes, private input preparation, optional original-console
+imports and save preservation. ISO-only first-run setup remains a release task.
+Native gameplay uses shared kernel services without booting a Microsoft kernel;
+today's owned-kernel dependency is offline signing preparation. Optional-input
+notices should explain only capabilities relevant to the selected title.
+
 For an already prepared checkout, build and open the shared launcher:
 
 ```powershell
