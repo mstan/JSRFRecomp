@@ -13,6 +13,30 @@ ui_revision = "ccc186e097b362555292b157ffd303abcea26fbf"
 # Added after original gameplay scope/timing observations; never just uncap.
 frame_modes = ["interpolated"]
 
+[launcher.defaults."jsrf.enhancement.widescreen/widescreen"]
+enabled = true
+options = { aspect = "adaptive" }
+
+[launcher.defaults."xboxlle.enhancement.visuals/resolution"]
+enabled = true
+options = { height = "1080" }
+
+[launcher.defaults."xboxlle.enhancement.visuals/supersampling"]
+enabled = true
+options = { axis = "2" }
+
+[launcher.defaults."xboxlle.enhancement.visuals/antialiasing"]
+enabled = true
+options = { method = "fxaa" }
+
+[launcher.defaults."xboxlle.enhancement.visuals/filtering"]
+enabled = true
+options = { anisotropy = "8" }
+
+[launcher.defaults."xboxlle.enhancement.frame-rate/frame-rate"]
+enabled = true
+options = { mode = "interpolated", rate = "60" }
+
 [mods]
 registry = "src/mods/visuals.c"
 inputs = ["config/revisions/ntsc-u/visuals.json"]

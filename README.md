@@ -23,27 +23,39 @@ and controller support through an Xbox-themed launcher. JSRFRecomp uses
 | Controller selection | The shared recomp-ui Player 1 card detects connected controllers and remembers the selected device. Keyboard input is also available. |
 | Original saves | Real in-game saving and fresh-process Load Game, character selection and movement. |
 
-Enhancements are optional mods. Original timing remains the default;
-interpolation can show blended double edges and adds one source frame of
-latency. Actual higher-rate gameplay is not available yet.
+Enhancements are individually selectable mods. Fresh launchers default to
+adaptive Fit to screen, a 16:9 starting window, 1080p internal height, 2x2
+supersampling, FXAA, 8x filtering and blended 60 FPS presentation. Gameplay
+keeps its original timing. Interpolation can show double edges and adds one
+source frame of latency. Actual higher-rate gameplay is unavailable.
 
 ## Getting started
 
-**Windows x64 development preview.** Self-contained downloads are being prepared;
-native Linux builds are not available yet. Current setup still needs developer
-tools and private preparation inputs. The release target is to require your own
-matching game dump and generate the remaining supported setup locally.
+**Windows x64 preview candidates are prepared; executable downloads await
+the [shared distribution review](https://github.com/mstan/xboxllr/blob/master/LICENSE-SCOPE.md).**
+Native Linux releases are deferred. A prepared ZIP includes the launcher,
+Python and native dependencies; players do not need developer tools.
 
-You need your own **Jet Set Radio Future (NTSC-U)** game files. Other regions
-and revisions have not been qualified. Original game files and generated game
-code are not included in this repository.
+You supply your own **Jet Set Radio Future (NTSC-U)** files. Open **Start Game.cmd**,
+choose **Skip** in the optional first-launch console setup, and select the
+supported extracted `default.xbe` on the main screen. Keep the complete game
+asset folder beside that XBE. Direct ISO import and other revisions are not
+supported yet. Original game files are not included in this repository.
 
-The shared [setup and required-file guide](https://github.com/mstan/xboxllr/blob/master/docs/SETUP.md)
-covers supported XBE hashes, private input preparation, optional original-console
-imports and save preservation. ISO-only first-run setup remains a release task.
-Native gameplay uses shared kernel services without booting a Microsoft kernel;
-today's owned-kernel dependency is offline signing preparation. Optional-input
-notices should explain only capabilities relevant to the selected title.
+No kernel dump, EEPROM or HDD image is needed to create a new local console.
+Automatic save storage is private to this game's package; no large disk image
+is generated. Advanced **Settings** can import original signing material and
+EEPROM, choose a shared save folder, or use an existing raw/QCOW2 FATX HDD image.
+An image takes priority over folder storage and requires validated original
+signing inputs and matching console identity. Original saves still undergo
+normal verification. Close xemu before sharing a disk image.
+
+Keep the package's `data` folder, your selected save storage and any
+`<image>.xboxllr` profile when updating. A new virtual identity is not equivalent
+to your physical Xbox's save identity. Xbox Live is unavailable; this generally
+does not affect new single-player play. Fresh virtual-profile save/restart/load
+and the full image-backed per-title save matrix remain qualification work.
+See the shared [setup guide](https://github.com/mstan/xboxllr/blob/master/docs/SETUP.md).
 
 For an already prepared checkout, build and open the shared launcher:
 
