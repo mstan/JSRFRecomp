@@ -23,6 +23,7 @@ static void fail(const char *reason)
 
 static int read_u32(unsigned address,unsigned *value)
 {return api->read(address,value,4);}
+#include "challenge_unlock.inc"
 static void write_float(unsigned address,float value)
 {if(!api->write_data(address,&value,4))fail("JSRF visual mod data is not writable");}
 static void update_scope(void)
@@ -202,6 +203,7 @@ static void draw(struct PilotTitleModDraw *draw)
 }
 static void present(void)
 {
+    challenge_refresh();
     scope_dirty=1;update_scope();
     if(frame_mode)api->frame_scope(scope);
     if(wide && !api->frame_shape(projection_seen?frame_aspect[0]:4,projection_seen?frame_aspect[1]:3))
@@ -223,10 +225,15 @@ static void present(void)
 const struct PilotTitleMod *pilot_title_mod_open(const struct PilotTitleModHost *host)
 {
     const char *path=getenv("XLLE_PILOT_MOD_PLAN");
-    if(!path || !*path)return NULL;
     if(!host || host->abi!=PILOT_TITLE_MOD_ABI || strcmp(host->xbe_sha256,JSRF_SHA))
         fail("JSRF visual mod identity mismatch");
     api=host;
+    challenge_configure();
+    static struct PilotTitleMod result;
+    if(!path || !*path) {
+        result=(struct PilotTitleMod){PILOT_TITLE_MOD_ABI,NULL,NULL,early_test_runs?present:NULL};
+        return &result;
+    }
     FILE *file=fopen(path,"rb");
     if(!file)fail("resolved visual mod plan is unavailable");
     struct PilotVisualPlan plan;
@@ -250,8 +257,7 @@ const struct PilotTitleMod *pilot_title_mod_open(const struct PilotTitleModHost 
         if(!trace_trigger || !*trace_trigger)fail("JSRF mod trace requires an explicit arm file");
         trace=fopen(path_trace,"wb");if(!trace)fail("JSRF mod trace cannot be opened");
     }
-    static struct PilotTitleMod result;
     result=(struct PilotTitleMod){PILOT_TITLE_MOD_ABI,(wide||trace)?transform:NULL,(wide||trace)?draw:NULL,
-        (wide||frame_mode||trace)?present:NULL};
+        (early_test_runs||wide||frame_mode||trace)?present:NULL};
     return &result;
 }

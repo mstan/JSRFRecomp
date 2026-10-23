@@ -50,3 +50,25 @@ code and recovery history stay in the private build directory.
 
 
 Return to the [player overview](../README.md).
+
+## Early Test Runs mod
+
+`src/mods/challenge_unlock.inc` rebuilds only the transient Roboy challenge
+menu for the supported original revision. Original `0x756E0` requires chapter9
+before comparing each area's total and collected graffiti souls. This mod
+retains that comparison and the original loaded challenge rows while allowing
+earlier chapters. It does not change chapter, collected souls, missions or
+saved progress. Chapter9 remains entirely under the original routine.
+
+The default is ON in `native-title.toml`; Mods can save OFF. It works without
+visual enhancements. Revision facts and bounded function/table hashes are in
+`config/revisions/ntsc-u/challenge-unlock.json`, with no original code bodies.
+
+Build the portable C fixtures with `cmake -S tests -B build/mod-contracts
+-DXBOXLLR_ROOT=<framework>`, then run CTest. For the unlock tests, set
+`JSRF_CHALLENGE_FIXTURE` to the resulting `jsrf_challenge_contract` shared
+library and run `python -m unittest discover -s tests -p test_challenge_unlock.py`.
+Setting `JSRF_ORIGINAL_XBE` to your supported original image also enables the
+bounded Unicorn comparison: four soul bitmaps must produce identical menu
+bytes to the original postgame x86 routine while the mod's chapter stays early.
+Capstone/Unicorn are development references only; production remains native.

@@ -40,7 +40,10 @@ int main(int argc,char **argv)
     struct PilotTitleModHost host={PILOT_TITLE_MOD_ABI,SHA,read_data,write_data,
         presentation,client_size,frame_shape,visuals,set_scope};
     if(!strcmp(argv[2],"disabled")) {
-        CHECK(!pilot_title_mod_open(&host));CHECK(!reads && !writes);return 0;
+        env("XLLE_PILOT_TITLE_MOD_EARLY_TEST_RUNS","0");
+        const struct PilotTitleMod *disabled=pilot_title_mod_open(&host);
+        CHECK(disabled && !disabled->transform && !disabled->draw && !disabled->present);
+        CHECK(!reads && !writes);return 0;
     }
     unsigned adaptive=!strcmp(argv[2],"adaptive");
     FILE *out=fopen(argv[1],"wb");CHECK(out);

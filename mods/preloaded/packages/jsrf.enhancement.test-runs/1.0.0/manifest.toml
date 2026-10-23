@@ -1,0 +1,15 @@
+format_version = 1
+id = "jsrf.enhancement.test-runs"
+name = "Early Test Runs"
+version = "1.0.0"
+description = "Unlock each area's Test Run challenges by collecting its graffiti souls, without finishing the story. Does not change story progress or award souls."
+
+[[target]]
+game_id = "5345000A"
+xbe_sha256 = "f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219"
+
+[[feature]]
+id = "early-unlock"
+name = "Unlock Test Runs before finishing the story"
+# The title's explicit launcher default enables this feature. Saved choices win.
+default_enabled = false

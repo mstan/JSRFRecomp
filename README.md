@@ -22,6 +22,7 @@ and controller support through an Xbox-themed launcher. JSRFRecomp uses
 | Smoother presentation | Optional blended 60/120 Hz presentation while gameplay keeps its original timing. |
 | Controller selection | The shared recomp-ui Player 1 card detects connected controllers and remembers the selected device. Keyboard input is also available. |
 | Camera controls | Optional horizontal and vertical right-stick inversion, independently selectable and disabled by default. |
+| Early Test Runs | Collect an area's graffiti souls to unlock its challenges without finishing the story. Enabled by default; switch it off in Mods for the original rule. |
 | Original saves | Real in-game saving and fresh-process Load Game, character selection and movement. |
 
 Enhancements are individually selectable mods. Fresh launchers default to
@@ -81,6 +82,10 @@ platform support and distribution requirements.
 Choose the input device in **Player 1**, select enhancements in **Mods**, then
 launch the game. Individual button remapping is not exposed in this preview.
 Use `--launcher` to reopen settings if you previously selected Skip launcher.
+
+**Early Test Runs** keeps the game's original soul requirement for each area.
+It changes the Roboy menu's availability checks without awarding souls or
+changing story progress. Disable it in Mods to require story completion again.
 
 Adaptive widescreen follows the window's aspect. Score text, dialogue portraits,
 speech panels and inventory have title-specific placement fixes through 32:9.

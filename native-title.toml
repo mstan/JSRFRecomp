@@ -37,12 +37,16 @@ options = { anisotropy = "8" }
 enabled = true
 options = { mode = "interpolated", rate = "60" }
 
+[launcher.defaults."jsrf.enhancement.test-runs/early-unlock"]
+enabled = true
+
 [mods]
 registry = "src/mods/visuals.c"
-inputs = ["config/revisions/ntsc-u/visuals.json"]
+inputs = ["config/revisions/ntsc-u/visuals.json", "src/mods/challenge_unlock.inc", "config/revisions/ntsc-u/challenge-unlock.json"]
 widescreen_manifest = "mods/preloaded/packages/jsrf.enhancement.widescreen/1.0.0/manifest.toml"
 widescreen_package = "jsrf.enhancement.widescreen"
 widescreen_plugin = "jsrf.widescreen"
+switches = [{ manifest = "mods/preloaded/packages/jsrf.enhancement.test-runs/1.0.0/manifest.toml", package = "jsrf.enhancement.test-runs", feature = "early-unlock", key = "EARLY_TEST_RUNS" }]
 
 [content]
 image = "default.xbe"

@@ -5,6 +5,11 @@ October 20 and authorized this phase after its source commit `52eb13c`.
 The qualified [idle attract](NATIVE-ATTRACT-BURNDOWN.md) stays complete within
 its recorded scope; it does not establish interactive gameplay.
 
+October23: the default-on [Early Test Runs mod](EARLY-TEST-RUNS.md) removes only
+the story-completion prerequisite. Original-routine comparison and native
+Chapter2 menu availability pass; deeper extra-mode entry/mechanics remain
+deferred. No campaign or challenge-completion flags are changed by the mod.
+
 Work from the first unfinished row. Use short, muted native runs to expose
 the next required boundary, then test that boundary and retry the same route.
 Preserve the normal owner builds and saves. Generated code, original content,
