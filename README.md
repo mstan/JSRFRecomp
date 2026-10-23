@@ -21,6 +21,7 @@ and controller support through an Xbox-themed launcher. JSRFRecomp uses
 | Image quality | Optional FXAA, 2x2 or 3x3 supersampling, and anisotropic texture filtering. |
 | Smoother presentation | Optional blended 60/120 Hz presentation while gameplay keeps its original timing. |
 | Controller selection | The shared recomp-ui Player 1 card detects connected controllers and remembers the selected device. Keyboard input is also available. |
+| Camera controls | Optional horizontal and vertical right-stick inversion, independently selectable and disabled by default. |
 | Original saves | Real in-game saving and fresh-process Load Game, character selection and movement. |
 
 Enhancements are individually selectable mods. Fresh launchers default to
@@ -36,6 +37,9 @@ The Windows ZIP includes the precompiled native application, launcher, Python
 and runtime dependencies. No compiler is needed to play. Separate project source
 and prepared dependency-source downloads are provided on the same release page.
 Linux releases remain deferred. The setup flow is described below.
+
+The current local [playtester update](docs/PLAYTESTER-2026-10-23.md) uses the
+latest pinned framework and includes matching source inside its ZIP.
 
 You supply your own **Jet Set Radio Future (NTSC-U)** files. Open **Start Game.cmd**,
 choose **Skip** in the optional first-launch console setup, and select the
