@@ -33,14 +33,15 @@ source frame of latency. Actual higher-rate gameplay is unavailable.
 
 ## Getting started
 
-**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026-10-22).**
+**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026-10-23.2).**
 The Windows ZIP includes the precompiled native application, launcher, Python
-and runtime dependencies. No compiler is needed to play. Separate project source
-and prepared dependency-source downloads are provided on the same release page.
+and runtime dependencies. No compiler is needed to play. Matching project and
+prepared dependency source is included under source/ and on the release page.
 Linux releases remain deferred. The setup flow is described below.
 
-The current local [playtester update](docs/PLAYTESTER-2026-10-23.md) uses the
-latest pinned framework and includes matching source inside its ZIP.
+The [controller hotfix](docs/RELEASE-NOTES-2026-10-23.2.md) corrects connected
+gamepads that gave no input. The Early Test Runs mod and current presentation,
+camera and save support are retained.
 
 You supply your own **Jet Set Radio Future (NTSC-U)** files. Open **Start Game.cmd**,
 choose **Skip** in the optional first-launch console setup, and select the
