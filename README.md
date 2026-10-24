@@ -33,20 +33,21 @@ source frame of latency. Actual higher-rate gameplay is unavailable.
 
 ## Getting started
 
-**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026-10-23.2).**
+**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026-10-24.1).**
 The Windows ZIP includes the precompiled native application, launcher, Python
 and runtime dependencies. No compiler is needed to play. Matching project and
 prepared dependency source is included under source/ and on the release page.
 Linux releases remain deferred. The setup flow is described below.
 
-The [controller hotfix](docs/RELEASE-NOTES-2026-10-23.2.md) corrects connected
-gamepads that gave no input. The Early Test Runs mod and current presentation,
-camera and save support are retained.
+The [October 24 update](docs/RELEASE-NOTES-2026-10-24.1.md) adds the USA standalone
+retail revision. It also includes the [controller hotfix](docs/RELEASE-NOTES-2026-10-23.2.md)
+for connected gamepads that gave no input, Early Test Runs and existing
+presentation, camera and save support.
 
 You supply your own **Jet Set Radio Future (NTSC-U)** files. Open **Start Game.cmd**,
 choose **Skip** in the optional first-launch console setup, and select the
 supported extracted `default.xbe` on the main screen. Keep the complete game
-asset folder beside that XBE. The next preview supports both the original
+asset folder beside that XBE. This preview supports both the original
 development input (certificate revision 4) and the USA standalone retail
 release (certificate revision 1). The launcher chooses the matching native
 program automatically. Direct ISO import and other revisions remain unsupported.
@@ -57,9 +58,9 @@ Original game files are not included in this repository.
 | USA standalone, certificate revision 1 | `fd19055756719893c466302809b433b785ecf5732df0441286f3f605f0f3ef9c` |
 | Existing development input, certificate revision 4 | `f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219` |
 
-The currently linked October 23 download supports only revision 4. Support for
-the standalone release requires the updated package. Default console profiles
-and save folders are separate for each revision; selecting another revision
+The October 23 download supports only revision 4; use the October 24 update for
+the standalone release. Default console profiles and save folders are separate
+for each revision; selecting another revision
 preserves the existing profile and progress. Shared or original-console saves
 retain their normal identity and signature checks.
 
@@ -74,8 +75,10 @@ normal verification. Close xemu before sharing a disk image.
 Keep the package's `data` folder, your selected save storage and any
 `<image>.xboxllr` profile when updating. A new virtual identity is not equivalent
 to your physical Xbox's save identity. Xbox Live is unavailable; this generally
-does not affect new single-player play. Fresh virtual-profile save/restart/load
-and the full image-backed per-title save matrix remain qualification work.
+does not affect new single-player play. Standalone virtual-profile saving and
+fresh-process loading pass the representative check described in the
+[revision admission notes](docs/REVISION-USA-STANDALONE.md). The full
+image-backed per-title save matrix remains qualification work.
 See the shared [setup guide](https://github.com/mstan/xboxllr/blob/master/docs/SETUP.md).
 
 For an already prepared checkout, build and open the shared launcher:
