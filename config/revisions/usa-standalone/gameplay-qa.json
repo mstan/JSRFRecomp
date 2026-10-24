@@ -1,0 +1,146 @@
+{
+  "schema": "xboxllr.title-qa.v1",
+  "xbe_sha256": "fd19055756719893c466302809b433b785ecf5732df0441286f3f605f0f3ef9c",
+  "reference": "https://github.com/JuMatt/JetSetRadioFuture-Unleashed",
+  "scope": "Private QA only; source-bound layouts; forced handovers, teleports and encounter-end cheats are explicit bypasses, never mechanics passes",
+  "camera_vtable": 1889560,
+  "camera_target": 36,
+  "camera_mode": 520,
+  "resource_camera_modes": [
+    3,
+    5,
+    9,
+    13,
+    14
+  ],
+  "player_position": 3236,
+  "player_previous_position": 3248,
+  "player_health": 3992,
+  "player_health_capacity": 3996,
+  "player_spray_cans": 4000,
+  "player_spray_capacity": 4004,
+  "flow_vtable": 1878704,
+  "flow_mission": 88,
+  "flow_state": 92,
+  "flow_next_chapter": 76,
+  "flow_next_number": 84,
+  "handover_state": 93,
+  "functions": [
+    {
+      "address": 583328,
+      "bytes": 50,
+      "sha256": "70a3263955a1a62b99c4233520bfaebc51ab8ccc1f130d5b09f4667c42269289"
+    },
+    {
+      "address": 523360,
+      "bytes": 33,
+      "sha256": "79674824024d69a3a8f694bf984c8397025a09bd082d5e3e4595bb74ff212508"
+    },
+    {
+      "address": 583240,
+      "bytes": 88,
+      "sha256": "8e7ed49811ab86d1ad02b862d990573fcb43a569b14ce54fbbf61aa8eb91851c"
+    },
+    {
+      "address": 675200,
+      "bytes": 712,
+      "sha256": "cf07f745525ebcc2b1957c9d6814c775fd84b79f77f6ec2ae5736234e880281d"
+    },
+    {
+      "address": 675952,
+      "bytes": 796,
+      "sha256": "3e2b88afcf45837ac116f27450209a769f50bc8c83b3744563986b16c46b5118"
+    },
+    {
+      "address": 72656,
+      "bytes": 4,
+      "sha256": "e27121b8816e0aef2ed29676899d26e79f66af7e5ee5aed902be7208122bb635"
+    },
+    {
+      "address": 678752,
+      "bytes": 1348,
+      "sha256": "a938a557d19a5860a4ab42f58bffeb0ec77bf9790f472dad13bfa5dffa583deb"
+    },
+    {
+      "address": 335808,
+      "bytes": 67,
+      "sha256": "4bbf4f6bd7f2668439d45002ef8a3096d52d0d739f01e83555598ed46b101a59"
+    },
+    {
+      "address": 306080,
+      "bytes": 39,
+      "sha256": "6df4b46ba5e49bf930020c99acdc2baa0f5e8eee56cb7eab4c2604edbcc0d7ef"
+    },
+    {
+      "address": 342448,
+      "bytes": 40,
+      "sha256": "da6c6e2c5b24d4601bf3a10d0213e4cacdb30165941bcd969399cdcbdcd30803"
+    },
+    {
+      "address": 305424,
+      "bytes": 656,
+      "sha256": "46f037245b7f9979e0813c3642009e663e9beb87255c9fc9a3663553b9e9bed3"
+    },
+    {
+      "address": 321968,
+      "bytes": 121,
+      "sha256": "e6405f6e75717c212198ce16f81986bd06e99a1191d2f5fe7d58dc6e89c591fd"
+    },
+    {
+      "address": 518685,
+      "bytes": 80,
+      "sha256": "7ff761cc4af8a4e436269c8fa88d075c67c910b2233d063517070c0381324492"
+    },
+    {
+      "address": 538589,
+      "bytes": 112,
+      "sha256": "d417124cdc8e6f0733997870b524e51fbfa4a5a2ad91d8a3b05b4dd7783b561f"
+    },
+    {
+      "address": 578656,
+      "bytes": 176,
+      "sha256": "0b50cb068224ab041229cf36d3f97ca94cb19b0539d7f5735418dd886a48c75b"
+    },
+    {
+      "address": 304880,
+      "bytes": 83,
+      "sha256": "9873f6644607746994cfd93d37ffeb825131f78852bc8975e791f04dda1ee054"
+    },
+    {
+      "address": 261824,
+      "bytes": 384,
+      "sha256": "a991e107c606a180c277d5a9443223cd9c50447ea57d5b1ae22d909114dd690f"
+    },
+    {
+      "address": 788000,
+      "bytes": 40,
+      "sha256": "a4de07e8f650bd2e81f9f8a2a7225a6b06961541a759ca5ac581e6023b36d0ba"
+    }
+  ],
+  "flow_vtables": [
+    1878704
+  ],
+  "reference_commit": "6cb1964b7512064d2c0d8ee6eb5417ca41d96a8b",
+  "graffiti": {
+    "registry": 2299064,
+    "piece_array": 148,
+    "parts": 152,
+    "id": 156,
+    "unpainted": 160,
+    "designs": 164,
+    "back_designs": 172,
+    "next": 260,
+    "piece_stride": 184,
+    "piece_position": 160,
+    "region_normals": 72
+  },
+  "enemy_groups": {
+    "manager": 2456804,
+    "buckets": 24,
+    "vtable": 1892336,
+    "remaining": 152,
+    "kind": 156,
+    "flags": 164,
+    "defeated_mask": 32
+  }
+}

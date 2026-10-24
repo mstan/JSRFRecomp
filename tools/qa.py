@@ -9,12 +9,13 @@ from pathlib import Path
 import argparse,json,math,struct,sys
 
 
-def open_qa(run,framework=None,write=False):
+def open_qa(run,framework=None,write=False,revision='ntsc-u'):
     root=Path(__file__).resolve().parents[1]
     framework=Path(framework) if framework else root/'xboxllr'
     sys.path.insert(0,str(framework/'tools'))
     from native_qa_memory import NativeQaMemory
-    facts=json.loads((root/'config/revisions/ntsc-u/gameplay-qa.json').read_text())
+    if revision not in ('ntsc-u','usa-standalone'):raise ValueError('unsupported QA revision')
+    facts=json.loads((root/'config/revisions'/revision/'gameplay-qa.json').read_text())
     class TitleQa(NativeQaMemory):
         def enemy_groups(self):
             """Inspect live encounter groups; definitions alone do not prove spawns."""
@@ -152,6 +153,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run',type=Path,required=True)
     parser.add_argument('--development-framework',type=Path)
+    parser.add_argument('--revision',choices=('ntsc-u','usa-standalone'),default='ntsc-u')
     commands=parser.add_subparsers(dest='command',required=True)
     commands.add_parser('status')
     commands.add_parser('tags',help='Read original per-piece graffiti positions and paint state')
@@ -162,7 +164,7 @@ def main():
     mission=commands.add_parser('mission');mission.add_argument('id',type=lambda s:int(s,0));mission.add_argument('--cancel-event',action='store_true')
     cans=commands.add_parser('cans');cans.add_argument('count',type=int)
     health=commands.add_parser('health');health.add_argument('count',type=int)
-    args=parser.parse_args();p=open_qa(args.run,args.development_framework,args.command not in ('status','tags','enemy-groups'))
+    args=parser.parse_args();p=open_qa(args.run,args.development_framework,args.command not in ('status','tags','enemy-groups'),args.revision)
     try:
         if args.command in ('enemy-groups','force-encounter-end'):
             print(json.dumps(p.enemy_groups() if args.command=='enemy-groups' else p.force_encounter_end(),indent=2))

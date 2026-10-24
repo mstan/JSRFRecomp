@@ -1,0 +1,94 @@
+{
+  "schema": "jsrf.early-test-runs.v1",
+  "xbe_sha256": "fd19055756719893c466302809b433b785ecf5732df0441286f3f605f0f3ef9c",
+  "original_rule": "chapter == 9, then per-area total graffiti souls == collected graffiti souls",
+  "mod_rule": "same per-area comparison, without the chapter prerequisite; temporary menu writes only",
+  "actor_manager": 2292960,
+  "menu_actor_id": 4746,
+  "menu_vtable": 1887448,
+  "image_end": 2655776,
+  "chapter": 2031540,
+  "collected_souls": 2031816,
+  "soul_count": 256,
+  "area_ids": 2211992,
+  "area_count": 14,
+  "zone_map": 2030728,
+  "zone_map_count": 100,
+  "soul_zones": 2067512,
+  "menu_main_pointer": 180,
+  "menu_mode_pointer": 204,
+  "menu_source_pointer": 248,
+  "menu_list_pointers": [
+    212,
+    216,
+    220,
+    224
+  ],
+  "source_list_offsets": [
+    4,
+    212,
+    420,
+    516
+  ],
+  "list_counts": [
+    13,
+    13,
+    6,
+    7
+  ],
+  "functions": [
+    {
+      "address": 84432,
+      "bytes": 4,
+      "sha256": "f7e0208f5e988ae39c7a45dfddbd12921d02f9c3deb5695d4c534c8ab0ccdb0f",
+      "role": "chapter getter"
+    },
+    {
+      "address": 237728,
+      "bytes": 139,
+      "sha256": "7af1906c8411fe8911fa2a8be8e5398349d33a036fd636c4a7a9731b204f5f20",
+      "role": "total soul count"
+    },
+    {
+      "address": 237872,
+      "bytes": 371,
+      "sha256": "74b037ef58acf2c266e28f580e2d78bdfaf418f1f9ebd0acfe5276c0cddc9ea2",
+      "role": "collected soul count"
+    },
+    {
+      "address": 480992,
+      "bytes": 848,
+      "sha256": "6c7dc731b77e70ece0fe6ff9c8324223c2907295e26b24b245236c4470033587",
+      "role": "original Test Run menu initialization"
+    },
+    {
+      "address": 481840,
+      "bytes": 677,
+      "sha256": "b729b6c8b9c2abe23e40ba5753bb8b16f4643065bf64459a42e6e9969b1d9bb9",
+      "role": "menu allocation owner"
+    },
+    {
+      "address": 478928,
+      "bytes": 34,
+      "sha256": "8980b990bc1a93ef5696e8171b0edc8474e0c1012f235f6cabec7e7aa5db11e8",
+      "role": "menu availability consumer"
+    }
+  ],
+  "tables": [
+    {
+      "address": 2211992,
+      "bytes": 56,
+      "sha256": "dbd059a9164eed9ea64bb20cd29bbfedd8b8735a31278311cb9949c96737907d"
+    },
+    {
+      "address": 2030728,
+      "bytes": 400,
+      "sha256": "0cb4402ba577e8277f99bad9494e737df751c9a389a42ac105bb6dc8a08a7e61"
+    },
+    {
+      "address": 2067512,
+      "bytes": 1024,
+      "sha256": "cd36d4b6c71ff2f81f9e66e96f92187ed1444817b7f1191eba0574d5b457a5ea"
+    }
+  ]
+}

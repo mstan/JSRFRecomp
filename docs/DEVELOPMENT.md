@@ -12,6 +12,23 @@ initialization and deeper mechanics remain deferred. This is a development previ
 
 Provide your own game under ignored local paths. Original game files, console inputs and generated code are never included in this repository. The private development image is SHA256 `f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219` (title ID `5345000A`, XDK 4134).
 
+The USA standalone input is independently described by `native-title-usa.toml`
+and `config/revisions/usa-standalone/`. Use `tools/game.py --revision usa-standalone`
+with separate private paths, generated output and host build directories.
+Prepare and recover with that revision's `native-function-recovery.json`, then
+configure/build normally. Its native executable is `JSRFRecompUSA`; both windows
+retain the clean game name. `tools/qa.py --revision usa-standalone` selects its
+own process-memory facts. Mod fixtures support both address layouts; select
+`JSRF_TEST_REVISION=usa-standalone` and the USA fixture DLL for the original-code
+Early Test Runs comparison.
+
+Package both native builds through the shared stager, supplying
+`--revision usa-standalone <USA-runtime.exe> <USA-build/CMakeCache.txt>`.
+The stager rejects an omitted declared revision. Its exact XBE hash selects the
+runtime, mod identity and private console/save directory; unknown XBEs remain
+rejected. Keep `data/console` and `data/state` for existing revision-4 users;
+standalone defaults live under `data/revisions/usa-standalone/`.
+
 The [native attract burndown](NATIVE-ATTRACT-BURNDOWN.md) records reached behavior, failures and deferred precision. Framework code is reusable across this title, Blinx and the dashboard; title-specific profiles supply reviewed interfaces and layouts.
 
 Interactive gameplay, explicit coverage bypasses and visual enhancements are

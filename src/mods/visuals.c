@@ -8,7 +8,7 @@
 #include <string.h>
 #include <math.h>
 
-#define JSRF_SHA "f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219"
+#include "revision.h"
 static const struct PilotTitleModHost *api;
 static FILE *trace;
 static const char *trace_trigger;
@@ -34,13 +34,13 @@ static void update_scope(void)
     /* Original CActMan::getAct(9), not a heap scan or a cached actor lifetime.
      * Camera 0 is actor4C. Slot owners and CMission state are checked before
      * using this scope; missing actors during loading mean original output. */
-    if(!read_u32(0x22fca0,&manager) || !manager ||
+    if(!read_u32(JSRF_VA(0x22fca0),&manager) || !manager ||
        !read_u32(manager+0x98+9*4,&mission) || !mission ||
-       !read_u32(mission,&vtable) || vtable!=0x1caa70 ||
+       !read_u32(mission,&vtable) || vtable!=JSRF_VA(0x1caa70) ||
        !read_u32(mission+0x58,&id) || !read_u32(mission+0x5c,&state) ||
        (state!=15 && state!=19) ||
        !read_u32(manager+0x98+0x4c*4,&camera) || !camera ||
-       !read_u32(camera,&vtable) || vtable!=0x1cd4d8)return;
+       !read_u32(camera,&vtable) || vtable!=JSRF_VA(0x1cd4d8))return;
     scene=1;scene_manager=manager;scene_camera=camera;
     /* Covered pause, event, frozen camera, uncovered pause. Only ordinary
      * gameplay enables synthetic presentation; a scope cut clears history. */
@@ -59,12 +59,12 @@ static void aspect(unsigned *n,unsigned *d)
 }
 static void camera_transform(unsigned state,unsigned address,unsigned caller)
 {
-    if(!wide || state!=1 || address!=0x22e678 || caller!=0x153fa9)return;
+    if(!wide || state!=1 || address!=JSRF_VA(0x22e678) || caller!=JSRF_VA(0x153fa9))return;
     scope_dirty=1;update_scope();
     float matrix[16];
     if(!api->read(address,matrix,sizeof(matrix)))fail("JSRF projection is unavailable");
     unsigned viewport[2];
-    if(!api->read(0x264e98,viewport,sizeof(viewport)))fail("JSRF logical viewport is unavailable");
+    if(!api->read(JSRF_VA(0x264e98),viewport,sizeof(viewport)))fail("JSRF logical viewport is unavailable");
     if(!isfinite(matrix[0]) || (fabsf(matrix[0]-1)>.00001f && fabsf(matrix[0]-prior_scale)>.00001f) ||
        !isfinite(matrix[8]) || (fabsf(matrix[8])>.000001f && fabsf(matrix[8]-prior_offset)>.000001f))
         fail("unexpected retained JSRF projection elements");
@@ -73,8 +73,8 @@ static void camera_transform(unsigned state,unsigned address,unsigned caller)
      * builder retains m0/m8, so remove only our previous changes before
      * leaving these producers otherwise untouched, including their m5. */
     if(!scene || viewport[0]!=640 || viewport[1]!=480) {
-        if(matrix[0]!=1){write_float(address,1);write_float(0x264eb8,1);}
-        if(matrix[8]!=0){write_float(address+32,0);write_float(0x264eb8+32,0);}
+        if(matrix[0]!=1){write_float(address,1);write_float(JSRF_VA(0x264eb8),1);}
+        if(matrix[8]!=0){write_float(address+32,0);write_float(JSRF_VA(0x264eb8)+32,0);}
         prior_scale=1;prior_offset=0;
         return;
     }
@@ -92,7 +92,7 @@ static void camera_transform(unsigned state,unsigned address,unsigned caller)
      * that matrix to264EB8 before SetTransform. Update both copies. The
      * original builder retains m0, so assign from its source invariant each
      * time instead of repeatedly multiplying an already modified matrix. */
-    write_float(address,scale);write_float(0x264eb8,scale);prior_scale=scale;
+    write_float(address,scale);write_float(JSRF_VA(0x264eb8),scale);prior_scale=scale;
     /* The camera uses the original0x222-angle miniature projection for both
      * centered interaction prompts and depth-biased HUD passes. The original
      * stock pass at79C41 selects bias-24.9; only it shares the right HUD anchor.
@@ -104,15 +104,15 @@ static void camera_transform(unsigned state,unsigned address,unsigned caller)
        fabsf(matrix[14]+matrix[10]+24.9f)<.001f &&
        read_u32(scene_manager+0x87ec,&owner) && owner==scene_camera)
         offset=(1-scale)*matrix[11];
-    write_float(address+32,offset);write_float(0x264eb8+32,offset);prior_offset=offset;
+    write_float(address+32,offset);write_float(JSRF_VA(0x264eb8)+32,offset);prior_offset=offset;
     /* 153A60 builds the two CPU horizontal clipping planes from this same
      * tangent: (+/-1,0,tan) and the sphere-radius factor sec(halfFov).
      * Keep original vertical/near/far planes. This preserves geometry/entity
      * admission in the added camera margins instead of widening only GPU X. */
     if(scale<1) {
         float secant=sqrtf(1+tangent*tangent);
-        write_float(0x264e40,secant);write_float(0x264e44,-tangent);
-        write_float(0x264e48,secant);write_float(0x264e4c,tangent);
+        write_float(JSRF_VA(0x264e40),secant);write_float(JSRF_VA(0x264e44),-tangent);
+        write_float(JSRF_VA(0x264e48),secant);write_float(JSRF_VA(0x264e4c),tangent);
     }
     /* 154100 projects view points with the original pixel focal264EA8.
      * These remain authored640x480 canvas coordinates, just like font quads;
@@ -132,7 +132,7 @@ static void transform(unsigned state,unsigned address,unsigned caller)
     float matrix[16];
     if(!api->read(address,matrix,sizeof(matrix)))return;
     unsigned manager=0,actor=0,id=0,vtable=0;
-    if(read_u32(0x22fca0,&manager) && manager) {
+    if(read_u32(JSRF_VA(0x22fca0),&manager) && manager) {
         read_u32(manager+0x87ec,&actor);read_u32(manager+0x87f0,&id);
         if(actor)read_u32(actor,&vtable);
     }
@@ -174,7 +174,7 @@ static void draw(struct PilotTitleModDraw *draw)
                  * trick name and multiplication glyph are queued through the
                  * shared text actor. Join those exact score rows to the same
                  * left anchor; NPC/radio dialogue keeps its centered canvas. */
-                if(read_u32(owner,&vtable) && vtable==0x1c4540 &&
+                if(read_u32(owner,&vtable) && vtable==JSRF_VA(0x1c4540) &&
                    read_u32(scene_camera+0x208,&mode) && (mode==3 || mode==5 || mode==13 || mode==14) &&
                    ((lo[1]>=77 && hi[1]<=105) || (lo[1]>=133 && hi[1]<=154)))
                     draw->x_anchor=0;
@@ -192,7 +192,7 @@ static void draw(struct PilotTitleModDraw *draw)
         }
     }
     unsigned manager=0,actor=0,id=0,vtable=0;
-    if(read_u32(0x22fca0,&manager) && manager) {
+    if(read_u32(JSRF_VA(0x22fca0),&manager) && manager) {
         read_u32(manager+0x87ec,&actor);read_u32(manager+0x87f0,&id);
         if(actor)read_u32(actor,&vtable);
     }

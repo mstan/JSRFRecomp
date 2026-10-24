@@ -1,0 +1,120 @@
+{
+  "schema": "xboxllr.title-visuals.v1",
+  "xbe_sha256": "fd19055756719893c466302809b433b785ecf5732df0441286f3f605f0f3ef9c",
+  "scope": "Source-bound static native camera/HUD facts for USA standalone certificate revision 1. Qualification and bypass limits: docs/REVISION-USA-STANDALONE.md.",
+  "projection": {
+    "source": 2287288,
+    "cpu_copy": 2510584,
+    "caller": 1392601,
+    "state": 1,
+    "original_m0": 1,
+    "original_m5": "4/3",
+    "horizontal_tangent_element": 11,
+    "gameplay_viewport": [
+      640,
+      480
+    ],
+    "viewport_size": "0x264ed8/0x264edc",
+    "other_producers": "Original Load Game uses the same builder for512x512 offscreen views with m5=1. Preserve those projections; restore only our retained m0/m8 changes before leaving non-gameplay or non640x480 producers."
+  },
+  "clipping": {
+    "horizontal_secant": [
+      2510464,
+      2510472
+    ],
+    "horizontal_tangent": [
+      2510468,
+      2510476
+    ],
+    "logical_width": 2510552,
+    "logical_pixel_focal": 2510568,
+    "pixel_focal_policy": "Preserve original640x480 canvas focal;154100 maps view point x/z with this focal. Raster scales canvas once. No inverse-focal or second aspect write."
+  },
+  "scene": {
+    "manager": 2292960,
+    "actor_table": 152,
+    "mission_actor": 9,
+    "camera_actor": 76,
+    "mission_vtable": 1878704,
+    "camera_vtable": 1889560,
+    "mission": 88,
+    "state": 92,
+    "gameplay": 15,
+    "event": 19,
+    "pause_event_flags": 64,
+    "current_draw": 34796
+  },
+  "source_blocks": [
+    {
+      "address": "0x153ec0",
+      "bytes": 285,
+      "sha256": "ea0ccbba728a8bbeb6aa1c12b502727f49f814b085eba90c9d744a8b7ebed40b"
+    },
+    {
+      "address": "0x153a90",
+      "bytes": 176,
+      "sha256": "d949cf1b87f07270bbc7c084dace547fffaa804ee34d2919369390a52b9719d5"
+    },
+    {
+      "address": "0x128c0",
+      "bytes": 23,
+      "sha256": "af6d1e6732aa791f78a89dd6899c05656ab1958a98c3ef4e63fd74fe78ea2c16"
+    },
+    {
+      "address": "0x153fe0",
+      "bytes": 189,
+      "sha256": "cb72d5d2f6869161392dc590c5be2aa838d2d8be42a379430acf3bd1f0f52ce5"
+    },
+    {
+      "address": "0x131f0",
+      "bytes": 120,
+      "sha256": "8413dba682e3b312452aa9b711968916f2ab47d6ea5453c481517b7cf0a8d38d"
+    },
+    {
+      "address": "0x154130",
+      "bytes": 64,
+      "sha256": "dfd1e03234d9a1bcb5966e1396bbbf73b16b1c02d20afc0e9050ccfd9f4b74f0"
+    },
+    {
+      "address": "0x79c71",
+      "bytes": 20,
+      "sha256": "73d6debefc8da643c1a0fdf0b1ae90b9c4aa65109cad90a2db870e9e9dbb9b67"
+    }
+  ],
+  "evidence": "October 24 standalone native New Game and controllable Garage, measured movement, real 4:3/16:9/21:9/32:9 resize with m0=1/.75/.5714286/.375 and original m5=4/3; real same-chapter Shibuya save-point paint/save and fresh-process Load Game. Private evidence remains under local/usa-revision-20261024. No exhaustive stage-effects claim.",
+  "hud_3d": {
+    "scope": "ordinary gameplay, checked camera owner and original stock miniature pass with bias-24.9; centered interaction prompt and bias-24/-25 producers retain their own anchors",
+    "fov_turns": 546,
+    "tangent": 0.0260835867,
+    "projection_bias_element": 8,
+    "right_anchor_ndc_offset": "1 - (4/3)/display_aspect",
+    "restored_on_next_world_projection": true,
+    "source_pass": "0x79c71",
+    "depth_bias": -24.9
+  },
+  "hud_2d": {
+    "owner": "CActMan current_draw; camera actor4C owns edge HUD; dialogue/radio actors retain centered canvas",
+    "camera_right_widgets": "health/can original y35..110,x>=390 and speed y400..440,x>=430",
+    "camera_other_widgets": "one left anchor, independent of changing glyph bounds",
+    "other_actors": "one centered canvas for frame, portrait and every text batch",
+    "text_score_rows": {
+      "actor_vtable": "0x1c4580",
+      "requires_camera_score_digits": true,
+      "camera_modes": [
+        3,
+        5,
+        13,
+        14
+      ],
+      "trick_name_y": [
+        77,
+        105
+      ],
+      "multiplication_y": [
+        133,
+        154
+      ],
+      "anchor": "left, shared with camera-owned score digits"
+    }
+  }
+}

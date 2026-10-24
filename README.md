@@ -46,8 +46,22 @@ camera and save support are retained.
 You supply your own **Jet Set Radio Future (NTSC-U)** files. Open **Start Game.cmd**,
 choose **Skip** in the optional first-launch console setup, and select the
 supported extracted `default.xbe` on the main screen. Keep the complete game
-asset folder beside that XBE. Direct ISO import and other revisions are not
-supported yet. Original game files are not included in this repository.
+asset folder beside that XBE. The next preview supports both the original
+development input (certificate revision 4) and the USA standalone retail
+release (certificate revision 1). The launcher chooses the matching native
+program automatically. Direct ISO import and other revisions remain unsupported.
+Original game files are not included in this repository.
+
+| Supported NTSC-U executable | `default.xbe` SHA-256 |
+| --- | --- |
+| USA standalone, certificate revision 1 | `fd19055756719893c466302809b433b785ecf5732df0441286f3f605f0f3ef9c` |
+| Existing development input, certificate revision 4 | `f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219` |
+
+The currently linked October 23 download supports only revision 4. Support for
+the standalone release requires the updated package. Default console profiles
+and save folders are separate for each revision; selecting another revision
+preserves the existing profile and progress. Shared or original-console saves
+retain their normal identity and signature checks.
 
 No kernel dump, EEPROM or HDD image is needed to create a new local console.
 Automatic save storage is private to this game's package; no large disk image

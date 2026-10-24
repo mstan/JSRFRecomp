@@ -1,0 +1,87 @@
+schema = "xboxllr.native-title.v1"
+
+[title]
+id = "jsrf-usa-standalone"
+name = "Jet Set Radio Future"
+game_id = "5345000A"
+region = "NTSC-U"
+executable = "JSRFRecompUSA"
+xbe_sha256 = "fd19055756719893c466302809b433b785ecf5732df0441286f3f605f0f3ef9c"
+
+[launcher]
+ui_revision = "ccc186e097b362555292b157ffd303abcea26fbf"
+# Added after original gameplay scope/timing observations; never just uncap.
+frame_modes = ["interpolated"]
+
+[launcher.defaults."jsrf.enhancement.widescreen/widescreen"]
+enabled = true
+options = { aspect = "adaptive" }
+
+[launcher.defaults."xboxlle.enhancement.visuals/resolution"]
+enabled = true
+options = { height = "1080" }
+
+[launcher.defaults."xboxlle.enhancement.visuals/supersampling"]
+enabled = true
+options = { axis = "2" }
+
+[launcher.defaults."xboxlle.enhancement.visuals/antialiasing"]
+enabled = true
+options = { method = "fxaa" }
+
+[launcher.defaults."xboxlle.enhancement.visuals/filtering"]
+enabled = true
+options = { anisotropy = "8" }
+
+[launcher.defaults."xboxlle.enhancement.frame-rate/frame-rate"]
+enabled = true
+options = { mode = "interpolated", rate = "60" }
+
+[launcher.defaults."jsrf.enhancement.test-runs/early-unlock"]
+enabled = true
+
+[mods]
+registry = "src/mods/visuals_usa.c"
+inputs = ["src/mods/revision.h", "src/mods/visuals.c", "config/revisions/usa-standalone/visuals.json", "src/mods/challenge_unlock.inc", "config/revisions/usa-standalone/challenge-unlock.json"]
+widescreen_manifest = "mods/preloaded/packages/jsrf.enhancement.widescreen/1.0.0/manifest.toml"
+widescreen_package = "jsrf.enhancement.widescreen"
+widescreen_plugin = "jsrf.widescreen"
+switches = [{ manifest = "mods/preloaded/packages/jsrf.enhancement.test-runs/1.0.0/manifest.toml", package = "jsrf.enhancement.test-runs", feature = "early-unlock", key = "EARLY_TEST_RUNS" }]
+
+[content]
+image = "default.xbe"
+device = '\Device\Cdrom0'
+drive = "D:"
+drive_owner = "HOST"
+
+[generation]
+profile = "config/revisions/usa-standalone/profile.json"
+bindings = ["cache", "input", "d3d", "audio"]
+unit_max_functions = 64
+unit_max_bytes = 524288
+
+[build]
+PILOT_NATIVE_OPTIMIZATION = "OPTIMIZED"
+PILOT_MEDIA = "HOST"
+PILOT_CACHE = "NATIVE"
+PILOT_CPU_PROBE = "ORIGINAL"
+PILOT_RENDERER = "D3D11"
+PILOT_D3D_DONOR = "PHOBOS"
+PILOT_AUDIO = "NATIVE"
+PILOT_AUDIO_BACKEND = "XAUDIO2_DSP"
+PILOT_CALENDAR = "HLE"
+PILOT_IO_DEVICE = "OFF"
+PILOT_USB = "OFF"
+PILOT_DISPLAY = "NATIVE"
+PILOT_MEMORY = "NATIVE"
+PILOT_FILES = "NATIVE"
+PILOT_INPUT = "NATIVE"
+PILOT_SCHEDULING = "NATIVE"
+
+[runtime]
+XLLE_PILOT_GUEST_SCHEDULER = "1"
+XLLE_PILOT_DEFER_STREAM_UPLOAD = "1"
+XLLE_PILOT_TEXTURE_EXPOSURE_CACHE = "1"
+XLLE_PILOT_GPU_EVENTS = "1"
+XLLE_PILOT_EVENT_TRACE = "0"
+XLLE_PILOT_TRACE = "0"

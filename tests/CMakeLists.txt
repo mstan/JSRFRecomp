@@ -21,3 +21,18 @@ foreach(mode disabled fixed adaptive)
   add_test(NAME jsrf_visual_${mode} COMMAND jsrf_visual_contract
     "${CMAKE_CURRENT_BINARY_DIR}/${mode}.plan" ${mode})
 endforeach()
+add_library(jsrf_usa_challenge_contract SHARED challenge_fixture.c)
+target_compile_definitions(jsrf_usa_challenge_contract PRIVATE JSRF_USA_STANDALONE=1)
+target_include_directories(jsrf_usa_challenge_contract PRIVATE "${XBOXLLR_SOURCE}/pilots/native-title")
+add_executable(jsrf_usa_visual_contract visual_contract.c ../src/mods/visuals_usa.c
+  "${XBOXLLR_SOURCE}/pilots/native-title/visual_mods.c"
+  "${XBOXLLR_SOURCE}/pilots/native-title/visual_mod_plan.c")
+target_compile_definitions(jsrf_usa_visual_contract PRIVATE JSRF_USA_STANDALONE=1)
+target_include_directories(jsrf_usa_visual_contract PRIVATE "${XBOXLLR_SOURCE}/pilots/native-title")
+if(NOT WIN32)
+  target_link_libraries(jsrf_usa_visual_contract PRIVATE m)
+endif()
+foreach(mode disabled fixed adaptive)
+  add_test(NAME jsrf_usa_visual_${mode} COMMAND jsrf_usa_visual_contract
+    "${CMAKE_CURRENT_BINARY_DIR}/usa-${mode}.plan" ${mode})
+endforeach()

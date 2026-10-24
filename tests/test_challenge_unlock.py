@@ -3,7 +3,7 @@ from pathlib import Path
 import ctypes,hashlib,json,os,struct,unittest
 
 ROOT=Path(__file__).resolve().parents[1]
-FACTS=json.loads((ROOT/'config/revisions/ntsc-u/challenge-unlock.json').read_text())
+FACTS=json.loads((ROOT/'config/revisions'/os.environ.get('JSRF_TEST_REVISION','ntsc-u')/'challenge-unlock.json').read_text())
 OWNER,MAIN,MODES,SOURCE=0x400000,0x401000,0x402000,0x408000
 LISTS=(0x403000,0x404000,0x405000,0x406000)
 COUNTS=(13,13,6,7)

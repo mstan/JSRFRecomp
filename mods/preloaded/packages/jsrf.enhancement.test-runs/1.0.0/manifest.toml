@@ -8,6 +8,10 @@ description = "Unlock each area's Test Run challenges by collecting its graffiti
 game_id = "5345000A"
 xbe_sha256 = "f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219"
 
+[[target]]
+game_id = "5345000A"
+xbe_sha256 = "fd19055756719893c466302809b433b785ecf5732df0441286f3f605f0f3ef9c"
+
 [[feature]]
 id = "early-unlock"
 name = "Unlock Test Runs before finishing the story"

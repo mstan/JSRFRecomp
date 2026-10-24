@@ -18,7 +18,7 @@ static int challenge_heap(uint32_t at,uint32_t bytes)
 {
     /* The original image ends at2885E0. UI allocations cannot alias original
      * static data (including the save manager), code or the hardware aperture. */
-    return at>=0x2885e0u && at<0x04000000u && !(at&3) && bytes<=0x04000000u-at;
+    return at>=JSRF_VA(0x2885e0u) && at<0x04000000u && !(at&3) && bytes<=0x04000000u-at;
 }
 static int challenge_overlap(uint32_t a,uint32_t an,uint32_t b,uint32_t bn)
 {return a<b+bn && b<a+an;}
@@ -26,12 +26,12 @@ static void challenge_refresh(void)
 {
     if(!early_test_runs)return;
     uint32_t manager=0,owner=0,vtable=0,chapter=0,pointers[20],key[16],root;
-    if(!read_u32(0x22fca0,&manager) || !manager ||
+    if(!read_u32(JSRF_VA(0x22fca0),&manager) || !manager ||
        !read_u32(manager+0x98+0x128a*4,&owner) || !owner ||
-       !challenge_heap(owner,0x17c) || !read_u32(owner,&vtable) || vtable!=0x1ccc98) {
+       !challenge_heap(owner,0x17c) || !read_u32(owner,&vtable) || vtable!=JSRF_VA(0x1ccc98)) {
         challenge_cached=0;return;
     }
-    if(!read_u32(0x1eff74,&chapter))fail("Test Run chapter data unavailable");
+    if(!read_u32(JSRF_VA(0x1eff74),&chapter))fail("Test Run chapter data unavailable");
     if(chapter==9){challenge_cached=0;return;} /* Original post-game behavior. */
     if(chapter>9)fail("unexpected Test Run chapter");
     if(!challenge_read(owner+0xb0,pointers,sizeof(pointers)))fail("Test Run menu owner unavailable");
@@ -53,13 +53,13 @@ static void challenge_refresh(void)
     }
     key[0]=owner;key[1]=main;key[2]=source;
     memcpy(key+3,destinations,sizeof(destinations));
-    if(!challenge_read(0x1f0088,key+8,32) || !read_u32(main+0x58,&root))
+    if(!challenge_read(JSRF_VA(0x1f0088),key+8,32) || !read_u32(main+0x58,&root))
         fail("Test Run soul data unavailable");
     if(challenge_cached && root==challenge_root && !memcmp(key,challenge_key,sizeof(key)))return;
     uint32_t area_ids[14],zone_map[100],soul_zones[256],source_rows[0x270/4];
-    if(!challenge_read(0x21c058,area_ids,sizeof(area_ids)) ||
-       !challenge_read(0x1efc48,zone_map,sizeof(zone_map)) ||
-       !challenge_read(0x1f8bf8,soul_zones,sizeof(soul_zones)) ||
+    if(!challenge_read(JSRF_VA(0x21c058),area_ids,sizeof(area_ids)) ||
+       !challenge_read(JSRF_VA(0x1efc48),zone_map,sizeof(zone_map)) ||
+       !challenge_read(JSRF_VA(0x1f8bf8),soul_zones,sizeof(soul_zones)) ||
        !challenge_read(source,source_rows,sizeof(source_rows)))fail("Test Run source tables unavailable");
     uint32_t complete[14];
     for(unsigned area=0;area<14;++area) {

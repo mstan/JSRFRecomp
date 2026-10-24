@@ -42,7 +42,7 @@ enabled = true
 
 [mods]
 registry = "src/mods/visuals.c"
-inputs = ["config/revisions/ntsc-u/visuals.json", "src/mods/challenge_unlock.inc", "config/revisions/ntsc-u/challenge-unlock.json"]
+inputs = ["src/mods/revision.h", "config/revisions/ntsc-u/visuals.json", "src/mods/challenge_unlock.inc", "config/revisions/ntsc-u/challenge-unlock.json"]
 widescreen_manifest = "mods/preloaded/packages/jsrf.enhancement.widescreen/1.0.0/manifest.toml"
 widescreen_package = "jsrf.enhancement.widescreen"
 widescreen_plugin = "jsrf.widescreen"
@@ -85,3 +85,6 @@ XLLE_PILOT_TEXTURE_EXPOSURE_CACHE = "1"
 XLLE_PILOT_GPU_EVENTS = "1"
 XLLE_PILOT_EVENT_TRACE = "0"
 XLLE_PILOT_TRACE = "0"
+
+[revisions.usa-standalone]
+definition = "native-title-usa.toml"

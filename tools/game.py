@@ -18,6 +18,7 @@ def main():
     parser.add_argument('--paths', type=Path, default=ROOT / 'local/paths.json')
     parser.add_argument('--generated', type=Path)
     parser.add_argument('--build-dir', type=Path)
+    parser.add_argument('--revision', choices=('ntsc-u', 'usa-standalone'), default='ntsc-u')
     parser.add_argument('--development-framework', type=Path,
                         help='Explicit development worktree; records its actual HEAD and tracked changes')
     args, extra = parser.parse_known_args()
@@ -37,8 +38,9 @@ def main():
     record = dict(action=args.action, framework=str(framework), framework_head=head,
                   tested_pin=pin['revision'], development=args.development_framework is not None,
                   tracked_framework_changes=changes, generated=str(generated), build=str(build))
+    title = ROOT / ('native-title-usa.toml' if args.revision == 'usa-standalone' else 'native-title.toml')
     command = [sys.executable, str(framework / 'tools/native_title.py'), args.action,
-               '--title', str(ROOT / 'native-title.toml'), '--paths', str(paths_file),
+               '--title', str(title), '--paths', str(paths_file),
                '--generated', str(generated), '--build-dir', str(build), *extra]
     record['command'] = command
     (evidence / (str(time.time_ns()) + '.aot-private.json')).write_text(json.dumps(record, indent=2) + '\n', encoding='utf-8')

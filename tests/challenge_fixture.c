@@ -1,5 +1,6 @@
 /* Authored fake-memory transport for the title plugin, with no original code. */
 #include "title_mod.h"
+#include "../src/mods/revision.h"
 #include <setjmp.h>
 #include <stdint.h>
 #include <stdio.h>

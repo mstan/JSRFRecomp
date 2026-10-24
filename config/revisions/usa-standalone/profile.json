@@ -1,0 +1,106 @@
+{
+  "schema": "native-title-profile.v1",
+  "id": "jsrf-usa-standalone",
+  "xbe_sha256": "fd19055756719893c466302809b433b785ecf5732df0441286f3f605f0f3ef9c",
+  "bindings": {
+    "input": {
+      "adapter": "xapi-gamepad-v1",
+      "calls": {
+        "XInitDevices": {
+          "sha256": "11753e3a6d9f5198cd6e74c0f4c76ebcdc7f5812db64cdb7e4abd45046d62f22",
+          "bytes": 142,
+          "stack_bytes": 8
+        },
+        "XGetDevices": {
+          "sha256": "61c51b800835e89204894145a78a673f427490658282ef51076a6ef5f9b2564a",
+          "bytes": 34,
+          "stack_bytes": 4
+        },
+        "XGetDeviceChanges": {
+          "sha256": "8931ce53eb60bc84718ddd80eae447a2de66f011259ac9556fdc28d208d596cf",
+          "bytes": 109,
+          "stack_bytes": 12
+        },
+        "XInputOpen": {
+          "sha256": "256f9f71f0a93c2ed019239113d3830f3b93dbd6ee50170e86d64422f2cebe3a",
+          "bytes": 117,
+          "stack_bytes": 16
+        },
+        "XInputClose": {
+          "sha256": "6a1fa93e250f21b1d79bd80cf885b7c35e7b26611e3a71132871028bf56a7623",
+          "bytes": 12,
+          "stack_bytes": 4
+        },
+        "XInputGetCapabilities": {
+          "sha256": "c38c997e5bc46fef0d252171e57c3e583226d9845c21c33529c5c7b6df3981fa",
+          "bytes": 498,
+          "stack_bytes": 8
+        },
+        "XInputGetState": {
+          "sha256": "f483ce21ce1ffab0e4b4feef2a1fecd0171b170af60131ef373c18b502c681ce",
+          "bytes": 113,
+          "stack_bytes": 8
+        },
+        "XInputSetState": {
+          "sha256": "e01d502a9807fa218493d9dd36eba52360973f01225239856674fd8c143174eb",
+          "bytes": 56,
+          "stack_bytes": 8
+        },
+        "XInputPoll": {
+          "sha256": "1d6c9e47290e26dc700345c9dbe74f66193e78f9b39fccce7b54d379ec8772ac",
+          "bytes": 89,
+          "stack_bytes": 4
+        }
+      },
+      "set_last_error": {
+        "sha256": "a67fbc1fe7a20d43e6b0c686e4c1f5b7b87f54d5fbaf870d28dc0ba990b960e6",
+        "bytes": 46,
+        "stack_bytes": 4
+      },
+      "variables": {
+        "g_DeviceType_MU": 1820640,
+        "g_DeviceType_Gamepad": 1820768,
+        "g_DeviceType_IRDongle": 1820792
+      },
+      "layout": {
+        "state_bytes": 22,
+        "capabilities_bytes": 25,
+        "feedback_motor_offset": 66,
+        "default_polling": [
+          1,
+          8,
+          0,
+          0
+        ]
+      },
+      "known_absent_classes": [
+        {
+          "symbol": "g_DeviceType_Keyboard",
+          "address": 1820780,
+          "bytes": 12,
+          "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+          "policy": "native-host-absent-v1"
+        }
+      ]
+    },
+    "cache": {
+      "adapter": "xapi-utility-cache-v1",
+      "body": {
+        "sha256": "a930cd90ff30922e21012fbec6ee728be801060a57df37a5d9247c0c003c0f2b",
+        "bytes": 235,
+        "stack_bytes": 4
+      },
+      "error_helper": {
+        "sha256": "66bf54a4019b2ed30a2ca93ebce1a1b75055e3b2a2fe514a6fac07592182b3cd",
+        "bytes": 23,
+        "stack_bytes": 4
+      }
+    },
+    "d3d": {
+      "include": "d3d-classic.json"
+    },
+    "audio": {
+      "include": "audio.json"
+    }
+  }
+}

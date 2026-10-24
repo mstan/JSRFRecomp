@@ -1,0 +1,1006 @@
+{
+  "adapter": "dsound-objects-v1",
+  "layout": {
+    "device_interface_offset": 8,
+    "buffer_interface_offset": 28,
+    "buffer_descriptor_bytes": 24
+  },
+  "calls": {
+    "IDirectSound_AddRef": {
+      "sha256": "d9c66149f31f1ecfb19bb8a7ba4c4b36e8c214b2dc045f17c6a08338f4dd535e",
+      "bytes": 22,
+      "stack_bytes": 4
+    },
+    "IDirectSound_Release": {
+      "sha256": "0a72b625b8e9e1a301ddf3c84ec304eded77fc8886c86f41f03efd6fa1fac2b5",
+      "bytes": 22,
+      "stack_bytes": 4
+    },
+    "IDirectSoundBuffer_Unlock": {
+      "sha256": "e123f60e9fc6e974d1381f2f15fb19e7960628cc8925d65e344c2f2bdc64f424",
+      "bytes": 5,
+      "stack_bytes": 20
+    },
+    "IDirectSoundBuffer_AddRef": {
+      "sha256": "c10bd3b2a86aeaef9176bd1dcfe990e5e4c90d53aa405c969817cfc97714cb01",
+      "bytes": 22,
+      "stack_bytes": 4
+    },
+    "IDirectSoundBuffer_Release": {
+      "sha256": "d3270be9d4962cdcdb62ef4c3242b41b960c1f0cb7621e035393e8b7607de92c",
+      "bytes": 22,
+      "stack_bytes": 4
+    },
+    "IDirectSound_GetCaps": {
+      "sha256": "ced46e5880db47c476a7fb13f51b999294928595125b746ca4000508979597a8",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSound_GetSpeakerConfig": {
+      "sha256": "a939c84115ce05646c3819d62f397e445ddb668f3b6fa76640a0dadee8e1d38f",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSound_DownloadEffectsImage": {
+      "sha256": "1334dd7cdc0c6860149634d59073991a302ab83274996dcd232137344029c326",
+      "bytes": 39,
+      "stack_bytes": 20
+    },
+    "IDirectSound_GetEffectData": {
+      "sha256": "216db7dec5528a8e13f7a163974fb3fe18eea5e492516993c1a8dc18bd3b4545",
+      "bytes": 39,
+      "stack_bytes": 20
+    },
+    "IDirectSound_SetEffectData": {
+      "sha256": "87d69fe2e8c48ff84b41534909f21e25758f481f9bfc227234bdc61fbf4ce317",
+      "bytes": 42,
+      "stack_bytes": 24
+    },
+    "IDirectSoundBuffer_SetVolume": {
+      "sha256": "b58eb0c194c7ed59ddd4dd5b4e35d7794448243ce9b4139d7bdc5659dc126f7f",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_SetLFO": {
+      "sha256": "b239782784f0cd716c4334f9a299150e1661fbc1037f8cbb9242e2f6ee2fe1e7",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_SetEG": {
+      "sha256": "1810b19e887639a037a138401d69cee1ea9ff58ca2abf34b5fad89184a0176bc",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_SetFilter": {
+      "sha256": "173fb8e2b1e495fdb9f18565e2723796b63d432d58242988e70170c1826234e6",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_SetHeadroom": {
+      "sha256": "1757cea17c629f6b1fd9c274ca4f415183aa33febabf97163f2325295b01de4d",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_SetMixBins": {
+      "sha256": "3a7e8bb57003883bd1ddfd19f87d8f793f6457246ca889b0c546316cdea4faa2",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_Play": {
+      "sha256": "adead72a8aacb01acfea8c6d25219d48a2e546348cf871ea96ce8cb65346d3be",
+      "bytes": 36,
+      "stack_bytes": 16
+    },
+    "IDirectSoundBuffer_Stop": {
+      "sha256": "df1837484aa3e62bbc781e21387a541521f9d91273cdce786ce386976d826c51",
+      "bytes": 24,
+      "stack_bytes": 4
+    },
+    "IDirectSoundBuffer_SetLoopRegion": {
+      "sha256": "898c06626099fbf8842e068425e0913787757c31ad1442753ef93077b5de6016",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_GetStatus": {
+      "sha256": "18468286922467a501a34e7b937bc8ae2219ea0429cb922c920416404a6c6e94",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_GetCurrentPosition": {
+      "sha256": "ccfc504dffc81dc7e4cbe7aa1d4e4a18cc2f0a881acede316cf419bf8b8e1c0f",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetCurrentPosition": {
+      "sha256": "ad6e90ccc5a642e4be01a4e583169a38982ddffe68ba57a500683dc8b28ab0d5",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_Lock": {
+      "sha256": "9fcb07696318977d91a1d9221c165eb4d652731c1ec4eaafa3df0b3c6fa3f030",
+      "bytes": 48,
+      "stack_bytes": 32
+    },
+    "IDirectSound_CommitDeferredSettings": {
+      "sha256": "34f59c0fa3a67230a5ff424d2c4ccc7b4d26f7b491183d09c0fdd2e95816284a",
+      "bytes": 24,
+      "stack_bytes": 4
+    },
+    "IDirectSoundBuffer_SetFrequency": {
+      "sha256": "f5621260d82ea8ca08e2f182e613d629e95113a562ec329b060ef1cefefb628d",
+      "bytes": 28,
+      "stack_bytes": 8
+    },
+    "IDirectSoundBuffer_SetAllParameters": {
+      "sha256": "74d2074724c78afcff1730de3785b631bbab4133b3d291dcecc5f6b7aa77f13a",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetConeAngles": {
+      "sha256": "25bb50e1e5a61620d76cd3718c2161599e56b5725cf9b08eb6fdcfb3264081de",
+      "bytes": 36,
+      "stack_bytes": 16
+    },
+    "IDirectSoundBuffer_SetConeOrientation": {
+      "sha256": "08fe4a21c42d1f1e2ed7b97277e10cbf39cb751eca34151fcd347662da34c3d9",
+      "bytes": 53,
+      "stack_bytes": 20
+    },
+    "IDirectSoundBuffer_SetConeOutsideVolume": {
+      "sha256": "02d78d8b8a8ed7f8dc10bf278531c80205384531a48d1ac06596f3b4edb57b76",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetMaxDistance": {
+      "sha256": "76bb9add19f869ba4d0112c56cb60f76593e913e993dd8865116583d3e108d88",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetMinDistance": {
+      "sha256": "1b82926f5294b5e653d997c34a7ef00c0e77f72169a990f04c967c07347e92ba",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetMode": {
+      "sha256": "87dfc63f38d9a69f11cf724d976be0dc915c8f4d6503ce292cc4b0d05cdebcc0",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetPosition": {
+      "sha256": "e1ea5cbe7f14f85e9a55dd8bcbb742cfb38df68447fd4990af5da8cfbad52a1b",
+      "bytes": 53,
+      "stack_bytes": 20
+    },
+    "IDirectSoundBuffer_SetVelocity": {
+      "sha256": "4487f541fc2a74ff963d9c676d4316e8b9af93d3d791efa1eca40b75b4d173e0",
+      "bytes": 53,
+      "stack_bytes": 20
+    },
+    "IDirectSoundBuffer_SetDistanceFactor": {
+      "sha256": "352cdbebcf668ab03bb8d22defcbdf23809b5f5628a68c1b0fa2d9d678795577",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetDopplerFactor": {
+      "sha256": "58fa66a8ad99ac977bb3f8066cce9e67b50186ce0c25c9676e87098c72d14686",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetRolloffFactor": {
+      "sha256": "051441bc027854431b4389493fafcfe483bebe79c79cad3d2f4a78da28fdfdf5",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetI3DL2Source": {
+      "sha256": "42e36fa3346367bfa9fb49b9acb68a2bd0a4131012798163ae15d55b25cf7b68",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSound_SetAllParameters": {
+      "sha256": "ef1e33f4b84214196a04de2a4ae3a6776af1cc44d478ef1e99a6d4a0c9e1b468",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSound_SetDistanceFactor": {
+      "sha256": "0598a96825f2410f54a080f476d7f056fe49e60fb18f560618281d3f391d0764",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSound_SetDopplerFactor": {
+      "sha256": "0e9a878a7a394b01b70d8dae82a5db3b02e3e0de3094c55ec0dc21ecb5c25198",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSound_SetOrientation": {
+      "sha256": "8d6ed84fd4a109010f606ae7c0d07678e30508e4e650a8dbc7e8067c25248d12",
+      "bytes": 74,
+      "stack_bytes": 32
+    },
+    "IDirectSound_SetPosition": {
+      "sha256": "7124fa7c18ffcf04fc43d8a6d8029696eb7ac2a757541019c320082602357ea5",
+      "bytes": 53,
+      "stack_bytes": 20
+    },
+    "IDirectSound_SetRolloffFactor": {
+      "sha256": "287c6d5db7fb07cbcf837f4020c810fdf181357cba57fe423e429978380e6b17",
+      "bytes": 36,
+      "stack_bytes": 12
+    },
+    "IDirectSound_SetVelocity": {
+      "sha256": "a1cbbaea2bf1a9a6480cc2b758a5fab563caba057a5a480c74bab52cea26234a",
+      "bytes": 53,
+      "stack_bytes": 20
+    },
+    "IDirectSound_SetI3DL2Listener": {
+      "sha256": "3afe59d80a99ec19f9dfcd32e510ed9b2cab49ca9067cdb12ea9140bbe72dea8",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSoundBuffer_SetBufferData": {
+      "sha256": "f8a1e318fc2410bb4eda11acd636d248b159ef005dfdd51efecb129dcdef76b0",
+      "bytes": 32,
+      "stack_bytes": 12
+    },
+    "IDirectSound_CreateSoundBuffer": {
+      "sha256": "03b0fdff70199320a2db605a34283edfb2714eec2213f0d8374beaf9eaa3f345",
+      "bytes": 36,
+      "stack_bytes": 16
+    },
+    "DirectSoundCreate": {
+      "sha256": "3c442c7555ca9ddd81cfd8387bee06f4c41168f0883e1af353a35d23cfd16613",
+      "bytes": 71,
+      "stack_bytes": 12
+    },
+    "ObjectAddRef": {
+      "sha256": "676b5e8fb16bdae190c431ee81f13d72f0298d465bb50d3bf4925006da1bbce8",
+      "bytes": 71,
+      "stack_bytes": 4
+    }
+  },
+  "addref": {
+    "sha256": "676b5e8fb16bdae190c431ee81f13d72f0298d465bb50d3bf4925006da1bbce8",
+    "bytes": 71,
+    "stack_bytes": 4
+  },
+  "constructors": {
+    "DEVICE": {
+      "sha256": "fc8bba76670fbfca986637b55b0a98a0bd639fc6e3337f1816146765e7f7e3c8",
+      "bytes": 29
+    },
+    "BUFFER": {
+      "sha256": "e83d900c50865cff0d6a8fbedb679af2dd2a7752d99ded8a8d48d522b5443d34",
+      "bytes": 24
+    }
+  },
+  "dsp_helpers": {
+    "step": {
+      "sha256": "5dd8c84b3dae815b6c5abc5bb442b2d4c75e002ffafd15568af4a91b76fef77d",
+      "bytes": 121
+    },
+    "seed": {
+      "sha256": "d6fbcf36fd435ef8992eb4c8a025a6037604441f2acca02094e056fd5a6831c7",
+      "bytes": 45
+    },
+    "decode": {
+      "sha256": "68bb004f6f6e3425b301652056b1e62eec935a43d1adab4c5cf61cc0a0000ba2",
+      "bytes": 207
+    },
+    "location": {
+      "sha256": "fdbfe8d8b720fe60daf1f383e0145206c7628364a40514e141374ded3cb1f84d",
+      "bytes": 34
+    }
+  },
+  "seed_push_prefix": [
+    0,
+    0
+  ],
+  "seed_push_suffix": [
+    80,
+    8,
+    0,
+    0
+  ],
+  "listener": {
+    "adapter": "listener-parameters-2d-v1",
+    "helpers": {
+      "SetAllParameters": {
+        "sha256": "c999351a611b171b3fadbfd06333d36fd71fc34ea00bd7562edbab4f9bc485d1",
+        "bytes": 230,
+        "stack_bytes": 12
+      },
+      "SetDistanceFactor": {
+        "sha256": "94c3d4436cc7f092160422de79afcdcbefd9b1e8a228ca4008a81d9ae46bf8b8",
+        "bytes": 98,
+        "stack_bytes": 12
+      },
+      "SetDopplerFactor": {
+        "sha256": "8fa1e90325f46ad27c8d827c3d226e974a2ee3c51580fc506f9415dcd387bca3",
+        "bytes": 98,
+        "stack_bytes": 12
+      },
+      "SetOrientation": {
+        "sha256": "60cb23b57678239e58aaf041755f53fccbd1a5f4fcca667e4aa235c194002a94",
+        "bytes": 144,
+        "stack_bytes": 32
+      },
+      "SetPosition": {
+        "sha256": "ec6fde3559742f5959e35399c9040d6b5f25b52b3952ed168cd9c59c1df55bda",
+        "bytes": 118,
+        "stack_bytes": 20
+      },
+      "SetRolloffFactor": {
+        "sha256": "299a78a1b9fb00e58e581ec041c502dac668071c2578b4377c1f8683a41d7a8b",
+        "bytes": 98,
+        "stack_bytes": 12
+      },
+      "SetVelocity": {
+        "sha256": "bc8c323ff0837dad576caae2a9c8e0697b627787b576d9b65a0b180d389891ef",
+        "bytes": 118,
+        "stack_bytes": 20
+      },
+      "CommitDeferredSettings": {
+        "sha256": "91e0e392b50f6bfbdea8b50a90598c3a9cfcf54e09f9ba4a5fc5e777a32481f3",
+        "bytes": 124,
+        "stack_bytes": 4
+      }
+    }
+  },
+  "i3dl2": {
+    "adapter": "original-native-i3dl2-v1",
+    "initialize": 1729671,
+    "calculate": 1730888,
+    "helpers": [
+      {
+        "address": 1707837,
+        "body": {
+          "sha256": "ae4a39f1f86ea5a10dc0f01ad19c2ede2c9ddf1aed58b048c690bc9f8fdebf83",
+          "bytes": 9,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1714094,
+        "body": {
+          "sha256": "c0001e38160de3c99fb274a8e33f30139728b8de149229ea7bba2c289f409cbd",
+          "bytes": 66,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729082,
+        "body": {
+          "sha256": "c29bc791de61603f8e286d19bf5c7399a3cfc4822be25589965732e3ee944ef5",
+          "bytes": 50,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729143,
+        "body": {
+          "sha256": "1be99a8a3ed24a3574a151636e81eabe0545ef020b707d45a14bb5af2762f6ff",
+          "bytes": 133,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729276,
+        "body": {
+          "sha256": "36c5c094d0472c4c2a0582970aefe4e6f6e9aa17336fbb26269d65ccc1b1551c",
+          "bytes": 51,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729327,
+        "body": {
+          "sha256": "3c11612f3de3afef64c72ae7f8f0c46dc3932cc310b362b2f03ee1f63afc7687",
+          "bytes": 28,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729355,
+        "body": {
+          "sha256": "22561d57f0957abb60f7933ec1d99fb105f7327bb95af8eb30e0d135e1676af6",
+          "bytes": 53,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729408,
+        "body": {
+          "sha256": "39feb998803749e64d1de2796041a23565a308037ed2d88b9d2823ae5a7f6174",
+          "bytes": 144,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729552,
+        "body": {
+          "sha256": "92713ca6a115f7c71b3a06022f88fec04329884dac58409c08520282c1ba7071",
+          "bytes": 119,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729671,
+        "body": {
+          "sha256": "9a13417f44aa3bea1232ffd97a6302e3842c53258702c689e669c8ed3bc868a7",
+          "bytes": 55,
+          "stack_bytes": 0
+        }
+      },
+      {
+        "address": 1729726,
+        "body": {
+          "sha256": "cb1317ad81fc19f677373af19271f7bb9f18933988af280486cde0fdc7bbe307",
+          "bytes": 191,
+          "stack_bytes": 24
+        }
+      },
+      {
+        "address": 1730094,
+        "body": {
+          "sha256": "e410604c15525d856d503dc77a0ae89fa808a1e9432da9f97118fcd8eb998283",
+          "bytes": 95,
+          "stack_bytes": 8
+        }
+      },
+      {
+        "address": 1730189,
+        "body": {
+          "sha256": "aad29ad0a4db583c46a22aafab934aaa9f1a1099941a3a19afe2ccbe5c45ba38",
+          "bytes": 171,
+          "stack_bytes": 20
+        }
+      },
+      {
+        "address": 1730673,
+        "body": {
+          "sha256": "5c11a0ccb1d0263011a47f5671326ed080c413f276b8165844d643a389d7dde4",
+          "bytes": 215,
+          "stack_bytes": 12
+        }
+      },
+      {
+        "address": 1730888,
+        "body": {
+          "sha256": "ae47d6d3979bbcd38915c43aa2f7a6db4019efef4ee62c80a4278356f1d162e4",
+          "bytes": 791,
+          "stack_bytes": 0
+        }
+      }
+    ],
+    "set_listener": {
+      "address": 1705206,
+      "body": {
+        "sha256": "bd96a253f1d617be6ce905a3a728f39518fa589e9405ff9df76a05cea6d1c445",
+        "bytes": 252,
+        "stack_bytes": 12
+      }
+    },
+    "driver_commit": {
+      "address": 1712180,
+      "body": {
+        "sha256": "1a890614d8cb76ff71345396d6ea13355e5b72ed46e3549482b38ca870da5204",
+        "bytes": 176,
+        "stack_bytes": 0
+      }
+    }
+  },
+  "spatial": {
+    "adapter": "spatial-cache-v1",
+    "setters": {
+      "SetAllParameters": {
+        "buffer": {
+          "address": 1702311,
+          "body": {
+            "sha256": "0aeff8f9e757c669e263cbf652954224a92e1af6ed7b149f20443e9d56412548",
+            "bytes": 82,
+            "stack_bytes": 12
+          }
+        },
+        "voice": {
+          "address": 1701003,
+          "body": {
+            "sha256": "8ba1edd0a5d9f3fa7bab194b6542bf8f9d9d6f07f2ff867a8bb29e24c73122b5",
+            "bytes": 311,
+            "stack_bytes": 12
+          }
+        }
+      },
+      "SetConeAngles": {
+        "buffer": {
+          "address": 1702393,
+          "body": {
+            "sha256": "fc02e3e2a294e8d48892982fb4dbd186def081c526d028b3c9ee24b3d7d1fe19",
+            "bytes": 86,
+            "stack_bytes": 16
+          }
+        },
+        "voice": {
+          "address": 1701314,
+          "body": {
+            "sha256": "170306b160c04f82a6f7bcf1d333ed670ed6318d473c744b85733613481470b2",
+            "bytes": 67,
+            "stack_bytes": 16
+          }
+        }
+      },
+      "SetConeOrientation": {
+        "buffer": {
+          "address": 1702479,
+          "body": {
+            "sha256": "1c4f6a03d6aea814d0f869a0422a5dfe69672cb2f933e4189a35483aa38dd338",
+            "bytes": 103,
+            "stack_bytes": 20
+          }
+        },
+        "voice": {
+          "address": 1701381,
+          "body": {
+            "sha256": "c5201769530133ecf1e666519c3cf956fd7cf107993f4f69c5a43b5919c8eac4",
+            "bytes": 82,
+            "stack_bytes": 20
+          }
+        }
+      },
+      "SetConeOutsideVolume": {
+        "buffer": {
+          "address": 1702582,
+          "body": {
+            "sha256": "f055235d9649f071f94d365fb12dceb67cfa6506ff17233a1e67a6057102512c",
+            "bytes": 82,
+            "stack_bytes": 12
+          }
+        },
+        "voice": {
+          "address": 1701463,
+          "body": {
+            "sha256": "f70bde9e9eea9cda41783cc1e26e669ede822e0a0aef385b0992418377f037a9",
+            "bytes": 51,
+            "stack_bytes": 12
+          }
+        }
+      },
+      "SetMaxDistance": {
+        "buffer": {
+          "address": 1702664,
+          "body": {
+            "sha256": "ec960fc2ffab7a8840c92d06b8ce2d7bd3f72f97f1616acfc7926471e134424a",
+            "bytes": 86,
+            "stack_bytes": 12
+          }
+        },
+        "voice": {
+          "address": 1701514,
+          "body": {
+            "sha256": "34c9671eaf5075a98716d1de09cbed4510aefe474c602a65c2901533a72e64db",
+            "bytes": 51,
+            "stack_bytes": 12
+          }
+        }
+      },
+      "SetMinDistance": {
+        "buffer": {
+          "address": 1702750,
+          "body": {
+            "sha256": "b1f21a36fa7b53ca314634cc5a8184dd0a995627a2aab8dbec055af991759932",
+            "bytes": 86,
+            "stack_bytes": 12
+          }
+        },
+        "voice": {
+          "address": 1701565,
+          "body": {
+            "sha256": "723d3603592cdd33b50e1e908718a3a22761a92a02b334fd0a2952d50843cd6c",
+            "bytes": 51,
+            "stack_bytes": 12
+          }
+        }
+      },
+      "SetMode": {
+        "buffer": {
+          "address": 1702836,
+          "body": {
+            "sha256": "3333d66c725728885b6783122baa36ef8bf5570e8dce23b7948ec9946b4613cc",
+            "bytes": 82,
+            "stack_bytes": 12
+          }
+        },
+        "voice": {
+          "address": 1701616,
+          "body": {
+            "sha256": "c16f67c948d8515366ceb715e4cb3aaf41a164ff69b50936e6611f2090c68e80",
+            "bytes": 38,
+            "stack_bytes": 12
+          }
+        }
+      },
+      "SetPosition": {
+        "buffer": {
+          "address": 1702918,
+          "body": {
+            "sha256": "d6771526bbe99b3f2ea16d749c8e5b73ed8eed8f4d4cd0d1e8e8ea336537dc2d",
+            "bytes": 103,
+            "stack_bytes": 20
+          }
+        },
+        "voice": {
+          "address": 1701654,
+          "body": {
+            "sha256": "142e75edc1a1a6f2db785c852913a0fdcd298055a029dc9522683539ee261234",
+            "bytes": 82,
+            "stack_bytes": 20
+          }
+        }
+      },
+      "SetVelocity": {
+        "buffer": {
+          "address": 1703021,
+          "body": {
+            "sha256": "62bd51a7b9a42233f1e003175c5d4ff608023dce8a3753488a10c1040a518d06",
+            "bytes": 103,
+            "stack_bytes": 20
+          }
+        },
+        "voice": {
+          "address": 1701736,
+          "body": {
+            "sha256": "13b9bfd6362230a9c2e95b1dfcc4eb0da5f450dfa794d2fbf6c7cb7689422eb0",
+            "bytes": 82,
+            "stack_bytes": 20
+          }
+        }
+      },
+      "SetDistanceFactor": {
+        "buffer": {
+          "address": 1703124,
+          "body": {
+            "sha256": "ccbb710cb37017256b52c99e2e6bd6daea96a7a62b2d20bcf01993d8fa93973c",
+            "bytes": 86,
+            "stack_bytes": 12
+          }
+        },
+        "voice": {
+          "address": 1701818,
+          "body": {
+            "sha256": "5a305b97e515f78ae476450c17cbe799d688f317636a0d2d106ac6dff33d95f5",
+            "bytes": 51,
+            "stack_bytes": 12
+          }
+        }
+      },
+      "SetDopplerFactor": {
+        "buffer": {
+          "address": 1703210,
+          "body": {
+            "sha256": "a9c260b18d2939aef11943b862ce68405a8480b1d860e3dd379ce55076a0d959",
+            "bytes": 86,
+            "stack_bytes": 12
+          }
+        },
+        "voice": {
+          "address": 1701869,
+          "body": {
+            "sha256": "8c619c688b3def6f5aa104db668bfa9309462b6c9d6c914ae8f4be8d769803b3",
+            "bytes": 51,
+            "stack_bytes": 12
+          }
+        }
+      },
+      "SetRolloffFactor": {
+        "buffer": {
+          "address": 1703296,
+          "body": {
+            "sha256": "98317f3afacd7ef1ccfbd081235b1c8109d34eefea3248e034a1c3deb3afd8ab",
+            "bytes": 86,
+            "stack_bytes": 12
+          }
+        },
+        "voice": {
+          "address": 1701920,
+          "body": {
+            "sha256": "cfeab3909fc881ac62217fc052039e1fd3f4e719a337dc53e6c6fe1f43157a93",
+            "bytes": 51,
+            "stack_bytes": 12
+          }
+        }
+      },
+      "SetI3DL2Source": {
+        "buffer": {
+          "address": 1703382,
+          "body": {
+            "sha256": "501e9a8f6ca3d4d208cc6ad76cd07368e0d235b4451606bed69eb3341eb55ed1",
+            "bytes": 82,
+            "stack_bytes": 12
+          }
+        },
+        "voice": {
+          "address": 1701971,
+          "body": {
+            "sha256": "f91ccf4f22bd3c739f3adb021850f49990058ec243d317c39976a8be68a4d186",
+            "bytes": 175,
+            "stack_bytes": 12
+          }
+        }
+      }
+    }
+  },
+  "spatial_math": {
+    "adapter": "original-native-spatial-math-v1",
+    "roots": {
+      "calculator_initialize": 1708126,
+      "listener_initialize": 1708037,
+      "listener_update": 1708063,
+      "relative": 1708271,
+      "hrtf": 1708347,
+      "distance": 1708683,
+      "cone_angle": 1708797,
+      "cone_gain": 1708948,
+      "weights": 1709090,
+      "doppler": 1709305,
+      "source_i3dl2_initialize": 1729917,
+      "source_i3dl2_calculate": 1730360,
+      "gain": 1715077,
+      "pitch": 1715529,
+      "table_initialize": 1696743,
+      "hrtf_lookup": 1709463,
+      "frequency_pitch": 1714273
+    },
+    "helpers": [
+      {
+        "address": 1696743,
+        "body": {
+          "sha256": "01bf7b21e1f410255634fcedee4ef72a8d9e3a559f6ffdccacbdfaaf10db8d42",
+          "bytes": 81,
+          "stack_bytes": 0
+        }
+      },
+      {
+        "address": 1707837,
+        "body": {
+          "sha256": "ae4a39f1f86ea5a10dc0f01ad19c2ede2c9ddf1aed58b048c690bc9f8fdebf83",
+          "bytes": 9,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1707846,
+        "body": {
+          "sha256": "5f4549c0bec7a3dc6cc1e1bcd1796f1271d397160f7620a1898d617aa5b1eb2b",
+          "bytes": 39,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1707885,
+        "body": {
+          "sha256": "1d64bf849c76a7a4c4a4991673785d8f982a12969fbb4e20a39a96217afb8873",
+          "bytes": 47,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1707932,
+        "body": {
+          "sha256": "63043017ece025e5d2d1719bd073a7aa04da48f5ee4bdd371be4f1f6a6e21dc3",
+          "bytes": 71,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1708003,
+        "body": {
+          "sha256": "b79c96e68a98a50420273f8df0a191638521c71fc021a113ffa01bd785b6c6aa",
+          "bytes": 34,
+          "stack_bytes": 0
+        }
+      },
+      {
+        "address": 1708037,
+        "body": {
+          "sha256": "55cc13ca2ca63c1e4bdced49dc7182b7789d93de6a0a42e40958c21ba88caccf",
+          "bytes": 26,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1708063,
+        "body": {
+          "sha256": "c58e243803abc188141743ab91ec44825cfe623e1c051129df825961739cac3e",
+          "bytes": 63,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1708126,
+        "body": {
+          "sha256": "dbbe02bb7cee7e30fed03000421a2bebb91c4b7eeb37856e66d585c70394ab29",
+          "bytes": 48,
+          "stack_bytes": 8
+        }
+      },
+      {
+        "address": 1708271,
+        "body": {
+          "sha256": "a25a43af3fc7bdba0a5785161009533328c2ebac4689380171057a8b4e829796",
+          "bytes": 76,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1708347,
+        "body": {
+          "sha256": "ced089ffca0e98c48e4724e3f5f19ab717eb9c91f382d60709724b8937c96a1b",
+          "bytes": 336,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1708683,
+        "body": {
+          "sha256": "3ff1bee59c8d89a3e3b4a30ee608c30cb8e2e012a3e48a96e61ebe0fa2ce5d1b",
+          "bytes": 114,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1708797,
+        "body": {
+          "sha256": "02ba2d0e4c4afd2272da62ec04b15879ca34092c16ab007d724954ba15eb7b2f",
+          "bytes": 151,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1708948,
+        "body": {
+          "sha256": "b2f2754beef4ef777d57ac046cb9ffc4cf16f5b680dde4546cda0ec5e024ea10",
+          "bytes": 142,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1709090,
+        "body": {
+          "sha256": "acef0007b871352e73dce395ee50a716ffb2faca79b38099ae22ab463448ae6e",
+          "bytes": 215,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1709305,
+        "body": {
+          "sha256": "57a7e6727b06cfbc2c7c94cb3e4fb1b422c4e0124c84d141874f8b01a0ef6466",
+          "bytes": 158,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1709463,
+        "body": {
+          "sha256": "b8dfaac3118a9edb155fe029991cc75eb738f561488e777286ee5d03a8429cc7",
+          "bytes": 284,
+          "stack_bytes": 16
+        }
+      },
+      {
+        "address": 1714094,
+        "body": {
+          "sha256": "c0001e38160de3c99fb274a8e33f30139728b8de149229ea7bba2c289f409cbd",
+          "bytes": 66,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1714160,
+        "body": {
+          "sha256": "a00e2045d29d17b3defcacbc2e5ea790622ec7a2bc296b12380d7cd2ec879046",
+          "bytes": 113,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1714273,
+        "body": {
+          "sha256": "06e8630df9abd22be0a0cf9161d826f46288a075fbba5b77b8a367ea5313faf1",
+          "bytes": 30,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1715077,
+        "body": {
+          "sha256": "435dbe52eb6212d436b61f078a309b96a1e28443f2bc5c3689da6966b59cfd2b",
+          "bytes": 452,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1715529,
+        "body": {
+          "sha256": "808d0779a73fb981ddeed2131d62f49462a0c1327243e23de48c93265bb2f28c",
+          "bytes": 130,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729082,
+        "body": {
+          "sha256": "c29bc791de61603f8e286d19bf5c7399a3cfc4822be25589965732e3ee944ef5",
+          "bytes": 50,
+          "stack_bytes": 4
+        }
+      },
+      {
+        "address": 1729917,
+        "body": {
+          "sha256": "72781632e14dc8a4847a44fa1d95f89af7d6a0a291d95945547a32d9b884d4d6",
+          "bytes": 35,
+          "stack_bytes": 8
+        }
+      },
+      {
+        "address": 1729952,
+        "body": {
+          "sha256": "1dc38ce842395b4cb89eeb25100abca65dfeec457e7250119a6af6606c0df813",
+          "bytes": 142,
+          "stack_bytes": 16
+        }
+      },
+      {
+        "address": 1730360,
+        "body": {
+          "sha256": "34d317cf0a3a490bde08217159b4eb3fa9bc14302874ae3267612fecd5b67cb8",
+          "bytes": 313,
+          "stack_bytes": 4
+        }
+      }
+    ],
+    "defaults": {
+      "listener": {
+        "address": 1809712,
+        "bytes": 64,
+        "sha256": "46839bc0e08ab265d29cd351ff85de794e83e67b58a658c5ed3e2d25feccf990"
+      },
+      "source": {
+        "address": 1809816,
+        "bytes": 76,
+        "sha256": "c2565118ae774dd02c90682c526d3ed3c666a13ec0d8a7e943345f7b9a27627e"
+      },
+      "source_i3dl2": {
+        "address": 1809776,
+        "bytes": 36,
+        "sha256": "46f2a7b846bcb343249ec477969f560ef6459e4afcfdca9302f057b368c71edf"
+      },
+      "listener_i3dl2": {
+        "address": 1809664,
+        "bytes": 48,
+        "sha256": "fd5ba98d27cbdfa550254b38ebefa5f1809c8e955d5c625e77ae78fae37c0636"
+      },
+      "calculator": {
+        "address": 1734664,
+        "bytes": 76,
+        "sha256": "f2c0d5456a983ecd12e314fcfa19879179fc8424343baeb1325457472ae85601"
+      },
+      "mix_descriptor": {
+        "address": 1809892,
+        "bytes": 8,
+        "sha256": "6490f110cd360ee9c318047c4210c5cf14c5787732720eb2150f70872a3612f8"
+      },
+      "mix_pairs": {
+        "address": 1809940,
+        "bytes": 40,
+        "sha256": "c6423e73234e87d4ca974879d2f7ba04de3d7053cfb4fb2593d93a00062d303d"
+      }
+    },
+    "indirect": [
+      {
+        "site": 1708030,
+        "slot": 1810588,
+        "target": 1709463
+      }
+    ]
+  }
+}
