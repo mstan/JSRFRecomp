@@ -13,6 +13,9 @@ ui_revision = "ccc186e097b362555292b157ffd303abcea26fbf"
 # Added after original gameplay scope/timing observations; never just uncap.
 frame_modes = ["interpolated"]
 
+[launcher.defaults."xboxllr.diagnostics/session-replay"]
+enabled = true
+
 [launcher.defaults."jsrf.enhancement.widescreen/widescreen"]
 enabled = true
 options = { aspect = "adaptive" }

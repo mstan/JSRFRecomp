@@ -40,6 +40,9 @@ options = { mode = "interpolated", rate = "60" }
 [launcher.defaults."jsrf.enhancement.test-runs/early-unlock"]
 enabled = true
 
+[launcher.defaults."xboxllr.diagnostics/session-replay"]
+enabled = true
+
 [mods]
 registry = "src/mods/visuals.c"
 inputs = ["src/mods/revision.h", "config/revisions/ntsc-u/visuals.json", "src/mods/challenge_unlock.inc", "config/revisions/ntsc-u/challenge-unlock.json"]
