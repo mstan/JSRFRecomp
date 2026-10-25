@@ -1,6 +1,7 @@
 format_version = 1
 id = "jsrf.enhancement.test-runs"
 name = "Early Test Runs"
+category = "Gameplay"
 version = "1.0.0"
 description = "Unlock each area's Test Run challenges by collecting its graffiti souls, without finishing the story. Does not change story progress or award souls."
 

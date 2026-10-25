@@ -1,6 +1,7 @@
 format_version = 1
 id = "jsrf.enhancement.widescreen"
 name = "Adaptive widescreen"
+category = "Visual enhancements"
 version = "1.0.0"
 description = "Expand the original camera through 32:9, with matching CPU clipping and HUD placement."
 
