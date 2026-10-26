@@ -17,12 +17,18 @@ static unsigned numerator=4,denominator=3,adaptive,wide,frame_mode;
 static unsigned frame_aspect[2]={4,3},projection_seen,scope_dirty=1,scene,scope;
 static unsigned score_overlay;
 static unsigned scene_manager,scene_camera;
+/* Keep the scene canvas through fade-only frames and camera teardown. A new
+ * original Title mission ends this presentation lifetime; actors/pointers
+ * themselves are still revalidated independently on every use. */
+static unsigned world_presentation;
 static float prior_scale=1,prior_offset;
 static void fail(const char *reason)
 {fprintf(stderr,"[TITLE MOD STOP] %s\n",reason);fflush(stderr);exit(2);}
 
 static int read_u32(unsigned address,unsigned *value)
 {return api->read(address,value,4);}
+#include "seamless.inc"
+#include "boost.inc"
 #include "challenge_unlock.inc"
 static void write_float(unsigned address,float value)
 {if(!api->write_data(address,&value,4))fail("JSRF visual mod data is not writable");}
@@ -37,9 +43,9 @@ static void update_scope(void)
     if(!read_u32(JSRF_VA(0x22fca0),&manager) || !manager ||
        !read_u32(manager+0x98+9*4,&mission) || !mission ||
        !read_u32(mission,&vtable) || vtable!=JSRF_VA(0x1caa70) ||
-       !read_u32(mission+0x58,&id) || !read_u32(mission+0x5c,&state) ||
-       (state!=15 && state!=19) ||
-       !read_u32(manager+0x98+0x4c*4,&camera) || !camera ||
+       !read_u32(mission+0x58,&id) || !read_u32(mission+0x5c,&state) || state>=119)return;
+    if(id==90){world_presentation=0;return;} /* Original Title/attract mission. */
+    if(!read_u32(manager+0x98+0x4c*4,&camera) || !camera ||
        !read_u32(camera,&vtable) || vtable!=JSRF_VA(0x1cd4d8))return;
     scene=1;scene_manager=manager;scene_camera=camera;
     /* Covered pause, event, frozen camera, uncovered pause. Only ordinary
@@ -72,13 +78,16 @@ static void camera_transform(unsigned state,unsigned address,unsigned caller)
      * Load Game (512x512, m5=1). They are not the gameplay viewport. The
      * builder retains m0/m8, so remove only our previous changes before
      * leaving these producers otherwise untouched, including their m5. */
-    if(!scene || viewport[0]!=640 || viewport[1]!=480) {
+    if(!scene || viewport[0]!=640 || !viewport[1] || viewport[1]>480) {
         if(matrix[0]!=1){write_float(address,1);write_float(JSRF_VA(0x264eb8),1);}
         if(matrix[8]!=0){write_float(address+32,0);write_float(JSRF_VA(0x264eb8)+32,0);}
         prior_scale=1;prior_offset=0;
         return;
     }
-    if(!isfinite(matrix[5]) || fabsf(matrix[5]-4.0f/3.0f)>.0001f ||
+    world_presentation=1;
+    /* The original builder also owns cinematic vertical framing. Preserve its
+     * finite positive vertical scale instead of requiring the gameplay value. */
+    if(!isfinite(matrix[5]) || matrix[5]<=0 || matrix[5]>32 ||
        !isfinite(matrix[11]) || matrix[11]<=0 || matrix[11]>32)
     {
         fprintf(stderr,"[JSRF PROJECTION] scene=%u scope=%u prior=%.9g/%.9g matrix=",
@@ -142,6 +151,7 @@ static void transform(unsigned state,unsigned address,unsigned caller)
 }
 static void draw(struct PilotTitleModDraw *draw)
 {
+    if(draw->default_target)boost_composite();
     /* FVF XYZRHW draws carry authored screen pixels. Keep their shape while
      * moving ordinary gameplay HUD to its nearest original edge. 3D draws,
      * full-screen passes and offscreen producers keep their own transforms. */
@@ -155,7 +165,9 @@ static void draw(struct PilotTitleModDraw *draw)
                 if(xy[j]<lo[j])lo[j]=xy[j];if(xy[j]>hi[j])hi[j]=xy[j];
             }
         }
-        if(valid && !(lo[0]<=1 && hi[0]>=639 && lo[1]<=1 && hi[1]>=479)) {
+        /* Full-width bands include cinematic top/bottom bars and fade wipes.
+         * Their width follows the output; only bounded widgets use HUD scale. */
+        if(valid && !(lo[0]<=1 && hi[0]>=639)) {
             draw->x_scale=4.0f*frame_aspect[1]/(3.0f*frame_aspect[0]);draw->x_anchor=320;
             update_scope();
             unsigned owner=0;
@@ -203,11 +215,15 @@ static void draw(struct PilotTitleModDraw *draw)
 }
 static void present(void)
 {
+    boost_composite();
     challenge_refresh();
     scope_dirty=1;update_scope();
     if(frame_mode)api->frame_scope(scope);
-    if(wide && !api->frame_shape(projection_seen?frame_aspect[0]:4,projection_seen?frame_aspect[1]:3))
-        fail("unsupported JSRF frame shape");
+    if(wide) {
+        unsigned n=4,d=3;
+        if(world_presentation)aspect(&n,&d);
+        if(!api->frame_shape(n,d))fail("unsupported JSRF frame shape");
+    }
     projection_seen=0;scope_dirty=1;score_overlay=0;
     if(trace) {
         FILE *trigger=fopen(trace_trigger,"rb");
@@ -228,10 +244,11 @@ const struct PilotTitleMod *pilot_title_mod_open(const struct PilotTitleModHost 
     if(!host || host->abi!=PILOT_TITLE_MOD_ABI || strcmp(host->xbe_sha256,JSRF_SHA))
         fail("JSRF visual mod identity mismatch");
     api=host;
+    seamless_configure();
     challenge_configure();
     static struct PilotTitleMod result;
     if(!path || !*path) {
-        result=(struct PilotTitleMod){PILOT_TITLE_MOD_ABI,NULL,NULL,early_test_runs?present:NULL};
+        result=(struct PilotTitleMod){PILOT_TITLE_MOD_ABI,NULL,draw,present,title_function};
         return &result;
     }
     FILE *file=fopen(path,"rb");
@@ -257,7 +274,6 @@ const struct PilotTitleMod *pilot_title_mod_open(const struct PilotTitleModHost 
         if(!trace_trigger || !*trace_trigger)fail("JSRF mod trace requires an explicit arm file");
         trace=fopen(path_trace,"wb");if(!trace)fail("JSRF mod trace cannot be opened");
     }
-    result=(struct PilotTitleMod){PILOT_TITLE_MOD_ABI,(wide||trace)?transform:NULL,(wide||trace)?draw:NULL,
-        (early_test_runs||wide||frame_mode||trace)?present:NULL};
+    result=(struct PilotTitleMod){PILOT_TITLE_MOD_ABI,(wide||trace)?transform:NULL,draw,present,title_function};
     return &result;
 }

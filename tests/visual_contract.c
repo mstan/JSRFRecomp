@@ -21,6 +21,18 @@ static int client_size(unsigned size[2]){memcpy(size,client,sizeof(client));retu
 static int frame_shape(unsigned n,unsigned d){shape[0]=n;shape[1]=d;return 1;}
 static int visuals(const struct PilotVisualMods *p){return pilot_visual_mods_validate(p);}
 static void set_scope(unsigned scope){frame_scope=scope;}
+static unsigned calls;
+static uint64_t clock100ns;
+static uint64_t monotonic(void){clock100ns+=100;return clock100ns;}
+static int invoke(unsigned id,unsigned object,const unsigned *args,unsigned count,unsigned *result)
+{
+    (void)args;if(count)return 0;++calls;*result=0;
+    if(id==2 && object==0x350000){u32(object+0x44,0);return 1;}
+    if(id==40 && object==0x330000){u32(object+0x5c,13);return 1;}
+    return 0;
+}
+static int resident(unsigned budget,const char *const *streams,unsigned count){return budget==1152 && count==1 && !strcmp(streams[0],".adx");}
+static int ready(void){return 1;}
 static void env(const char *key,const char *value)
 {
 #ifdef _WIN32
@@ -38,12 +50,29 @@ static void original_projection(void)
 int main(int argc,char **argv)
 {
     CHECK(argc==3);env("JSRF_MOD_TRACE","");env("XLLE_PILOT_MOD_PLAN","");
+    env("XLLE_PILOT_TITLE_MOD_SEAMLESS_LOADING","0");
     struct PilotTitleModHost host={PILOT_TITLE_MOD_ABI,SHA,read_data,write_data,
         presentation,client_size,frame_shape,visuals,set_scope};
+    if(!strcmp(argv[2],"loading")) {
+        env("XLLE_PILOT_TITLE_MOD_SEAMLESS_LOADING","1");env("XLLE_PILOT_TITLE_MOD_EARLY_TEST_RUNS","0");
+        host.resident_media=resident;host.resident_ready=ready;host.invoke=invoke;host.monotonic=monotonic;
+        const struct PilotTitleMod *mod=pilot_title_mod_open(&host);
+        u32(JSRF_VA(0x22fca0),0x300000);u32(0x300000+0x98+9*4,0x330000);
+        u32(0x330000,JSRF_VA(0x1caa70));u32(0x33005c,8);u32(0x330058,0x10001);
+        u32(0x300000+0x98+7*4,0x350000);u32(0x350044,1);
+        unsigned entry[8]={0};entry[1]=0x330000;
+        struct PilotTitleModCall call={0};call.id=3;call.phase=1;call.entry=entry;
+        mod->function(&call);CHECK(calls==2); /* Real loader then real resource phase. */
+        unsigned state=0;CHECK(read_data(0x33005c,&state,4) && state==13);
+        mod->function(&call);CHECK(calls==2); /* Bridge13 must wait for original owner. */
+        for(unsigned phase=14;phase<=31;++phase){u32(0x33005c,phase);mod->function(&call);CHECK(calls==2);}
+        mod->present();CHECK(calls==2); /* No special loading presentation path. */
+        return 0;
+    }
     if(!strcmp(argv[2],"disabled")) {
         env("XLLE_PILOT_TITLE_MOD_EARLY_TEST_RUNS","0");
         const struct PilotTitleMod *disabled=pilot_title_mod_open(&host);
-        CHECK(disabled && !disabled->transform && !disabled->draw && !disabled->present);
+        CHECK(disabled && !disabled->transform && disabled->draw && disabled->present && disabled->function);
         CHECK(!reads && !writes);return 0;
     }
     unsigned adaptive=!strcmp(argv[2],"adaptive");
@@ -130,8 +159,26 @@ int main(int argc,char **argv)
         client[0]=640;client[1]=480;original_projection();mod->transform(1,JSRF_VA(0x22e678),JSRF_VA(0x153fa9));
         CHECK(getf(JSRF_VA(0x22e678))==1 && getf(JSRF_VA(0x264e40))==1.25f);mod->present();
     }
-    /* Loading restores original shape/projection and cuts synthetic frames. */
+    /* Exit fades and dialogue retain the scene canvas. Cinematic letterbox
+     * bands span that canvas; ordinary dialogue glyphs keep their size. */
+    client[0]=1680;client[1]=720;
     u32(0x31005c,93);original_projection();mod->transform(1,JSRF_VA(0x22e678),JSRF_VA(0x153fa9));mod->present();
-    CHECK(getf(JSRF_VA(0x22e678))==1 && shape[0]==4 && shape[1]==3 && !frame_scope);
+    CHECK(fabsf(getf(JSRF_VA(0x22e678))-4.0f/7)<.000001f && shape[0]*3==shape[1]*7 && !frame_scope);
+    u32(0x31005c,31);original_projection();u32(JSRF_VA(0x264e9c),360);f32(JSRF_VA(0x22e68c),16.0f/9);
+    mod->transform(1,JSRF_VA(0x22e678),JSRF_VA(0x153fa9));
+    CHECK(fabsf(getf(JSRF_VA(0x22e678))-4.0f/7)<.000001f && getf(JSRF_VA(0x22e68c))==16.0f/9);
+    quad[0][0]=quad[2][0]=0;quad[1][0]=quad[3][0]=640;
+    for(unsigned bottom=0;bottom<2;++bottom) {
+        quad[0][1]=quad[1][1]=bottom?420.0f:0;quad[2][1]=quad[3][1]=bottom?480.0f:60;
+        draw.x_scale=1;draw.x_anchor=320;mod->draw(&draw);CHECK(draw.x_scale==1);
+    }
+    quad[0][0]=quad[2][0]=200;quad[1][0]=quad[3][0]=216;
+    mod->draw(&draw);CHECK(fabsf(draw.x_scale-4.0f/7)<.000001f && draw.x_anchor==320);
+    mod->present();CHECK(shape[0]*3==shape[1]*7 && !frame_scope);
+    /* A camera-free fade frame and a resize need no new projection call. */
+    u32(0x300000+0x98+0x4c*4,0);u32(0x300000+0x98+9*4,0);mod->present();CHECK(shape[0]*3==shape[1]*7);
+    if(adaptive){client[0]=1920;client[1]=1080;mod->present();CHECK(shape[0]*9==shape[1]*16);}
+    /* Returning to the original Title mission ends that scene lifetime. */
+    u32(0x300000+0x98+9*4,0x310000);u32(0x310058,90);mod->present();CHECK(shape[0]==4 && shape[1]==3);
     return 0;
 }

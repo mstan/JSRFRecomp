@@ -1,0 +1,19 @@
+format_version = 1
+id = "jsrf.enhancement.seamless"
+name = "Preloaded Area Assets"
+category = "Gameplay"
+version = "1.0.0"
+description = "Cache area files at startup and accelerate resource loading. Loading screens remain while work is pending. Uses approximately 1 GB of additional system memory; music and voices continue to stream."
+
+[[target]]
+game_id = "5345000A"
+xbe_sha256 = "f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219"
+
+[[target]]
+game_id = "5345000A"
+xbe_sha256 = "fd19055756719893c466302809b433b785ecf5732df0441286f3f605f0f3ef9c"
+
+[[feature]]
+id = "seamless-loading"
+name = "Preload area assets"
+default_enabled = false

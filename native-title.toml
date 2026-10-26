@@ -43,13 +43,16 @@ enabled = true
 [launcher.defaults."xboxllr.diagnostics/session-replay"]
 enabled = true
 
+[launcher.defaults."jsrf.enhancement.seamless/seamless-loading"]
+enabled = true
+
 [mods]
 registry = "src/mods/visuals.c"
-inputs = ["src/mods/revision.h", "config/revisions/ntsc-u/visuals.json", "src/mods/challenge_unlock.inc", "config/revisions/ntsc-u/challenge-unlock.json"]
+inputs = ["src/mods/revision.h", "config/revisions/ntsc-u/visuals.json", "src/mods/boost.inc", "src/mods/seamless.inc", "src/mods/challenge_unlock.inc", "config/revisions/ntsc-u/challenge-unlock.json"]
 widescreen_manifest = "mods/preloaded/packages/jsrf.enhancement.widescreen/1.0.0/manifest.toml"
 widescreen_package = "jsrf.enhancement.widescreen"
 widescreen_plugin = "jsrf.widescreen"
-switches = [{ manifest = "mods/preloaded/packages/jsrf.enhancement.test-runs/1.0.0/manifest.toml", package = "jsrf.enhancement.test-runs", feature = "early-unlock", key = "EARLY_TEST_RUNS" }]
+switches = [{ manifest = "mods/preloaded/packages/jsrf.enhancement.test-runs/1.0.0/manifest.toml", package = "jsrf.enhancement.test-runs", feature = "early-unlock", key = "EARLY_TEST_RUNS" }, { manifest = "mods/preloaded/packages/jsrf.enhancement.seamless/1.0.0/manifest.toml", package = "jsrf.enhancement.seamless", feature = "seamless-loading", key = "SEAMLESS_LOADING" }]
 
 [content]
 image = "default.xbe"
@@ -59,7 +62,7 @@ drive_owner = "HOST"
 
 [generation]
 profile = "config/revisions/ntsc-u/profile.json"
-bindings = ["cache", "input", "d3d", "audio"]
+bindings = ["cache", "input", "d3d", "audio", "title"]
 unit_max_functions = 64
 unit_max_bytes = 524288
 
