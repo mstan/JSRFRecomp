@@ -34,7 +34,7 @@ gameplay is unavailable.
 
 ## Getting started
 
-**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026-10-26.1).**
+**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026-10-26.2).**
 The Windows ZIP includes the precompiled native application, launcher, Python
 and runtime dependencies. No compiler is needed to play. Matching project and
 prepared dependency source is included under source/ and on the release page.
