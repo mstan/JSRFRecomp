@@ -26,13 +26,15 @@ and controller support through an Xbox-themed launcher. JSRFRecomp uses
 
 Enhancements are individually selectable mods. Fresh launchers default to
 adaptive Fit to screen, a 16:9 starting window, 1080p internal height, 2x2
-supersampling, FXAA, 8x filtering and blended 60 FPS presentation. Gameplay
-keeps its original timing. Interpolation can show double edges and adds one
-source frame of latency. Actual higher-rate gameplay is unavailable.
+supersampling, FXAA, 8x filtering and sharp original frames. Gameplay keeps its
+original timing. Optional blended frames add motion blur, double edges and one
+source frame of latency. The first update resets the earlier automatically
+enabled blending; later explicit opt-ins are remembered. Actual higher-rate
+gameplay is unavailable.
 
 ## Getting started
 
-**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026-10-24.1).**
+**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026-10-26.1).**
 The Windows ZIP includes the precompiled native application, launcher, Python
 and runtime dependencies. No compiler is needed to play. Matching project and
 prepared dependency source is included under source/ and on the release page.
@@ -102,6 +104,11 @@ platform support and distribution requirements.
 Choose the input device in **Player 1**, select enhancements in **Mods**, then
 launch the game. Individual button remapping is not exposed in this preview.
 Use `--launcher` to reopen settings if you previously selected Skip launcher.
+
+Pressing Play with a controller selects that controller for gameplay. Friendly
+names are retained while disconnected. Alt+Enter toggles borderless desktop
+fullscreen; normal window placement, maximized state and borderless state are
+remembered across game launches. Keep the package's whole `data` folder.
 
 **Early Test Runs** keeps the game's original soul requirement for each area.
 It changes the Roboy menu's availability checks without awarding souls or

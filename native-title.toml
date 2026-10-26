@@ -9,6 +9,7 @@ executable = "JSRFRecomp"
 xbe_sha256 = "f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219"
 
 [launcher]
+sharp_presentation = true
 ui_revision = "ccc186e097b362555292b157ffd303abcea26fbf"
 # Added after original gameplay scope/timing observations; never just uncap.
 frame_modes = ["interpolated"]
@@ -34,8 +35,8 @@ enabled = true
 options = { anisotropy = "8" }
 
 [launcher.defaults."xboxlle.enhancement.frame-rate/frame-rate"]
-enabled = true
-options = { mode = "interpolated", rate = "60" }
+enabled = false
+options = { mode = "original", rate = "60" }
 
 [launcher.defaults."jsrf.enhancement.test-runs/early-unlock"]
 enabled = true
