@@ -21,7 +21,6 @@ and controller support through an Xbox-themed launcher. JSRFRecomp uses
 | Image quality | Optional FXAA, 2x2 or 3x3 supersampling, and anisotropic texture filtering. |
 | Smoother presentation | Optional blended 60/120 Hz presentation while gameplay keeps its original timing. |
 | Controller selection | The shared recomp-ui Player 1 card detects connected controllers and remembers the selected device. Keyboard input is also available. |
-| Camera controls | Optional horizontal and vertical right-stick inversion, independently selectable and disabled by default. |
 | Early Test Runs | Collect an area's graffiti souls to unlock its challenges without finishing the story. Enabled by default; switch it off in Mods for the original rule. |
 | Original saves | Real in-game saving and fresh-process Load Game, character selection and movement. |
 
@@ -42,15 +41,18 @@ Linux releases remain deferred. The setup flow is described below.
 The [October 24 update](docs/RELEASE-NOTES-2026-10-24.1.md) adds the USA standalone
 retail revision. It also includes the [controller hotfix](docs/RELEASE-NOTES-2026-10-23.2.md)
 for connected gamepads that gave no input, Early Test Runs and existing
-presentation, camera and save support.
+presentation and save support.
 
 You supply your own **Jet Set Radio Future (NTSC-U)** files. Open **Start Game.cmd**,
 choose **Skip** in the optional first-launch console setup, and select the
-supported extracted `default.xbe` on the main screen. Keep the complete game
-asset folder beside that XBE. This preview supports both the original
+supported `.iso`, `.xiso` or extracted `default.xbe` on the main screen. Disc
+images are imported once with progress and Cancel, then reused from `data/discs`
+with the same gameplay file access as an extracted copy. Keep that cache across
+updates to avoid importing again. Extracted XBEs still need the complete game
+asset folder beside them. This preview supports both the original
 development input (certificate revision 4) and the USA standalone retail
 release (certificate revision 1). The launcher chooses the matching native
-program automatically. Direct ISO import and other revisions remain unsupported.
+program automatically. Other revisions remain unsupported.
 Original game files are not included in this repository.
 
 | Supported NTSC-U executable | `default.xbe` SHA-256 |
