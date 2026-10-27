@@ -28,8 +28,10 @@ static void fail(const char *reason)
 static int read_u32(unsigned address,unsigned *value)
 {return api->read(address,value,4);}
 #include "seamless.inc"
-#include "boost.inc"
 #include "challenge_unlock.inc"
+#include "cutscene_skip.inc"
+#include "boost.inc"
+#include "startup_skip.inc"
 static void write_float(unsigned address,float value)
 {if(!api->write_data(address,&value,4))fail("JSRF visual mod data is not writable");}
 static void update_scope(void)
@@ -215,6 +217,7 @@ static void draw(struct PilotTitleModDraw *draw)
 }
 static void present(void)
 {
+    startup_refresh();
     boost_composite();
     challenge_refresh();
     scope_dirty=1;update_scope();
@@ -246,6 +249,8 @@ const struct PilotTitleMod *pilot_title_mod_open(const struct PilotTitleModHost 
     api=host;
     seamless_configure();
     challenge_configure();
+    startup_configure();
+    cutscene_configure();
     static struct PilotTitleMod result;
     if(!path || !*path) {
         result=(struct PilotTitleMod){PILOT_TITLE_MOD_ABI,NULL,draw,present,title_function};

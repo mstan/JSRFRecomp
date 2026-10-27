@@ -6,6 +6,18 @@
 static unsigned early_test_runs=1,challenge_cached,challenge_notified;
 static uint32_t challenge_key[16],challenge_root;
 
+/* Original results constructor 11A880 (USA11A8B0) gates its entire reward
+ * tail on chapter9 before calling the original rank/area predicates. Permit
+ * that one consumer to evaluate earned rewards early. The caller-filtered
+ * getter binding leaves every other use, and the actual chapter, untouched.
+ * Original score/rank checks, unlock notification and saving still execute. */
+static void challenge_result(struct PilotTitleModCall *call)
+{
+    if(early_test_runs && call->phase==1 && call->id==10 &&
+       call->caller==JSRF_VA(0x11aac8) && call->entry[1]==JSRF_VA(0x1eff70) && call->gpr[0]<9)
+        call->gpr[0]=9;
+}
+
 static void challenge_configure(void)
 {
     const char *value=getenv("XLLE_PILOT_TITLE_MOD_EARLY_TEST_RUNS");

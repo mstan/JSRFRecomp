@@ -47,13 +47,22 @@ enabled = true
 [launcher.defaults."jsrf.enhancement.seamless/seamless-loading"]
 enabled = true
 
+[launcher.defaults."jsrf.enhancement.startup/skippable-intros"]
+enabled = true
+
+[launcher.image_import]
+codec = "tools/graffiti_native.py"
+
+[release]
+extras = ["extras/graffiti/RPTK-SS.png", "extras/graffiti/RAID-Discord-XL.png", "extras/graffiti/README.md"]
+
 [mods]
 registry = "src/mods/visuals_usa.c"
-inputs = ["src/mods/revision.h", "src/mods/visuals.c", "config/revisions/usa-standalone/visuals.json", "src/mods/boost.inc", "src/mods/seamless.inc", "src/mods/challenge_unlock.inc", "config/revisions/usa-standalone/challenge-unlock.json"]
+inputs = ["src/mods/revision.h", "src/mods/visuals.c", "config/revisions/usa-standalone/visuals.json", "src/mods/boost.inc", "src/mods/seamless.inc", "src/mods/challenge_unlock.inc", "src/mods/startup_skip.inc", "src/mods/cutscene_skip.inc", "config/revisions/usa-standalone/challenge-unlock.json", "config/revisions/usa-standalone/cutscene-skip.json"]
 widescreen_manifest = "mods/preloaded/packages/jsrf.enhancement.widescreen/1.0.0/manifest.toml"
 widescreen_package = "jsrf.enhancement.widescreen"
 widescreen_plugin = "jsrf.widescreen"
-switches = [{ manifest = "mods/preloaded/packages/jsrf.enhancement.test-runs/1.0.0/manifest.toml", package = "jsrf.enhancement.test-runs", feature = "early-unlock", key = "EARLY_TEST_RUNS" }, { manifest = "mods/preloaded/packages/jsrf.enhancement.seamless/1.0.0/manifest.toml", package = "jsrf.enhancement.seamless", feature = "seamless-loading", key = "SEAMLESS_LOADING" }]
+switches = [{ manifest = "mods/preloaded/packages/jsrf.enhancement.startup/1.0.0/manifest.toml", package = "jsrf.enhancement.startup", feature = "skippable-intros", key = "SKIP_STARTUP" }, { manifest = "mods/preloaded/packages/jsrf.enhancement.cutscenes/1.0.0/manifest.toml", package = "jsrf.enhancement.cutscenes", feature = "hold-start", key = "HOLD_SKIP_CUTSCENES" }, { manifest = "mods/preloaded/packages/jsrf.enhancement.test-runs/1.0.0/manifest.toml", package = "jsrf.enhancement.test-runs", feature = "early-unlock", key = "EARLY_TEST_RUNS" }, { manifest = "mods/preloaded/packages/jsrf.enhancement.seamless/1.0.0/manifest.toml", package = "jsrf.enhancement.seamless", feature = "seamless-loading", key = "SEAMLESS_LOADING" }]
 
 [content]
 image = "default.xbe"

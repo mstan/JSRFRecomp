@@ -13,6 +13,7 @@ static void boost_composite(void)
 }
 static int title_function(struct PilotTitleModCall *call)
 {
+    cutscene_function(call);
     if(!call->phase) {
         if(call->id==2 && seamless) {
             unsigned kind=63;read_u32(call->entry[1]+0x48,&kind);
@@ -25,6 +26,7 @@ static int title_function(struct PilotTitleModCall *call)
         loading_cost((unsigned)(call->scratch&63),call->scratch>>6);
     }
     seamless_step(call);
+    challenge_result(call);
     if(call->id==1 && (call->caller==JSRF_VA(0xa299f) || call->caller==JSRF_VA(0xa30fc))) {
         if(call->caller==JSRF_VA(0xa299f) && call->gpr[0])boost_pending=1;
         call->gpr[0]=0;

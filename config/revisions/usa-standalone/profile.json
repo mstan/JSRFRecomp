@@ -209,6 +209,30 @@
           "bytes": 42,
           "sha256": "14795084d4c0d7cad7e04a28a6c6b8b73f2b8c2bdbc02d421115176250205205",
           "stack_bytes": 0
+        },
+        {
+          "id": 10,
+          "address": 84432,
+          "bytes": 4,
+          "sha256": "f7e0208f5e988ae39c7a45dfddbd12921d02f9c3deb5695d4c534c8ab0ccdb0f",
+          "stack_bytes": 0,
+          "callers": [
+            1157880
+          ]
+        },
+        {
+          "id": 11,
+          "address": 145296,
+          "bytes": 570,
+          "sha256": "c411444239032a750939b1ab92ca1a46e7359d1a36d0b5e71ff380a31684e6a3",
+          "stack_bytes": 0
+        },
+        {
+          "id": 12,
+          "address": 125120,
+          "bytes": 472,
+          "sha256": "e78565f86ac680756e9905364976d6e262929fdb00b2ef15cea0e8c04eeb0707",
+          "stack_bytes": 0
         }
       ]
     }

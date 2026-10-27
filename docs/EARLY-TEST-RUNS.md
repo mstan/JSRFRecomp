@@ -5,8 +5,10 @@ Tracking: `beads-xbox.2.15`.
 The default-on **Early Test Runs** mod removes the finished-story prerequisite
 from Roboy's Test Run menu. Each area's original graffiti-soul requirement
 remains. A saved OFF selection restores the original story prerequisite.
-The mod works without visual enhancements and changes only disposable menu
-allocations; it never awards souls, advances the chapter or edits a save.
+The mod works without visual enhancements. It changes disposable menu
+allocations and the results screen's separate postgame prerequisite; it never
+awards souls, advances the chapter or directly edits a save. Earned character
+rewards continue through the original rank/area checks and award routine.
 
 The supported original `0x756E0` first requires chapter9 and then builds four
 challenge lists using per-area total-souls == collected-souls comparisons.
@@ -33,3 +35,11 @@ inputs left the initial submenu selected, and a later retry timed out at the
 title. These are recorded limits, not challenge-gameplay passes. Broader original
 extra-mode initialization and mechanics remain deferred under `beads-xbox.2.9`.
 No release or existing Nextcloud ZIP is replaced by this local feature build.
+
+October26 reward correction: the results constructor independently queried
+chapter9 before running any character reward checks. The exact admitted call
+site now reports that prerequisite as met when Early Test Runs is on, retaining
+all original earned-rank, area and already-unlocked checks. The generic chapter
+getter's other callers, chapter RAM and disabled behavior are unchanged. Both
+revision contracts pass. The reporter's Garage challenge recording is retained
+privately for gameplay validation; no complete earned-reward pass is claimed.

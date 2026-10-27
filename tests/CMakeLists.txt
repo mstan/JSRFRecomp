@@ -17,7 +17,7 @@ target_include_directories(jsrf_visual_contract PRIVATE "${XBOXLLR_SOURCE}/pilot
 if(NOT WIN32)
   target_link_libraries(jsrf_visual_contract PRIVATE m)
 endif()
-foreach(mode disabled fixed adaptive loading)
+foreach(mode disabled fixed adaptive loading startup startup-off reward reward-off cutscene cutscene-off)
   add_test(NAME jsrf_visual_${mode} COMMAND jsrf_visual_contract
     "${CMAKE_CURRENT_BINARY_DIR}/${mode}.plan" ${mode})
 endforeach()
@@ -32,7 +32,7 @@ target_include_directories(jsrf_usa_visual_contract PRIVATE "${XBOXLLR_SOURCE}/p
 if(NOT WIN32)
   target_link_libraries(jsrf_usa_visual_contract PRIVATE m)
 endif()
-foreach(mode disabled fixed adaptive loading)
+foreach(mode disabled fixed adaptive loading startup startup-off reward reward-off cutscene cutscene-off)
   add_test(NAME jsrf_usa_visual_${mode} COMMAND jsrf_usa_visual_contract
     "${CMAKE_CURRENT_BINARY_DIR}/usa-${mode}.plan" ${mode})
 endforeach()

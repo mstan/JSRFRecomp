@@ -1,0 +1,39 @@
+{
+  "schema": "jsrf.hold-start-cutscenes.v1",
+  "xbe_sha256": "fd19055756719893c466302809b433b785ecf5732df0441286f3f605f0f3ef9c",
+  "functions": [
+    {
+      "id": 11,
+      "address": 145296,
+      "bytes": 570,
+      "sha256": "c411444239032a750939b1ab92ca1a46e7359d1a36d0b5e71ff380a31684e6a3",
+      "stack_bytes": 0,
+      "role": "original scripted-event update"
+    },
+    {
+      "id": 12,
+      "address": 125120,
+      "bytes": 472,
+      "sha256": "e78565f86ac680756e9905364976d6e262929fdb00b2ef15cea0e8c04eeb0707",
+      "stack_bytes": 0,
+      "role": "original natural completion and repeat-view skip cleanup"
+    }
+  ],
+  "actor_manager": 2292960,
+  "event_actor_id": 7645,
+  "event_vtable": 1854376,
+  "wrapper_actor_id": 7643,
+  "wrapper_vtable": 1854672,
+  "mission_vtable": 1878704,
+  "ready_state": 2,
+  "mission_state": 19,
+  "event_phase": 136,
+  "event_id": 140,
+  "script_pointer": 220,
+  "input_held": 2432484,
+  "start_mask": 1,
+  "hold_100ns": 10000000,
+  "original_viewed_bits": 2045052,
+  "original_rule": "23790 natural end or previously viewed + A/Start calls 1E8C0; wrapper destruction resumes original CMission state19 tail",
+  "mod_rule": "opt-in; released P1 Start then uninterrupted one-second hold during a qualified live story event invokes that same original cleanup after update; no original input or progression writes by mod"
+}

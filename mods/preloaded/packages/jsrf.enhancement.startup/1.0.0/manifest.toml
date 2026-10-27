@@ -1,0 +1,19 @@
+format_version = 1
+id = "jsrf.enhancement.startup"
+name = "Skippable startup screens"
+category = "Presentation"
+version = "1.0.0"
+description = "Press A or Start to dismiss startup logos and the graffiti warning immediately, retaining the original fades."
+
+[[target]]
+game_id = "5345000A"
+xbe_sha256 = "f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219"
+
+[[target]]
+game_id = "5345000A"
+xbe_sha256 = "fd19055756719893c466302809b433b785ecf5732df0441286f3f605f0f3ef9c"
+
+[[feature]]
+id = "skippable-intros"
+name = "Skip logos and warning with A / Start"
+default_enabled = false

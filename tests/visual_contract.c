@@ -29,6 +29,7 @@ static int invoke(unsigned id,unsigned object,const unsigned *args,unsigned coun
     (void)args;if(count)return 0;++calls;*result=0;
     if(id==2 && object==0x350000){u32(object+0x44,0);return 1;}
     if(id==40 && object==0x330000){u32(object+0x5c,13);return 1;}
+    if(id==12 && object==0x360000){u32(object+4,0x80005100);u32(0x300000+0x98+0x1ddd*4,0);return 1;}
     return 0;
 }
 static int resident(unsigned budget,const char *const *streams,unsigned count){return budget==1152 && count==1 && !strcmp(streams[0],".adx");}
@@ -53,6 +54,86 @@ int main(int argc,char **argv)
     env("XLLE_PILOT_TITLE_MOD_SEAMLESS_LOADING","0");
     struct PilotTitleModHost host={PILOT_TITLE_MOD_ABI,SHA,read_data,write_data,
         presentation,client_size,frame_shape,visuals,set_scope};
+    if(!strcmp(argv[2],"cutscene") || !strcmp(argv[2],"cutscene-off")) {
+        unsigned enabled=!strcmp(argv[2],"cutscene");
+        env("XLLE_PILOT_TITLE_MOD_HOLD_SKIP_CUTSCENES",enabled?"1":"0");
+        host.monotonic=monotonic;host.invoke=invoke;
+        const struct PilotTitleMod *mod=pilot_title_mod_open(&host);
+        u32(JSRF_VA(0x22fca0),0x300000);u32(0x300000+0x98+9*4,0x330000);
+        u32(0x330000,JSRF_VA(0x1caa70));u32(0x33005c,19);
+        u32(0x300000+0x98+0x1ddb*4,0x340000);u32(0x340000,JSRF_VA(0x1c4c90));
+        u32(0x340024,0x330000);u32(0x340048,201);
+        u32(0x300000+0x98+0x1ddd*4,0x360000);u32(0x360000,JSRF_VA(0x1c4b68));
+        u32(0x360004,0x5100);u32(0x360024,0x340000);u32(0x360088,2);u32(0x36008c,201);u32(0x3600dc,0x370000);
+        unsigned entry[8]={1,0x360000,3,4,0x3ffff00,6,7,8};
+        struct PilotTitleModCall call={0};call.id=11;call.entry=entry;memcpy(call.gpr,entry,sizeof(entry));
+        unsigned before_reads=reads;
+        /* Carrying Start into the event never arms it. */
+        u32(JSRF_VA(0x251da4),1);
+        for(unsigned i=0;i<8;++i){clock100ns+=2000000;call.phase=0;call.scratch=0;CHECK(!mod->function(&call));call.phase=1;CHECK(!mod->function(&call));}
+        CHECK(!calls && !writes);
+        if(!enabled){CHECK(reads==before_reads);return 0;}
+        /* Release, short hold, release: no early skip. */
+        call.phase=0;u32(JSRF_VA(0x251da4),0);CHECK(!mod->function(&call));
+        /* A has logical bit4; holding it is never this mod's skip request. */
+        u32(JSRF_VA(0x251da4),4);
+        for(unsigned i=0;i<8;++i){clock100ns+=2000000;call.scratch=0;CHECK(!mod->function(&call));CHECK(!call.scratch);}
+        u32(JSRF_VA(0x251da4),1);
+        for(unsigned i=0;i<4;++i){clock100ns+=2000000;call.scratch=0;CHECK(!mod->function(&call));CHECK(!call.scratch);}
+        u32(JSRF_VA(0x251da4),0);CHECK(!mod->function(&call));CHECK(!calls && !writes);
+        /* A suspended/stalled window discards elapsed hold time. */
+        u32(JSRF_VA(0x251da4),1);CHECK(!mod->function(&call));clock100ns+=20000000;
+        call.scratch=0;CHECK(!mod->function(&call));CHECK(!call.scratch && !calls);
+        /* Gameplay or unready events cannot be skipped. */
+        u32(0x33005c,15);clock100ns+=20000000;CHECK(!mod->function(&call));CHECK(!call.scratch && !calls);
+        u32(0x33005c,19);u32(0x360088,1);CHECK(!mod->function(&call));CHECK(!call.scratch && !calls);
+        u32(0x360088,2);u32(0x340048,202);CHECK(!mod->function(&call));CHECK(!call.scratch && !calls);
+        u32(0x340048,201);u32(JSRF_VA(0x251da4),0);CHECK(!mod->function(&call));
+        u32(JSRF_VA(0x251da4),1);CHECK(!mod->function(&call));
+        for(unsigned i=0;i<5;++i){clock100ns+=2000000;call.scratch=0;CHECK(!mod->function(&call));}
+        CHECK(call.scratch==1 && !calls && !writes);
+        /* If the original update naturally ended this frame, no second cleanup. */
+        u32(0x300000+0x98+0x1ddd*4,0);call.phase=1;CHECK(!mod->function(&call));CHECK(!calls && !writes);
+        u32(0x300000+0x98+0x1ddd*4,0x360000);u32(JSRF_VA(0x251da4),0);call.phase=0;call.scratch=0;CHECK(!mod->function(&call));
+        u32(JSRF_VA(0x251da4),1);CHECK(!mod->function(&call));
+        for(unsigned i=0;i<5;++i){clock100ns+=2000000;call.scratch=0;CHECK(!mod->function(&call));}
+        CHECK(call.scratch==1 && !calls && !writes);call.phase=1;CHECK(!mod->function(&call));CHECK(calls==1 && !writes);
+        CHECK(!memcmp(call.gpr,entry,sizeof(entry))); /* No register, stack or input edits. */
+        CHECK(!mod->function(&call));CHECK(calls==1);return 0;
+    }
+    if(!strcmp(argv[2],"reward") || !strcmp(argv[2],"reward-off")) {
+        unsigned enabled=!strcmp(argv[2],"reward");
+        env("XLLE_PILOT_TITLE_MOD_EARLY_TEST_RUNS",enabled?"1":"0");
+        const struct PilotTitleMod *mod=pilot_title_mod_open(&host);
+        u32(JSRF_VA(0x1eff74),3);unsigned entry[8]={0};entry[1]=JSRF_VA(0x1eff70);
+        struct PilotTitleModCall call={0};call.id=10;call.phase=1;call.entry=entry;
+        call.caller=JSRF_VA(0x11aac8);call.gpr[0]=3;call.gpr[1]=0x12345678;
+        CHECK(!mod->function(&call));CHECK(call.gpr[0]==(enabled?9:3));CHECK(call.gpr[1]==0x12345678);
+        CHECK(!writes);
+        unsigned chapter=0;CHECK(read_data(JSRF_VA(0x1eff74),&chapter,4) && chapter==3);
+        call.caller++;call.gpr[0]=3;CHECK(!mod->function(&call) && call.gpr[0]==3);
+        call.caller--;entry[1]+=4;CHECK(!mod->function(&call) && call.gpr[0]==3);
+        entry[1]-=4;call.phase=0;CHECK(!mod->function(&call) && call.gpr[0]==3);
+        call.phase=1;call.gpr[0]=9;CHECK(!mod->function(&call) && call.gpr[0]==9);
+        CHECK(!writes);return 0;
+    }
+    if(!strcmp(argv[2],"startup") || !strcmp(argv[2],"startup-off")) {
+        unsigned enabled=!strcmp(argv[2],"startup");
+        env("XLLE_PILOT_TITLE_MOD_SKIP_STARTUP",enabled?"1":"0");
+        env("XLLE_PILOT_TITLE_MOD_EARLY_TEST_RUNS","0");
+        const struct PilotTitleMod *mod=pilot_title_mod_open(&host);
+        u32(JSRF_VA(0x22fca0),0x300000);
+        u32(0x300000+0x98+0x1dda*4,0x340000);u32(0x340000,JSRF_VA(0x1ccf78));
+        u32(0x340098,13);u32(0x34009c,5);u32(JSRF_VA(0x251da8),0);
+        mod->present();
+        unsigned timer=0,latch=0;read_data(0x34009c,&timer,4);CHECK(timer==5);
+        u32(JSRF_VA(0x251da8),4);mod->present();
+        read_data(0x34009c,&timer,4);read_data(0x3400a0,&latch,4);
+        CHECK(timer==(enabled?421:5));CHECK(latch==enabled);
+        u32(0x340000,0);u32(0x34009c,7);u32(0x3400a0,0);mod->present();
+        read_data(0x34009c,&timer,4);CHECK(timer==7);
+        return 0;
+    }
     if(!strcmp(argv[2],"loading")) {
         env("XLLE_PILOT_TITLE_MOD_SEAMLESS_LOADING","1");env("XLLE_PILOT_TITLE_MOD_EARLY_TEST_RUNS","0");
         host.resident_media=resident;host.resident_ready=ready;host.invoke=invoke;host.monotonic=monotonic;

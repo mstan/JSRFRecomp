@@ -22,6 +22,9 @@ and controller support through an Xbox-themed launcher. JSRFRecomp uses
 | Smoother presentation | Optional blended 60/120 Hz presentation while gameplay keeps its original timing. |
 | Controller selection | The shared recomp-ui Player 1 card detects connected controllers and remembers the selected device. Keyboard input is also available. |
 | Early Test Runs | Collect an area's graffiti souls to unlock its challenges without finishing the story. Enabled by default; switch it off in Mods for the original rule. |
+| Custom graffiti images | Import PNG/JPEG/TGA artwork from Mods > Manage Graffiti at native, 2x or 4x detail. Browse saved thumbnails, view full-size artwork, or delete a selected design. Free slots and storage space update automatically; imports add a new design. |
+| Skippable startup screens | A/Start dismisses the startup logos and graffiti warning with the original fade. Enabled by default; switch it off in Mods > Presentation for the original timing. |
+| Hold Start to skip story cutscenes | Optional, off by default in Mods > Presentation. Release Start after a scripted story scene begins, then hold it for one second to request the game's original scene cleanup. Gameplay pause and ordinary dialogue controls remain unchanged. |
 | Original saves | Real in-game saving and fresh-process Load Game, character selection and movement. |
 
 Enhancements are individually selectable mods. Fresh launchers default to
@@ -32,9 +35,13 @@ source frame of latency. The first update resets the earlier automatically
 enabled blending; later explicit opt-ins are remembered. Actual higher-rate
 gameplay is unavailable.
 
+Releases include the RPTK and RAID Discord emblem PNGs under `extras/graffiti`,
+with recommended SS/XL and 4x import settings. Only these two emblems are bundled;
+personal imports remain in each player's local save/profile.
+
 ## Getting started
 
-**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026-10-26.2).**
+**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026-10-26.3).**
 The Windows ZIP includes the precompiled native application, launcher, Python
 and runtime dependencies. No compiler is needed to play. Matching project and
 prepared dependency source is included under source/ and on the release page.
