@@ -77,6 +77,7 @@ unit_max_functions = 64
 unit_max_bytes = 524288
 
 [build]
+PILOT_NATIVE_IPO = true
 PILOT_NATIVE_OPTIMIZATION = "OPTIMIZED"
 PILOT_MEDIA = "HOST"
 PILOT_CACHE = "NATIVE"
