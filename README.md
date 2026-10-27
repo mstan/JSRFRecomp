@@ -41,11 +41,15 @@ personal imports remain in each player's local save/profile.
 
 ## Getting started
 
-**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026-10-26.3).**
+**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026.10.27.1).**
 The Windows ZIP includes the precompiled native application, launcher, Python
 and runtime dependencies. No compiler is needed to play. Matching project and
 prepared dependency source is included under source/ and on the release page.
 Linux releases remain deferred. The setup flow is described below.
+
+The [October 27 optimization update](docs/RELEASE-NOTES-2026.10.27.1.md)
+retains both supported revisions and existing features. Matched performance is
+neutral/inconclusive for both revisions; no reproducible regression was found.
 
 The [October 24 update](docs/RELEASE-NOTES-2026-10-24.1.md) adds the USA standalone
 retail revision. It also includes the [controller hotfix](docs/RELEASE-NOTES-2026-10-23.2.md)
