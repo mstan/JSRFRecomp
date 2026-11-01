@@ -88,6 +88,8 @@ PILOT_AUDIO = "NATIVE"
 PILOT_AUDIO_BACKEND = "XAUDIO2_DSP"
 # Opt in to the pristine spatial-consumer profile; other titles keep the default.
 PILOT_AUDIO_DORMANT_OWNER = true
+PILOT_DSP_GRAPH_OWNER = true
+PILOT_DSP_DMA = true
 PILOT_CALENDAR = "HLE"
 PILOT_IO_DEVICE = "OFF"
 PILOT_USB = "OFF"
@@ -98,6 +100,8 @@ PILOT_INPUT = "NATIVE"
 PILOT_SCHEDULING = "NATIVE"
 
 [runtime]
+XLLE_PILOT_DSP_GRAPH_OWNER = "1"
+XLLE_PILOT_DSP_DMA = "1"
 # Qualified R03 package; other titles retain the byte fallback.
 XLLE_PILOT_RESOURCE_MIRROR_OWNER = "1"
 XLLE_PILOT_GUEST_SCHEDULER = "1"
