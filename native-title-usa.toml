@@ -86,6 +86,8 @@ PILOT_RENDERER = "D3D11"
 PILOT_D3D_DONOR = "PHOBOS"
 PILOT_AUDIO = "NATIVE"
 PILOT_AUDIO_BACKEND = "XAUDIO2_DSP"
+# Opt in to the pristine spatial-consumer profile; other titles keep the default.
+PILOT_AUDIO_DORMANT_OWNER = true
 PILOT_CALENDAR = "HLE"
 PILOT_IO_DEVICE = "OFF"
 PILOT_USB = "OFF"
