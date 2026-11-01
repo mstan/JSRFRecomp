@@ -77,6 +77,8 @@ unit_max_functions = 64
 unit_max_bytes = 524288
 
 [build]
+PILOT_SESSION_PAGE_OWNER = true
+PILOT_INPUT_REPLAY_OWNER = false
 PILOT_NATIVE_IPO = true
 PILOT_NATIVE_OPTIMIZATION = "OPTIMIZED"
 PILOT_MEDIA = "HOST"
@@ -100,6 +102,8 @@ PILOT_INPUT = "NATIVE"
 PILOT_SCHEDULING = "NATIVE"
 
 [runtime]
+XLLE_PILOT_SESSION_PAGE_OWNER = "1"
+XLLE_PILOT_INPUT_REPLAY_OWNER = "0"
 XLLE_PILOT_DSP_GRAPH_OWNER = "1"
 XLLE_PILOT_DSP_DMA = "1"
 # Qualified R03 package; other titles retain the byte fallback.
