@@ -1,3 +1,7 @@
+> **Playable beta:** Gameplay and native save/load have been tested, but the game
+> has **not been tested end to end**. Expect bugs; please report the release,
+> selected mods and steps to reproduce on [GitHub](https://github.com/mstan/JSRFRecomp/issues).
+
 # Jet Set Radio Future Recompiled
 
 Explore Tokyo-to on PC with adaptive widescreen, higher internal resolution
@@ -14,10 +18,10 @@ and controller support through an Xbox-themed launcher. JSRFRecomp uses
 
 ## Features
 
-| Feature | Available in the development preview |
+| Feature | Available in the beta |
 | --- | --- |
 | Adaptive widescreen | Fit gameplay to the window, or choose fixed aspects through 32:9, with expanded camera visibility and adjusted HUD anchors. |
-| Higher resolution | Native internal heights of 1080p, 1440p, 1800p and 2160p. |
+| Higher resolution | Original internal resolution or heights of 1080p, 1440p, 1800p and 2160p. |
 | Image quality | Optional FXAA, supersampling from 1x through 8x, and anisotropic texture filtering. |
 | Smoother presentation | Optional blended 60/120 Hz presentation while gameplay keeps its original timing. |
 | Controller selection | The shared recomp-ui Player 1 card detects connected controllers and remembers the selected device. Keyboard input is also available. |
@@ -41,11 +45,14 @@ personal imports remain in each player's local save/profile.
 
 ## Getting started
 
-**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026.11.02.1).**
+**[Download the Windows x64 beta](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026.11.02.1).**
 The Windows ZIP includes the precompiled native application, launcher, Python
 and runtime dependencies. No compiler is needed to play. Matching project and
 prepared dependency source is included under source/ and on the release page.
-Linux releases remain deferred. The setup flow is described below.
+Native Linux AppImages are undergoing release qualification. The existing
+Linux test packages predate the Windows optimization release linked above;
+matching Linux downloads will be linked after their build and runtime checks.
+The setup flow is described below.
 
 The [October 27 optimization update](docs/RELEASE-NOTES-2026.10.27.1.md)
 retains both supported revisions and existing features. Matched performance is
@@ -56,7 +63,7 @@ retail revision. It also includes the [controller hotfix](docs/RELEASE-NOTES-202
 for connected gamepads that gave no input, Early Test Runs and existing
 presentation and save support.
 
-You supply your own **Jet Set Radio Future (NTSC-U)** files. Open **Start Game.cmd**,
+You supply your own **Jet Set Radio Future (NTSC-U)** files. Open **Start Game.exe**,
 choose **Skip** in the optional first-launch console setup, and select the
 supported `.iso`, `.xiso` or extracted `default.xbe` on the main screen. Disc
 images are imported once with progress and Cancel, then reused from `data/discs`
@@ -148,6 +155,26 @@ The tested gameplay profile compiles original CPU code ahead of time and uses
 shared native services. It has no guest x86 interpreter fallback. Unsupported
 paths stop explicitly; scene-entry coverage is not proof that every function
 or gameplay path has been exercised.
+
+## Linux configuration and updates
+
+The native Linux package keeps the AppImage immutable. Writable settings,
+console identity, imported discs and native saves are stored outside it in
+`${XDG_DATA_HOME:-~/.local/share}/xboxllr/xbox-5345000a/data/`.
+For a custom location, launch with an absolute `XDG_DATA_HOME` path and
+keep using that same path after replacing or moving the AppImage:
+
+```sh
+XDG_DATA_HOME="$HOME/Games/xboxllr-data" ./JSRFRecomp-linux-x86_64.AppImage
+```
+
+`setup.json` remembers the selected game; `mod-selection.json` stores
+enhancement and controller choices. Preserve the complete `data/` folder,
+including console identities, rather than copying settings alone. Selected
+external save folders and HDD images stay in their chosen locations.
+A FUSE-less host can use `--appimage-extract-and-run`. Ubuntu 24.04/glibc
+and Vulkan 1.3 are the current build baseline; older distributions and
+full-speed WSL gameplay are not qualified by the package check.
 
 ## Credits and distribution
 
