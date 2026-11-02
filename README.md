@@ -1,4 +1,5 @@
-> **Early beta: not exhaustively playtested or tested end to end.** Expect bugs.
+> **Early beta — Playtesters needed!** JSRF has not been exhaustively playtested
+> or tested end to end. We're looking for feedback and bug reports.
 > [Report an issue](https://github.com/mstan/JSRFRecomp/issues/new) with your release version,
 > reproduction steps and [diagnostic logs](docs/REPORTING-BUGS.md).
 
