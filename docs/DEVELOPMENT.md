@@ -38,8 +38,9 @@ Visual mods use the shared Xbox launcher: adaptive widescreen through 32:9,
 internal resolution through 2160p, AA, supersampling, filtering and optional
 60/120Hz interpolated presentation. Live 4:3, 16:9, 21:9 and 32:9 resizing,
 GPU/CPU projection and clipping, HUD anchoring, 1080p/2160p rendering and 3x3
-supersampling have sampled gameplay evidence. These enhancements are optional
-and disabled by default. Final visual/performance review belongs to the owner;
+supersampling have sampled gameplay evidence. Fresh release settings enable
+adaptive widescreen and selected graphics enhancements; see [the player guide](PLAYING.md)
+for current defaults. Saved player choices are preserved. Final visual/performance review belongs to the owner;
 the samples do not qualify every stage-specific effect. Frame interpolation preserves original
 simulation and can produce blended double edges. Actual faster game simulation
 is unavailable until a title timing adapter is qualified.

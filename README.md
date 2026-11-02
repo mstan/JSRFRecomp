@@ -1,192 +1,70 @@
-> **Playable beta:** Gameplay and native save/load have been tested, but the game
-> has **not been tested end to end**. Expect bugs; please report the release,
-> selected mods and steps to reproduce on [GitHub](https://github.com/mstan/JSRFRecomp/issues).
+> **Early beta: not exhaustively playtested or tested end to end.** Expect bugs.
+> [Report an issue](https://github.com/mstan/JSRFRecomp/issues/new) with your release version,
+> reproduction steps and [diagnostic logs](docs/REPORTING-BUGS.md).
 
 # Jet Set Radio Future Recompiled
 
-Explore Tokyo-to on PC with adaptive widescreen, higher internal resolution
-and controller support through an Xbox-themed launcher. JSRFRecomp uses
-[xboxllr](https://github.com/mstan/xboxllr), the shared Xbox Low Level Recompiler.
+Play JSRF on PC with widescreen, higher resolutions and your own graffiti.
+Built on [XboxLLR](https://github.com/mstan/xboxllr), the same engine used by
+[Blinx Recompiled](https://github.com/mstan/BlinxRecomp).
 
-![Jet Set Radio Future gameplay in Chuo Street with an expanded widescreen view](docs/screenshots/chuo-widescreen.png)
+**[Download the Windows beta](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026.11.02.1)**
+· [Setup guide](docs/PLAYING.md) · [Report a bug](https://github.com/mstan/JSRFRecomp/issues/new)
 
-*Chuo Street in the development preview, after loading an original in-game save.
-[Image credits](docs/screenshots/NOTICE.md).*
+You need your own supported **NTSC-U game files**. No compiler required.
 
-[Features](#features) | [Getting started](#getting-started) |
-[Controls and graphics](#controls-and-graphics) | [Credits](CREDITS.md)
+![JSRF gameplay in 21:9](docs/screenshots/gameplay-21x9.png)
+
+*Actual gameplay in 21:9, with widescreen enabled.*
 
 ## Features
 
-| Feature | Available in the beta |
-| --- | --- |
-| Adaptive widescreen | Fit gameplay to the window, or choose fixed aspects through 32:9, with expanded camera visibility and adjusted HUD anchors. |
-| Higher resolution | Original internal resolution or heights of 1080p, 1440p, 1800p and 2160p. |
-| Image quality | Optional FXAA, supersampling from 1x through 8x, and anisotropic texture filtering. |
-| Smoother presentation | Optional blended 60/120 Hz presentation while gameplay keeps its original timing. |
-| Controller selection | The shared recomp-ui Player 1 card detects connected controllers and remembers the selected device. Keyboard input is also available. |
-| Early Test Runs | Collect an area's graffiti souls to unlock its challenges without finishing the story. Enabled by default; switch it off in Mods for the original rule. |
-| Custom graffiti images | Import PNG/JPEG/TGA artwork from Mods > Manage Graffiti at native, 2x or 4x detail. Browse saved thumbnails, view full-size artwork, or delete a selected design. Free slots and storage space update automatically; imports add a new design. |
-| Skippable startup screens | A/Start dismisses the startup logos and graffiti warning with the original fade. Enabled by default; switch it off in Mods > Presentation for the original timing. |
-| Hold Start to skip story cutscenes | Optional, off by default in Mods > Presentation. Release Start after a scripted story scene begins, then hold it for one second to request the game's original scene cleanup. Gameplay pause and ordinary dialogue controls remain unchanged. |
-| Original saves | Real in-game saving and fresh-process Load Game, character selection and movement. |
+- **Widescreen on by default.** Fit to screen follows your window, including ultrawide displays.
+- **Higher resolutions.** Internal resolution options, 1x–8x supersampling, FXAA and texture filtering.
+- **Early Test Runs.** Collect an area's graffiti souls to unlock its challenges before finishing the story.
+- **Your own graffiti.** Import PNG, JPEG or TGA artwork locally, with native, 2x or 4x detail.
+- **Controller and keyboard support.** Select your device in Player 1; the launcher remembers it.
+- **Native saves.** Save and load through the original game menus.
+- **Optional presentation controls.** Startup and story-cutscene skipping, plus blended 60/120 Hz presentation.
 
-Enhancements are individually selectable mods. Fresh launchers default to
-adaptive Fit to screen, a 16:9 starting window, Original internal resolution,
-3x supersampling, FXAA, 8x filtering and sharp original frames. Gameplay keeps its
-original timing. Optional blended frames add motion blur, double edges and one
-source frame of latency. The first update resets the earlier automatically
-enabled blending; later explicit opt-ins are remembered. Actual higher-rate
-gameplay is unavailable.
+Choose enhancements in **Mods**. Gameplay keeps its original timing; higher
+graphics settings cost performance. [Options and setup](docs/PLAYING.md).
 
-Releases include the RPTK and RAID Discord emblem PNGs under `extras/graffiti`,
-with recommended SS/XL and 4x import settings. Only these two emblems are bundled;
-personal imports remain in each player's local save/profile.
+## Bring your own graffiti
 
-## Getting started
+Import artwork through **Mods → Manage Graffiti**, then select it through
+**Roboy → Graffiti → Pick or Edit**. Your designs stay in your local save/profile.
 
-**[Download the Windows x64 beta](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026.11.02.1).**
-The Windows ZIP includes the precompiled native application, launcher, Python
-and runtime dependencies. No compiler is needed to play. Matching project and
-prepared dependency source is included under source/ and on the release page.
-Native Linux AppImages are undergoing release qualification. The existing
-Linux test packages predate the Windows optimization release linked above;
-matching Linux downloads will be linked after their build and runtime checks.
-The setup flow is described below.
+![A locally imported controller design painted onto a wall](docs/screenshots/custom-graffiti-controller.jpg)
 
-The [October 27 optimization update](docs/RELEASE-NOTES-2026.10.27.1.md)
-retains both supported revisions and existing features. Matched performance is
-neutral/inconclusive for both revisions; no reproducible regression was found.
+![A custom Discord banner being sprayed onto a wall](docs/screenshots/custom-graffiti-raid.jpg)
 
-The [October 24 update](docs/RELEASE-NOTES-2026-10-24.1.md) adds the USA standalone
-retail revision. It also includes the [controller hotfix](docs/RELEASE-NOTES-2026-10-23.2.md)
-for connected gamepads that gave no input, Early Test Runs and existing
-presentation and save support.
+*Two custom designs used in-game, from the owner's recording. [Image sources](docs/screenshots/NOTICE.md).*
 
-You supply your own **Jet Set Radio Future (NTSC-U)** files. Open **Start Game.exe**,
-choose **Skip** in the optional first-launch console setup, and select the
-supported `.iso`, `.xiso` or extracted `default.xbe` on the main screen. Disc
-images are imported once with progress and Cancel, then reused from `data/discs`
-with the same gameplay file access as an extracted copy. Keep that cache across
-updates to avoid importing again. Extracted XBEs still need the complete game
-asset folder beside them. This preview supports both the original
-development input (certificate revision 4) and the USA standalone retail
-release (certificate revision 1). The launcher chooses the matching native
-program automatically. Other revisions remain unsupported.
-Original game files are not included in this repository.
+## Start playing
 
-| Supported NTSC-U executable | `default.xbe` SHA-256 |
-| --- | --- |
-| USA standalone, certificate revision 1 | `fd19055756719893c466302809b433b785ecf5732df0441286f3f605f0f3ef9c` |
-| Existing development input, certificate revision 4 | `f4441696fdd007c31a712815cdde967836fbc3ab97fcb2f58e1db56974644219` |
+1. Extract the Windows ZIP and open **Start Game.exe**.
+2. Choose **Skip** in the optional console setup for a new local profile.
+3. Select your supported `.iso`, `.xiso` or extracted `default.xbe` with its game assets.
+4. Choose your controller and press **Play**.
 
-The October 23 download supports only revision 4; use the October 24 update for
-the standalone release. Default console profiles and save folders are separate
-for each revision; selecting another revision
-preserves the existing profile and progress. Shared or original-console saves
-retain their normal identity and signature checks.
+The USA standalone release and NTSC-U certificate revision 4 are supported.
+Keep the complete **`data` folder** when updating to preserve settings, console
+identity and saves. [Save and Linux configuration guide](docs/PLAYING.md#saves-settings-and-updates).
 
-No kernel dump, EEPROM or HDD image is needed to create a new local console.
-Automatic save storage is private to this game's package; no large disk image
-is generated. Advanced **Settings** can import original signing material and
-EEPROM, choose a shared save folder, or use an existing raw/QCOW2 FATX HDD image.
-An image takes priority over folder storage and requires validated original
-signing inputs and matching console identity. Original saves still undergo
-normal verification. Close xemu before sharing a disk image.
+A matching Linux AppImage is still being prepared for this release.
 
-Keep the package's `data` folder, your selected save storage and any
-`<image>.xboxllr` profile when updating. A new virtual identity is not equivalent
-to your physical Xbox's save identity. Xbox Live is unavailable; this generally
-does not affect new single-player play. Standalone virtual-profile saving and
-fresh-process loading pass the representative check described in the
-[revision admission notes](docs/REVISION-USA-STANDALONE.md). The full
-image-backed per-title save matrix remains qualification work.
-See the shared [setup guide](https://github.com/mstan/xboxllr/blob/master/docs/SETUP.md).
+## Found a bug?
 
-For an already prepared checkout, build and open the shared launcher:
+[Open an issue](https://github.com/mstan/JSRFRecomp/issues/new) with the release,
+area, selected mods and steps to reproduce. Attach the crash dialog's
+**diagnostic ZIP**, or follow the [log instructions](docs/REPORTING-BUGS.md).
+Do not upload original game files or the `PRIVATE-DO-NOT-SHARE` folder.
 
-```powershell
-python tools/game.py build-launcher --paths local/paths.json
-python tools/game.py run --paths local/paths.json --launcher
-```
+## Credits and source
 
-See [developer setup](docs/DEVELOPMENT.md), the
-[title profile](native-title.toml) and the shared
-[native-title driver guide](xboxllr/docs/NATIVE-TITLE-DRIVER.md) for prerequisites,
-preparation and builds. The framework's
-[release readiness plan](https://github.com/mstan/xboxllr/blob/master/docs/RELEASE-READINESS.md) tracks packaging,
-platform support and distribution requirements.
+[Credits](CREDITS.md) · [Build instructions](docs/DEVELOPMENT.md) ·
+[Component attribution](THIRD_PARTY_ATTRIBUTION.md) · [License](LICENSE-SCOPE.md)
 
-## Controls and graphics
-
-Choose the input device in **Player 1**, select enhancements in **Mods**, then
-launch the game. Individual button remapping is not exposed in this preview.
-Use `--launcher` to reopen settings if you previously selected Skip launcher.
-
-Pressing Play with a controller selects that controller for gameplay. Friendly
-names are retained while disconnected. Alt+Enter toggles borderless desktop
-fullscreen; normal window placement, maximized state and borderless state are
-remembered across game launches. Keep the package's whole `data` folder.
-
-**Early Test Runs** keeps the game's original soul requirement for each area.
-It changes the Roboy menu's availability checks without awarding souls or
-changing story progress. Disable it in Mods to require story completion again.
-
-Adaptive widescreen follows the window's aspect. Score text, dialogue portraits,
-speech panels and inventory have title-specific placement fixes through 32:9.
-Higher resolution and supersampling increase GPU cost; begin with original
-presentation timing when comparing performance.
-
-## Current playtest scope
-
-The original title and attract demo run, and gameplay is available. A rapid
-cheat-assisted sweep entered all 19 campaign/gameplay scene groups and nine
-story-event groups, plus 13 additional encounter files. The final post-fight
-sequence was reached with a forced defeat condition. These are coverage checks,
-with explicit bypasses; they do not qualify every mission's natural mechanics.
-
-Original save/load, sampled movement, grinding, graffiti and progression have
-direct evidence. The owner briefly playtested the visual preview and reported
-that it looked good. Extra-mode setup, deeper recovery checks and exhaustive
-routes remain deferred. See the [gameplay burndown](docs/NATIVE-GAMEPLAY-BURNDOWN.md)
-and [content ledger](docs/CONTENT-COVERAGE.md) for passed checks and limits.
-
-The tested gameplay profile compiles original CPU code ahead of time and uses
-shared native services. It has no guest x86 interpreter fallback. Unsupported
-paths stop explicitly; scene-entry coverage is not proof that every function
-or gameplay path has been exercised.
-
-## Linux configuration and updates
-
-The native Linux package keeps the AppImage immutable. Writable settings,
-console identity, imported discs and native saves are stored outside it in
-`${XDG_DATA_HOME:-~/.local/share}/xboxllr/xbox-5345000a/data/`.
-For a custom location, launch with an absolute `XDG_DATA_HOME` path and
-keep using that same path after replacing or moving the AppImage:
-
-```sh
-XDG_DATA_HOME="$HOME/Games/xboxllr-data" ./JSRFRecomp-linux-x86_64.AppImage
-```
-
-`setup.json` remembers the selected game; `mod-selection.json` stores
-enhancement and controller choices. Preserve the complete `data/` folder,
-including console identities, rather than copying settings alone. Selected
-external save folders and HDD images stay in their chosen locations.
-A FUSE-less host can use `--appimage-extract-and-run`. Ubuntu 24.04/glibc
-and Vulkan 1.3 are the current build baseline; older distributions and
-full-speed WSL gameplay are not qualified by the package check.
-
-## Credits and distribution
-
-Development and integration: **Matthew Stanley**. Special thanks to
-**sp00nz / sp00nznet**, **Phobos**, **NoRain** and the **xemu contributors** for
-the recompiler, renderer, audio and hardware work used or referenced by the
-shared framework. [Credits](CREDITS.md) links their projects and the detailed
-component inventory.
-
-This repository does not grant rights to Sega's original game files. The
-owner-original source uses [GNU GPL version 3 or later](LICENSE), subject to
-[license scope](LICENSE-SCOPE.md). Third-party work retains its own terms.
-The native application includes ahead-of-time translated execution code; users
-supply the original game data/assets. Original-title source bodies are generated
-from their own input. See [the original rights notice](RIGHTS-NOTICE.md).
+Jet Set Radio Future and its original assets belong to their respective rights
+holders. Original game data is not included. [Rights notice](RIGHTS-NOTICE.md).
