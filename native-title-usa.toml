@@ -23,11 +23,11 @@ options = { aspect = "adaptive" }
 
 [launcher.defaults."xboxlle.enhancement.visuals/resolution"]
 enabled = true
-options = { height = "1080" }
+options = { height = "0" }
 
 [launcher.defaults."xboxlle.enhancement.visuals/supersampling"]
 enabled = true
-options = { axis = "2" }
+options = { axis = "3" }
 
 [launcher.defaults."xboxlle.enhancement.visuals/antialiasing"]
 enabled = true

@@ -18,7 +18,7 @@ and controller support through an Xbox-themed launcher. JSRFRecomp uses
 | --- | --- |
 | Adaptive widescreen | Fit gameplay to the window, or choose fixed aspects through 32:9, with expanded camera visibility and adjusted HUD anchors. |
 | Higher resolution | Native internal heights of 1080p, 1440p, 1800p and 2160p. |
-| Image quality | Optional FXAA, 2x2 or 3x3 supersampling, and anisotropic texture filtering. |
+| Image quality | Optional FXAA, supersampling from 1x through 8x, and anisotropic texture filtering. |
 | Smoother presentation | Optional blended 60/120 Hz presentation while gameplay keeps its original timing. |
 | Controller selection | The shared recomp-ui Player 1 card detects connected controllers and remembers the selected device. Keyboard input is also available. |
 | Early Test Runs | Collect an area's graffiti souls to unlock its challenges without finishing the story. Enabled by default; switch it off in Mods for the original rule. |
@@ -28,8 +28,8 @@ and controller support through an Xbox-themed launcher. JSRFRecomp uses
 | Original saves | Real in-game saving and fresh-process Load Game, character selection and movement. |
 
 Enhancements are individually selectable mods. Fresh launchers default to
-adaptive Fit to screen, a 16:9 starting window, 1080p internal height, 2x2
-supersampling, FXAA, 8x filtering and sharp original frames. Gameplay keeps its
+adaptive Fit to screen, a 16:9 starting window, Original internal resolution,
+3x supersampling, FXAA, 8x filtering and sharp original frames. Gameplay keeps its
 original timing. Optional blended frames add motion blur, double edges and one
 source frame of latency. The first update resets the earlier automatically
 enabled blending; later explicit opt-ins are remembered. Actual higher-rate
@@ -41,7 +41,7 @@ personal imports remain in each player's local save/profile.
 
 ## Getting started
 
-**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026.11.01.1).**
+**[Download the Windows x64 preview](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026.11.02.1).**
 The Windows ZIP includes the precompiled native application, launcher, Python
 and runtime dependencies. No compiler is needed to play. Matching project and
 prepared dependency source is included under source/ and on the release page.
