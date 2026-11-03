@@ -2,6 +2,9 @@
 
 Original NTSC-U Jet Set Radio Future native-title project. Read README.md and native-title.toml first.
 
+- This repository is public. Publish releases on GitHub; do not deliver JSRF builds to Nextcloud.
+- Use SemVer starting at 0.5.0: `v0.5.0` tags and matching release/asset labels. Keep the early beta / Playtesters needed notice and preserve saved player settings.
+
 - Shared CPU/kernel/renderer/audio/input/services belong in the xboxllr framework; game identity, original revision facts, seeds and data-only mods belong here.
 - Pin the framework to a tested commit. Keep xboxllr gitlink and framework.json coherent.
 - Central Beads only: F:/Software/beads/issues. Game epic beads-xbox.2; native attract task beads-xbox.2.1. No per-repo Beads database.
