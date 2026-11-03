@@ -6,6 +6,10 @@ Download the [Windows x64 beta](https://github.com/mstan/JSRFRecomp/releases/tag
 extract the entire ZIP into a writable folder and open **Start Game.exe**.
 The launcher and runtime dependencies are included; no compiler is needed.
 
+On Linux, download the AppImage from the same release, make it executable and
+run it. It includes both supported game revisions and the launcher. The build
+targets x86_64, Ubuntu 24.04 or newer and Vulkan 1.3.
+
 Choose **Skip** in the optional console setup for a new local console identity.
 New local play needs no kernel dump, EEPROM or HDD image. Select your own
 supported `.iso`, `.xiso` or extracted `default.xbe`. An extracted XBE needs its
@@ -59,9 +63,8 @@ An original-console save may need matching signing inputs and console identity.
 See [console and save setup](https://github.com/mstan/xboxllr/blob/master/docs/SETUP.md).
 Close xemu or other writers before sharing an HDD image. Xbox Live is unavailable.
 
-A Linux AppImage matching the current Windows release is still being prepared.
-Existing native Linux packages use an Ubuntu 24.04/glibc baseline and Vulkan 1.3.
-Their settings and saves live **outside the AppImage**, at
+The current Linux AppImage includes the November 2 rendering changes.
+Settings and saves live **outside the AppImage**, at
 `${XDG_DATA_HOME:-~/.local/share}/xboxllr/xbox-5345000a/data/`.
 
 For a custom location, use an absolute `XDG_DATA_HOME` path and keep using it
@@ -73,6 +76,8 @@ XDG_DATA_HOME="$HOME/Games/xboxllr-data" ./JSRFRecomp-linux-x86_64.AppImage
 
 FUSE-less environments can use `--appimage-extract-and-run`. Bounded WSL startup
 checks do not qualify full-speed gameplay or the complete campaign.
+In WSL, keep game files on the Linux filesystem. Reading an extracted game
+through `/mnt/` can make startup much slower.
 
 ## Testing scope
 

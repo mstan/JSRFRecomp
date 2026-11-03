@@ -9,7 +9,7 @@ Play JSRF on PC with widescreen, higher resolutions and your own graffiti.
 Built on [XboxLLR](https://github.com/mstan/xboxllr), the same engine used by
 [Blinx Recompiled](https://github.com/mstan/BlinxRecomp).
 
-**[Download the Windows beta](https://github.com/mstan/JSRFRecomp/releases/tag/windows-preview-2026.11.02.1)**
+**[Download the Windows or Linux beta](https://github.com/mstan/JSRFRecomp/releases/latest)**
 · [Setup guide](docs/PLAYING.md) · [Report a bug](https://github.com/mstan/JSRFRecomp/issues/new)
 
 You need your own supported **NTSC-U game files**. No compiler required.
@@ -44,7 +44,7 @@ Import artwork through **Mods → Manage Graffiti**, then select it through
 
 ## Start playing
 
-1. Extract the Windows ZIP and open **Start Game.exe**.
+1. On Windows, extract the ZIP and open **Start Game.exe**. On Linux, make the AppImage executable and run it.
 2. Choose **Skip** in the optional console setup for a new local profile.
 3. Select your supported `.iso`, `.xiso` or extracted `default.xbe` with its game assets.
 4. Choose your controller and press **Play**.
@@ -53,7 +53,8 @@ The USA standalone release and NTSC-U certificate revision 4 are supported.
 Keep the complete **`data` folder** when updating to preserve settings, console
 identity and saves. [Save and Linux configuration guide](docs/PLAYING.md#saves-settings-and-updates).
 
-A matching Linux AppImage is still being prepared for this release.
+The native Linux AppImage targets x86_64, Ubuntu 24.04 or newer and Vulkan 1.3.
+Settings, saves and imported artwork stay outside the AppImage.
 
 ## Found a bug?
 
