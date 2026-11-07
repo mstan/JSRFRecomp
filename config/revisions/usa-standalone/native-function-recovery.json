@@ -15,7 +15,7 @@
       "original_end": 262568,
       "end": 262840,
       "sha256": "37205b603c5f9ff2b80c7d26c8f548856206b73b2cbd9483ac889d6475d0f662",
-      "reason": "Original3FEED conditional branch reaches40299 within same caller frame; retain all14source-bound discovered fragments while expanding parent through finalRET402B7. No new semantic CPU replacement.",
+      "reason": "Original3FEED conditional branch reaches40299 within the same caller frame; expand the parent through finalRET402B7 and retain the independently verified fragments present in current discovery. Original parent and contained-byte hashes are unchanged.",
       "contained_entries": [
         {
           "start": 262568,
@@ -31,31 +31,6 @@
           "start": 262664,
           "end": 262804,
           "sha256": "5cd3d0eeb7c4c7325472629efdfd1c416c364f94b0c72b8a3932ea19a32ce41b"
-        },
-        {
-          "start": 262760,
-          "end": 262804,
-          "sha256": "0c3377eb1f452472b0c168f3298419c68f8c3e9692b7f9f45d514a20167d81c0"
-        },
-        {
-          "start": 262764,
-          "end": 262804,
-          "sha256": "77a462c4f6c75dd2b6ef1a8273beb2aa6c0897d3228bb598799847c90af7c9b1"
-        },
-        {
-          "start": 262768,
-          "end": 262804,
-          "sha256": "0c87afd78394c1817eb4f97a19a674b0820a16e69fad5c4ae09923cc9b158cdd"
-        },
-        {
-          "start": 262776,
-          "end": 262804,
-          "sha256": "9297155ddb699954181a134793033dc88d77efa97f307e8a78f15692943f586f"
-        },
-        {
-          "start": 262796,
-          "end": 262804,
-          "sha256": "8f3eca89616c4ea5f11856d431746dabca51b69c300da07ed0bf0583f09170ba"
         },
         {
           "start": 262804,
