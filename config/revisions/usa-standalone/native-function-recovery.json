@@ -15,7 +15,7 @@
       "original_end": 262568,
       "end": 262840,
       "sha256": "37205b603c5f9ff2b80c7d26c8f548856206b73b2cbd9483ac889d6475d0f662",
-      "reason": "Original3FEED conditional branch reaches40299 within same caller frame; retain all14source-bound discovered fragments while expanding parent through finalRET402B7. No new semantic CPU replacement.",
+      "reason": "Original3FEED conditional branch reaches40299 within the same caller frame; expand the parent through finalRET402B7 and retain the independently verified fragments present in current discovery. Original parent and contained-byte hashes are unchanged.",
       "contained_entries": [
         {
           "start": 262568,
