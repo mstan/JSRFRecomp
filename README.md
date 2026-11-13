@@ -31,6 +31,10 @@ You need your own supported **NTSC-U game files**. No compiler required.
 Choose enhancements in **Mods**. Gameplay keeps its original timing; higher
 graphics settings cost performance. [Options and setup](docs/PLAYING.md).
 
+The 0.5.2 beta reduces duplicate rendering work above 1x supersampling. Original
+resolution and the selectable exact reference path remain available; visibility
+counts and CPU image readbacks may be approximate above 1x.
+
 ## Bring your own graffiti
 
 Import artwork through **Mods → Manage Graffiti**, then select it through
