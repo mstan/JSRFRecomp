@@ -9,6 +9,7 @@ Original NTSC-U Jet Set Radio Future native-title project. Read README.md and na
 - Pin the framework to a tested commit. Keep xboxllr gitlink and framework.json coherent.
 - Central Beads only: F:/Software/beads/issues. Game epic beads-xbox.2; native attract task beads-xbox.2.1. No per-repo Beads database.
 - Never commit original XBE/media/kernel/EEPROM/signing inputs, generated original code or captures. local/ and build/ remain private.
-- No interpreter fallback, fabricated success/completion, or hidden hardware bypass. Unsupported native boundaries stop explicitly.
+- Native code first. Missed code (unresolved indirect targets, undiscovered/untranslated functions) falls back to the framework guest interpreter by default (owner decision 2026-11-18); it logs loudly, writes a heal manifest and must be healed into native code. Qualification runs use `--interpreter strict`.
+- No fabricated success/completion or hidden hardware bypass. Other unsupported native boundaries stop explicitly.
 - Keep the retained LLE contract foundation while using fast native HLE. Batch compatible source checks and actual bounded muted title runs; distinguish components from whole-attract acceptance.
 - Preserve the working dashboard/Blinx stages. Work solo unless the owner authorizes subagents for this task.
