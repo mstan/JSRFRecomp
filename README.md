@@ -35,6 +35,10 @@ The 0.5.2 beta reduces duplicate rendering work above 1x supersampling. Original
 resolution and the selectable exact reference path remain available; visibility
 counts and CPU image readbacks may be approximate above 1x.
 
+The 0.5.3 beta adds a guest CPU interpreter fallback: game code that was not
+translated ahead of time now runs interpreted instead of stopping the game.
+Diagnostic reports list any interpreted code so it can be translated natively.
+
 ## Bring your own graffiti
 
 Import artwork through **Mods → Manage Graffiti**, then select it through
