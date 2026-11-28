@@ -10,7 +10,7 @@ xbe_sha256 = "fd19055756719893c466302809b433b785ecf5732df0441286f3f605f0f3ef9c"
 
 [launcher]
 sharp_presentation = true
-ui_revision = "ccc186e097b362555292b157ffd303abcea26fbf"
+ui_revision = "9d9c41e6b0ff80d5efe3960a1b7c7eaad36eac07"
 # Added after original gameplay scope/timing observations; never just uncap.
 frame_modes = ["interpolated"]
 
